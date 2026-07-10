@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://utilify.tools/sitemap.xml
+Sitemap: https://utilify.co.in/sitemap.xml
