@@ -1,0 +1,17 @@
+{
+  "name": "utilify",
+  "version": "1.0.0",
+  "description": "Premium text formatter for social media (Unicode) and rich text editors (HTML).",
+  "main": "index.html",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build && node -e \"const fs = require('fs'); fs.copyFileSync('app.js', 'dist/app.js');\"",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^5.0.0"
+  },
+  "dependencies": {
+    "jsdom": "^28.1.0"
+  }
+}

@@ -1,0 +1,493 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Primary Landing Page -->
+  <url>
+    <loc>https://utilify.tools/</loc>
+    <lastmod>2026-07-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <!-- About Us -->
+  <url>
+    <loc>https://utilify.tools/#/about</loc>
+    <lastmod>2026-07-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Privacy Policy -->
+  <url>
+    <loc>https://utilify.tools/#/privacy</loc>
+    <lastmod>2026-07-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <!-- Terms of Service -->
+  <url>
+    <loc>https://utilify.tools/#/terms</loc>
+    <lastmod>2026-07-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <!-- Disclaimer -->
+  <url>
+    <loc>https://utilify.tools/#/disclaimer</loc>
+    <lastmod>2026-07-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <!-- HTML Sitemap Directory -->
+  <url>
+    <loc>https://utilify.tools/#/sitemap</loc>
+    <lastmod>2026-07-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- Contact Us -->
+  <url>
+    <loc>https://utilify.tools/#/contact</loc>
+    <lastmod>2026-07-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- Tool: social -->
+  <url>
+    <loc>https://utilify.tools/#/tools/social</loc>
+    <lastmod>2026-07-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <!-- Tool: rich -->
+  <url>
+    <loc>https://utilify.tools/#/tools/rich</loc>
+    <lastmod>2026-07-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <!-- Tool: words -->
+  <url>
+    <loc>https://utilify.tools/#/tools/words</loc>
+    <lastmod>2026-07-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <!-- Tool: case -->
+  <url>
+    <loc>https://utilify.tools/#/tools/case</loc>
+    <lastmod>2026-07-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <!-- Tool: slug -->
+  <url>
+    <loc>https://utilify.tools/#/tools/slug</loc>
+    <lastmod>2026-07-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <!-- Tool: lorem -->
+  <url>
+    <loc>https://utilify.tools/#/tools/lorem</loc>
+    <lastmod>2026-07-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <!-- Tool: textutils -->
+  <url>
+    <loc>https://utilify.tools/#/tools/textutils</loc>
+    <lastmod>2026-07-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <!-- Tool: json -->
+  <url>
+    <loc>https://utilify.tools/#/tools/json</loc>
+    <lastmod>2026-07-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <!-- Tool: yamljson -->
+  <url>
+    <loc>https://utilify.tools/#/tools/yamljson</loc>
+    <lastmod>2026-07-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <!-- Tool: jwt -->
+  <url>
+    <loc>https://utilify.tools/#/tools/jwt</loc>
+    <lastmod>2026-07-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <!-- Tool: base64 -->
+  <url>
+    <loc>https://utilify.tools/#/tools/base64</loc>
+    <lastmod>2026-07-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <!-- Tool: url -->
+  <url>
+    <loc>https://utilify.tools/#/tools/url</loc>
+    <lastmod>2026-07-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <!-- Tool: hash -->
+  <url>
+    <loc>https://utilify.tools/#/tools/hash</loc>
+    <lastmod>2026-07-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <!-- Tool: diff -->
+  <url>
+    <loc>https://utilify.tools/#/tools/diff</loc>
+    <lastmod>2026-07-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <!-- Tool: dockerfile -->
+  <url>
+    <loc>https://utilify.tools/#/tools/dockerfile</loc>
+    <lastmod>2026-07-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <!-- Tool: compose -->
+  <url>
+    <loc>https://utilify.tools/#/tools/compose</loc>
+    <lastmod>2026-07-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <!-- Tool: ghactions -->
+  <url>
+    <loc>https://utilify.tools/#/tools/ghactions</loc>
+    <lastmod>2026-07-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <!-- Tool: nginx -->
+  <url>
+    <loc>https://utilify.tools/#/tools/nginx</loc>
+    <lastmod>2026-07-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <!-- Tool: iam -->
+  <url>
+    <loc>https://utilify.tools/#/tools/iam</loc>
+    <lastmod>2026-07-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <!-- Tool: cron -->
+  <url>
+    <loc>https://utilify.tools/#/tools/cron</loc>
+    <lastmod>2026-07-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <!-- Tool: linuxcmd -->
+  <url>
+    <loc>https://utilify.tools/#/tools/linuxcmd</loc>
+    <lastmod>2026-07-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <!-- Tool: cipher -->
+  <url>
+    <loc>https://utilify.tools/#/tools/cipher</loc>
+    <lastmod>2026-07-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <!-- Tool: pwdinspector -->
+  <url>
+    <loc>https://utilify.tools/#/tools/pwdinspector</loc>
+    <lastmod>2026-07-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <!-- Tool: boxshadow -->
+  <url>
+    <loc>https://utilify.tools/#/tools/boxshadow</loc>
+    <lastmod>2026-07-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <!-- Tool: gradient -->
+  <url>
+    <loc>https://utilify.tools/#/tools/gradient</loc>
+    <lastmod>2026-07-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <!-- Tool: colorconv -->
+  <url>
+    <loc>https://utilify.tools/#/tools/colorconv</loc>
+    <lastmod>2026-07-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <!-- Tool: qr -->
+  <url>
+    <loc>https://utilify.tools/#/tools/qr</loc>
+    <lastmod>2026-07-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <!-- Tool: metatag -->
+  <url>
+    <loc>https://utilify.tools/#/tools/metatag</loc>
+    <lastmod>2026-07-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <!-- Tool: robotstxt -->
+  <url>
+    <loc>https://utilify.tools/#/tools/robotstxt</loc>
+    <lastmod>2026-07-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <!-- Tool: pdfmerge -->
+  <url>
+    <loc>https://utilify.tools/#/tools/pdfmerge</loc>
+    <lastmod>2026-07-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <!-- Tool: pdfsplit -->
+  <url>
+    <loc>https://utilify.tools/#/tools/pdfsplit</loc>
+    <lastmod>2026-07-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <!-- Tool: pdfrotate -->
+  <url>
+    <loc>https://utilify.tools/#/tools/pdfrotate</loc>
+    <lastmod>2026-07-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <!-- Tool: imgcomp -->
+  <url>
+    <loc>https://utilify.tools/#/tools/imgcomp</loc>
+    <lastmod>2026-07-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <!-- Tool: imgresize -->
+  <url>
+    <loc>https://utilify.tools/#/tools/imgresize</loc>
+    <lastmod>2026-07-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <!-- Tool: imgcrop -->
+  <url>
+    <loc>https://utilify.tools/#/tools/imgcrop</loc>
+    <lastmod>2026-07-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <!-- Tool: imgconvert -->
+  <url>
+    <loc>https://utilify.tools/#/tools/imgconvert</loc>
+    <lastmod>2026-07-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <!-- Tool: svgtopng -->
+  <url>
+    <loc>https://utilify.tools/#/tools/svgtopng</loc>
+    <lastmod>2026-07-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <!-- Tool: pngtosvg -->
+  <url>
+    <loc>https://utilify.tools/#/tools/pngtosvg</loc>
+    <lastmod>2026-07-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <!-- Tool: imgtobase64 -->
+  <url>
+    <loc>https://utilify.tools/#/tools/imgtobase64</loc>
+    <lastmod>2026-07-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <!-- Tool: exif -->
+  <url>
+    <loc>https://utilify.tools/#/tools/exif</loc>
+    <lastmod>2026-07-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <!-- Tool: imgmerge -->
+  <url>
+    <loc>https://utilify.tools/#/tools/imgmerge</loc>
+    <lastmod>2026-07-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <!-- Tool: scicalc -->
+  <url>
+    <loc>https://utilify.tools/#/tools/scicalc</loc>
+    <lastmod>2026-07-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <!-- Tool: cgpacalc -->
+  <url>
+    <loc>https://utilify.tools/#/tools/cgpacalc</loc>
+    <lastmod>2026-07-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <!-- Tool: percentcalc -->
+  <url>
+    <loc>https://utilify.tools/#/tools/percentcalc</loc>
+    <lastmod>2026-07-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <!-- Tool: attendcalc -->
+  <url>
+    <loc>https://utilify.tools/#/tools/attendcalc</loc>
+    <lastmod>2026-07-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <!-- Tool: emicalc -->
+  <url>
+    <loc>https://utilify.tools/#/tools/emicalc</loc>
+    <lastmod>2026-07-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <!-- Tool: gstcalc -->
+  <url>
+    <loc>https://utilify.tools/#/tools/gstcalc</loc>
+    <lastmod>2026-07-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <!-- Tool: loancalc -->
+  <url>
+    <loc>https://utilify.tools/#/tools/loancalc</loc>
+    <lastmod>2026-07-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <!-- Tool: agecalc -->
+  <url>
+    <loc>https://utilify.tools/#/tools/agecalc</loc>
+    <lastmod>2026-07-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <!-- Tool: datediff -->
+  <url>
+    <loc>https://utilify.tools/#/tools/datediff</loc>
+    <lastmod>2026-07-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <!-- Tool: unitconv -->
+  <url>
+    <loc>https://utilify.tools/#/tools/unitconv</loc>
+    <lastmod>2026-07-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <!-- Tool: uuid -->
+  <url>
+    <loc>https://utilify.tools/#/tools/uuid</loc>
+    <lastmod>2026-07-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <!-- Tool: password -->
+  <url>
+    <loc>https://utilify.tools/#/tools/password</loc>
+    <lastmod>2026-07-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <!-- Tool: htmltopdf -->
+  <url>
+    <loc>https://utilify.tools/#/tools/htmltopdf</loc>
+    <lastmod>2026-07-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <!-- Tool: htmltoimage -->
+  <url>
+    <loc>https://utilify.tools/#/tools/htmltoimage</loc>
+    <lastmod>2026-07-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <!-- Tool: imagetopdf -->
+  <url>
+    <loc>https://utilify.tools/#/tools/imagetopdf</loc>
+    <lastmod>2026-07-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <!-- Tool: pdftoimage -->
+  <url>
+    <loc>https://utilify.tools/#/tools/pdftoimage</loc>
+    <lastmod>2026-07-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <!-- Tool: pdfcompress -->
+  <url>
+    <loc>https://utilify.tools/#/tools/pdfcompress</loc>
+    <lastmod>2026-07-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <!-- Tool: pdfprotect -->
+  <url>
+    <loc>https://utilify.tools/#/tools/pdfprotect</loc>
+    <lastmod>2026-07-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <!-- Tool: pdfunlock -->
+  <url>
+    <loc>https://utilify.tools/#/tools/pdfunlock</loc>
+    <lastmod>2026-07-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <!-- Tool: pdfremove -->
+  <url>
+    <loc>https://utilify.tools/#/tools/pdfremove</loc>
+    <lastmod>2026-07-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <!-- Tool: digisign -->
+  <url>
+    <loc>https://utilify.tools/#/tools/digisign</loc>
+    <lastmod>2026-07-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <!-- Tool: imgwatermark -->
+  <url>
+    <loc>https://utilify.tools/#/tools/imgwatermark</loc>
+    <lastmod>2026-07-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+</urlset>
