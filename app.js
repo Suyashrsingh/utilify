@@ -270,6 +270,19 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     const handleRouting = () => {
+        // Redirect direct pathnames to hashes for SPA routing compatibility (e.g. /sitemap -> #/sitemap)
+        const path = window.location.pathname;
+        if (path && path !== "/" && path !== "/index.html") {
+            const cleanPath = path.replace(/^\/|\/$/g, "");
+            if (routes[cleanPath]) {
+                window.location.hash = `#/${cleanPath}`;
+                window.history.replaceState(null, "", `/#/${cleanPath}`);
+            } else if (toolRoutes[cleanPath]) {
+                window.location.hash = `#/tools/${cleanPath}`;
+                window.history.replaceState(null, "", `/#/tools/${cleanPath}`);
+            }
+        }
+
         const hash = window.location.hash || "#/home";
         
         if (hash.startsWith("#/tools/")) {
