@@ -1,0 +1,64 @@
+# Utilify - Premium Offline-First Toolbox
+
+Utilify is a privacy-focused collection of 63+ offline-first browser utilities designed for developers, creators, and students. All operations, computations, and conversions run completely client-side in the browser memory, ensuring 100% data security.
+
+## Core Resources
+
+- [Utilify Home](https://utilify.co.in/) - Main application dashboard and tool directory.
+- [HTML Sitemap Directory](https://utilify.co.in/#/sitemap) - Category-wise directory of all 63 utilities.
+- [About Utilify](https://utilify.co.in/#/about) - Architecture details, privacy safeguards, and credit attributions.
+- [Contact Us](https://utilify.co.in/#/contact) - Direct support inquiry form and credits details.
+- [Privacy Policy](https://utilify.co.in/#/privacy) - Privacy policies confirming offline local storage operation.
+- [Terms of Service](https://utilify.co.in/#/terms) - Platform usage terms.
+
+---
+
+## Utility Tools Directory
+
+### 🗂️ PDF & File Utilities
+- [PDF Merger](https://utilify.co.in/#/tools/pdfmerge) - Combine multiple PDF files client-side.
+- [PDF Splitter](https://utilify.co.in/#/tools/pdfsplit) - Split PDF files by page ranges.
+- [PDF Page Rotator](https://utilify.co.in/#/tools/pdfrotate) - Rotate individual or bulk PDF pages.
+- [PDF Compressor](https://utilify.co.in/#/tools/pdfcompress) - Optimize stream layout to compress PDF size.
+- [Protect PDF](https://utilify.co.in/#/tools/pdfprotect) - Add open security passwords using client-side encryption.
+- [Unlock PDF](https://utilify.co.in/#/tools/pdfunlock) - Remove passwords and security flags from local PDFs.
+- [Digital Signature](https://utilify.co.in/#/tools/digisign) - Annotate and sign PDF/image documents with custom signature elements.
+- [Image to PDF](https://utilify.co.in/#/tools/imgtopdf) - Convert PNG/JPG/WebP images to PDF document.
+- [PDF to Image](https://utilify.co.in/#/tools/pdftoimg) - Extract PDF pages as high-resolution images.
+- [Image Compressor](https://utilify.co.in/#/tools/imgcomp) - Compress photo dimensions and file sizes.
+- [Image Resizer](https://utilify.co.in/#/tools/imgresize) - Resize image dimensions in pixels.
+- [Image Cropper](https://utilify.co.in/#/tools/imgcrop) - Crop images visually with cropping bounds.
+- [Image Converter](https://utilify.co.in/#/tools/imgconvert) - Convert between PNG, JPEG, WEBP, and GIF formats.
+- [SVG to PNG](https://utilify.co.in/#/tools/svgtopng) - Convert vector drawings to raster PNGs.
+- [PNG to SVG](https://utilify.co.in/#/tools/pngtosvg) - Trace and vectorize raster images to SVG coordinates.
+- [EXIF Data Viewer](https://utilify.co.in/#/tools/exif) - Inspect and strip camera metadata from image files.
+
+### ⚙️ DevOps & Configuration
+- [Dockerfile Generator](https://utilify.co.in/#/tools/dockerfile) - Create production-ready Node/Python/Go Dockerfiles.
+- [Docker Compose Generator](https://utilify.co.in/#/tools/compose) - Build multi-container Docker Compose YAML files.
+- [Nginx Config Builder](https://utilify.co.in/#/tools/nginx) - Generate reverse proxy, SSL, and redirect rules.
+- [AWS IAM Policy Validator](https://utilify.co.in/#/tools/iam) - Validate IAM permission policy schemas.
+- [Cron Expression Editor](https://utilify.co.in/#/tools/cron) - Generate and inspect schedule timings.
+- [Linux Commands Cheat Sheet](https://utilify.co.in/#/tools/linuxcmd) - Interactive Unix shell commands quick reference.
+- [Text Diff Checker](https://utilify.co.in/#/tools/diff) - Compare two text snippets side-by-side.
+- [YAML ↔ JSON Converter](https://utilify.co.in/#/tools/yamljson) - Interconvert between structural formats.
+
+### ✍️ Text & Content Formatting
+- [Social Text Formatter](https://utilify.co.in/#/tools/social) - Format posts using bold/italic Unicode fonts.
+- [Rich Text Editor](https://utilify.co.in/#/tools/richtext) - Visual editor for documents and emails.
+- [Word Counter](https://utilify.co.in/#/tools/words) - Count words and analyze reading readability.
+- [Case Converter](https://utilify.co.in/#/tools/case) - Convert casings to camelCase, snake_case, or UPPERCASE.
+
+### 🎨 Graphic Design & Styling
+- [Box Shadow Generator](https://utilify.co.in/#/tools/boxshadow) - Visual shadow design tool with CSS code output.
+- [CSS Gradient Creator](https://utilify.co.in/#/tools/gradient) - Interactive gradient designer.
+- [Color Converter](https://utilify.co.in/#/tools/colorconv) - Convert HEX, RGB, and HSL values.
+- [Custom QR Generator](https://utilify.co.in/#/tools/qr) - Encode URLs into styled, downloadable QR codes.
+- [Watermark Image](https://utilify.co.in/#/tools/imgwatermark) - Add copyright text or logo overlays to photos.
+
+### 🧮 Calculators & Math
+- [Scientific Calculator](https://utilify.co.in/#/tools/calc) - Perform advanced mathematics and trigonometry offline.
+- [CGPA & GPA Tracker](https://utilify.co.in/#/tools/gpa) - Log semesters and calculate academic score averages.
+- [EMI Loan Calculator](https://utilify.co.in/#/tools/emi) - Compute interest rates and monthly mortgage payouts.
+- [GST Tax Calculator](https://utilify.co.in/#/tools/gst) - Calculate inclusive or exclusive sales taxes.
+- [Age & Date Difference](https://utilify.co.in/#/tools/age) - Calculate precise calendar differences between dates.
