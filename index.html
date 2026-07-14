@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- 101% Google SEO & AI Crawler Optimization -->
-    <title>Utilify | 63+ Offline Developer & Creator Utilities Hub</title>
-    <meta name="description" content="Utilify is a premium collection of 63+ offline-first utility web tools built for speed, privacy, and flawless text, image, and data formatting. Designed and engineered by Rushikesh Wagh.">
+    <title>Utilify | Client-Side Browser Tools for Text, Files & Images</title>
+    <meta name="description" content="Utilify is a premium collection of 63+ client-side browser utilities built for speed, privacy, and local files, text, and image formatting. Designed and engineered by Rushikesh Wagh.">
     <meta name="keywords" content="linkedin bold text generator, bold text twitter, instagram bio font converter, unicode font generator, copy paste text formatter, bold text linkedin, rich text color converter, text size tool online">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <link rel="canonical" href="https://utilify.co.in">
@@ -30,8 +30,9 @@
     <meta property="twitter:description" content="Free premium online text formatter. Convert text into bold, italics, script, and gothic Unicode for social media, and colored rich text for documents.">
     <meta property="twitter:image" content="https://utilify.co.in/og-image.png">
 
-    <!-- Inline SVG Favicon representing the Utilify stacked layers logo -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236366F1' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5'/%3E%3C/svg%3E">
+    <!-- Physical Favicon Links to Comply with Search Console & SEO Audits -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
 
     <!-- Schema Markup JSON-LD (WebApplication Schema) -->
     <script type="application/ld+json">
@@ -91,18 +92,11 @@
     }
     </script>
 
-    <!-- Google Fonts - Asynchronously loaded to prevent render-blocking -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" media="print" onload="this.media='all'">
+    <!-- Google Fonts - Asynchronously loaded and weight-restricted to reduce initial payload -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'">
     
-    <!-- External Client-Side Libraries (PDF Processing, Image Cropping, EXIF Parsing) - Deferred to eliminate render-blocking -->
+    <!-- External Stylesheets (Non-blocking) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.6.1/cropper.min.css" media="print" onload="this.media='all'">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.6.1/cropper.min.js" defer></script>
-    <script src="https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/exif-js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.min.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" defer></script>
-
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="dark-theme">
@@ -1429,7 +1423,7 @@
                             <header class="app-header">
                                 <div class="logo-area-desktop">
                                     <span class="logo-icon" aria-hidden="true">✍️</span>
-                                    <h1>Social Text Formatter</h1>
+                                    <h2>Social Text Formatter</h2>
                                 </div>
                                 <p class="tagline">Convert plain text into styled Unicode characters for social media posts, bios, and headlines.</p>
                             </header>
@@ -1645,7 +1639,7 @@
                             <header class="app-header">
                                 <div class="logo-area-desktop">
                                     <span class="logo-icon" aria-hidden="true">📝</span>
-                                    <h1>Rich Text Editor</h1>
+                                    <h2>Rich Text Editor</h2>
                                 </div>
                                 <p class="tagline">Create custom styled text with custom sizes, colors, and background highlights for emails and documents.</p>
                             </header>
@@ -1673,7 +1667,7 @@
                                 <div class="toolbar-group">
                                     <button class="tool-btn" id="btn-bold" title="Bold (Ctrl+B)" aria-label="Toggle Bold text"><b>B</b></button>
                                     <button class="tool-btn" id="btn-italic" title="Italic (Ctrl+I)" aria-label="Toggle Italic text"><i>I</i></button>
-                                    <button class="tool-btn" id="btn-underline" title="Underline (Ctrl+U)" aria-label="Toggle Underline text"><u>U</u></button>
+                                    <button class="tool-btn" id="btn-underline" title="Underline (Ctrl+U)" aria-label="Toggle Underline text"><span style="text-decoration: underline;">U</span></button>
                                     <button class="tool-btn" id="btn-strike" title="Strikethrough" aria-label="Toggle Strikethrough text"><s>S</s></button>
                                 </div>
 
@@ -1775,7 +1769,7 @@
                             <header class="app-header">
                                 <div class="logo-area-desktop">
                                     <span class="logo-icon" aria-hidden="true">📊</span>
-                                    <h1>Word Counter</h1>
+                                    <h2>Word Counter</h2>
                                 </div>
                                 <p class="tagline">Analyze word length, readability levels (Flesch Ease index), and keyword density indicators.</p>
                             </header>
@@ -1893,7 +1887,7 @@
                             <header class="app-header">
                                 <div class="logo-area-desktop">
                                     <span class="logo-icon" aria-hidden="true">🔠</span>
-                                    <h1>Smart Case Converter</h1>
+                                    <h2>Smart Case Converter</h2>
                                 </div>
                                 <p class="tagline">Convert cases between Sentence case, Title Case, camelCase, snake_case, kebab-case, and mock toggleCase.</p>
                             </header>
@@ -2019,7 +2013,7 @@
                             <header class="app-header">
                                 <div class="logo-area-desktop">
                                     <span class="logo-icon" aria-hidden="true">🔗</span>
-                                    <h1>QR Code Generator</h1>
+                                    <h2>QR Code Generator</h2>
                                 </div>
                                 <p class="tagline">Create custom, client-side vector QR codes with direct high-quality PNG download capabilities.</p>
                             </header>
@@ -2130,7 +2124,7 @@
                             <header class="app-header">
                                 <div class="logo-area-desktop">
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="logo-icon" style="color:var(--indigo)" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-                                    <h1>Vivid Image Compressor</h1>
+                                    <h2>Vivid Image Compressor</h2>
                                 </div>
                                 <p class="tagline">Optimize, compress, and resize JPEG, PNG, and WebP images client-side directly in your browser.</p>
                             </header>
@@ -2282,7 +2276,7 @@
                             <header class="app-header">
                                 <div class="logo-area-desktop">
                                     <span class="logo-icon" aria-hidden="true">⚙️</span>
-                                    <h1>JSON Formatter</h1>
+                                    <h2>JSON Formatter</h2>
                                 </div>
                                 <p class="tagline">Prettify, minify, and validate JSON data structures with live parser diagnostics.</p>
                             </header>
@@ -2386,7 +2380,7 @@
                             <header class="app-header">
                                 <div class="logo-area-desktop">
                                     <span class="logo-icon" aria-hidden="true">📦</span>
-                                    <h1>Base64 Encoder & Decoder</h1>
+                                    <h2>Base64 Encoder & Decoder</h2>
                                 </div>
                                 <p class="tagline">Convert raw text string values to Base64 formats, or decode Base64 strings back to clean text.</p>
                             </header>
@@ -2488,7 +2482,7 @@
                             <header class="app-header">
                                 <div class="logo-area-desktop">
                                     <span class="logo-icon" aria-hidden="true">🌐</span>
-                                    <h1>URL Encoder & Decoder</h1>
+                                    <h2>URL Encoder & Decoder</h2>
                                 </div>
                                 <p class="tagline">Percent-encode special characters in URLs for query parameters, or decode URL-encoded strings back to standard syntax.</p>
                             </header>
@@ -2570,7 +2564,7 @@
                             <header class="app-header">
                                 <div class="logo-area-desktop">
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="logo-icon" style="color: var(--indigo);" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-                                    <h1>Cryptographic Hash Generator</h1>
+                                    <h2>Cryptographic Hash Generator</h2>
                                 </div>
                                 <p class="tagline">Generate secure MD5 and SHA-256 hashes from text inputs entirely inside your browser sandbox.</p>
                             </header>
@@ -2694,7 +2688,7 @@
                             <header class="app-header">
                                 <div class="logo-area-desktop">
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="logo-icon" style="color: var(--indigo);" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
-                                    <h1>SEO URL Slug Generator</h1>
+                                    <h2>SEO URL Slug Generator</h2>
                                 </div>
                                 <p class="tagline">Convert titles or raw headlines into clean, URL-friendly slugs to maximize Google crawl rankings.</p>
                             </header>
@@ -2770,7 +2764,7 @@
                             <header class="app-header">
                                 <div class="logo-area-desktop">
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="logo-icon" style="color: var(--indigo);" aria-hidden="true"><line x1="18" y1="8" x2="22" y2="12"/><line x1="18" y1="16" x2="22" y2="12"/><line x1="22" y1="12" x2="10" y2="12"/><line x1="6" y1="16" x2="2" y2="12"/><line x1="6" y1="8" x2="2" y2="12"/><line x1="2" y1="12" x2="14" y2="12"/></svg>
-                                    <h1>Text Diff Checker & Compare</h1>
+                                    <h2>Text Diff Checker & Compare</h2>
                                 </div>
                                 <p class="tagline">Compare two text segments side-by-side to highlight additions, modifications, and deletions.</p>
                             </header>
@@ -2856,7 +2850,7 @@
                             <header class="app-header">
                                 <div class="logo-area-desktop">
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="logo-icon" style="color:var(--indigo)" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
-                                    <h1>Dockerfile Generator</h1>
+                                    <h2>Dockerfile Generator</h2>
                                 </div>
                                 <p class="tagline">Generate optimized, production-ready Dockerfiles by selecting your language, runtime, and port configuration.</p>
                             </header>
@@ -3055,7 +3049,7 @@
                             <header class="app-header">
                                 <div class="logo-area-desktop">
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="logo-icon" style="color:var(--teal)" aria-hidden="true"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-                                    <h1>Docker Compose Builder</h1>
+                                    <h2>Docker Compose Builder</h2>
                                 </div>
                                 <p class="tagline">Generate docker-compose.yml with your chosen services, databases, and networking configurations.</p>
                             </header>
@@ -3217,7 +3211,7 @@
                             <header class="app-header">
                                 <div class="logo-area-desktop">
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="logo-icon" style="color:var(--indigo)" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
-                                    <h1>GitHub Actions Workflow Generator</h1>
+                                    <h2>GitHub Actions Workflow Generator</h2>
                                 </div>
                                 <p class="tagline">Generate production-ready CI/CD workflow YAML files for GitHub Actions pipelines.</p>
                             </header>
@@ -3314,7 +3308,7 @@
                             <header class="app-header">
                                 <div class="logo-area-desktop">
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="logo-icon" style="color:var(--indigo)" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                                    <h1>Cron Expression Generator</h1>
+                                    <h2>Cron Expression Generator</h2>
                                 </div>
                                 <p class="tagline">Build and explain cron schedule expressions visually — no memorization needed.</p>
                             </header>
@@ -3401,7 +3395,7 @@
                             <header class="app-header">
                                 <div class="logo-area-desktop">
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="logo-icon" style="color:var(--teal)" aria-hidden="true"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14M7 23l-4-4 4-4"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg>
-                                    <h1>YAML ↔ JSON Converter</h1>
+                                    <h2>YAML ↔ JSON Converter</h2>
                                 </div>
                                 <p class="tagline">Instantly convert YAML configuration files to JSON and back — fully client-side.</p>
                             </header>
@@ -3477,7 +3471,7 @@
                             <header class="app-header">
                                 <div class="logo-area-desktop">
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="logo-icon" style="color:var(--rose)" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-                                    <h1>JWT Decoder & Inspector</h1>
+                                    <h2>JWT Decoder & Inspector</h2>
                                 </div>
                                 <p class="tagline">Decode and inspect JSON Web Token headers, payloads, and signature details — 100% client-side, never sent to any server.</p>
                             </header>
@@ -3559,7 +3553,7 @@
                             <header class="app-header">
                                 <div class="logo-area-desktop">
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="logo-icon" style="color:var(--indigo)" aria-hidden="true"><rect x="3" y="3" width="13" height="13" rx="2"/><rect x="8" y="8" width="13" height="13" rx="2"/></svg>
-                                    <h1>CSS Box Shadow Generator</h1>
+                                    <h2>CSS Box Shadow Generator</h2>
                                 </div>
                                 <p class="tagline">Visually design CSS box shadows with real-time preview and one-click copy.</p>
                             </header>
@@ -3688,7 +3682,7 @@
                             <header class="app-header">
                                 <div class="logo-area-desktop">
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="logo-icon" style="color:var(--rose)" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 2v10l6.5 3.5"/></svg>
-                                    <h1>CSS Gradient Generator</h1>
+                                    <h2>CSS Gradient Generator</h2>
                                 </div>
                                 <p class="tagline">Generate beautiful linear and radial CSS gradients with live preview and copyable code.</p>
                             </header>
@@ -3815,7 +3809,7 @@
                             <header class="app-header">
                                 <div class="logo-area-desktop">
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="logo-icon" style="color:var(--amber)" aria-hidden="true"><circle cx="13.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="10.5" r="2.5"/><circle cx="8.5" cy="7.5" r="2.5"/><circle cx="6.5" cy="12.5" r="2.5"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg>
-                                    <h1>HEX ↔ RGB ↔ HSL Color Converter</h1>
+                                    <h2>HEX ↔ RGB ↔ HSL Color Converter</h2>
                                 </div>
                                 <p class="tagline">Convert color codes between HEX, RGB, and HSL formats instantly with live preview.</p>
                             </header>
@@ -3950,7 +3944,7 @@
                             <header class="app-header">
                                 <div class="logo-area-desktop">
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="logo-icon" style="color:var(--teal)" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-                                    <h1>UUID v4 Generator</h1>
+                                    <h2>UUID v4 Generator</h2>
                                 </div>
                                 <p class="tagline">Generate cryptographically secure RFC 4122 v4 UUIDs in single or bulk batches — entirely client-side.</p>
                             </header>
@@ -4046,7 +4040,7 @@
                             <header class="app-header">
                                 <div class="logo-area-desktop">
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="logo-icon" style="color:var(--rose)" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/><circle cx="12" cy="16" r="1"/></svg>
-                                    <h1>Secure Password Generator</h1>
+                                    <h2>Secure Password Generator</h2>
                                 </div>
                                 <p class="tagline">Generate strong, random passwords with custom length and character set controls — client-side only.</p>
                             </header>
@@ -4148,7 +4142,7 @@
                             <header class="app-header">
                                 <div class="logo-area-desktop">
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="logo-icon" style="color:var(--indigo)" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
-                                    <h1>Lorem Ipsum Generator</h1>
+                                    <h2>Lorem Ipsum Generator</h2>
                                 </div>
                                 <p class="tagline">Generate custom placeholder filler text by paragraph, word count, or byte size for UI mockups and design prototypes.</p>
                             </header>
@@ -4223,7 +4217,7 @@
                             <header class="app-header">
                                 <div class="logo-area-desktop">
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="logo-icon" style="color:var(--teal)" aria-hidden="true"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
-                                    <h1>Text Utilities Workspace</h1>
+                                    <h2>Text Utilities Workspace</h2>
                                 </div>
                                 <p class="tagline">Quick-action text processing: sort lines, remove duplicates, reverse text, remove empty lines, and more.</p>
                             </header>
@@ -4302,7 +4296,7 @@
                             <header class="app-header">
                                 <div class="logo-area-desktop">
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="logo-icon" style="color:var(--indigo)" aria-hidden="true"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
-                                    <h1>SEO Meta Tag Generator</h1>
+                                    <h2>SEO Meta Tag Generator</h2>
                                 </div>
                                 <p class="tagline">Generate complete HTML meta tags, Open Graph, and Twitter Card tags to maximize Google and social media search rankings.</p>
                             </header>
@@ -4376,7 +4370,7 @@
                             <header class="app-header">
                                 <div class="logo-area-desktop">
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="logo-icon" style="color:var(--teal)" aria-hidden="true"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
-                                    <h1>Robots.txt Generator</h1>
+                                    <h2>Robots.txt Generator</h2>
                                 </div>
                                 <p class="tagline">Generate a valid robots.txt file with custom crawler directives and sitemap locations for Google, Bing, and other bots.</p>
                             </header>
@@ -4453,7 +4447,7 @@
                             <header class="app-header">
                                 <div class="logo-area-desktop">
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="logo-icon" style="color:var(--indigo)" aria-hidden="true"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>
-                                    <h1>Linux Command Builder</h1>
+                                    <h2>Linux Command Builder</h2>
                                 </div>
                                 <p class="tagline">Build production-level Linux &amp; Bash commands visually — 60+ commands across 12 categories used daily in real-world deployments.</p>
                             </header>
@@ -4572,7 +4566,7 @@
                             <header class="app-header">
                                 <div class="logo-area-desktop">
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="logo-icon" style="color:var(--teal)" aria-hidden="true"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>
-                                    <h1>Nginx Config Generator</h1>
+                                    <h2>Nginx Config Generator</h2>
                                 </div>
                                 <p class="tagline">Generate production-ready Nginx server block configurations for reverse proxy, static sites, and SSL setups.</p>
                             </header>
@@ -4652,7 +4646,7 @@
                             <header class="app-header">
                                 <div class="logo-area-desktop">
                                     <span class="logo-icon">➕</span>
-                                    <h1>PDF Merge</h1>
+                                    <h2>PDF Merge</h2>
                                 </div>
                                 <p class="tagline">Combine multiple PDF files client-side into a single document instantly.</p>
                             </header>
@@ -4731,7 +4725,7 @@
                             <header class="app-header">
                                 <div class="logo-area-desktop">
                                     <span class="logo-icon">✂️</span>
-                                    <h1>PDF Splitter</h1>
+                                    <h2>PDF Splitter</h2>
                                 </div>
                                 <p class="tagline">Extract page ranges or individual pages from a PDF document.</p>
                             </header>
@@ -4812,7 +4806,7 @@
                             <header class="app-header">
                                 <div class="logo-area-desktop">
                                     <span class="logo-icon">🔄</span>
-                                    <h1>PDF Rotator</h1>
+                                    <h2>PDF Rotator</h2>
                                 </div>
                                 <p class="tagline">Rotate pages of your PDF document easily in the browser.</p>
                             </header>
@@ -4897,7 +4891,7 @@
                             <header class="app-header">
                                 <div class="logo-area-desktop">
                                     <span class="logo-icon">📐</span>
-                                    <h1>Image Resizer</h1>
+                                    <h2>Image Resizer</h2>
                                 </div>
                                 <p class="tagline">Scale image dimensions to custom pixel sizes client-side.</p>
                             </header>
@@ -4992,7 +4986,7 @@
                             <header class="app-header">
                                 <div class="logo-area-desktop">
                                     <span class="logo-icon">🖼️</span>
-                                    <h1>Image Cropper</h1>
+                                    <h2>Image Cropper</h2>
                                 </div>
                                 <p class="tagline">Crop images visually with direct local canvas operations.</p>
                             </header>
@@ -5083,7 +5077,7 @@
                             <header class="app-header">
                                 <div class="logo-area-desktop">
                                     <span class="logo-icon">🔄</span>
-                                    <h1>Image Converter</h1>
+                                    <h2>Image Converter</h2>
                                 </div>
                                 <p class="tagline">Convert color profiles and image extensions locally inside canvas memory.</p>
                             </header>
@@ -5168,7 +5162,7 @@
                             <header class="app-header">
                                 <div class="logo-area-desktop">
                                     <span class="logo-icon">🎨</span>
-                                    <h1>SVG to PNG Converter</h1>
+                                    <h2>SVG to PNG Converter</h2>
                                 </div>
                                 <p class="tagline">Rasterize vector graphics into high-resolution PNG images client-side.</p>
                             </header>
@@ -5251,7 +5245,7 @@
                             <header class="app-header">
                                 <div class="logo-area-desktop">
                                     <span class="logo-icon">🖊️</span>
-                                    <h1>PNG to SVG Converter</h1>
+                                    <h2>PNG to SVG Converter</h2>
                                 </div>
                                 <p class="tagline">Wrap raster images inside vector SVG structures client-side.</p>
                             </header>
@@ -5332,7 +5326,7 @@
                             <header class="app-header">
                                 <div class="logo-area-desktop">
                                     <span class="logo-icon">🔗</span>
-                                    <h1>Image to Base64</h1>
+                                    <h2>Image to Base64</h2>
                                 </div>
                                 <p class="tagline">Convert local image files to base64 encoding strings for web embeddings.</p>
                             </header>
@@ -5406,7 +5400,7 @@
                             <header class="app-header">
                                 <div class="logo-area-desktop">
                                     <span class="logo-icon">📷</span>
-                                    <h1>EXIF Viewer</h1>
+                                    <h2>EXIF Viewer</h2>
                                 </div>
                                 <p class="tagline">Parse photographic camera configurations and geospatial EXIF metadata locally.</p>
                             </header>
@@ -5492,7 +5486,7 @@
                             <header class="app-header">
                                 <div class="logo-area-desktop">
                                     <span class="logo-icon">🔗</span>
-                                    <h1>Two Image Merger</h1>
+                                    <h2>Two Image Merger</h2>
                                 </div>
                                 <p class="tagline">Merge two images side-by-side (horizontally) or stacked (vertically) with custom alignment options client-side.</p>
                             </header>
@@ -5621,7 +5615,7 @@
                             <header class="app-header">
                                 <div class="logo-area-desktop">
                                     <span class="logo-icon">🧮</span>
-                                    <h1>Scientific Calculator</h1>
+                                    <h2>Scientific Calculator</h2>
                                 </div>
                                 <p class="tagline">Evaluate math expressions, trigonometric functions, and logs client-side.</p>
                             </header>
@@ -5739,7 +5733,7 @@
                             <header class="app-header">
                                 <div class="logo-area-desktop">
                                     <span class="logo-icon">🏫</span>
-                                    <h1>CGPA & GPA Calculator</h1>
+                                    <h2>CGPA & GPA Calculator</h2>
                                 </div>
                                 <p class="tagline">Calculate academic grade point averages cleanly by semester courses.</p>
                             </header>
@@ -5865,7 +5859,7 @@
                             <header class="app-header">
                                 <div class="logo-area-desktop">
                                     <span class="logo-icon">➗</span>
-                                    <h1>Percentage Calculator</h1>
+                                    <h2>Percentage Calculator</h2>
                                 </div>
                                 <p class="tagline">Solve standard percentage queries and score percentages.</p>
                             </header>
@@ -5957,7 +5951,7 @@
                             <header class="app-header">
                                 <div class="logo-area-desktop">
                                     <span class="logo-icon">📅</span>
-                                    <h1>Attendance Goal Calculator</h1>
+                                    <h2>Attendance Goal Calculator</h2>
                                 </div>
                                 <p class="tagline">Calculate class counts needed to meet target percentage rules.</p>
                             </header>
@@ -6041,7 +6035,7 @@
                             <header class="app-header">
                                 <div class="logo-area-desktop">
                                     <span class="logo-icon">💰</span>
-                                    <h1>EMI Loan Calculator</h1>
+                                    <h2>EMI Loan Calculator</h2>
                                 </div>
                                 <p class="tagline">Compute monthly installments and overall interest payable.</p>
                             </header>
@@ -6137,7 +6131,7 @@
                             <header class="app-header">
                                 <div class="logo-area-desktop">
                                     <span class="logo-icon">💸</span>
-                                    <h1>GST Tax Calculator</h1>
+                                    <h2>GST Tax Calculator</h2>
                                 </div>
                                 <p class="tagline">Add or remove GST tax values with complete CGPA/SGST components.</p>
                             </header>
@@ -6241,7 +6235,7 @@
                             <header class="app-header">
                                 <div class="logo-area-desktop">
                                     <span class="logo-icon">🏦</span>
-                                    <h1>Mortgage &amp; Loan Calculator</h1>
+                                    <h2>Mortgage &amp; Loan Calculator</h2>
                                 </div>
                                 <p class="tagline">Analyze mortgage loan payments and full amortization tables.</p>
                             </header>
@@ -6335,7 +6329,7 @@
                             <header class="app-header">
                                 <div class="logo-area-desktop">
                                     <span class="logo-icon">👶</span>
-                                    <h1>Age Calculator</h1>
+                                    <h2>Age Calculator</h2>
                                 </div>
                                 <p class="tagline">Compute exact age in years, months, days, and intervals from birthday calendar entries.</p>
                             </header>
@@ -6412,7 +6406,7 @@
                             <header class="app-header">
                                 <div class="logo-area-desktop">
                                     <span class="logo-icon">📅</span>
-                                    <h1>Date Difference Calculator</h1>
+                                    <h2>Date Difference Calculator</h2>
                                 </div>
                                 <p class="tagline">Count total calendar days, weeks, and months between two selected dates.</p>
                             </header>
@@ -6493,7 +6487,7 @@
                             <header class="app-header">
                                 <div class="logo-area-desktop">
                                     <span class="logo-icon">⚖️</span>
-                                    <h1>Unit Converter Workspace</h1>
+                                    <h2>Unit Converter Workspace</h2>
                                 </div>
                                 <p class="tagline">Convert Length, Weight, Temperature, Area, Speed, and Data storage values.</p>
                             </header>
@@ -6592,7 +6586,7 @@
                             <header class="app-header">
                                 <div class="logo-area-desktop">
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="logo-icon" style="color:var(--amber)" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                                    <h1>AWS IAM Policy Generator</h1>
+                                    <h2>AWS IAM Policy Generator</h2>
                                 </div>
                                 <p class="tagline">Generate valid AWS IAM JSON policy documents for S3, EC2, Lambda, DynamoDB, and more — instantly client-side.</p>
                             </header>
@@ -6680,7 +6674,7 @@
                             <header class="app-header">
                                 <div class="logo-area-desktop">
                                     <span class="logo-icon">🔐</span>
-                                    <h1>AES Text Encrypter &amp; Decrypter</h1>
+                                    <h2>AES Text Encrypter &amp; Decrypter</h2>
                                 </div>
                                 <p class="tagline">Locally encrypt and decrypt text messages using industry-standard Advanced Encryption Standard (AES-GCM) directly inside your browser memory.</p>
                             </header>
@@ -6788,7 +6782,7 @@
                             <header class="app-header">
                                 <div class="logo-area-desktop">
                                     <span class="logo-icon">🛡️</span>
-                                    <h1>Password Strength &amp; Entropy Inspector</h1>
+                                    <h2>Password Strength &amp; Entropy Inspector</h2>
                                 </div>
                                 <p class="tagline">Analyze password complexity, calculate Shannon entropy bits, check against dictionary pattern matches, and estimate crack times securely in real-time.</p>
                             </header>
@@ -6927,7 +6921,7 @@
                             <header class="app-header">
                                 <div class="logo-area-desktop">
                                     <span class="logo-icon">🖼️</span>
-                                    <h1>Image to PDF Converter</h1>
+                                    <h2>Image to PDF Converter</h2>
                                 </div>
                                 <p class="tagline">Convert JPG, PNG, and WebP images into a single PDF document. Drag to reorder, customize page size, margins, and orientation.</p>
                             </header>
@@ -7023,7 +7017,7 @@
                             <header class="app-header">
                                 <div class="logo-area-desktop">
                                     <span class="logo-icon">🖼️</span>
-                                    <h1>PDF to Image Converter</h1>
+                                    <h2>PDF to Image Converter</h2>
                                 </div>
                                 <p class="tagline">Extract and render all pages of a PDF document into PNG or JPG image formats client-side.</p>
                             </header>
@@ -7107,7 +7101,7 @@
                             <header class="app-header">
                                 <div class="logo-area-desktop">
                                     <span class="logo-icon">🗜️</span>
-                                    <h1>PDF Compressor</h1>
+                                    <h2>PDF Compressor</h2>
                                 </div>
                                 <p class="tagline">Optimize PDF size client-side by compressing stream layouts and packing objects locally.</p>
                             </header>
@@ -7195,7 +7189,7 @@
                             <header class="app-header">
                                 <div class="logo-area-desktop">
                                     <span class="logo-icon">🔒</span>
-                                    <h1>Protect PDF</h1>
+                                    <h2>Protect PDF</h2>
                                 </div>
                                 <p class="tagline">Secure your PDF files by adding user passwords and permission flags client-side.</p>
                             </header>
@@ -7272,7 +7266,7 @@
                             <header class="app-header">
                                 <div class="logo-area-desktop">
                                     <span class="logo-icon">🔓</span>
-                                    <h1>Unlock PDF</h1>
+                                    <h2>Unlock PDF</h2>
                                 </div>
                                 <p class="tagline">Remove passwords, encryption, and permission restrictions from protected PDF documents client-side.</p>
                             </header>
@@ -7345,7 +7339,7 @@
                             <header class="app-header">
                                 <div class="logo-area-desktop">
                                     <span class="logo-icon">🗑️</span>
-                                    <h1>Remove PDF Pages</h1>
+                                    <h2>Remove PDF Pages</h2>
                                 </div>
                                 <p class="tagline">Remove specific pages or custom page ranges from a PDF document client-side.</p>
                             </header>
@@ -7426,7 +7420,7 @@
                             <header class="app-header">
                                 <div class="logo-area-desktop">
                                     <span class="logo-icon">✍️</span>
-                                    <h1>Digital Signature Creator</h1>
+                                    <h2>Digital Signature Creator</h2>
                                 </div>
                                 <p class="tagline">Draw or upload custom signatures, drag to position them on your documents, and download securely.</p>
                             </header>
@@ -7521,7 +7515,7 @@
                             <header class="app-header">
                                 <div class="logo-area-desktop">
                                     <span class="logo-icon">💧</span>
-                                    <h1>Watermark Image</h1>
+                                    <h2>Watermark Image</h2>
                                 </div>
                                 <p class="tagline">Apply custom text or logo overlay watermarks to your images locally inside your browser sandbox.</p>
                             </header>
@@ -7647,7 +7641,7 @@
                             <header class="app-header">
                                 <div class="logo-area-desktop">
                                     <span class="logo-icon">📄</span>
-                                    <h1>HTML to PDF Converter</h1>
+                                    <h2>HTML to PDF Converter</h2>
                                 </div>
                                 <p class="tagline">Type or paste HTML code with CSS styles and export it directly into a formatted PDF document client-side.</p>
                             </header>
@@ -7721,7 +7715,7 @@
                             <header class="app-header">
                                 <div class="logo-area-desktop">
                                     <span class="logo-icon">🖼️</span>
-                                    <h1>HTML to Image Converter</h1>
+                                    <h2>HTML to Image Converter</h2>
                                 </div>
                                 <p class="tagline">Write custom CSS templates and compile them directly into PNG or JPG images client-side.</p>
                             </header>
@@ -7794,7 +7788,7 @@
         <!-- About Page View -->
         <div class="view-panel" id="view-about">
             <section class="about-hero" style="text-align: center; padding: 4rem 2rem; background: var(--bg-hover); border-radius: 12px; margin-bottom: 2rem;">
-                <h1 style="font-family: var(--font-heading); font-size: 2.5rem; font-weight: 800; color: var(--text-color); margin-bottom: 1rem;">About Utilify</h1>
+                <h2 style="font-family: var(--font-heading); font-size: 2.5rem; font-weight: 800; color: var(--text-color); margin-bottom: 1rem;">About Utilify</h2>
                 <p style="font-size: 1.1rem; color: var(--text-muted); max-width: 700px; margin: 0 auto;">Premium collection of utility web tools built for speed, privacy, and flawless text, image, and data formatting.</p>
             </section>
             <article class="blog-card" style="margin-top: 0;">
@@ -7814,7 +7808,7 @@
         <!-- Privacy Policy View -->
         <div class="view-panel" id="view-privacy">
             <section class="about-hero" style="text-align: center; padding: 4rem 2rem; background: var(--bg-hover); border-radius: 12px; margin-bottom: 2rem;">
-                <h1 style="font-family: var(--font-heading); font-size: 2.5rem; font-weight: 800; color: var(--text-color); margin-bottom: 1rem;">Privacy Policy</h1>
+                <h2 style="font-family: var(--font-heading); font-size: 2.5rem; font-weight: 800; color: var(--text-color); margin-bottom: 1rem;">Privacy Policy</h2>
                 <p style="font-size: 1.1rem; color: var(--text-muted); max-width: 700px; margin: 0 auto;">Read our strict GDPR-compliant guarantees. All parsing and calculations happen locally inside your browser sandbox.</p>
             </section>
             <article class="blog-card" style="margin-top: 0;">
@@ -7831,7 +7825,7 @@
         <!-- Terms of Service View -->
         <div class="view-panel" id="view-terms">
             <section class="about-hero" style="text-align: center; padding: 4rem 2rem; background: var(--bg-hover); border-radius: 12px; margin-bottom: 2rem;">
-                <h1 style="font-family: var(--font-heading); font-size: 2.5rem; font-weight: 800; color: var(--text-color); margin-bottom: 1rem;">Terms of Service</h1>
+                <h2 style="font-family: var(--font-heading); font-size: 2.5rem; font-weight: 800; color: var(--text-color); margin-bottom: 1rem;">Terms of Service</h2>
                 <p style="font-size: 1.1rem; color: var(--text-muted); max-width: 700px; margin: 0 auto;">Review the rules and guidelines for using the Utilify utility web hub.</p>
             </section>
             <article class="blog-card" style="margin-top: 0;">
@@ -7848,7 +7842,7 @@
         <!-- Disclaimer View -->
         <div class="view-panel" id="view-disclaimer">
             <section class="about-hero" style="text-align: center; padding: 4rem 2rem; background: var(--bg-hover); border-radius: 12px; margin-bottom: 2rem;">
-                <h1 style="font-family: var(--font-heading); font-size: 2.5rem; font-weight: 800; color: var(--text-color); margin-bottom: 1rem;">General Disclaimer</h1>
+                <h2 style="font-family: var(--font-heading); font-size: 2.5rem; font-weight: 800; color: var(--text-color); margin-bottom: 1rem;">General Disclaimer</h2>
                 <p style="font-size: 1.1rem; color: var(--text-muted); max-width: 700px; margin: 0 auto;">Limitations of liability regarding Unicode text fonts rendering, browser compatibility, and cryptographic safety.</p>
             </section>
             <article class="blog-card" style="margin-top: 0;">
@@ -7865,7 +7859,7 @@
         <!-- Sitemap View -->
         <div class="view-panel" id="view-sitemap">
             <section class="about-hero" style="text-align: center; padding: 4rem 2rem; background: var(--bg-hover); border-radius: 12px; margin-bottom: 2rem;">
-                <h1 style="font-family: var(--font-heading); font-size: 2.5rem; font-weight: 800; color: var(--text-color); margin-bottom: 1rem;">HTML Sitemap Directory</h1>
+                <h2 style="font-family: var(--font-heading); font-size: 2.5rem; font-weight: 800; color: var(--text-color); margin-bottom: 1rem;">HTML Sitemap Directory</h2>
                 <p style="font-size: 1.1rem; color: var(--text-muted); max-width: 700px; margin: 0 auto;">Crawlable index of all active online utilities, compliance views, and platform details.</p>
             </section>
             
@@ -7979,7 +7973,7 @@
         <!-- Contact Page View -->
         <div class="view-panel" id="view-contact">
             <section class="about-hero" style="text-align: center; padding: 4rem 2rem; background: var(--bg-hover); border-radius: 12px; margin-bottom: 2rem;">
-                <h1 style="font-family: var(--font-heading); font-size: 2.5rem; font-weight: 800; color: var(--text-color); margin-bottom: 0.5rem;">Get in Touch</h1>
+                <h2 style="font-family: var(--font-heading); font-size: 2.5rem; font-weight: 800; color: var(--text-color); margin-bottom: 0.5rem;">Get in Touch</h2>
                 <p style="font-size: 1.1rem; color: var(--text-muted); max-width: 700px; margin: 0 auto;">Have questions, feature suggestions, or business inquiries? Drop us a message.</p>
             </section>
             
@@ -8130,6 +8124,28 @@
 
     <!-- Notification Toast -->
     <div class="toast" id="toast" role="alert" aria-live="assertive">Copied to clipboard!</div>
+
+    <!-- Background delayed script loader to eliminate initial load network congestion on mobile -->
+    <script>
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                const scripts = [
+                    "https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.6.1/cropper.min.js",
+                    "https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js",
+                    "https://cdn.jsdelivr.net/npm/exif-js",
+                    "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.min.js",
+                    "https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js",
+                    "https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"
+                ];
+                scripts.forEach(src => {
+                    const s = document.createElement('script');
+                    s.src = src;
+                    s.defer = true;
+                    document.body.appendChild(s);
+                });
+            }, 1000);
+        });
+    </script>
 
     <script type="module" src="app.js"></script>
 </body>
