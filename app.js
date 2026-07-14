@@ -127,7 +127,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // ================= SPA VIEWS NAVIGATION & HASH ROUTER =================
     
     const routes = {
-        home: { title: "Utilify - Ultimate Alphanumeric Formatting Tool Hub | Developed by Rushikesh Wagh", description: "Premium collection of utility web tools built for speed, privacy, and flawless text, image, and data formatting. Designed by Rushikesh Wagh." },
+        home: { title: "Utilify | 63+ Offline Developer & Creator Utilities Hub", description: "Utilify is a premium collection of 63+ offline-first utility web tools built for speed, privacy, and flawless text, image, and data formatting. Designed and engineered by Rushikesh Wagh." },
         about: { title: "About Us - Utilify Creators & Developers Info", description: "Learn about Utilify, our 100% client-side privacy sandbox commitment, optimized code speed, and under-the-hood web API designs by Rushikesh Wagh." },
         privacy: { title: "Privacy Policy - Utilify Client-Side Sandbox Safety", description: "Read our strict privacy guarantees. All formatting, hashing, and encoding happen locally in your browser. No databases, no cloud retention." },
         terms: { title: "Terms of Service Agreement - Utilify Tools Hub Rules", description: "Review terms of use, intellectual property copyrights of creator Rushikesh Wagh, and client-side utility limitations." },
