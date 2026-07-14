@@ -127,7 +127,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // ================= SPA VIEWS NAVIGATION & HASH ROUTER =================
     
     const routes = {
-        home: { title: "Utilify | Client-Side Browser Tools for Text, Files & Images", description: "Utilify is a premium collection of 63+ client-side browser utilities built for speed, privacy, and local files, text, and image formatting. Designed and engineered by Rushikesh Wagh." },
+        home: { title: "Utilify | Client-Side Browser Tools for Text, Files & Images", description: "Utilify has 63+ client-side browser tools to format text, files & images locally and privately. Fast, offline-first conversion. Developed by Rushikesh Wagh." },
         about: { title: "About Us - Utilify Creators & Developers Info", description: "Learn about Utilify, our 100% client-side privacy sandbox commitment, optimized code speed, and under-the-hood web API designs by Rushikesh Wagh." },
         privacy: { title: "Privacy Policy - Utilify Client-Side Sandbox Safety", description: "Read our strict privacy guarantees. All formatting, hashing, and encoding happen locally in your browser. No databases, no cloud retention." },
         terms: { title: "Terms of Service Agreement - Utilify Tools Hub Rules", description: "Review terms of use, intellectual property copyrights of creator Rushikesh Wagh, and client-side utility limitations." },
