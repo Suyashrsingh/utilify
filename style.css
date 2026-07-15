@@ -3540,4 +3540,14 @@ body.light-theme .gpa-result-card {
     }
 }
 
-
+/* Focus Ring Accessibility Styles */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+[role="button"]:focus-visible,
+[role="tab"]:focus-visible {
+    outline: 2px solid var(--indigo) !important;
+    outline-offset: 3px !important;
+}

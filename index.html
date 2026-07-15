@@ -95,8 +95,6 @@
     <!-- Google Fonts - Asynchronously loaded and weight-restricted to reduce initial payload -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'">
     
-    <!-- External Stylesheets (Non-blocking) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.6.1/cropper.min.css" media="print" onload="this.media='all'">
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="dark-theme">
@@ -218,7 +216,7 @@
                 </button>
 
                 <!-- Mobile Menu Button -->
-                <button class="mobile-nav-toggle" id="mobile-nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+                <button class="mobile-nav-toggle" id="mobile-nav-toggle" aria-label="Toggle menu" aria-controls="mobile-nav-menu" aria-expanded="false">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
                 </button>
             </div>
@@ -2204,13 +2202,13 @@
                                                 <!-- Original Image Box -->
                                                 <div style="flex:1; border: 1px solid var(--border-color); border-radius:8px; overflow:hidden; display:flex; justify-content:center; align-items:center; background: rgba(0,0,0,0.25); position:relative;">
                                                     <span style="position:absolute; top:4px; left:4px; font-size:0.65rem; background:rgba(0,0,0,0.6); padding:2px 6px; border-radius:4px; font-weight:700;">ORIGINAL</span>
-                                                    <img id="imgcomp-orig-preview" style="max-width:100%; max-height:100%; object-fit:contain; display:none;">
+                                                    <img id="imgcomp-orig-preview" alt="Original image preview" style="max-width:100%; max-height:100%; object-fit:contain; display:none;">
                                                     <span id="imgcomp-orig-placeholder" style="font-size:0.75rem; color:var(--text-muted);">No image</span>
                                                 </div>
                                                 <!-- Compressed Image Box -->
                                                 <div style="flex:1; border: 1px solid var(--border-color); border-radius:8px; overflow:hidden; display:flex; justify-content:center; align-items:center; background: rgba(0,0,0,0.25); position:relative;">
                                                     <span style="position:absolute; top:4px; left:4px; font-size:0.65rem; background:rgba(0,0,0,0.6); padding:2px 6px; border-radius:4px; font-weight:700; color:var(--emerald);">COMPRESSED</span>
-                                                    <img id="imgcomp-comp-preview" style="max-width:100%; max-height:100%; object-fit:contain; display:none;">
+                                                    <img id="imgcomp-comp-preview" alt="Compressed image preview" style="max-width:100%; max-height:100%; object-fit:contain; display:none;">
                                                     <span id="imgcomp-comp-placeholder" style="font-size:0.75rem; color:var(--text-muted);">No image</span>
                                                 </div>
                                             </div>
@@ -5015,7 +5013,7 @@
                                     <div class="input-card card" style="display:flex; flex-direction:column; gap:1.25rem;">
                                         <h3>✂️ Visual Workspace</h3>
                                         <div class="preview-canvas-container">
-                                            <img id="imgcrop-workspace-img" style="display:none;">
+                                            <img id="imgcrop-workspace-img" alt="Image cropping workspace" style="display:none;">
                                             <div id="imgcrop-workspace-placeholder" style="display: flex; flex-direction: column; align-items: center; gap: 0.5rem; color: var(--text-muted); text-align: center; padding: 0 1rem; z-index: 1;">
                                                 <span style="font-size: 1.8rem; opacity: 0.5; display: block;">✂️</span>
                                                 <span style="font-size: 0.85rem; font-weight: 600;">No image uploaded for cropping</span>
@@ -5381,7 +5379,7 @@
                                     <h3>💡 Frequently Asked Questions (FAQ)</h3>
                                     <div class="faq-item">
                                         <span class="faq-question">Where can I use Base64 image strings?</span>
-                                        <span class="faq-answer">You can embed them directly in HTML <img> tags or CSS backgrounds to load images without server requests.</span>
+                                        <span class="faq-answer">You can embed them directly in HTML &lt;img&gt; tags or CSS backgrounds to load images without server requests.</span>
                                     </div>
                                     <div class="faq-item">
                                         <span class="faq-question">Does it support large files?</span>
@@ -5503,7 +5501,7 @@
                                                         <span style="font-size: 1.8rem;">🖼️</span>
                                                         <span style="font-size: 0.8rem; font-weight: 600; color: var(--text-color);">Select Image 1</span>
                                                     </div>
-                                                    <img id="imgmerge-preview-img1" class="checkerboard-bg" style="display: none; width: 100%; height: 100%; object-fit: contain; border-radius: 12px; position: absolute; top: 0; left: 0; pointer-events: none;">
+                                                    <img id="imgmerge-preview-img1" class="checkerboard-bg" alt="First image to merge" style="display: none; width: 100%; height: 100%; object-fit: contain; border-radius: 12px; position: absolute; top: 0; left: 0; pointer-events: none;">
                                                     <input type="file" id="imgmerge-file1" accept="image/*" style="display: none;">
                                                 </div>
                                             </div>
@@ -5514,7 +5512,7 @@
                                                         <span style="font-size: 1.8rem;">🖼️</span>
                                                         <span style="font-size: 0.8rem; font-weight: 600; color: var(--text-color);">Select Image 2</span>
                                                     </div>
-                                                    <img id="imgmerge-preview-img2" class="checkerboard-bg" style="display: none; width: 100%; height: 100%; object-fit: contain; border-radius: 12px; position: absolute; top: 0; left: 0; pointer-events: none;">
+                                                    <img id="imgmerge-preview-img2" class="checkerboard-bg" alt="Second image to merge" style="display: none; width: 100%; height: 100%; object-fit: contain; border-radius: 12px; position: absolute; top: 0; left: 0; pointer-events: none;">
                                                     <input type="file" id="imgmerge-file2" accept="image/*" style="display: none;">
                                                 </div>
                                             </div>
@@ -7437,7 +7435,7 @@
                                                 <canvas id="digisign-preview-canvas"></canvas>
                                                 <!-- Drag-and-drop signature block overlay -->
                                                 <div id="digisign-signature-overlay" style="display:none; position:absolute; cursor:move; border:2px dashed var(--indigo); background:rgba(99,102,241,0.15); padding:4px; box-sizing:border-box;">
-                                                    <img id="digisign-overlay-img" style="width:100%; height:100%; object-fit:contain; pointer-events:none;">
+                                                    <img id="digisign-overlay-img" alt="PDF document preview" style="width:100%; height:100%; object-fit:contain; pointer-events:none;">
                                                     <!-- Resize handle -->
                                                     <div style="position:absolute; right:-6px; bottom:-6px; width:12px; height:12px; background:var(--indigo); border-radius:50%; cursor:se-resize;"></div>
                                                 </div>
@@ -8132,6 +8130,12 @@
     <script>
         window.addEventListener('load', () => {
             setTimeout(() => {
+                // Dynamically load Cropper CSS stylesheet
+                const link = document.createElement('link');
+                link.rel = 'stylesheet';
+                link.href = "https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.6.1/cropper.min.css";
+                document.head.appendChild(link);
+
                 const scripts = [
                     "https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.6.1/cropper.min.js",
                     "https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js",
