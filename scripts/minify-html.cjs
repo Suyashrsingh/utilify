@@ -44,4 +44,10 @@ function safeMinifyHtml(html) {
 console.log(`[HTML Minifier] Original compiled HTML size: ${(rawHtml.length / 1024).toFixed(2)} KB`);
 const minified = safeMinifyHtml(rawHtml);
 fs.writeFileSync(distHtmlPath, minified, 'utf8');
+
+// Copy minified index.html to 200.html to serve as Cloudflare Pages SPA fallback page
+const distFallbackPath = path.join(__dirname, '../dist/200.html');
+fs.writeFileSync(distFallbackPath, minified, 'utf8');
+
 console.log(`[HTML Minifier] Minified compiled HTML size: ${(minified.length / 1024).toFixed(2)} KB (Saved: ${((rawHtml.length - minified.length) / 1024).toFixed(2)} KB)`);
+console.log(`[HTML Minifier] Copied fallback router asset to: ${distFallbackPath}`);
