@@ -6,8 +6,10 @@
   "main": "index.html",
   "scripts": {
     "dev": "vite",
-    "build": "vite build && node scripts/minify-html.cjs",
-    "preview": "vite preview"
+    "build": "node scripts/update-links-helper.cjs && node scripts/generate-sitemap-helper.cjs && vite build && node scripts/minify-html.cjs",
+    "preview": "vite preview",
+    "update-links": "node scripts/update-links-helper.cjs",
+    "generate-sitemap": "node scripts/generate-sitemap-helper.cjs"
   },
   "devDependencies": {
     "vite": "^6.0.0"

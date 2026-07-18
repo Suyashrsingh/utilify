@@ -269,48 +269,136 @@ document.addEventListener("DOMContentLoaded", () => {
         mobileNavToggle.setAttribute("aria-expanded", "false");
     };
 
+    const seoToolUrls = {
+        social: "social-media-text-formatter",
+        rich: "rich-text-editor",
+        words: "word-counter-readability-analyzer",
+        case: "smart-case-converter",
+        slug: "seo-url-slug-generator",
+        qr: "custom-qr-code-generator",
+        imgcomp: "image-compressor",
+        pdfmerge: "pdf-merger",
+        pdfsplit: "pdf-splitter",
+        pdfrotate: "pdf-page-rotator",
+        imagetopdf: "image-to-pdf-converter",
+        pdftoimage: "pdf-to-image-converter",
+        pdfcompress: "pdf-compressor",
+        pdfprotect: "pdf-password-protector",
+        pdfunlock: "pdf-password-remover",
+        pdfremove: "pdf-page-remover",
+        digisign: "digital-signature-creator",
+        imgwatermark: "image-watermark-tool",
+        htmltopdf: "html-to-pdf-converter",
+        htmltoimage: "html-to-image-converter",
+        imgresize: "image-resizer",
+        imgcrop: "image-cropper",
+        imgconvert: "image-format-converter",
+        svgtopng: "svg-to-png-converter",
+        pngtosvg: "png-to-svg-converter",
+        imgtobase64: "image-to-base64-converter",
+        exif: "exif-data-viewer-remover",
+        imgmerge: "image-merger-stitcher",
+        scicalc: "scientific-calculator",
+        cgpacalc: "cgpa-calculator",
+        percentcalc: "percentage-calculator",
+        attendcalc: "attendance-calculator",
+        emicalc: "emi-loan-calculator",
+        gstcalc: "gst-tax-calculator",
+        loancalc: "simple-loan-calculator",
+        agecalc: "age-date-of-birth-calculator",
+        datediff: "date-difference-calculator",
+        unitconv: "universal-unit-converter",
+        uuid: "uuid-v4-guid-generator",
+        password: "secure-random-password-generator",
+        lorem: "lorem-ipsum-text-generator",
+        textutils: "regex-search-replace-text-cleaner",
+        metatag: "meta-tags-seo-generator",
+        robotstxt: "robots-txt-generator",
+        json: "json-prettifier-validator",
+        yamljson: "yaml-to-json-converter",
+        jwt: "jwt-debugger-decoder-encoder",
+        base64: "base64-encoder-decoder",
+        url: "url-encoder-decoder",
+        hash: "cryptographic-hash-generator",
+        diff: "text-diff-checker-comparison",
+        dockerfile: "dockerfile-generator-builder",
+        compose: "docker-compose-generator-builder",
+        ghactions: "github-actions-workflow-generator",
+        nginx: "nginx-config-generator-builder",
+        iam: "aws-iam-policy-generator-builder",
+        cron: "crontab-schedule-generator-helper",
+        linuxcmd: "linux-command-helper-reference",
+        colorconv: "color-converter-hex-rgb-hsl",
+        boxshadow: "css-box-shadow-generator-builder",
+        gradient: "css-gradient-background-generator",
+        cipher: "caesar-rot13-vigenere-cipher",
+        pwdinspector: "password-strength-inspector-analyzer"
+    };
+
+    const urlToToolKey = {};
+    for (const key in seoToolUrls) {
+        urlToToolKey[seoToolUrls[key]] = key;
+    }
+
+    const navigate = (urlPath) => {
+        window.history.pushState(null, "", urlPath);
+        handleRouting();
+    };
+
     const handleRouting = () => {
-        // Redirect direct pathnames to hashes for SPA routing compatibility (e.g. /sitemap -> #/sitemap)
-        const path = window.location.pathname;
-        if (path && path !== "/" && path !== "/index.html") {
-            const cleanPath = path.replace(/^\/|\/$/g, "");
-            if (routes[cleanPath]) {
-                window.location.hash = `#/${cleanPath}`;
-                window.history.replaceState(null, "", `/#/${cleanPath}`);
-            } else if (toolRoutes[cleanPath]) {
-                window.location.hash = `#/tools/${cleanPath}`;
-                window.history.replaceState(null, "", `/#/tools/${cleanPath}`);
+        let path = window.location.pathname;
+        
+        // Handle legacy hash routing fallback
+        if (window.location.hash) {
+            const cleanHash = window.location.hash.replace(/^#\/?/, "");
+            if (cleanHash.startsWith("tools/")) {
+                const toolName = cleanHash.replace("tools/", "");
+                const seoSlug = seoToolUrls[toolName] || toolName;
+                window.history.replaceState(null, "", `/tools/${seoSlug}`);
+                path = `/tools/${seoSlug}`;
+            } else if (routes[cleanHash]) {
+                window.history.replaceState(null, "", `/${cleanHash}`);
+                path = `/${cleanHash}`;
+            } else if (cleanHash === "home") {
+                window.history.replaceState(null, "", "/");
+                path = "/";
             }
         }
 
-        const hash = window.location.hash || "#/home";
-        
-        if (hash.startsWith("#/tools/")) {
-            const toolName = hash.replace("#/tools/", "");
-            if (toolRoutes[toolName]) {
+        const cleanPath = path.replace(/^\/|\/$/g, "") || "home";
+
+        if (cleanPath.startsWith("tools/")) {
+            const urlSlug = cleanPath.replace(/^tools\//, "");
+            const toolKey = urlToToolKey[urlSlug] || urlSlug;
+            
+            if (toolRoutes[toolKey]) {
                 navigateToView("tools");
-                switchToolPanel(toolName);
-                updateSEO(toolRoutes[toolName].title, toolRoutes[toolName].description);
+                switchToolPanel(toolKey);
+                updateSEO(toolRoutes[toolKey].title, toolRoutes[toolKey].description);
             } else {
-                window.location.hash = "#/home";
+                window.history.replaceState(null, "", "/");
+                navigateToView("home");
+                updateSEO(routes.home.title, routes.home.description);
             }
         } else {
-            const viewName = hash.replace("#/", "");
+            const viewName = cleanPath === "index.html" ? "home" : cleanPath;
             if (routes[viewName]) {
                 navigateToView(viewName);
                 updateSEO(routes[viewName].title, routes[viewName].description);
             } else {
-                window.location.hash = "#/home";
+                window.history.replaceState(null, "", "/");
+                navigateToView("home");
+                updateSEO(routes.home.title, routes.home.description);
             }
         }
     };
 
-    // Bind hashchange listener
-    window.addEventListener("hashchange", handleRouting);
+    // Bind popstate listener
+    window.addEventListener("popstate", handleRouting);
 
     // Navigation item click bindings
     const scrollToToolsShowcase = () => {
-        window.location.hash = "#/home";
+        navigate("/");
         setTimeout(() => {
             const showcaseSec = document.querySelector(".tools-showcase");
             if (showcaseSec) {
@@ -326,7 +414,7 @@ document.addEventListener("DOMContentLoaded", () => {
             if (targetView === "tools") {
                 scrollToToolsShowcase();
             } else {
-                window.location.hash = `#/${targetView}`;
+                navigate(`/${targetView}`);
             }
         });
     });
@@ -338,7 +426,7 @@ document.addEventListener("DOMContentLoaded", () => {
             if (targetView === "tools") {
                 scrollToToolsShowcase();
             } else {
-                window.location.hash = `#/${targetView}`;
+                navigate(`/${targetView}`);
             }
         });
     });
@@ -351,24 +439,26 @@ document.addEventListener("DOMContentLoaded", () => {
             
             if (targetView === "tools") {
                 if (toolType) {
-                    window.location.hash = `#/tools/${toolType}`;
+                    const seoSlug = seoToolUrls[toolType] || toolType;
+                    navigate(`/tools/${seoSlug}`);
                 } else {
                     scrollToToolsShowcase();
                 }
             } else {
-                window.location.hash = `#/${targetView}`;
+                navigate(`/${targetView}`);
             }
         });
     });
 
-    navLogo.addEventListener("click", () => { window.location.hash = "#/home"; });
-    heroCtaBtn.addEventListener("click", () => scrollToToolsShowcase());
+    navLogo.addEventListener("click", (e) => { e.preventDefault(); navigate("/"); });
+    heroCtaBtn.addEventListener("click", (e) => { e.preventDefault(); scrollToToolsShowcase(); });
     
     launchToolBtns.forEach(btn => {
         btn.addEventListener("click", (e) => {
             e.preventDefault();
             const tool = btn.getAttribute("data-tool");
-            window.location.hash = `#/tools/${tool}`;
+            const seoSlug = seoToolUrls[tool] || tool;
+            navigate(`/tools/${seoSlug}`);
         });
     });
 
@@ -377,8 +467,22 @@ document.addEventListener("DOMContentLoaded", () => {
         item.addEventListener("click", (e) => {
             e.preventDefault();
             const tool = item.getAttribute("data-tool");
-            window.location.hash = `#/tools/${tool}`;
+            const seoSlug = seoToolUrls[tool] || tool;
+            navigate(`/tools/${seoSlug}`);
         });
+    });
+
+    // Global click listener to intercept all internal routing links (including sidebar tools)
+    document.addEventListener("click", (e) => {
+        const anchor = e.target.closest("a");
+        if (anchor) {
+            const href = anchor.getAttribute("href");
+            // Only intercept relative, local paths starting with /
+            if (href && href.startsWith("/") && !anchor.getAttribute("target") && !anchor.getAttribute("download")) {
+                e.preventDefault();
+                navigate(href);
+            }
+        }
     });
 
     // ================= CATEGORY FILTER TABS FOR HOME VIEW =================
