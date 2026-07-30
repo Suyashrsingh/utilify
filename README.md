@@ -2,7 +2,7 @@
 
 Utilify is a premium, offline-first collection of **63+ browser-based utilities** designed for creators, developers, and students. Built with a focus on privacy, speed, and responsiveness, all computations are performed locally inside the user's browser memory—meaning no files or inputs are ever uploaded to a server.
 
-🔗 **Live Platform URL:** [https://utilify.tools](https://utilify.tools)  
+🔗 **Live Platform URL:** [https://utilify.co.in](https://utilify.co.in)  
 🏷️ **Creator Badge:** by Suyash Singh  
 🛠️ **Designed & Engineered by:** Rushikesh Wagh  
 
