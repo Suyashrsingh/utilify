@@ -177,6 +177,36 @@ for (const [toolKey, seoSlug] of Object.entries(seoToolUrls)) {
                         "item": toolUrl
                     }
                 ]
+            },
+            {
+                "@type": "FAQPage",
+                "@id": `${toolUrl}#faq`,
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": `Is the ${toolNameShort} tool free to use on Utilify?`,
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": `Yes, ${toolNameShort} on Utilify is 100% free with no usage limits, no credit card, and no signups required. All tasks execute directly inside your web browser.`
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": `Are my files uploaded to a server when using ${toolNameShort}?`,
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": `No. Utilify is an offline-first privacy platform. Your files, text, and inputs are processed locally in your browser memory and are never uploaded to any remote server or cloud database.`
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": `How does ${toolNameShort} work?`,
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": `${cleanDesc} Simply open the tool, input your content or choose your files, apply your preferred settings, and download or copy the result instantly.`
+                        }
+                    }
+                ]
             }
         ]
     });
