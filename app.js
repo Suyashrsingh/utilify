@@ -230,7 +230,75 @@ document.addEventListener("DOMContentLoaded", () => {
         setMeta('meta[property="twitter:url"]', 'content', fullUrl);
     };
 
+    // Dynamic on-demand script & stylesheet loader (eliminates 1MB+ unused JS on initial load)
+    const loadedAssets = new Set();
+    const loadScriptAsync = (src) => {
+        if (loadedAssets.has(src)) return Promise.resolve();
+        return new Promise((resolve, reject) => {
+            const existing = document.querySelector(`script[src="${src}"]`);
+            if (existing) {
+                loadedAssets.add(src);
+                return resolve();
+            }
+            const s = document.createElement("script");
+            s.src = src;
+            s.async = true;
+            s.onload = () => {
+                loadedAssets.add(src);
+                resolve();
+            };
+            s.onerror = (err) => reject(err);
+            document.head.appendChild(s);
+        });
+    };
+
+    const loadCssAsync = (href) => {
+        if (loadedAssets.has(href) || document.querySelector(`link[href="${href}"]`)) return;
+        const l = document.createElement("link");
+        l.rel = "stylesheet";
+        l.href = href;
+        loadedAssets.add(href);
+        document.head.appendChild(l);
+    };
+
+    const toolScriptDependencies = {
+        pdfmerge: ["https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js"],
+        pdfsplit: ["https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js"],
+        pdfrotate: ["https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js"],
+        imagetopdf: ["https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js"],
+        pdftoimage: ["https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.min.js"],
+        pdfcompress: ["https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js"],
+        pdfprotect: ["https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js"],
+        pdfunlock: ["https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js"],
+        pdfremove: ["https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js"],
+        digisign: [
+            "https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js",
+            "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.min.js"
+        ],
+        imgcrop: [
+            "https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.6.1/cropper.min.css",
+            "https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.6.1/cropper.min.js"
+        ],
+        exif: ["https://cdn.jsdelivr.net/npm/exif-js"],
+        htmltoimage: ["https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"],
+        htmltopdf: [
+            "https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js",
+            "https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"
+        ]
+    };
+
+    const ensureToolAssets = (panelName) => {
+        const deps = toolScriptDependencies[panelName];
+        if (!deps) return Promise.resolve();
+        const promises = deps.map(dep => dep.endsWith(".css") ? loadCssAsync(dep) : loadScriptAsync(dep));
+        return Promise.all(promises);
+    };
+    window.ensureToolAssets = ensureToolAssets;
+
     const switchToolPanel = (panelName) => {
+        // Trigger on-demand lazy loading for this specific tool's engines
+        ensureToolAssets(panelName);
+
         // Toggle menu items active state
         sidebarMenuItems.forEach(item => {
             if (item.getAttribute("data-panel") === panelName) {
@@ -4679,7 +4747,7 @@ ${withHealth ? `    healthcheck:
             try {
                 pdfMergeDownloadBtn.textContent = "⏳ Merging...";
                 pdfMergeDownloadBtn.disabled = true;
-                
+                await ensureToolAssets("pdfmerge");
                 const { PDFDocument } = window.PDFLib;
                 const mergedPdf = await PDFDocument.create();
                 
@@ -4731,6 +4799,7 @@ ${withHealth ? `    healthcheck:
         const handleSplitLoad = async (file) => {
             if (file && file.type === "application/pdf") {
                 try {
+                    await ensureToolAssets("pdfsplit");
                     const arrayBuffer = await file.arrayBuffer();
                     currentSplitPdfBytes = arrayBuffer;
                     const { PDFDocument } = window.PDFLib;
@@ -4875,7 +4944,7 @@ ${withHealth ? `    healthcheck:
             try {
                 pdfRotateDownloadBtn.textContent = "⏳ Rotating...";
                 pdfRotateDownloadBtn.disabled = true;
-                
+                await ensureToolAssets("pdfrotate");
                 const { PDFDocument, degrees } = window.PDFLib;
                 const pdfDoc = await PDFDocument.load(currentRotatePdfBytes);
                 const pages = pdfDoc.getPages();
@@ -5032,7 +5101,8 @@ ${withHealth ? `    healthcheck:
             
             if (cropperInstance) cropperInstance.destroy();
             
-            imgCropWorkspaceImg.onload = () => {
+            imgCropWorkspaceImg.onload = async () => {
+                await ensureToolAssets("imgcrop");
                 cropperInstance = new Cropper(imgCropWorkspaceImg, {
                     aspectRatio: NaN,
                     viewMode: 1,
@@ -5372,10 +5442,10 @@ ${withHealth ? `    healthcheck:
 
             if (file.type.startsWith("image/")) {
                 const img = new Image();
-                img.onload = function() {
+                img.onload = async function() {
                     rows.push({ category: "General Info", tag: "Dimensions", val: `${img.width} x ${img.height} px` });
                     URL.revokeObjectURL(img.src);
-                    
+                    await ensureToolAssets("exif");
                     if (window.EXIF) {
                         try {
                             window.EXIF.getData(file, function() {
@@ -6563,6 +6633,7 @@ ${withHealth ? `    healthcheck:
             imgToPdfDownloadBtn.textContent = "⌛ Processing PDF...";
 
             try {
+                await ensureToolAssets("imagetopdf");
                 const pdfDoc = await PDFLib.PDFDocument.create();
                 const pageSize = imgToPdfSize.value;
                 const orientation = imgToPdfOrient.value;
@@ -6701,6 +6772,10 @@ ${withHealth ? `    healthcheck:
         pdfToImgPages = [];
 
         try {
+            await ensureToolAssets("pdftoimage");
+            if (window.pdfjsLib && !pdfjsLib.GlobalWorkerOptions.workerSrc) {
+                pdfjsLib.GlobalWorkerOptions.workerSrc = "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.worker.min.js";
+            }
             const arrayBuffer = await file.arrayBuffer();
             const loadingTask = pdfjsLib.getDocument({ data: arrayBuffer });
             activePdfDoc = await loadingTask.promise;
@@ -6860,6 +6935,7 @@ ${withHealth ? `    healthcheck:
             pdfCompDownloadBtn.textContent = "⌛ Compressing PDF...";
 
             try {
+                await ensureToolAssets("pdfcompress");
                 const pdfDoc = await PDFLib.PDFDocument.load(rawPdfBuffer);
                 const compressedBytes = await pdfDoc.save({
                     useObjectStreams: true,
@@ -7133,6 +7209,10 @@ ${withHealth ? `    healthcheck:
 
         if (isPdfDoc) {
             try {
+                await ensureToolAssets("digisign");
+                if (window.pdfjsLib && !pdfjsLib.GlobalWorkerOptions.workerSrc) {
+                    pdfjsLib.GlobalWorkerOptions.workerSrc = "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.worker.min.js";
+                }
                 const arrayBuffer = await file.arrayBuffer();
                 const doc = await pdfjsLib.getDocument({ data: arrayBuffer }).promise;
                 const page = await doc.getPage(1);
@@ -7536,6 +7616,7 @@ ${withHealth ? `    healthcheck:
             htmlToPdfDownloadBtn.textContent = "⌛ Compiling PDF...";
 
             try {
+                await ensureToolAssets("htmltopdf");
                 const sandbox = document.createElement("div");
                 sandbox.style.position = "absolute";
                 sandbox.style.left = "-9999px";
@@ -7600,6 +7681,7 @@ ${withHealth ? `    healthcheck:
             htmlToImgDownloadBtn.textContent = "⌛ Compiling Image...";
 
             try {
+                await ensureToolAssets("htmltopdf");
                 const sandbox = document.createElement("div");
                 sandbox.style.position = "absolute";
                 sandbox.style.left = "-9999px";
@@ -7695,6 +7777,7 @@ ${withHealth ? `    healthcheck:
             pdfUnlDownloadBtn.textContent = "⌛ Decrypting PDF...";
 
             try {
+                await ensureToolAssets("pdfunlock");
                 const pdfDoc = await PDFLib.PDFDocument.load(rawUnlPdfBuffer, {
                     password: passVal
                 });
@@ -7763,6 +7846,7 @@ ${withHealth ? `    healthcheck:
             return;
         }
         try {
+            await ensureToolAssets("pdfremove");
             rawRemPdfBuffer = await file.arrayBuffer();
             rawRemPdfName = file.name;
 
@@ -7822,6 +7906,7 @@ ${withHealth ? `    healthcheck:
             pdfRemDownloadBtn.textContent = "⌛ Removing Pages...";
 
             try {
+                await ensureToolAssets("pdfremove");
                 const pdfDoc = await PDFLib.PDFDocument.load(rawRemPdfBuffer);
                 const totalPages = pdfDoc.getPageCount();
 

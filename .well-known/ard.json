@@ -1,0 +1,83 @@
+{
+  "$schema": "https://agenticresource.org/schema/v1/ard.json",
+  "name": "Utilify",
+  "version": "2.0.0",
+  "description": "63+ free, private, offline-first client-side web utilities for developers, creators, and professionals. All data formatting, image processing, and PDF manipulations execute 100% in local browser memory.",
+  "url": "https://utilify.co.in",
+  "documentation": "https://utilify.co.in/llms-full.txt",
+  "llms_txt": "https://utilify.co.in/llms.txt",
+  "publisher": {
+    "name": "Rushikesh Wagh",
+    "url": "https://utilify.co.in/about"
+  },
+  "capabilities": [
+    "pdf-merging",
+    "pdf-compression",
+    "pdf-splitting",
+    "image-to-pdf",
+    "pdf-to-image",
+    "image-compression",
+    "image-conversion",
+    "text-analysis",
+    "markdown-formatting",
+    "cryptographic-hashing",
+    "unit-conversion"
+  ],
+  "privacy": {
+    "data_collection": "none",
+    "execution_location": "client-side-browser-memory",
+    "server_uploads": false,
+    "privacy_policy": "https://utilify.co.in/privacy"
+  },
+  "resources": [
+    {
+      "id": "merge-pdf",
+      "name": "Merge PDF",
+      "type": "utility",
+      "description": "Combine multiple PDF files client-side into a single document without server uploads.",
+      "url": "https://utilify.co.in/tools/merge-pdf"
+    },
+    {
+      "id": "compress-pdf",
+      "name": "Compress PDF",
+      "type": "utility",
+      "description": "Compress PDF documents in local browser memory with visual quality preservation.",
+      "url": "https://utilify.co.in/tools/compress-pdf"
+    },
+    {
+      "id": "image-to-pdf",
+      "name": "Image to PDF",
+      "type": "utility",
+      "description": "Convert JPG, PNG, and WebP images to a single PDF document client-side.",
+      "url": "https://utilify.co.in/tools/image-to-pdf"
+    },
+    {
+      "id": "pdf-to-image",
+      "name": "PDF to Image",
+      "type": "utility",
+      "description": "Extract and render all pages of a PDF document into JPG or PNG image files.",
+      "url": "https://utilify.co.in/tools/pdf-to-image"
+    },
+    {
+      "id": "split-pdf",
+      "name": "Split PDF",
+      "type": "utility",
+      "description": "Extract custom page ranges or separate individual PDF pages client-side.",
+      "url": "https://utilify.co.in/tools/split-pdf"
+    },
+    {
+      "id": "image-compressor",
+      "name": "Image Compressor",
+      "type": "utility",
+      "description": "Optimize and compress JPEG, PNG, and WebP images client-side directly in browser memory.",
+      "url": "https://utilify.co.in/tools/image-compressor"
+    },
+    {
+      "id": "json-validator",
+      "name": "JSON Prettifier & Validator",
+      "type": "utility",
+      "description": "Prettify, format, validate, and minify JSON data structures client-side.",
+      "url": "https://utilify.co.in/tools/json-prettifier-validator"
+    }
+  ]
+}

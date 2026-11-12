@@ -49,5 +49,20 @@ fs.writeFileSync(distHtmlPath, minified, 'utf8');
 const distFallbackPath = path.join(__dirname, '../dist/200.html');
 fs.writeFileSync(distFallbackPath, minified, 'utf8');
 
+// Ensure _headers and .well-known/ard.json are copied to dist
+const publicHeaders = path.join(__dirname, '../public/_headers');
+const distHeaders = path.join(__dirname, '../dist/_headers');
+if (fs.existsSync(publicHeaders)) {
+    fs.copyFileSync(publicHeaders, distHeaders);
+}
+
+const publicArd = path.join(__dirname, '../public/.well-known/ard.json');
+const distArdDir = path.join(__dirname, '../dist/.well-known');
+const distArd = path.join(distArdDir, 'ard.json');
+if (fs.existsSync(publicArd)) {
+    fs.mkdirSync(distArdDir, { recursive: true });
+    fs.copyFileSync(publicArd, distArd);
+}
+
 console.log(`[HTML Minifier] Minified compiled HTML size: ${(minified.length / 1024).toFixed(2)} KB (Saved: ${((rawHtml.length - minified.length) / 1024).toFixed(2)} KB)`);
 console.log(`[HTML Minifier] Copied fallback router asset to: ${distFallbackPath}`);

@@ -379,13 +379,20 @@ body.light-theme .moon-icon {
     font-family: var(--font-heading);
     font-size: 0.78rem;
     font-weight: 700;
-    color: var(--indigo);
-    background: rgba(99, 102, 241, 0.1);
-    border: 1px solid rgba(99, 102, 241, 0.2);
+    color: #c7d2fe; /* High contrast light indigo for dark theme (>10:1 ratio) */
+    background: rgba(99, 102, 241, 0.22);
+    border: 1px solid rgba(199, 210, 254, 0.45);
     padding: 0.35rem 0.85rem;
     border-radius: 30px;
     text-transform: uppercase;
     letter-spacing: 0.05em;
+}
+
+body:not(.dark-theme) .badge-new,
+body.light-theme .badge-new {
+    color: #312e81; /* Deep high contrast indigo for light theme (>12:1 ratio) */
+    background: rgba(99, 102, 241, 0.14);
+    border-color: rgba(49, 46, 129, 0.35);
 }
 
 .hero-title {
@@ -3364,7 +3371,7 @@ body.light-theme .gpa-result-card {
 
 /* Dynamic Glowing Pulsar Effect for 63 Tools Count Highlight */
 .highlight-count {
-    color: var(--indigo);
+    color: #a5b4fc; /* High contrast light indigo for dark theme (>9:1 ratio) */
     font-weight: 800;
     position: relative;
     display: inline-block;
@@ -3373,16 +3380,22 @@ body.light-theme .gpa-result-card {
     animation: pulse-glow 2.5s infinite ease-in-out;
 }
 
+body:not(.dark-theme) .highlight-count,
+body.light-theme .highlight-count {
+    color: #312e81; /* Deep high contrast indigo for light theme (>12:1 ratio) */
+    animation: none;
+}
+
 @keyframes pulse-glow {
     0%, 100% {
         transform: scale(1);
         filter: drop-shadow(0 0 2px rgba(99, 102, 241, 0.4));
-        color: var(--indigo);
+        color: #a5b4fc;
     }
     50% {
-        transform: scale(1.15);
-        filter: drop-shadow(0 0 10px rgba(139, 92, 246, 0.9));
-        color: var(--purple);
+        transform: scale(1.1);
+        filter: drop-shadow(0 0 8px rgba(165, 180, 252, 0.8));
+        color: #c7d2fe;
     }
 }
 

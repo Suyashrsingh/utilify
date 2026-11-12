@@ -17,12 +17,14 @@
     <meta name="theme-color" content="#4f46e5">
     <link rel="canonical" href="https://utilify.co.in">
     <link rel="manifest" href="/site.webmanifest">
+    <link rel="ard" type="application/json" href="/.well-known/ard.json">
     <link rel="alternate" type="text/markdown" href="https://utilify.co.in/llms.txt" title="LLM Context">
     
     <!-- Core Web Vitals Resource Hints (Faster Crawling & Loading) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="preload" href="style.css" as="style">
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
@@ -116,7 +118,7 @@
 </head>
 <body class="dark-theme">
     <!-- Skip Link for Accessibility -->
-    <a href="#main-nav" class="skip-link">Skip to navigation</a>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
 
     <div class="background-effects" aria-hidden="true">
         <div class="blob-1"></div>
@@ -253,7 +255,7 @@
     </header>
 
     <!-- Global App Layout -->
-    <div class="app-layout">
+    <main class="app-layout" id="main-content">
 
         <!-- ================= 1. HOME VIEW (LANDING PAGE) ================= -->
         <div class="view-panel active-view" id="view-home">
@@ -1417,7 +1419,7 @@
                 </aside>
 
                 <!-- Workspace Content Pane -->
-                <main class="main-content">
+                <div class="main-content">
                     <!-- Mobile Tool Header Bar -->
                     <div class="mobile-header">
                         <button class="menu-toggle-btn" id="menu-toggle-btn" aria-label="Open sidebar menu">
@@ -1431,7 +1433,7 @@
                     </div>
 
                     <!-- Work Area -->
-                    <main class="workspace" id="main-workspace">
+                    <div class="workspace" id="main-workspace">
                         
                         <!-- SOCIAL MEDIA PANEL -->
                         <section class="panel active" id="panel-social" role="tabpanel" aria-labelledby="tab-social">
@@ -8884,7 +8886,7 @@
                             </article>
                         </section>
 
-            </main>
+            </div>
         </div>
     </div>
 
@@ -9144,7 +9146,7 @@
                     </form>
                 </div>
             </div>
-        </div>
+        </main>
 
     <!-- Global Website Footer -->
     <footer class="global-footer">
@@ -9232,33 +9234,7 @@
     <!-- Notification Toast -->
     <div class="toast" id="toast" role="alert" aria-live="assertive">Copied to clipboard!</div>
 
-    <!-- Background delayed script loader to eliminate initial load network congestion on mobile -->
-    <script>
-        window.addEventListener('load', () => {
-            setTimeout(() => {
-                // Dynamically load Cropper CSS stylesheet
-                const link = document.createElement('link');
-                link.rel = 'stylesheet';
-                link.href = "https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.6.1/cropper.min.css";
-                document.head.appendChild(link);
-
-                const scripts = [
-                    "https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.6.1/cropper.min.js",
-                    "https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js",
-                    "https://cdn.jsdelivr.net/npm/exif-js",
-                    "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.min.js",
-                    "https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js",
-                    "https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"
-                ];
-                scripts.forEach(src => {
-                    const s = document.createElement('script');
-                    s.src = src;
-                    s.defer = true;
-                    document.body.appendChild(s);
-                });
-            }, 1000);
-        });
-    </script>
+    <!-- Dynamic on-demand script loader managed client-side in app.js -->
 
     <script type="module" src="app.js"></script>
 </body>
