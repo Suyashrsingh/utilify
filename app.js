@@ -167,9 +167,9 @@ document.addEventListener("DOMContentLoaded", () => {
         nginx: { title: "Nginx Config Generator - Reverse Proxy & SSL Setup | Utilify", description: "Generate production-ready Nginx server block configurations for static sites, reverse proxies, HTTPS with SSL certificates, and SPAs." },
         iam: { title: "AWS IAM Policy Generator - S3, EC2 & Lambda | Utilify", description: "Generate valid AWS IAM JSON policy documents for S3, EC2, Lambda, DynamoDB, CloudWatch, SNS, and SQS with read/write/full access." },
         imgcomp: { title: "Image Compressor - Optimize PNG, JPG & WebP | Utilify", description: "Optimize, compress, and resize JPEG, PNG, and WebP images client-side directly in your browser. Maintain aspect ratio, choose formats, and compare visual savings." },
-        pdfmerge: { title: "PDF Merge - Combine PDF Documents Online Free | Utilify", description: "Merge PDF files online free. Combine multiple PDF documents into a single file quickly, securely, and 100% in your browser without uploading." },
-        pdfsplit: { title: "PDF Splitter - Extract PDF Pages Online Free | Utilify", description: "Split PDF files online free. Extract custom page ranges or separate individual PDF pages instantly and securely inside your browser memory." },
-        pdfrotate: { title: "PDF Rotator - Rotate PDF Pages Online Free | Utilify", description: "Rotate PDF pages online free. Permanently rotate individual or all pages of your PDF document 90, 180, or 270 degrees client-side with no uploads." },
+        pdfmerge: { title: "Merge PDF Online Free - Combine PDFs Privately | Utilify", description: "Merge PDF files online free. Combine multiple PDF documents into a single file quickly, securely, and 100% in your browser without uploading to any server." },
+        pdfsplit: { title: "Split PDF Online Free - Extract Pages from PDF | Utilify", description: "Split PDF files online free. Extract custom page ranges or separate individual PDF pages instantly and securely inside your browser memory with zero uploads." },
+        pdfrotate: { title: "Rotate PDF Pages Online Free - 90 & 180 Degrees | Utilify", description: "Rotate PDF pages online free. Permanently rotate individual or all pages of your PDF document 90, 180, or 270 degrees client-side with no uploads." },
         imgresize: { title: "Image Resizer - Scale Dimensions Online Free | Utilify", description: "Free online image resizer. Scale JPG, PNG, and WebP dimensions to exact custom pixels or percentages with aspect ratio lock client-side." },
         imgcrop: { title: "Image Cropper - Crop Photos Online Free | Utilify", description: "Free online image cropper. Crop photos visually with custom aspect ratios, circular masks, and instant high-res PNG or JPG download." },
         imgconvert: { title: "Image Converter - Change Formats Online Free | Utilify", description: "Convert image formats online free. Convert between JPG, PNG, WebP, GIF, and BMP locally in your browser memory without server uploads." },
@@ -190,16 +190,16 @@ document.addEventListener("DOMContentLoaded", () => {
         cipher: { title: "AES Text Encrypter & Decrypter - Offline Crypto | Utilify", description: "Locally encrypt and decrypt text messages using industry-standard Advanced Encryption Standard (AES-GCM/CBC) directly inside your browser memory." },
         pwdinspector: { title: "Password Strength & Entropy Inspector - Realtime | Utilify", description: "Analyze password complexity, calculate Shannon entropy bits, check against dictionary patterns, and estimate brute-force crack times securely." },
         imgmerge: { title: "Image Merger - Combine Images Side-by-Side | Utilify", description: "Merge two images horizontally or vertically with custom scaling, padding, and alignments completely offline in your browser." },
-        imagetopdf: { title: "Image to PDF Converter - Convert Photos to PDF | Utilify", description: "Convert images to PDF online free. Combine JPG, PNG, and WebP photos into a single PDF document with custom margins, orientations, and page sizes." },
-        pdftoimage: { title: "PDF to Image - Extract PDF Pages as Images Free | Utilify", description: "Convert PDF to images online free. Extract and render all PDF pages into high-resolution JPG or PNG images directly in your browser offline." },
-        pdfcompress: { title: "Compress PDF - Reduce PDF File Size Online Free | Utilify", description: "Compress PDF files online free. Reduce PDF document file size with high visual quality using smart client-side compression without uploading." },
-        pdfprotect: { title: "Protect PDF - Password Encrypt PDF Files Free | Utilify", description: "Password protect PDF files online free. Encrypt your sensitive PDF documents with strong client-side security passwords before sharing." },
-        digisign: { title: "Digital Signature Creator - Sign PDFs Online | Utilify", description: "Create digital signature online free. Draw, type, or upload your signature and stamp it onto PDF and image documents securely and privately." },
+        imagetopdf: { title: "Image to PDF - Convert JPG & PNG to PDF Online Free | Utilify", description: "Convert JPG and PNG images to PDF online free. Combine multiple photos into a single PDF document in your browser with custom page sizes and zero server uploads." },
+        pdftoimage: { title: "PDF to Image - Convert PDF to JPG & PNG Online Free | Utilify", description: "Convert PDF to JPG and PNG images online free. Extract and render all PDF pages into high-resolution images directly in your browser offline." },
+        pdfcompress: { title: "Compress PDF Online Free - Reduce PDF File Size | Utilify", description: "Compress PDF files online free. Reduce PDF document file size with high visual quality using smart client-side compression without uploading." },
+        pdfprotect: { title: "Protect PDF - Password Encrypt PDF Online Free | Utilify", description: "Password protect PDF files online free. Encrypt your sensitive PDF documents with strong client-side security passwords before sharing." },
+        digisign: { title: "Sign PDF Online Free - Digital Signature Creator | Utilify", description: "Sign PDF documents online free. Draw, type, or upload your signature and stamp it onto PDF and image documents securely and privately." },
         imgwatermark: { title: "Watermark Image - Add Watermarks to Photos Free | Utilify", description: "Add watermark to photos online free. Protect copyright with custom text or logo image watermarks, opacity sliders, and position controls." },
         htmltopdf: { title: "HTML to PDF - Render HTML Code to PDF Free | Utilify", description: "Convert HTML to PDF online free. Render raw HTML/CSS code or documents into clean, paginated PDF files with custom page formatting offline." },
         htmltoimage: { title: "HTML to Image - Render HTML Code to Image Free | Utilify", description: "Convert HTML to image online free. Render and compile HTML and CSS code blocks into high-resolution PNG or JPG screenshots client-side." },
-        pdfunlock: { title: "Unlock PDF - Remove Password from PDF Free | Utilify", description: "Unlock PDF files online free. Remove passwords, permissions, and security restrictions from protected PDF documents client-side instantly." },
-        pdfremove: { title: "Remove PDF Pages - Remove Pages from PDF Free | Utilify", description: "Remove pages from PDF online free. Delete unwanted pages or custom page ranges from your PDF documents securely in your browser." }
+        pdfunlock: { title: "Unlock PDF - Remove Password from PDF Online Free | Utilify", description: "Unlock PDF files online free. Remove passwords, permissions, and security restrictions from protected PDF documents client-side instantly." },
+        pdfremove: { title: "Remove PDF Pages - Delete Pages from PDF Free | Utilify", description: "Remove pages from PDF online free. Delete unwanted pages or custom page ranges from your PDF documents securely in your browser." }
     };
 
     const updateSEO = (title, description, canonicalPath) => {
@@ -297,16 +297,16 @@ document.addEventListener("DOMContentLoaded", () => {
         slug: "seo-url-slug-generator",
         qr: "custom-qr-code-generator",
         imgcomp: "image-compressor",
-        pdfmerge: "pdf-merger",
-        pdfsplit: "pdf-splitter",
-        pdfrotate: "pdf-page-rotator",
-        imagetopdf: "image-to-pdf-converter",
-        pdftoimage: "pdf-to-image-converter",
-        pdfcompress: "pdf-compressor",
-        pdfprotect: "pdf-password-protector",
-        pdfunlock: "pdf-password-remover",
-        pdfremove: "pdf-page-remover",
-        digisign: "digital-signature-creator",
+        pdfmerge: "merge-pdf",
+        pdfsplit: "split-pdf",
+        pdfrotate: "rotate-pdf",
+        imagetopdf: "image-to-pdf",
+        pdftoimage: "pdf-to-image",
+        pdfcompress: "compress-pdf",
+        pdfprotect: "protect-pdf",
+        pdfunlock: "unlock-pdf",
+        pdfremove: "remove-pdf-pages",
+        digisign: "sign-pdf",
         imgwatermark: "image-watermark-tool",
         htmltopdf: "html-to-pdf-converter",
         htmltoimage: "html-to-image-converter",
@@ -359,6 +359,32 @@ document.addEventListener("DOMContentLoaded", () => {
     for (const key in seoToolUrls) {
         urlToToolKey[seoToolUrls[key]] = key;
     }
+    // High-intent search aliases and legacy slug redirects
+    const slugAliases = {
+        "pdf-merger": "pdfmerge",
+        "combine-pdf": "pdfmerge",
+        "merge-pdf-files": "pdfmerge",
+        "image-to-pdf-converter": "imagetopdf",
+        "jpg-to-pdf": "imagetopdf",
+        "png-to-pdf": "imagetopdf",
+        "jpeg-to-pdf": "imagetopdf",
+        "pdf-compressor": "pdfcompress",
+        "reduce-pdf-size": "pdfcompress",
+        "shrink-pdf": "pdfcompress",
+        "pdf-splitter": "pdfsplit",
+        "extract-pdf-pages": "pdfsplit",
+        "pdf-to-image-converter": "pdftoimage",
+        "pdf-to-jpg": "pdftoimage",
+        "pdf-to-png": "pdftoimage",
+        "pdf-page-rotator": "pdfrotate",
+        "pdf-password-protector": "pdfprotect",
+        "encrypt-pdf": "pdfprotect",
+        "pdf-password-remover": "pdfunlock",
+        "pdf-page-remover": "pdfremove",
+        "digital-signature-creator": "digisign",
+        "pdf-signer": "digisign"
+    };
+    Object.assign(urlToToolKey, slugAliases);
 
     const navigate = (urlPath) => {
         window.history.pushState(null, "", urlPath);

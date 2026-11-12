@@ -183,9 +183,9 @@
                         <!-- Column 4: PDF & Image Tools -->
                         <div class="dropdown-category">
                             <span class="dropdown-category-title">📄 PDF & Image</span>
-                            <a href="/tools/pdf-merger" class="dropdown-item" data-view="tools" data-tool="pdfmerge">PDF Merge</a>
-                            <a href="/tools/pdf-splitter" class="dropdown-item" data-view="tools" data-tool="pdfsplit">PDF Split</a>
-                            <a href="/tools/pdf-page-rotator" class="dropdown-item" data-view="tools" data-tool="pdfrotate">PDF Rotate</a>
+                            <a href="/tools/merge-pdf" class="dropdown-item" data-view="tools" data-tool="pdfmerge">PDF Merge</a>
+                            <a href="/tools/split-pdf" class="dropdown-item" data-view="tools" data-tool="pdfsplit">PDF Split</a>
+                            <a href="/tools/rotate-pdf" class="dropdown-item" data-view="tools" data-tool="pdfrotate">PDF Rotate</a>
                             <a href="/tools/image-compressor" class="dropdown-item" data-view="tools" data-tool="imgcomp">Image Compressor</a>
                             <a href="/tools/image-resizer" class="dropdown-item" data-view="tools" data-tool="imgresize">Image Resizer</a>
                             <a href="/tools/image-cropper" class="dropdown-item" data-view="tools" data-tool="imgcrop">Image Cropper</a>
@@ -1272,43 +1272,43 @@
 
                         <div class="menu-group">
                             <span class="group-title">📄 PDF &amp; Image Tools</span>
-                            <a href="/tools/pdf-merger" class="menu-item" data-panel="pdfmerge">
+                            <a href="/tools/merge-pdf" class="menu-item" data-panel="pdfmerge">
                                 <span class="item-icon" aria-hidden="true">➕</span>
                                 <div class="item-details"><span class="item-name">PDF Merge</span><span class="item-desc">Combine PDF files</span></div>
                             </a>
-                            <a href="/tools/pdf-splitter" class="menu-item" data-panel="pdfsplit">
+                            <a href="/tools/split-pdf" class="menu-item" data-panel="pdfsplit">
                                 <span class="item-icon" aria-hidden="true">✂️</span>
                                 <div class="item-details"><span class="item-name">PDF Split</span><span class="item-desc">Extract PDF pages</span></div>
                             </a>
-                            <a href="/tools/pdf-page-rotator" class="menu-item" data-panel="pdfrotate">
+                            <a href="/tools/rotate-pdf" class="menu-item" data-panel="pdfrotate">
                                 <span class="item-icon" aria-hidden="true">🔄</span>
                                 <div class="item-details"><span class="item-name">PDF Rotate</span><span class="item-desc">Rotate PDF pages</span></div>
                             </a>
-                            <a href="/tools/image-to-pdf-converter" class="menu-item" data-panel="imagetopdf">
+                            <a href="/tools/image-to-pdf" class="menu-item" data-panel="imagetopdf">
                                 <span class="item-icon" aria-hidden="true">🖼️</span>
                                 <div class="item-details"><span class="item-name">Image to PDF</span><span class="item-desc">Convert images to PDF</span></div>
                             </a>
-                            <a href="/tools/pdf-to-image-converter" class="menu-item" data-panel="pdftoimage">
+                            <a href="/tools/pdf-to-image" class="menu-item" data-panel="pdftoimage">
                                 <span class="item-icon" aria-hidden="true">🖼️</span>
                                 <div class="item-details"><span class="item-name">PDF to Image</span><span class="item-desc">Render PDF pages to images</span></div>
                             </a>
-                            <a href="/tools/pdf-compressor" class="menu-item" data-panel="pdfcompress">
+                            <a href="/tools/compress-pdf" class="menu-item" data-panel="pdfcompress">
                                 <span class="item-icon" aria-hidden="true">🗜️</span>
                                 <div class="item-details"><span class="item-name">Compress PDF</span><span class="item-desc">Reduce PDF document size</span></div>
                             </a>
-                            <a href="/tools/pdf-password-protector" class="menu-item" data-panel="pdfprotect">
+                            <a href="/tools/protect-pdf" class="menu-item" data-panel="pdfprotect">
                                 <span class="item-icon" aria-hidden="true">🔒</span>
                                 <div class="item-details"><span class="item-name">Protect PDF</span><span class="item-desc">Encrypt PDF with password</span></div>
                             </a>
-                            <a href="/tools/pdf-password-remover" class="menu-item" data-panel="pdfunlock">
+                            <a href="/tools/unlock-pdf" class="menu-item" data-panel="pdfunlock">
                                 <span class="item-icon" aria-hidden="true">🔓</span>
                                 <div class="item-details"><span class="item-name">Unlock PDF</span><span class="item-desc">Remove PDF password restriction</span></div>
                             </a>
-                            <a href="/tools/pdf-page-remover" class="menu-item" data-panel="pdfremove">
+                            <a href="/tools/remove-pdf-pages" class="menu-item" data-panel="pdfremove">
                                 <span class="item-icon" aria-hidden="true">🗑️</span>
                                 <div class="item-details"><span class="item-name">Remove PDF Pages</span><span class="item-desc">Remove page ranges from PDF</span></div>
                             </a>
-                            <a href="/tools/digital-signature-creator" class="menu-item" data-panel="digisign">
+                            <a href="/tools/sign-pdf" class="menu-item" data-panel="digisign">
                                 <span class="item-icon" aria-hidden="true">✍️</span>
                                 <div class="item-details"><span class="item-name">Digital Signature</span><span class="item-desc">Sign PDFs &amp; images locally</span></div>
                             </a>
@@ -4731,7 +4731,106 @@
                                         <span class="faq-question">Are my files uploaded to a server?</span>
                                         <span class="faq-answer">No, all merging operations happen locally in your browser memory.</span>
                                     </div>
-                                </div>
+                                
+                                    <!-- UTILIFY VS ILOVEPDF & SMALLPDF COMPARISON CARD -->
+                                    <div class="competitor-comparison-box" style="margin: 2.25rem 0 1.5rem; padding: 1.5rem; background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 12px; box-shadow: 0 4px 14px rgba(0,0,0,0.04);">
+                                        <h3 style="display:flex; align-items:center; gap:0.5rem; font-size:1.15rem; margin-bottom:0.75rem; color:var(--text-color);">
+                                            🛡️ Why Choose Utilify Over iLovePDF &amp; Smallpdf?
+                                        </h3>
+                                        <p style="font-size:0.88rem; color:var(--text-muted); line-height:1.6; margin-bottom:1.25rem;">
+                                            When merging PDF files, traditional cloud services like <strong>iLovePDF</strong> and <strong>Smallpdf</strong> transmit your confidential files across the internet to remote cloud servers (AWS/Google Cloud). This introduces significant data exposure risks, corporate privacy violations, and rigid paywalls (Smallpdf limits free users to just 1–2 tasks per day before demanding $108/year).
+                                        </p>
+                                        <p style="font-size:0.88rem; color:var(--text-muted); line-height:1.6; margin-bottom:1.25rem;">
+                                            <strong>Utilify is built fundamentally differently:</strong> Our entire PDF engine executes <strong>100% client-side inside your browser's local memory (RAM)</strong> using WebAssembly and Web Crypto APIs. Your documents never touch our servers, are never logged, and never leave your machine.
+                                        </p>
+                                        <div style="overflow-x:auto;">
+                                            <table style="width:100%; border-collapse:collapse; font-size:0.85rem; text-align:left;">
+                                                <thead>
+                                                    <tr style="border-bottom: 2px solid var(--border-color); background: rgba(99,102,241,0.06);">
+                                                        <th style="padding:0.75rem 0.6rem;">Feature / Metric</th>
+                                                        <th style="padding:0.75rem 0.6rem; color:var(--indigo); font-weight:700;">Utilify (Offline-First)</th>
+                                                        <th style="padding:0.75rem 0.6rem; color:var(--text-muted);">iLovePDF</th>
+                                                        <th style="padding:0.75rem 0.6rem; color:var(--text-muted);">Smallpdf</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr style="border-bottom:1px solid var(--border-color);">
+                                                        <td style="padding:0.65rem 0.6rem; font-weight:600;">Server Uploads</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:#10b981; font-weight:700;">Zero (0% Uploads)</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:#ef4444;">Uploads to Cloud Servers</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:#ef4444;">Uploads to Cloud Servers</td>
+                                                    </tr>
+                                                    <tr style="border-bottom:1px solid var(--border-color);">
+                                                        <td style="padding:0.65rem 0.6rem; font-weight:600;">Data Privacy &amp; Security</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:#10b981; font-weight:700;">100% In-Memory RAM Safe</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:var(--text-muted);">Stored on Remote Disks</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:var(--text-muted);">Stored on Remote Disks</td>
+                                                    </tr>
+                                                    <tr style="border-bottom:1px solid var(--border-color);">
+                                                        <td style="padding:0.65rem 0.6rem; font-weight:600;">Daily Usage Limits</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:#10b981; font-weight:700;">Unlimited Free Tasks</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:var(--text-muted);">Strict File Size Caps</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:#ef4444;">1–2 Tasks/Day Paywall</td>
+                                                    </tr>
+                                                    <tr style="border-bottom:1px solid var(--border-color);">
+                                                        <td style="padding:0.65rem 0.6rem; font-weight:600;">Pricing / Subscription</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:#10b981; font-weight:700;">100% Free Forever</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:var(--text-muted);">$48 – $84 / Year</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:var(--text-muted);">$108 / Year</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="padding:0.65rem 0.6rem; font-weight:600;">Offline Accessibility</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:#10b981; font-weight:700;">Works 100% Offline</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:#ef4444;">Requires Active Internet</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:#ef4444;">Requires Active Internet</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+
+                                    <!-- RELATED PDF & DOCUMENT UTILITIES INTERNAL SILO -->
+                                    <div class="pdf-silo-nav" style="margin-top: 1.5rem; padding: 1.25rem; background: var(--bg-hover); border-radius: 12px; border: 1px solid var(--border-color);">
+                                        <h3 style="font-size: 1.05rem; margin-bottom: 0.5rem; color: var(--text-color); display:flex; align-items:center; gap:0.5rem;">
+                                            📂 Related PDF &amp; Document Utilities
+                                        </h3>
+                                        <p style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 0.85rem;">
+                                            Switch to other free, client-side PDF and document processing tools without uploading:
+                                        </p>
+                                        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 0.65rem;">
+                                            <a href="/tools/merge-pdf" style="display:flex; align-items:center; gap:0.45rem; padding:0.55rem 0.75rem; background:var(--bg-card); border:1px solid var(--border-color); border-radius:8px; text-decoration:none; color:var(--text-color); font-size:0.83rem; font-weight:500;">
+                                                <span>➕</span> <strong>Merge PDF</strong>
+                                            </a>
+                                            <a href="/tools/split-pdf" style="display:flex; align-items:center; gap:0.45rem; padding:0.55rem 0.75rem; background:var(--bg-card); border:1px solid var(--border-color); border-radius:8px; text-decoration:none; color:var(--text-color); font-size:0.83rem; font-weight:500;">
+                                                <span>✂️</span> <strong>Split PDF</strong>
+                                            </a>
+                                            <a href="/tools/compress-pdf" style="display:flex; align-items:center; gap:0.45rem; padding:0.55rem 0.75rem; background:var(--bg-card); border:1px solid var(--border-color); border-radius:8px; text-decoration:none; color:var(--text-color); font-size:0.83rem; font-weight:500;">
+                                                <span>🗜️</span> <strong>Compress PDF</strong>
+                                            </a>
+                                            <a href="/tools/image-to-pdf" style="display:flex; align-items:center; gap:0.45rem; padding:0.55rem 0.75rem; background:var(--bg-card); border:1px solid var(--border-color); border-radius:8px; text-decoration:none; color:var(--text-color); font-size:0.83rem; font-weight:500;">
+                                                <span>🖼️</span> <strong>Image to PDF</strong>
+                                            </a>
+                                            <a href="/tools/pdf-to-image" style="display:flex; align-items:center; gap:0.45rem; padding:0.55rem 0.75rem; background:var(--bg-card); border:1px solid var(--border-color); border-radius:8px; text-decoration:none; color:var(--text-color); font-size:0.83rem; font-weight:500;">
+                                                <span>📄</span> <strong>PDF to Image</strong>
+                                            </a>
+                                            <a href="/tools/rotate-pdf" style="display:flex; align-items:center; gap:0.45rem; padding:0.55rem 0.75rem; background:var(--bg-card); border:1px solid var(--border-color); border-radius:8px; text-decoration:none; color:var(--text-color); font-size:0.83rem; font-weight:500;">
+                                                <span>🔄</span> <strong>Rotate PDF</strong>
+                                            </a>
+                                            <a href="/tools/protect-pdf" style="display:flex; align-items:center; gap:0.45rem; padding:0.55rem 0.75rem; background:var(--bg-card); border:1px solid var(--border-color); border-radius:8px; text-decoration:none; color:var(--text-color); font-size:0.83rem; font-weight:500;">
+                                                <span>🔒</span> <strong>Protect PDF</strong>
+                                            </a>
+                                            <a href="/tools/unlock-pdf" style="display:flex; align-items:center; gap:0.45rem; padding:0.55rem 0.75rem; background:var(--bg-card); border:1px solid var(--border-color); border-radius:8px; text-decoration:none; color:var(--text-color); font-size:0.83rem; font-weight:500;">
+                                                <span>🔓</span> <strong>Unlock PDF</strong>
+                                            </a>
+                                            <a href="/tools/remove-pdf-pages" style="display:flex; align-items:center; gap:0.45rem; padding:0.55rem 0.75rem; background:var(--bg-card); border:1px solid var(--border-color); border-radius:8px; text-decoration:none; color:var(--text-color); font-size:0.83rem; font-weight:500;">
+                                                <span>🗑️</span> <strong>Remove Pages</strong>
+                                            </a>
+                                            <a href="/tools/sign-pdf" style="display:flex; align-items:center; gap:0.45rem; padding:0.55rem 0.75rem; background:var(--bg-card); border:1px solid var(--border-color); border-radius:8px; text-decoration:none; color:var(--text-color); font-size:0.83rem; font-weight:500;">
+                                                <span>✍️</span> <strong>Sign PDF</strong>
+                                            </a>
+                                        </div>
+                                    </div>
+</div>
                             </article>
                         </section>
 
@@ -4812,7 +4911,106 @@
                                         <span class="faq-question">Is my document secure during splitting?</span>
                                         <span class="faq-answer">Yes, it runs locally, keeping your confidential files private.</span>
                                     </div>
-                                </div>
+                                
+                                    <!-- UTILIFY VS ILOVEPDF & SMALLPDF COMPARISON CARD -->
+                                    <div class="competitor-comparison-box" style="margin: 2.25rem 0 1.5rem; padding: 1.5rem; background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 12px; box-shadow: 0 4px 14px rgba(0,0,0,0.04);">
+                                        <h3 style="display:flex; align-items:center; gap:0.5rem; font-size:1.15rem; margin-bottom:0.75rem; color:var(--text-color);">
+                                            🛡️ Why Choose Utilify Over iLovePDF &amp; Smallpdf?
+                                        </h3>
+                                        <p style="font-size:0.88rem; color:var(--text-muted); line-height:1.6; margin-bottom:1.25rem;">
+                                            When splitting and extracting PDF pages, traditional cloud services like <strong>iLovePDF</strong> and <strong>Smallpdf</strong> transmit your confidential files across the internet to remote cloud servers (AWS/Google Cloud). This introduces significant data exposure risks, corporate privacy violations, and rigid paywalls (Smallpdf limits free users to just 1–2 tasks per day before demanding $108/year).
+                                        </p>
+                                        <p style="font-size:0.88rem; color:var(--text-muted); line-height:1.6; margin-bottom:1.25rem;">
+                                            <strong>Utilify is built fundamentally differently:</strong> Our entire PDF engine executes <strong>100% client-side inside your browser's local memory (RAM)</strong> using WebAssembly and Web Crypto APIs. Your documents never touch our servers, are never logged, and never leave your machine.
+                                        </p>
+                                        <div style="overflow-x:auto;">
+                                            <table style="width:100%; border-collapse:collapse; font-size:0.85rem; text-align:left;">
+                                                <thead>
+                                                    <tr style="border-bottom: 2px solid var(--border-color); background: rgba(99,102,241,0.06);">
+                                                        <th style="padding:0.75rem 0.6rem;">Feature / Metric</th>
+                                                        <th style="padding:0.75rem 0.6rem; color:var(--indigo); font-weight:700;">Utilify (Offline-First)</th>
+                                                        <th style="padding:0.75rem 0.6rem; color:var(--text-muted);">iLovePDF</th>
+                                                        <th style="padding:0.75rem 0.6rem; color:var(--text-muted);">Smallpdf</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr style="border-bottom:1px solid var(--border-color);">
+                                                        <td style="padding:0.65rem 0.6rem; font-weight:600;">Server Uploads</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:#10b981; font-weight:700;">Zero (0% Uploads)</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:#ef4444;">Uploads to Cloud Servers</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:#ef4444;">Uploads to Cloud Servers</td>
+                                                    </tr>
+                                                    <tr style="border-bottom:1px solid var(--border-color);">
+                                                        <td style="padding:0.65rem 0.6rem; font-weight:600;">Data Privacy &amp; Security</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:#10b981; font-weight:700;">100% In-Memory RAM Safe</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:var(--text-muted);">Stored on Remote Disks</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:var(--text-muted);">Stored on Remote Disks</td>
+                                                    </tr>
+                                                    <tr style="border-bottom:1px solid var(--border-color);">
+                                                        <td style="padding:0.65rem 0.6rem; font-weight:600;">Daily Usage Limits</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:#10b981; font-weight:700;">Unlimited Free Tasks</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:var(--text-muted);">Strict File Size Caps</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:#ef4444;">1–2 Tasks/Day Paywall</td>
+                                                    </tr>
+                                                    <tr style="border-bottom:1px solid var(--border-color);">
+                                                        <td style="padding:0.65rem 0.6rem; font-weight:600;">Pricing / Subscription</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:#10b981; font-weight:700;">100% Free Forever</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:var(--text-muted);">$48 – $84 / Year</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:var(--text-muted);">$108 / Year</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="padding:0.65rem 0.6rem; font-weight:600;">Offline Accessibility</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:#10b981; font-weight:700;">Works 100% Offline</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:#ef4444;">Requires Active Internet</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:#ef4444;">Requires Active Internet</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+
+                                    <!-- RELATED PDF & DOCUMENT UTILITIES INTERNAL SILO -->
+                                    <div class="pdf-silo-nav" style="margin-top: 1.5rem; padding: 1.25rem; background: var(--bg-hover); border-radius: 12px; border: 1px solid var(--border-color);">
+                                        <h3 style="font-size: 1.05rem; margin-bottom: 0.5rem; color: var(--text-color); display:flex; align-items:center; gap:0.5rem;">
+                                            📂 Related PDF &amp; Document Utilities
+                                        </h3>
+                                        <p style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 0.85rem;">
+                                            Switch to other free, client-side PDF and document processing tools without uploading:
+                                        </p>
+                                        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 0.65rem;">
+                                            <a href="/tools/merge-pdf" style="display:flex; align-items:center; gap:0.45rem; padding:0.55rem 0.75rem; background:var(--bg-card); border:1px solid var(--border-color); border-radius:8px; text-decoration:none; color:var(--text-color); font-size:0.83rem; font-weight:500;">
+                                                <span>➕</span> <strong>Merge PDF</strong>
+                                            </a>
+                                            <a href="/tools/split-pdf" style="display:flex; align-items:center; gap:0.45rem; padding:0.55rem 0.75rem; background:var(--bg-card); border:1px solid var(--border-color); border-radius:8px; text-decoration:none; color:var(--text-color); font-size:0.83rem; font-weight:500;">
+                                                <span>✂️</span> <strong>Split PDF</strong>
+                                            </a>
+                                            <a href="/tools/compress-pdf" style="display:flex; align-items:center; gap:0.45rem; padding:0.55rem 0.75rem; background:var(--bg-card); border:1px solid var(--border-color); border-radius:8px; text-decoration:none; color:var(--text-color); font-size:0.83rem; font-weight:500;">
+                                                <span>🗜️</span> <strong>Compress PDF</strong>
+                                            </a>
+                                            <a href="/tools/image-to-pdf" style="display:flex; align-items:center; gap:0.45rem; padding:0.55rem 0.75rem; background:var(--bg-card); border:1px solid var(--border-color); border-radius:8px; text-decoration:none; color:var(--text-color); font-size:0.83rem; font-weight:500;">
+                                                <span>🖼️</span> <strong>Image to PDF</strong>
+                                            </a>
+                                            <a href="/tools/pdf-to-image" style="display:flex; align-items:center; gap:0.45rem; padding:0.55rem 0.75rem; background:var(--bg-card); border:1px solid var(--border-color); border-radius:8px; text-decoration:none; color:var(--text-color); font-size:0.83rem; font-weight:500;">
+                                                <span>📄</span> <strong>PDF to Image</strong>
+                                            </a>
+                                            <a href="/tools/rotate-pdf" style="display:flex; align-items:center; gap:0.45rem; padding:0.55rem 0.75rem; background:var(--bg-card); border:1px solid var(--border-color); border-radius:8px; text-decoration:none; color:var(--text-color); font-size:0.83rem; font-weight:500;">
+                                                <span>🔄</span> <strong>Rotate PDF</strong>
+                                            </a>
+                                            <a href="/tools/protect-pdf" style="display:flex; align-items:center; gap:0.45rem; padding:0.55rem 0.75rem; background:var(--bg-card); border:1px solid var(--border-color); border-radius:8px; text-decoration:none; color:var(--text-color); font-size:0.83rem; font-weight:500;">
+                                                <span>🔒</span> <strong>Protect PDF</strong>
+                                            </a>
+                                            <a href="/tools/unlock-pdf" style="display:flex; align-items:center; gap:0.45rem; padding:0.55rem 0.75rem; background:var(--bg-card); border:1px solid var(--border-color); border-radius:8px; text-decoration:none; color:var(--text-color); font-size:0.83rem; font-weight:500;">
+                                                <span>🔓</span> <strong>Unlock PDF</strong>
+                                            </a>
+                                            <a href="/tools/remove-pdf-pages" style="display:flex; align-items:center; gap:0.45rem; padding:0.55rem 0.75rem; background:var(--bg-card); border:1px solid var(--border-color); border-radius:8px; text-decoration:none; color:var(--text-color); font-size:0.83rem; font-weight:500;">
+                                                <span>🗑️</span> <strong>Remove Pages</strong>
+                                            </a>
+                                            <a href="/tools/sign-pdf" style="display:flex; align-items:center; gap:0.45rem; padding:0.55rem 0.75rem; background:var(--bg-card); border:1px solid var(--border-color); border-radius:8px; text-decoration:none; color:var(--text-color); font-size:0.83rem; font-weight:500;">
+                                                <span>✍️</span> <strong>Sign PDF</strong>
+                                            </a>
+                                        </div>
+                                    </div>
+</div>
                             </article>
                         </section>
 
@@ -4897,7 +5095,106 @@
                                         <span class="faq-question">Is my data secure with the rotator?</span>
                                         <span class="faq-answer">Yes, the file is modified locally, protecting your documents.</span>
                                     </div>
-                                </div>
+                                
+                                    <!-- UTILIFY VS ILOVEPDF & SMALLPDF COMPARISON CARD -->
+                                    <div class="competitor-comparison-box" style="margin: 2.25rem 0 1.5rem; padding: 1.5rem; background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 12px; box-shadow: 0 4px 14px rgba(0,0,0,0.04);">
+                                        <h3 style="display:flex; align-items:center; gap:0.5rem; font-size:1.15rem; margin-bottom:0.75rem; color:var(--text-color);">
+                                            🛡️ Why Choose Utilify Over iLovePDF &amp; Smallpdf?
+                                        </h3>
+                                        <p style="font-size:0.88rem; color:var(--text-muted); line-height:1.6; margin-bottom:1.25rem;">
+                                            When rotating PDF document pages, traditional cloud services like <strong>iLovePDF</strong> and <strong>Smallpdf</strong> transmit your confidential files across the internet to remote cloud servers (AWS/Google Cloud). This introduces significant data exposure risks, corporate privacy violations, and rigid paywalls (Smallpdf limits free users to just 1–2 tasks per day before demanding $108/year).
+                                        </p>
+                                        <p style="font-size:0.88rem; color:var(--text-muted); line-height:1.6; margin-bottom:1.25rem;">
+                                            <strong>Utilify is built fundamentally differently:</strong> Our entire PDF engine executes <strong>100% client-side inside your browser's local memory (RAM)</strong> using WebAssembly and Web Crypto APIs. Your documents never touch our servers, are never logged, and never leave your machine.
+                                        </p>
+                                        <div style="overflow-x:auto;">
+                                            <table style="width:100%; border-collapse:collapse; font-size:0.85rem; text-align:left;">
+                                                <thead>
+                                                    <tr style="border-bottom: 2px solid var(--border-color); background: rgba(99,102,241,0.06);">
+                                                        <th style="padding:0.75rem 0.6rem;">Feature / Metric</th>
+                                                        <th style="padding:0.75rem 0.6rem; color:var(--indigo); font-weight:700;">Utilify (Offline-First)</th>
+                                                        <th style="padding:0.75rem 0.6rem; color:var(--text-muted);">iLovePDF</th>
+                                                        <th style="padding:0.75rem 0.6rem; color:var(--text-muted);">Smallpdf</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr style="border-bottom:1px solid var(--border-color);">
+                                                        <td style="padding:0.65rem 0.6rem; font-weight:600;">Server Uploads</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:#10b981; font-weight:700;">Zero (0% Uploads)</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:#ef4444;">Uploads to Cloud Servers</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:#ef4444;">Uploads to Cloud Servers</td>
+                                                    </tr>
+                                                    <tr style="border-bottom:1px solid var(--border-color);">
+                                                        <td style="padding:0.65rem 0.6rem; font-weight:600;">Data Privacy &amp; Security</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:#10b981; font-weight:700;">100% In-Memory RAM Safe</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:var(--text-muted);">Stored on Remote Disks</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:var(--text-muted);">Stored on Remote Disks</td>
+                                                    </tr>
+                                                    <tr style="border-bottom:1px solid var(--border-color);">
+                                                        <td style="padding:0.65rem 0.6rem; font-weight:600;">Daily Usage Limits</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:#10b981; font-weight:700;">Unlimited Free Tasks</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:var(--text-muted);">Strict File Size Caps</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:#ef4444;">1–2 Tasks/Day Paywall</td>
+                                                    </tr>
+                                                    <tr style="border-bottom:1px solid var(--border-color);">
+                                                        <td style="padding:0.65rem 0.6rem; font-weight:600;">Pricing / Subscription</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:#10b981; font-weight:700;">100% Free Forever</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:var(--text-muted);">$48 – $84 / Year</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:var(--text-muted);">$108 / Year</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="padding:0.65rem 0.6rem; font-weight:600;">Offline Accessibility</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:#10b981; font-weight:700;">Works 100% Offline</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:#ef4444;">Requires Active Internet</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:#ef4444;">Requires Active Internet</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+
+                                    <!-- RELATED PDF & DOCUMENT UTILITIES INTERNAL SILO -->
+                                    <div class="pdf-silo-nav" style="margin-top: 1.5rem; padding: 1.25rem; background: var(--bg-hover); border-radius: 12px; border: 1px solid var(--border-color);">
+                                        <h3 style="font-size: 1.05rem; margin-bottom: 0.5rem; color: var(--text-color); display:flex; align-items:center; gap:0.5rem;">
+                                            📂 Related PDF &amp; Document Utilities
+                                        </h3>
+                                        <p style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 0.85rem;">
+                                            Switch to other free, client-side PDF and document processing tools without uploading:
+                                        </p>
+                                        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 0.65rem;">
+                                            <a href="/tools/merge-pdf" style="display:flex; align-items:center; gap:0.45rem; padding:0.55rem 0.75rem; background:var(--bg-card); border:1px solid var(--border-color); border-radius:8px; text-decoration:none; color:var(--text-color); font-size:0.83rem; font-weight:500;">
+                                                <span>➕</span> <strong>Merge PDF</strong>
+                                            </a>
+                                            <a href="/tools/split-pdf" style="display:flex; align-items:center; gap:0.45rem; padding:0.55rem 0.75rem; background:var(--bg-card); border:1px solid var(--border-color); border-radius:8px; text-decoration:none; color:var(--text-color); font-size:0.83rem; font-weight:500;">
+                                                <span>✂️</span> <strong>Split PDF</strong>
+                                            </a>
+                                            <a href="/tools/compress-pdf" style="display:flex; align-items:center; gap:0.45rem; padding:0.55rem 0.75rem; background:var(--bg-card); border:1px solid var(--border-color); border-radius:8px; text-decoration:none; color:var(--text-color); font-size:0.83rem; font-weight:500;">
+                                                <span>🗜️</span> <strong>Compress PDF</strong>
+                                            </a>
+                                            <a href="/tools/image-to-pdf" style="display:flex; align-items:center; gap:0.45rem; padding:0.55rem 0.75rem; background:var(--bg-card); border:1px solid var(--border-color); border-radius:8px; text-decoration:none; color:var(--text-color); font-size:0.83rem; font-weight:500;">
+                                                <span>🖼️</span> <strong>Image to PDF</strong>
+                                            </a>
+                                            <a href="/tools/pdf-to-image" style="display:flex; align-items:center; gap:0.45rem; padding:0.55rem 0.75rem; background:var(--bg-card); border:1px solid var(--border-color); border-radius:8px; text-decoration:none; color:var(--text-color); font-size:0.83rem; font-weight:500;">
+                                                <span>📄</span> <strong>PDF to Image</strong>
+                                            </a>
+                                            <a href="/tools/rotate-pdf" style="display:flex; align-items:center; gap:0.45rem; padding:0.55rem 0.75rem; background:var(--bg-card); border:1px solid var(--border-color); border-radius:8px; text-decoration:none; color:var(--text-color); font-size:0.83rem; font-weight:500;">
+                                                <span>🔄</span> <strong>Rotate PDF</strong>
+                                            </a>
+                                            <a href="/tools/protect-pdf" style="display:flex; align-items:center; gap:0.45rem; padding:0.55rem 0.75rem; background:var(--bg-card); border:1px solid var(--border-color); border-radius:8px; text-decoration:none; color:var(--text-color); font-size:0.83rem; font-weight:500;">
+                                                <span>🔒</span> <strong>Protect PDF</strong>
+                                            </a>
+                                            <a href="/tools/unlock-pdf" style="display:flex; align-items:center; gap:0.45rem; padding:0.55rem 0.75rem; background:var(--bg-card); border:1px solid var(--border-color); border-radius:8px; text-decoration:none; color:var(--text-color); font-size:0.83rem; font-weight:500;">
+                                                <span>🔓</span> <strong>Unlock PDF</strong>
+                                            </a>
+                                            <a href="/tools/remove-pdf-pages" style="display:flex; align-items:center; gap:0.45rem; padding:0.55rem 0.75rem; background:var(--bg-card); border:1px solid var(--border-color); border-radius:8px; text-decoration:none; color:var(--text-color); font-size:0.83rem; font-weight:500;">
+                                                <span>🗑️</span> <strong>Remove Pages</strong>
+                                            </a>
+                                            <a href="/tools/sign-pdf" style="display:flex; align-items:center; gap:0.45rem; padding:0.55rem 0.75rem; background:var(--bg-card); border:1px solid var(--border-color); border-radius:8px; text-decoration:none; color:var(--text-color); font-size:0.83rem; font-weight:500;">
+                                                <span>✍️</span> <strong>Sign PDF</strong>
+                                            </a>
+                                        </div>
+                                    </div>
+</div>
                             </article>
                         </section>
 
@@ -7023,7 +7320,106 @@
                                         <span class="faq-question">Q: Is there a file size limit?</span>
                                         <span class="faq-answer">There are no artificial file limits. The only constraint is your computer's RAM capacity, allowing you to build large archives without premium subscriptions.</span>
                                     </div>
-                                </div>
+                                
+                                    <!-- UTILIFY VS ILOVEPDF & SMALLPDF COMPARISON CARD -->
+                                    <div class="competitor-comparison-box" style="margin: 2.25rem 0 1.5rem; padding: 1.5rem; background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 12px; box-shadow: 0 4px 14px rgba(0,0,0,0.04);">
+                                        <h3 style="display:flex; align-items:center; gap:0.5rem; font-size:1.15rem; margin-bottom:0.75rem; color:var(--text-color);">
+                                            🛡️ Why Choose Utilify Over iLovePDF &amp; Smallpdf?
+                                        </h3>
+                                        <p style="font-size:0.88rem; color:var(--text-muted); line-height:1.6; margin-bottom:1.25rem;">
+                                            When converting photos and images to PDF, traditional cloud services like <strong>iLovePDF</strong> and <strong>Smallpdf</strong> transmit your confidential files across the internet to remote cloud servers (AWS/Google Cloud). This introduces significant data exposure risks, corporate privacy violations, and rigid paywalls (Smallpdf limits free users to just 1–2 tasks per day before demanding $108/year).
+                                        </p>
+                                        <p style="font-size:0.88rem; color:var(--text-muted); line-height:1.6; margin-bottom:1.25rem;">
+                                            <strong>Utilify is built fundamentally differently:</strong> Our entire PDF engine executes <strong>100% client-side inside your browser's local memory (RAM)</strong> using WebAssembly and Web Crypto APIs. Your documents never touch our servers, are never logged, and never leave your machine.
+                                        </p>
+                                        <div style="overflow-x:auto;">
+                                            <table style="width:100%; border-collapse:collapse; font-size:0.85rem; text-align:left;">
+                                                <thead>
+                                                    <tr style="border-bottom: 2px solid var(--border-color); background: rgba(99,102,241,0.06);">
+                                                        <th style="padding:0.75rem 0.6rem;">Feature / Metric</th>
+                                                        <th style="padding:0.75rem 0.6rem; color:var(--indigo); font-weight:700;">Utilify (Offline-First)</th>
+                                                        <th style="padding:0.75rem 0.6rem; color:var(--text-muted);">iLovePDF</th>
+                                                        <th style="padding:0.75rem 0.6rem; color:var(--text-muted);">Smallpdf</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr style="border-bottom:1px solid var(--border-color);">
+                                                        <td style="padding:0.65rem 0.6rem; font-weight:600;">Server Uploads</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:#10b981; font-weight:700;">Zero (0% Uploads)</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:#ef4444;">Uploads to Cloud Servers</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:#ef4444;">Uploads to Cloud Servers</td>
+                                                    </tr>
+                                                    <tr style="border-bottom:1px solid var(--border-color);">
+                                                        <td style="padding:0.65rem 0.6rem; font-weight:600;">Data Privacy &amp; Security</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:#10b981; font-weight:700;">100% In-Memory RAM Safe</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:var(--text-muted);">Stored on Remote Disks</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:var(--text-muted);">Stored on Remote Disks</td>
+                                                    </tr>
+                                                    <tr style="border-bottom:1px solid var(--border-color);">
+                                                        <td style="padding:0.65rem 0.6rem; font-weight:600;">Daily Usage Limits</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:#10b981; font-weight:700;">Unlimited Free Tasks</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:var(--text-muted);">Strict File Size Caps</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:#ef4444;">1–2 Tasks/Day Paywall</td>
+                                                    </tr>
+                                                    <tr style="border-bottom:1px solid var(--border-color);">
+                                                        <td style="padding:0.65rem 0.6rem; font-weight:600;">Pricing / Subscription</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:#10b981; font-weight:700;">100% Free Forever</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:var(--text-muted);">$48 – $84 / Year</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:var(--text-muted);">$108 / Year</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="padding:0.65rem 0.6rem; font-weight:600;">Offline Accessibility</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:#10b981; font-weight:700;">Works 100% Offline</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:#ef4444;">Requires Active Internet</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:#ef4444;">Requires Active Internet</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+
+                                    <!-- RELATED PDF & DOCUMENT UTILITIES INTERNAL SILO -->
+                                    <div class="pdf-silo-nav" style="margin-top: 1.5rem; padding: 1.25rem; background: var(--bg-hover); border-radius: 12px; border: 1px solid var(--border-color);">
+                                        <h3 style="font-size: 1.05rem; margin-bottom: 0.5rem; color: var(--text-color); display:flex; align-items:center; gap:0.5rem;">
+                                            📂 Related PDF &amp; Document Utilities
+                                        </h3>
+                                        <p style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 0.85rem;">
+                                            Switch to other free, client-side PDF and document processing tools without uploading:
+                                        </p>
+                                        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 0.65rem;">
+                                            <a href="/tools/merge-pdf" style="display:flex; align-items:center; gap:0.45rem; padding:0.55rem 0.75rem; background:var(--bg-card); border:1px solid var(--border-color); border-radius:8px; text-decoration:none; color:var(--text-color); font-size:0.83rem; font-weight:500;">
+                                                <span>➕</span> <strong>Merge PDF</strong>
+                                            </a>
+                                            <a href="/tools/split-pdf" style="display:flex; align-items:center; gap:0.45rem; padding:0.55rem 0.75rem; background:var(--bg-card); border:1px solid var(--border-color); border-radius:8px; text-decoration:none; color:var(--text-color); font-size:0.83rem; font-weight:500;">
+                                                <span>✂️</span> <strong>Split PDF</strong>
+                                            </a>
+                                            <a href="/tools/compress-pdf" style="display:flex; align-items:center; gap:0.45rem; padding:0.55rem 0.75rem; background:var(--bg-card); border:1px solid var(--border-color); border-radius:8px; text-decoration:none; color:var(--text-color); font-size:0.83rem; font-weight:500;">
+                                                <span>🗜️</span> <strong>Compress PDF</strong>
+                                            </a>
+                                            <a href="/tools/image-to-pdf" style="display:flex; align-items:center; gap:0.45rem; padding:0.55rem 0.75rem; background:var(--bg-card); border:1px solid var(--border-color); border-radius:8px; text-decoration:none; color:var(--text-color); font-size:0.83rem; font-weight:500;">
+                                                <span>🖼️</span> <strong>Image to PDF</strong>
+                                            </a>
+                                            <a href="/tools/pdf-to-image" style="display:flex; align-items:center; gap:0.45rem; padding:0.55rem 0.75rem; background:var(--bg-card); border:1px solid var(--border-color); border-radius:8px; text-decoration:none; color:var(--text-color); font-size:0.83rem; font-weight:500;">
+                                                <span>📄</span> <strong>PDF to Image</strong>
+                                            </a>
+                                            <a href="/tools/rotate-pdf" style="display:flex; align-items:center; gap:0.45rem; padding:0.55rem 0.75rem; background:var(--bg-card); border:1px solid var(--border-color); border-radius:8px; text-decoration:none; color:var(--text-color); font-size:0.83rem; font-weight:500;">
+                                                <span>🔄</span> <strong>Rotate PDF</strong>
+                                            </a>
+                                            <a href="/tools/protect-pdf" style="display:flex; align-items:center; gap:0.45rem; padding:0.55rem 0.75rem; background:var(--bg-card); border:1px solid var(--border-color); border-radius:8px; text-decoration:none; color:var(--text-color); font-size:0.83rem; font-weight:500;">
+                                                <span>🔒</span> <strong>Protect PDF</strong>
+                                            </a>
+                                            <a href="/tools/unlock-pdf" style="display:flex; align-items:center; gap:0.45rem; padding:0.55rem 0.75rem; background:var(--bg-card); border:1px solid var(--border-color); border-radius:8px; text-decoration:none; color:var(--text-color); font-size:0.83rem; font-weight:500;">
+                                                <span>🔓</span> <strong>Unlock PDF</strong>
+                                            </a>
+                                            <a href="/tools/remove-pdf-pages" style="display:flex; align-items:center; gap:0.45rem; padding:0.55rem 0.75rem; background:var(--bg-card); border:1px solid var(--border-color); border-radius:8px; text-decoration:none; color:var(--text-color); font-size:0.83rem; font-weight:500;">
+                                                <span>🗑️</span> <strong>Remove Pages</strong>
+                                            </a>
+                                            <a href="/tools/sign-pdf" style="display:flex; align-items:center; gap:0.45rem; padding:0.55rem 0.75rem; background:var(--bg-card); border:1px solid var(--border-color); border-radius:8px; text-decoration:none; color:var(--text-color); font-size:0.83rem; font-weight:500;">
+                                                <span>✍️</span> <strong>Sign PDF</strong>
+                                            </a>
+                                        </div>
+                                    </div>
+</div>
                             </article>
                         </section>
 
@@ -7107,7 +7503,106 @@
                                         <span class="faq-question">Q: Is my data safe with PDF to Image?</span>
                                         <span class="faq-answer">Completely. Rendering happens in your local browser sandbox without using external servers, ensuring that your corporate files remain private.</span>
                                     </div>
-                                </div>
+                                
+                                    <!-- UTILIFY VS ILOVEPDF & SMALLPDF COMPARISON CARD -->
+                                    <div class="competitor-comparison-box" style="margin: 2.25rem 0 1.5rem; padding: 1.5rem; background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 12px; box-shadow: 0 4px 14px rgba(0,0,0,0.04);">
+                                        <h3 style="display:flex; align-items:center; gap:0.5rem; font-size:1.15rem; margin-bottom:0.75rem; color:var(--text-color);">
+                                            🛡️ Why Choose Utilify Over iLovePDF &amp; Smallpdf?
+                                        </h3>
+                                        <p style="font-size:0.88rem; color:var(--text-muted); line-height:1.6; margin-bottom:1.25rem;">
+                                            When extracting images and pages from PDF, traditional cloud services like <strong>iLovePDF</strong> and <strong>Smallpdf</strong> transmit your confidential files across the internet to remote cloud servers (AWS/Google Cloud). This introduces significant data exposure risks, corporate privacy violations, and rigid paywalls (Smallpdf limits free users to just 1–2 tasks per day before demanding $108/year).
+                                        </p>
+                                        <p style="font-size:0.88rem; color:var(--text-muted); line-height:1.6; margin-bottom:1.25rem;">
+                                            <strong>Utilify is built fundamentally differently:</strong> Our entire PDF engine executes <strong>100% client-side inside your browser's local memory (RAM)</strong> using WebAssembly and Web Crypto APIs. Your documents never touch our servers, are never logged, and never leave your machine.
+                                        </p>
+                                        <div style="overflow-x:auto;">
+                                            <table style="width:100%; border-collapse:collapse; font-size:0.85rem; text-align:left;">
+                                                <thead>
+                                                    <tr style="border-bottom: 2px solid var(--border-color); background: rgba(99,102,241,0.06);">
+                                                        <th style="padding:0.75rem 0.6rem;">Feature / Metric</th>
+                                                        <th style="padding:0.75rem 0.6rem; color:var(--indigo); font-weight:700;">Utilify (Offline-First)</th>
+                                                        <th style="padding:0.75rem 0.6rem; color:var(--text-muted);">iLovePDF</th>
+                                                        <th style="padding:0.75rem 0.6rem; color:var(--text-muted);">Smallpdf</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr style="border-bottom:1px solid var(--border-color);">
+                                                        <td style="padding:0.65rem 0.6rem; font-weight:600;">Server Uploads</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:#10b981; font-weight:700;">Zero (0% Uploads)</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:#ef4444;">Uploads to Cloud Servers</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:#ef4444;">Uploads to Cloud Servers</td>
+                                                    </tr>
+                                                    <tr style="border-bottom:1px solid var(--border-color);">
+                                                        <td style="padding:0.65rem 0.6rem; font-weight:600;">Data Privacy &amp; Security</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:#10b981; font-weight:700;">100% In-Memory RAM Safe</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:var(--text-muted);">Stored on Remote Disks</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:var(--text-muted);">Stored on Remote Disks</td>
+                                                    </tr>
+                                                    <tr style="border-bottom:1px solid var(--border-color);">
+                                                        <td style="padding:0.65rem 0.6rem; font-weight:600;">Daily Usage Limits</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:#10b981; font-weight:700;">Unlimited Free Tasks</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:var(--text-muted);">Strict File Size Caps</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:#ef4444;">1–2 Tasks/Day Paywall</td>
+                                                    </tr>
+                                                    <tr style="border-bottom:1px solid var(--border-color);">
+                                                        <td style="padding:0.65rem 0.6rem; font-weight:600;">Pricing / Subscription</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:#10b981; font-weight:700;">100% Free Forever</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:var(--text-muted);">$48 – $84 / Year</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:var(--text-muted);">$108 / Year</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="padding:0.65rem 0.6rem; font-weight:600;">Offline Accessibility</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:#10b981; font-weight:700;">Works 100% Offline</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:#ef4444;">Requires Active Internet</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:#ef4444;">Requires Active Internet</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+
+                                    <!-- RELATED PDF & DOCUMENT UTILITIES INTERNAL SILO -->
+                                    <div class="pdf-silo-nav" style="margin-top: 1.5rem; padding: 1.25rem; background: var(--bg-hover); border-radius: 12px; border: 1px solid var(--border-color);">
+                                        <h3 style="font-size: 1.05rem; margin-bottom: 0.5rem; color: var(--text-color); display:flex; align-items:center; gap:0.5rem;">
+                                            📂 Related PDF &amp; Document Utilities
+                                        </h3>
+                                        <p style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 0.85rem;">
+                                            Switch to other free, client-side PDF and document processing tools without uploading:
+                                        </p>
+                                        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 0.65rem;">
+                                            <a href="/tools/merge-pdf" style="display:flex; align-items:center; gap:0.45rem; padding:0.55rem 0.75rem; background:var(--bg-card); border:1px solid var(--border-color); border-radius:8px; text-decoration:none; color:var(--text-color); font-size:0.83rem; font-weight:500;">
+                                                <span>➕</span> <strong>Merge PDF</strong>
+                                            </a>
+                                            <a href="/tools/split-pdf" style="display:flex; align-items:center; gap:0.45rem; padding:0.55rem 0.75rem; background:var(--bg-card); border:1px solid var(--border-color); border-radius:8px; text-decoration:none; color:var(--text-color); font-size:0.83rem; font-weight:500;">
+                                                <span>✂️</span> <strong>Split PDF</strong>
+                                            </a>
+                                            <a href="/tools/compress-pdf" style="display:flex; align-items:center; gap:0.45rem; padding:0.55rem 0.75rem; background:var(--bg-card); border:1px solid var(--border-color); border-radius:8px; text-decoration:none; color:var(--text-color); font-size:0.83rem; font-weight:500;">
+                                                <span>🗜️</span> <strong>Compress PDF</strong>
+                                            </a>
+                                            <a href="/tools/image-to-pdf" style="display:flex; align-items:center; gap:0.45rem; padding:0.55rem 0.75rem; background:var(--bg-card); border:1px solid var(--border-color); border-radius:8px; text-decoration:none; color:var(--text-color); font-size:0.83rem; font-weight:500;">
+                                                <span>🖼️</span> <strong>Image to PDF</strong>
+                                            </a>
+                                            <a href="/tools/pdf-to-image" style="display:flex; align-items:center; gap:0.45rem; padding:0.55rem 0.75rem; background:var(--bg-card); border:1px solid var(--border-color); border-radius:8px; text-decoration:none; color:var(--text-color); font-size:0.83rem; font-weight:500;">
+                                                <span>📄</span> <strong>PDF to Image</strong>
+                                            </a>
+                                            <a href="/tools/rotate-pdf" style="display:flex; align-items:center; gap:0.45rem; padding:0.55rem 0.75rem; background:var(--bg-card); border:1px solid var(--border-color); border-radius:8px; text-decoration:none; color:var(--text-color); font-size:0.83rem; font-weight:500;">
+                                                <span>🔄</span> <strong>Rotate PDF</strong>
+                                            </a>
+                                            <a href="/tools/protect-pdf" style="display:flex; align-items:center; gap:0.45rem; padding:0.55rem 0.75rem; background:var(--bg-card); border:1px solid var(--border-color); border-radius:8px; text-decoration:none; color:var(--text-color); font-size:0.83rem; font-weight:500;">
+                                                <span>🔒</span> <strong>Protect PDF</strong>
+                                            </a>
+                                            <a href="/tools/unlock-pdf" style="display:flex; align-items:center; gap:0.45rem; padding:0.55rem 0.75rem; background:var(--bg-card); border:1px solid var(--border-color); border-radius:8px; text-decoration:none; color:var(--text-color); font-size:0.83rem; font-weight:500;">
+                                                <span>🔓</span> <strong>Unlock PDF</strong>
+                                            </a>
+                                            <a href="/tools/remove-pdf-pages" style="display:flex; align-items:center; gap:0.45rem; padding:0.55rem 0.75rem; background:var(--bg-card); border:1px solid var(--border-color); border-radius:8px; text-decoration:none; color:var(--text-color); font-size:0.83rem; font-weight:500;">
+                                                <span>🗑️</span> <strong>Remove Pages</strong>
+                                            </a>
+                                            <a href="/tools/sign-pdf" style="display:flex; align-items:center; gap:0.45rem; padding:0.55rem 0.75rem; background:var(--bg-card); border:1px solid var(--border-color); border-radius:8px; text-decoration:none; color:var(--text-color); font-size:0.83rem; font-weight:500;">
+                                                <span>✍️</span> <strong>Sign PDF</strong>
+                                            </a>
+                                        </div>
+                                    </div>
+</div>
                             </article>
                         </section>
 
@@ -7195,7 +7690,106 @@
                                         <span class="faq-question">Q: Can I compress encrypted files?</span>
                                         <span class="faq-answer">You must first decrypt password-protected PDF files before compressing them, as the compression engine needs access to the document object pool.</span>
                                     </div>
-                                </div>
+                                
+                                    <!-- UTILIFY VS ILOVEPDF & SMALLPDF COMPARISON CARD -->
+                                    <div class="competitor-comparison-box" style="margin: 2.25rem 0 1.5rem; padding: 1.5rem; background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 12px; box-shadow: 0 4px 14px rgba(0,0,0,0.04);">
+                                        <h3 style="display:flex; align-items:center; gap:0.5rem; font-size:1.15rem; margin-bottom:0.75rem; color:var(--text-color);">
+                                            🛡️ Why Choose Utilify Over iLovePDF &amp; Smallpdf?
+                                        </h3>
+                                        <p style="font-size:0.88rem; color:var(--text-muted); line-height:1.6; margin-bottom:1.25rem;">
+                                            When compressing and reducing PDF file size, traditional cloud services like <strong>iLovePDF</strong> and <strong>Smallpdf</strong> transmit your confidential files across the internet to remote cloud servers (AWS/Google Cloud). This introduces significant data exposure risks, corporate privacy violations, and rigid paywalls (Smallpdf limits free users to just 1–2 tasks per day before demanding $108/year).
+                                        </p>
+                                        <p style="font-size:0.88rem; color:var(--text-muted); line-height:1.6; margin-bottom:1.25rem;">
+                                            <strong>Utilify is built fundamentally differently:</strong> Our entire PDF engine executes <strong>100% client-side inside your browser's local memory (RAM)</strong> using WebAssembly and Web Crypto APIs. Your documents never touch our servers, are never logged, and never leave your machine.
+                                        </p>
+                                        <div style="overflow-x:auto;">
+                                            <table style="width:100%; border-collapse:collapse; font-size:0.85rem; text-align:left;">
+                                                <thead>
+                                                    <tr style="border-bottom: 2px solid var(--border-color); background: rgba(99,102,241,0.06);">
+                                                        <th style="padding:0.75rem 0.6rem;">Feature / Metric</th>
+                                                        <th style="padding:0.75rem 0.6rem; color:var(--indigo); font-weight:700;">Utilify (Offline-First)</th>
+                                                        <th style="padding:0.75rem 0.6rem; color:var(--text-muted);">iLovePDF</th>
+                                                        <th style="padding:0.75rem 0.6rem; color:var(--text-muted);">Smallpdf</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr style="border-bottom:1px solid var(--border-color);">
+                                                        <td style="padding:0.65rem 0.6rem; font-weight:600;">Server Uploads</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:#10b981; font-weight:700;">Zero (0% Uploads)</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:#ef4444;">Uploads to Cloud Servers</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:#ef4444;">Uploads to Cloud Servers</td>
+                                                    </tr>
+                                                    <tr style="border-bottom:1px solid var(--border-color);">
+                                                        <td style="padding:0.65rem 0.6rem; font-weight:600;">Data Privacy &amp; Security</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:#10b981; font-weight:700;">100% In-Memory RAM Safe</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:var(--text-muted);">Stored on Remote Disks</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:var(--text-muted);">Stored on Remote Disks</td>
+                                                    </tr>
+                                                    <tr style="border-bottom:1px solid var(--border-color);">
+                                                        <td style="padding:0.65rem 0.6rem; font-weight:600;">Daily Usage Limits</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:#10b981; font-weight:700;">Unlimited Free Tasks</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:var(--text-muted);">Strict File Size Caps</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:#ef4444;">1–2 Tasks/Day Paywall</td>
+                                                    </tr>
+                                                    <tr style="border-bottom:1px solid var(--border-color);">
+                                                        <td style="padding:0.65rem 0.6rem; font-weight:600;">Pricing / Subscription</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:#10b981; font-weight:700;">100% Free Forever</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:var(--text-muted);">$48 – $84 / Year</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:var(--text-muted);">$108 / Year</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="padding:0.65rem 0.6rem; font-weight:600;">Offline Accessibility</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:#10b981; font-weight:700;">Works 100% Offline</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:#ef4444;">Requires Active Internet</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:#ef4444;">Requires Active Internet</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+
+                                    <!-- RELATED PDF & DOCUMENT UTILITIES INTERNAL SILO -->
+                                    <div class="pdf-silo-nav" style="margin-top: 1.5rem; padding: 1.25rem; background: var(--bg-hover); border-radius: 12px; border: 1px solid var(--border-color);">
+                                        <h3 style="font-size: 1.05rem; margin-bottom: 0.5rem; color: var(--text-color); display:flex; align-items:center; gap:0.5rem;">
+                                            📂 Related PDF &amp; Document Utilities
+                                        </h3>
+                                        <p style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 0.85rem;">
+                                            Switch to other free, client-side PDF and document processing tools without uploading:
+                                        </p>
+                                        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 0.65rem;">
+                                            <a href="/tools/merge-pdf" style="display:flex; align-items:center; gap:0.45rem; padding:0.55rem 0.75rem; background:var(--bg-card); border:1px solid var(--border-color); border-radius:8px; text-decoration:none; color:var(--text-color); font-size:0.83rem; font-weight:500;">
+                                                <span>➕</span> <strong>Merge PDF</strong>
+                                            </a>
+                                            <a href="/tools/split-pdf" style="display:flex; align-items:center; gap:0.45rem; padding:0.55rem 0.75rem; background:var(--bg-card); border:1px solid var(--border-color); border-radius:8px; text-decoration:none; color:var(--text-color); font-size:0.83rem; font-weight:500;">
+                                                <span>✂️</span> <strong>Split PDF</strong>
+                                            </a>
+                                            <a href="/tools/compress-pdf" style="display:flex; align-items:center; gap:0.45rem; padding:0.55rem 0.75rem; background:var(--bg-card); border:1px solid var(--border-color); border-radius:8px; text-decoration:none; color:var(--text-color); font-size:0.83rem; font-weight:500;">
+                                                <span>🗜️</span> <strong>Compress PDF</strong>
+                                            </a>
+                                            <a href="/tools/image-to-pdf" style="display:flex; align-items:center; gap:0.45rem; padding:0.55rem 0.75rem; background:var(--bg-card); border:1px solid var(--border-color); border-radius:8px; text-decoration:none; color:var(--text-color); font-size:0.83rem; font-weight:500;">
+                                                <span>🖼️</span> <strong>Image to PDF</strong>
+                                            </a>
+                                            <a href="/tools/pdf-to-image" style="display:flex; align-items:center; gap:0.45rem; padding:0.55rem 0.75rem; background:var(--bg-card); border:1px solid var(--border-color); border-radius:8px; text-decoration:none; color:var(--text-color); font-size:0.83rem; font-weight:500;">
+                                                <span>📄</span> <strong>PDF to Image</strong>
+                                            </a>
+                                            <a href="/tools/rotate-pdf" style="display:flex; align-items:center; gap:0.45rem; padding:0.55rem 0.75rem; background:var(--bg-card); border:1px solid var(--border-color); border-radius:8px; text-decoration:none; color:var(--text-color); font-size:0.83rem; font-weight:500;">
+                                                <span>🔄</span> <strong>Rotate PDF</strong>
+                                            </a>
+                                            <a href="/tools/protect-pdf" style="display:flex; align-items:center; gap:0.45rem; padding:0.55rem 0.75rem; background:var(--bg-card); border:1px solid var(--border-color); border-radius:8px; text-decoration:none; color:var(--text-color); font-size:0.83rem; font-weight:500;">
+                                                <span>🔒</span> <strong>Protect PDF</strong>
+                                            </a>
+                                            <a href="/tools/unlock-pdf" style="display:flex; align-items:center; gap:0.45rem; padding:0.55rem 0.75rem; background:var(--bg-card); border:1px solid var(--border-color); border-radius:8px; text-decoration:none; color:var(--text-color); font-size:0.83rem; font-weight:500;">
+                                                <span>🔓</span> <strong>Unlock PDF</strong>
+                                            </a>
+                                            <a href="/tools/remove-pdf-pages" style="display:flex; align-items:center; gap:0.45rem; padding:0.55rem 0.75rem; background:var(--bg-card); border:1px solid var(--border-color); border-radius:8px; text-decoration:none; color:var(--text-color); font-size:0.83rem; font-weight:500;">
+                                                <span>🗑️</span> <strong>Remove Pages</strong>
+                                            </a>
+                                            <a href="/tools/sign-pdf" style="display:flex; align-items:center; gap:0.45rem; padding:0.55rem 0.75rem; background:var(--bg-card); border:1px solid var(--border-color); border-radius:8px; text-decoration:none; color:var(--text-color); font-size:0.83rem; font-weight:500;">
+                                                <span>✍️</span> <strong>Sign PDF</strong>
+                                            </a>
+                                        </div>
+                                    </div>
+</div>
                             </article>
                         </section>
 
@@ -7272,7 +7866,106 @@
                                         <span class="faq-question">Q: Does local encryption work on mobile devices?</span>
                                         <span class="faq-answer">Yes, Utilify is designed for mobile-first responsiveness, allowing you to secure files on iPhones, iPads, and Android devices.</span>
                                     </div>
-                                </div>
+                                
+                                    <!-- UTILIFY VS ILOVEPDF & SMALLPDF COMPARISON CARD -->
+                                    <div class="competitor-comparison-box" style="margin: 2.25rem 0 1.5rem; padding: 1.5rem; background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 12px; box-shadow: 0 4px 14px rgba(0,0,0,0.04);">
+                                        <h3 style="display:flex; align-items:center; gap:0.5rem; font-size:1.15rem; margin-bottom:0.75rem; color:var(--text-color);">
+                                            🛡️ Why Choose Utilify Over iLovePDF &amp; Smallpdf?
+                                        </h3>
+                                        <p style="font-size:0.88rem; color:var(--text-muted); line-height:1.6; margin-bottom:1.25rem;">
+                                            When encrypting and password-protecting PDF files, traditional cloud services like <strong>iLovePDF</strong> and <strong>Smallpdf</strong> transmit your confidential files across the internet to remote cloud servers (AWS/Google Cloud). This introduces significant data exposure risks, corporate privacy violations, and rigid paywalls (Smallpdf limits free users to just 1–2 tasks per day before demanding $108/year).
+                                        </p>
+                                        <p style="font-size:0.88rem; color:var(--text-muted); line-height:1.6; margin-bottom:1.25rem;">
+                                            <strong>Utilify is built fundamentally differently:</strong> Our entire PDF engine executes <strong>100% client-side inside your browser's local memory (RAM)</strong> using WebAssembly and Web Crypto APIs. Your documents never touch our servers, are never logged, and never leave your machine.
+                                        </p>
+                                        <div style="overflow-x:auto;">
+                                            <table style="width:100%; border-collapse:collapse; font-size:0.85rem; text-align:left;">
+                                                <thead>
+                                                    <tr style="border-bottom: 2px solid var(--border-color); background: rgba(99,102,241,0.06);">
+                                                        <th style="padding:0.75rem 0.6rem;">Feature / Metric</th>
+                                                        <th style="padding:0.75rem 0.6rem; color:var(--indigo); font-weight:700;">Utilify (Offline-First)</th>
+                                                        <th style="padding:0.75rem 0.6rem; color:var(--text-muted);">iLovePDF</th>
+                                                        <th style="padding:0.75rem 0.6rem; color:var(--text-muted);">Smallpdf</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr style="border-bottom:1px solid var(--border-color);">
+                                                        <td style="padding:0.65rem 0.6rem; font-weight:600;">Server Uploads</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:#10b981; font-weight:700;">Zero (0% Uploads)</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:#ef4444;">Uploads to Cloud Servers</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:#ef4444;">Uploads to Cloud Servers</td>
+                                                    </tr>
+                                                    <tr style="border-bottom:1px solid var(--border-color);">
+                                                        <td style="padding:0.65rem 0.6rem; font-weight:600;">Data Privacy &amp; Security</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:#10b981; font-weight:700;">100% In-Memory RAM Safe</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:var(--text-muted);">Stored on Remote Disks</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:var(--text-muted);">Stored on Remote Disks</td>
+                                                    </tr>
+                                                    <tr style="border-bottom:1px solid var(--border-color);">
+                                                        <td style="padding:0.65rem 0.6rem; font-weight:600;">Daily Usage Limits</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:#10b981; font-weight:700;">Unlimited Free Tasks</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:var(--text-muted);">Strict File Size Caps</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:#ef4444;">1–2 Tasks/Day Paywall</td>
+                                                    </tr>
+                                                    <tr style="border-bottom:1px solid var(--border-color);">
+                                                        <td style="padding:0.65rem 0.6rem; font-weight:600;">Pricing / Subscription</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:#10b981; font-weight:700;">100% Free Forever</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:var(--text-muted);">$48 – $84 / Year</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:var(--text-muted);">$108 / Year</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="padding:0.65rem 0.6rem; font-weight:600;">Offline Accessibility</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:#10b981; font-weight:700;">Works 100% Offline</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:#ef4444;">Requires Active Internet</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:#ef4444;">Requires Active Internet</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+
+                                    <!-- RELATED PDF & DOCUMENT UTILITIES INTERNAL SILO -->
+                                    <div class="pdf-silo-nav" style="margin-top: 1.5rem; padding: 1.25rem; background: var(--bg-hover); border-radius: 12px; border: 1px solid var(--border-color);">
+                                        <h3 style="font-size: 1.05rem; margin-bottom: 0.5rem; color: var(--text-color); display:flex; align-items:center; gap:0.5rem;">
+                                            📂 Related PDF &amp; Document Utilities
+                                        </h3>
+                                        <p style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 0.85rem;">
+                                            Switch to other free, client-side PDF and document processing tools without uploading:
+                                        </p>
+                                        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 0.65rem;">
+                                            <a href="/tools/merge-pdf" style="display:flex; align-items:center; gap:0.45rem; padding:0.55rem 0.75rem; background:var(--bg-card); border:1px solid var(--border-color); border-radius:8px; text-decoration:none; color:var(--text-color); font-size:0.83rem; font-weight:500;">
+                                                <span>➕</span> <strong>Merge PDF</strong>
+                                            </a>
+                                            <a href="/tools/split-pdf" style="display:flex; align-items:center; gap:0.45rem; padding:0.55rem 0.75rem; background:var(--bg-card); border:1px solid var(--border-color); border-radius:8px; text-decoration:none; color:var(--text-color); font-size:0.83rem; font-weight:500;">
+                                                <span>✂️</span> <strong>Split PDF</strong>
+                                            </a>
+                                            <a href="/tools/compress-pdf" style="display:flex; align-items:center; gap:0.45rem; padding:0.55rem 0.75rem; background:var(--bg-card); border:1px solid var(--border-color); border-radius:8px; text-decoration:none; color:var(--text-color); font-size:0.83rem; font-weight:500;">
+                                                <span>🗜️</span> <strong>Compress PDF</strong>
+                                            </a>
+                                            <a href="/tools/image-to-pdf" style="display:flex; align-items:center; gap:0.45rem; padding:0.55rem 0.75rem; background:var(--bg-card); border:1px solid var(--border-color); border-radius:8px; text-decoration:none; color:var(--text-color); font-size:0.83rem; font-weight:500;">
+                                                <span>🖼️</span> <strong>Image to PDF</strong>
+                                            </a>
+                                            <a href="/tools/pdf-to-image" style="display:flex; align-items:center; gap:0.45rem; padding:0.55rem 0.75rem; background:var(--bg-card); border:1px solid var(--border-color); border-radius:8px; text-decoration:none; color:var(--text-color); font-size:0.83rem; font-weight:500;">
+                                                <span>📄</span> <strong>PDF to Image</strong>
+                                            </a>
+                                            <a href="/tools/rotate-pdf" style="display:flex; align-items:center; gap:0.45rem; padding:0.55rem 0.75rem; background:var(--bg-card); border:1px solid var(--border-color); border-radius:8px; text-decoration:none; color:var(--text-color); font-size:0.83rem; font-weight:500;">
+                                                <span>🔄</span> <strong>Rotate PDF</strong>
+                                            </a>
+                                            <a href="/tools/protect-pdf" style="display:flex; align-items:center; gap:0.45rem; padding:0.55rem 0.75rem; background:var(--bg-card); border:1px solid var(--border-color); border-radius:8px; text-decoration:none; color:var(--text-color); font-size:0.83rem; font-weight:500;">
+                                                <span>🔒</span> <strong>Protect PDF</strong>
+                                            </a>
+                                            <a href="/tools/unlock-pdf" style="display:flex; align-items:center; gap:0.45rem; padding:0.55rem 0.75rem; background:var(--bg-card); border:1px solid var(--border-color); border-radius:8px; text-decoration:none; color:var(--text-color); font-size:0.83rem; font-weight:500;">
+                                                <span>🔓</span> <strong>Unlock PDF</strong>
+                                            </a>
+                                            <a href="/tools/remove-pdf-pages" style="display:flex; align-items:center; gap:0.45rem; padding:0.55rem 0.75rem; background:var(--bg-card); border:1px solid var(--border-color); border-radius:8px; text-decoration:none; color:var(--text-color); font-size:0.83rem; font-weight:500;">
+                                                <span>🗑️</span> <strong>Remove Pages</strong>
+                                            </a>
+                                            <a href="/tools/sign-pdf" style="display:flex; align-items:center; gap:0.45rem; padding:0.55rem 0.75rem; background:var(--bg-card); border:1px solid var(--border-color); border-radius:8px; text-decoration:none; color:var(--text-color); font-size:0.83rem; font-weight:500;">
+                                                <span>✍️</span> <strong>Sign PDF</strong>
+                                            </a>
+                                        </div>
+                                    </div>
+</div>
                             </article>
                         </section>
 
@@ -7345,7 +8038,106 @@
                                         <span class="faq-question">Q: Will this remove signature locks?</span>
                                         <span class="faq-answer">No, official cryptographic signatures remain locked to protect document integrity. Only standard password restrictions are removed.</span>
                                     </div>
-                                </div>
+                                
+                                    <!-- UTILIFY VS ILOVEPDF & SMALLPDF COMPARISON CARD -->
+                                    <div class="competitor-comparison-box" style="margin: 2.25rem 0 1.5rem; padding: 1.5rem; background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 12px; box-shadow: 0 4px 14px rgba(0,0,0,0.04);">
+                                        <h3 style="display:flex; align-items:center; gap:0.5rem; font-size:1.15rem; margin-bottom:0.75rem; color:var(--text-color);">
+                                            🛡️ Why Choose Utilify Over iLovePDF &amp; Smallpdf?
+                                        </h3>
+                                        <p style="font-size:0.88rem; color:var(--text-muted); line-height:1.6; margin-bottom:1.25rem;">
+                                            When unlocking and removing passwords from PDF files, traditional cloud services like <strong>iLovePDF</strong> and <strong>Smallpdf</strong> transmit your confidential files across the internet to remote cloud servers (AWS/Google Cloud). This introduces significant data exposure risks, corporate privacy violations, and rigid paywalls (Smallpdf limits free users to just 1–2 tasks per day before demanding $108/year).
+                                        </p>
+                                        <p style="font-size:0.88rem; color:var(--text-muted); line-height:1.6; margin-bottom:1.25rem;">
+                                            <strong>Utilify is built fundamentally differently:</strong> Our entire PDF engine executes <strong>100% client-side inside your browser's local memory (RAM)</strong> using WebAssembly and Web Crypto APIs. Your documents never touch our servers, are never logged, and never leave your machine.
+                                        </p>
+                                        <div style="overflow-x:auto;">
+                                            <table style="width:100%; border-collapse:collapse; font-size:0.85rem; text-align:left;">
+                                                <thead>
+                                                    <tr style="border-bottom: 2px solid var(--border-color); background: rgba(99,102,241,0.06);">
+                                                        <th style="padding:0.75rem 0.6rem;">Feature / Metric</th>
+                                                        <th style="padding:0.75rem 0.6rem; color:var(--indigo); font-weight:700;">Utilify (Offline-First)</th>
+                                                        <th style="padding:0.75rem 0.6rem; color:var(--text-muted);">iLovePDF</th>
+                                                        <th style="padding:0.75rem 0.6rem; color:var(--text-muted);">Smallpdf</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr style="border-bottom:1px solid var(--border-color);">
+                                                        <td style="padding:0.65rem 0.6rem; font-weight:600;">Server Uploads</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:#10b981; font-weight:700;">Zero (0% Uploads)</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:#ef4444;">Uploads to Cloud Servers</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:#ef4444;">Uploads to Cloud Servers</td>
+                                                    </tr>
+                                                    <tr style="border-bottom:1px solid var(--border-color);">
+                                                        <td style="padding:0.65rem 0.6rem; font-weight:600;">Data Privacy &amp; Security</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:#10b981; font-weight:700;">100% In-Memory RAM Safe</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:var(--text-muted);">Stored on Remote Disks</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:var(--text-muted);">Stored on Remote Disks</td>
+                                                    </tr>
+                                                    <tr style="border-bottom:1px solid var(--border-color);">
+                                                        <td style="padding:0.65rem 0.6rem; font-weight:600;">Daily Usage Limits</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:#10b981; font-weight:700;">Unlimited Free Tasks</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:var(--text-muted);">Strict File Size Caps</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:#ef4444;">1–2 Tasks/Day Paywall</td>
+                                                    </tr>
+                                                    <tr style="border-bottom:1px solid var(--border-color);">
+                                                        <td style="padding:0.65rem 0.6rem; font-weight:600;">Pricing / Subscription</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:#10b981; font-weight:700;">100% Free Forever</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:var(--text-muted);">$48 – $84 / Year</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:var(--text-muted);">$108 / Year</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="padding:0.65rem 0.6rem; font-weight:600;">Offline Accessibility</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:#10b981; font-weight:700;">Works 100% Offline</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:#ef4444;">Requires Active Internet</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:#ef4444;">Requires Active Internet</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+
+                                    <!-- RELATED PDF & DOCUMENT UTILITIES INTERNAL SILO -->
+                                    <div class="pdf-silo-nav" style="margin-top: 1.5rem; padding: 1.25rem; background: var(--bg-hover); border-radius: 12px; border: 1px solid var(--border-color);">
+                                        <h3 style="font-size: 1.05rem; margin-bottom: 0.5rem; color: var(--text-color); display:flex; align-items:center; gap:0.5rem;">
+                                            📂 Related PDF &amp; Document Utilities
+                                        </h3>
+                                        <p style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 0.85rem;">
+                                            Switch to other free, client-side PDF and document processing tools without uploading:
+                                        </p>
+                                        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 0.65rem;">
+                                            <a href="/tools/merge-pdf" style="display:flex; align-items:center; gap:0.45rem; padding:0.55rem 0.75rem; background:var(--bg-card); border:1px solid var(--border-color); border-radius:8px; text-decoration:none; color:var(--text-color); font-size:0.83rem; font-weight:500;">
+                                                <span>➕</span> <strong>Merge PDF</strong>
+                                            </a>
+                                            <a href="/tools/split-pdf" style="display:flex; align-items:center; gap:0.45rem; padding:0.55rem 0.75rem; background:var(--bg-card); border:1px solid var(--border-color); border-radius:8px; text-decoration:none; color:var(--text-color); font-size:0.83rem; font-weight:500;">
+                                                <span>✂️</span> <strong>Split PDF</strong>
+                                            </a>
+                                            <a href="/tools/compress-pdf" style="display:flex; align-items:center; gap:0.45rem; padding:0.55rem 0.75rem; background:var(--bg-card); border:1px solid var(--border-color); border-radius:8px; text-decoration:none; color:var(--text-color); font-size:0.83rem; font-weight:500;">
+                                                <span>🗜️</span> <strong>Compress PDF</strong>
+                                            </a>
+                                            <a href="/tools/image-to-pdf" style="display:flex; align-items:center; gap:0.45rem; padding:0.55rem 0.75rem; background:var(--bg-card); border:1px solid var(--border-color); border-radius:8px; text-decoration:none; color:var(--text-color); font-size:0.83rem; font-weight:500;">
+                                                <span>🖼️</span> <strong>Image to PDF</strong>
+                                            </a>
+                                            <a href="/tools/pdf-to-image" style="display:flex; align-items:center; gap:0.45rem; padding:0.55rem 0.75rem; background:var(--bg-card); border:1px solid var(--border-color); border-radius:8px; text-decoration:none; color:var(--text-color); font-size:0.83rem; font-weight:500;">
+                                                <span>📄</span> <strong>PDF to Image</strong>
+                                            </a>
+                                            <a href="/tools/rotate-pdf" style="display:flex; align-items:center; gap:0.45rem; padding:0.55rem 0.75rem; background:var(--bg-card); border:1px solid var(--border-color); border-radius:8px; text-decoration:none; color:var(--text-color); font-size:0.83rem; font-weight:500;">
+                                                <span>🔄</span> <strong>Rotate PDF</strong>
+                                            </a>
+                                            <a href="/tools/protect-pdf" style="display:flex; align-items:center; gap:0.45rem; padding:0.55rem 0.75rem; background:var(--bg-card); border:1px solid var(--border-color); border-radius:8px; text-decoration:none; color:var(--text-color); font-size:0.83rem; font-weight:500;">
+                                                <span>🔒</span> <strong>Protect PDF</strong>
+                                            </a>
+                                            <a href="/tools/unlock-pdf" style="display:flex; align-items:center; gap:0.45rem; padding:0.55rem 0.75rem; background:var(--bg-card); border:1px solid var(--border-color); border-radius:8px; text-decoration:none; color:var(--text-color); font-size:0.83rem; font-weight:500;">
+                                                <span>🔓</span> <strong>Unlock PDF</strong>
+                                            </a>
+                                            <a href="/tools/remove-pdf-pages" style="display:flex; align-items:center; gap:0.45rem; padding:0.55rem 0.75rem; background:var(--bg-card); border:1px solid var(--border-color); border-radius:8px; text-decoration:none; color:var(--text-color); font-size:0.83rem; font-weight:500;">
+                                                <span>🗑️</span> <strong>Remove Pages</strong>
+                                            </a>
+                                            <a href="/tools/sign-pdf" style="display:flex; align-items:center; gap:0.45rem; padding:0.55rem 0.75rem; background:var(--bg-card); border:1px solid var(--border-color); border-radius:8px; text-decoration:none; color:var(--text-color); font-size:0.83rem; font-weight:500;">
+                                                <span>✍️</span> <strong>Sign PDF</strong>
+                                            </a>
+                                        </div>
+                                    </div>
+</div>
                             </article>
                         </section>
 
@@ -7426,7 +8218,106 @@
                                         <span class="faq-question">Q: Does removing pages affect the file quality?</span>
                                         <span class="faq-answer">No, the vector data, text structures, and images are copied exactly, so quality remains identical to the original.</span>
                                     </div>
-                                </div>
+                                
+                                    <!-- UTILIFY VS ILOVEPDF & SMALLPDF COMPARISON CARD -->
+                                    <div class="competitor-comparison-box" style="margin: 2.25rem 0 1.5rem; padding: 1.5rem; background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 12px; box-shadow: 0 4px 14px rgba(0,0,0,0.04);">
+                                        <h3 style="display:flex; align-items:center; gap:0.5rem; font-size:1.15rem; margin-bottom:0.75rem; color:var(--text-color);">
+                                            🛡️ Why Choose Utilify Over iLovePDF &amp; Smallpdf?
+                                        </h3>
+                                        <p style="font-size:0.88rem; color:var(--text-muted); line-height:1.6; margin-bottom:1.25rem;">
+                                            When deleting unwanted pages from PDF files, traditional cloud services like <strong>iLovePDF</strong> and <strong>Smallpdf</strong> transmit your confidential files across the internet to remote cloud servers (AWS/Google Cloud). This introduces significant data exposure risks, corporate privacy violations, and rigid paywalls (Smallpdf limits free users to just 1–2 tasks per day before demanding $108/year).
+                                        </p>
+                                        <p style="font-size:0.88rem; color:var(--text-muted); line-height:1.6; margin-bottom:1.25rem;">
+                                            <strong>Utilify is built fundamentally differently:</strong> Our entire PDF engine executes <strong>100% client-side inside your browser's local memory (RAM)</strong> using WebAssembly and Web Crypto APIs. Your documents never touch our servers, are never logged, and never leave your machine.
+                                        </p>
+                                        <div style="overflow-x:auto;">
+                                            <table style="width:100%; border-collapse:collapse; font-size:0.85rem; text-align:left;">
+                                                <thead>
+                                                    <tr style="border-bottom: 2px solid var(--border-color); background: rgba(99,102,241,0.06);">
+                                                        <th style="padding:0.75rem 0.6rem;">Feature / Metric</th>
+                                                        <th style="padding:0.75rem 0.6rem; color:var(--indigo); font-weight:700;">Utilify (Offline-First)</th>
+                                                        <th style="padding:0.75rem 0.6rem; color:var(--text-muted);">iLovePDF</th>
+                                                        <th style="padding:0.75rem 0.6rem; color:var(--text-muted);">Smallpdf</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr style="border-bottom:1px solid var(--border-color);">
+                                                        <td style="padding:0.65rem 0.6rem; font-weight:600;">Server Uploads</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:#10b981; font-weight:700;">Zero (0% Uploads)</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:#ef4444;">Uploads to Cloud Servers</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:#ef4444;">Uploads to Cloud Servers</td>
+                                                    </tr>
+                                                    <tr style="border-bottom:1px solid var(--border-color);">
+                                                        <td style="padding:0.65rem 0.6rem; font-weight:600;">Data Privacy &amp; Security</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:#10b981; font-weight:700;">100% In-Memory RAM Safe</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:var(--text-muted);">Stored on Remote Disks</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:var(--text-muted);">Stored on Remote Disks</td>
+                                                    </tr>
+                                                    <tr style="border-bottom:1px solid var(--border-color);">
+                                                        <td style="padding:0.65rem 0.6rem; font-weight:600;">Daily Usage Limits</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:#10b981; font-weight:700;">Unlimited Free Tasks</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:var(--text-muted);">Strict File Size Caps</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:#ef4444;">1–2 Tasks/Day Paywall</td>
+                                                    </tr>
+                                                    <tr style="border-bottom:1px solid var(--border-color);">
+                                                        <td style="padding:0.65rem 0.6rem; font-weight:600;">Pricing / Subscription</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:#10b981; font-weight:700;">100% Free Forever</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:var(--text-muted);">$48 – $84 / Year</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:var(--text-muted);">$108 / Year</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="padding:0.65rem 0.6rem; font-weight:600;">Offline Accessibility</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:#10b981; font-weight:700;">Works 100% Offline</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:#ef4444;">Requires Active Internet</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:#ef4444;">Requires Active Internet</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+
+                                    <!-- RELATED PDF & DOCUMENT UTILITIES INTERNAL SILO -->
+                                    <div class="pdf-silo-nav" style="margin-top: 1.5rem; padding: 1.25rem; background: var(--bg-hover); border-radius: 12px; border: 1px solid var(--border-color);">
+                                        <h3 style="font-size: 1.05rem; margin-bottom: 0.5rem; color: var(--text-color); display:flex; align-items:center; gap:0.5rem;">
+                                            📂 Related PDF &amp; Document Utilities
+                                        </h3>
+                                        <p style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 0.85rem;">
+                                            Switch to other free, client-side PDF and document processing tools without uploading:
+                                        </p>
+                                        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 0.65rem;">
+                                            <a href="/tools/merge-pdf" style="display:flex; align-items:center; gap:0.45rem; padding:0.55rem 0.75rem; background:var(--bg-card); border:1px solid var(--border-color); border-radius:8px; text-decoration:none; color:var(--text-color); font-size:0.83rem; font-weight:500;">
+                                                <span>➕</span> <strong>Merge PDF</strong>
+                                            </a>
+                                            <a href="/tools/split-pdf" style="display:flex; align-items:center; gap:0.45rem; padding:0.55rem 0.75rem; background:var(--bg-card); border:1px solid var(--border-color); border-radius:8px; text-decoration:none; color:var(--text-color); font-size:0.83rem; font-weight:500;">
+                                                <span>✂️</span> <strong>Split PDF</strong>
+                                            </a>
+                                            <a href="/tools/compress-pdf" style="display:flex; align-items:center; gap:0.45rem; padding:0.55rem 0.75rem; background:var(--bg-card); border:1px solid var(--border-color); border-radius:8px; text-decoration:none; color:var(--text-color); font-size:0.83rem; font-weight:500;">
+                                                <span>🗜️</span> <strong>Compress PDF</strong>
+                                            </a>
+                                            <a href="/tools/image-to-pdf" style="display:flex; align-items:center; gap:0.45rem; padding:0.55rem 0.75rem; background:var(--bg-card); border:1px solid var(--border-color); border-radius:8px; text-decoration:none; color:var(--text-color); font-size:0.83rem; font-weight:500;">
+                                                <span>🖼️</span> <strong>Image to PDF</strong>
+                                            </a>
+                                            <a href="/tools/pdf-to-image" style="display:flex; align-items:center; gap:0.45rem; padding:0.55rem 0.75rem; background:var(--bg-card); border:1px solid var(--border-color); border-radius:8px; text-decoration:none; color:var(--text-color); font-size:0.83rem; font-weight:500;">
+                                                <span>📄</span> <strong>PDF to Image</strong>
+                                            </a>
+                                            <a href="/tools/rotate-pdf" style="display:flex; align-items:center; gap:0.45rem; padding:0.55rem 0.75rem; background:var(--bg-card); border:1px solid var(--border-color); border-radius:8px; text-decoration:none; color:var(--text-color); font-size:0.83rem; font-weight:500;">
+                                                <span>🔄</span> <strong>Rotate PDF</strong>
+                                            </a>
+                                            <a href="/tools/protect-pdf" style="display:flex; align-items:center; gap:0.45rem; padding:0.55rem 0.75rem; background:var(--bg-card); border:1px solid var(--border-color); border-radius:8px; text-decoration:none; color:var(--text-color); font-size:0.83rem; font-weight:500;">
+                                                <span>🔒</span> <strong>Protect PDF</strong>
+                                            </a>
+                                            <a href="/tools/unlock-pdf" style="display:flex; align-items:center; gap:0.45rem; padding:0.55rem 0.75rem; background:var(--bg-card); border:1px solid var(--border-color); border-radius:8px; text-decoration:none; color:var(--text-color); font-size:0.83rem; font-weight:500;">
+                                                <span>🔓</span> <strong>Unlock PDF</strong>
+                                            </a>
+                                            <a href="/tools/remove-pdf-pages" style="display:flex; align-items:center; gap:0.45rem; padding:0.55rem 0.75rem; background:var(--bg-card); border:1px solid var(--border-color); border-radius:8px; text-decoration:none; color:var(--text-color); font-size:0.83rem; font-weight:500;">
+                                                <span>🗑️</span> <strong>Remove Pages</strong>
+                                            </a>
+                                            <a href="/tools/sign-pdf" style="display:flex; align-items:center; gap:0.45rem; padding:0.55rem 0.75rem; background:var(--bg-card); border:1px solid var(--border-color); border-radius:8px; text-decoration:none; color:var(--text-color); font-size:0.83rem; font-weight:500;">
+                                                <span>✍️</span> <strong>Sign PDF</strong>
+                                            </a>
+                                        </div>
+                                    </div>
+</div>
                             </article>
                         </section>
 
@@ -7521,7 +8412,106 @@
                                         <span class="faq-question">Q: Are my signatures stored on a server?</span>
                                         <span class="faq-answer">No. The signature files and drawing buffers exist only in your browser's local memory, protecting your signature from theft.</span>
                                     </div>
-                                </div>
+                                
+                                    <!-- UTILIFY VS ILOVEPDF & SMALLPDF COMPARISON CARD -->
+                                    <div class="competitor-comparison-box" style="margin: 2.25rem 0 1.5rem; padding: 1.5rem; background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 12px; box-shadow: 0 4px 14px rgba(0,0,0,0.04);">
+                                        <h3 style="display:flex; align-items:center; gap:0.5rem; font-size:1.15rem; margin-bottom:0.75rem; color:var(--text-color);">
+                                            🛡️ Why Choose Utilify Over iLovePDF &amp; Smallpdf?
+                                        </h3>
+                                        <p style="font-size:0.88rem; color:var(--text-muted); line-height:1.6; margin-bottom:1.25rem;">
+                                            When creating digital signatures and signing PDF documents, traditional cloud services like <strong>iLovePDF</strong> and <strong>Smallpdf</strong> transmit your confidential files across the internet to remote cloud servers (AWS/Google Cloud). This introduces significant data exposure risks, corporate privacy violations, and rigid paywalls (Smallpdf limits free users to just 1–2 tasks per day before demanding $108/year).
+                                        </p>
+                                        <p style="font-size:0.88rem; color:var(--text-muted); line-height:1.6; margin-bottom:1.25rem;">
+                                            <strong>Utilify is built fundamentally differently:</strong> Our entire PDF engine executes <strong>100% client-side inside your browser's local memory (RAM)</strong> using WebAssembly and Web Crypto APIs. Your documents never touch our servers, are never logged, and never leave your machine.
+                                        </p>
+                                        <div style="overflow-x:auto;">
+                                            <table style="width:100%; border-collapse:collapse; font-size:0.85rem; text-align:left;">
+                                                <thead>
+                                                    <tr style="border-bottom: 2px solid var(--border-color); background: rgba(99,102,241,0.06);">
+                                                        <th style="padding:0.75rem 0.6rem;">Feature / Metric</th>
+                                                        <th style="padding:0.75rem 0.6rem; color:var(--indigo); font-weight:700;">Utilify (Offline-First)</th>
+                                                        <th style="padding:0.75rem 0.6rem; color:var(--text-muted);">iLovePDF</th>
+                                                        <th style="padding:0.75rem 0.6rem; color:var(--text-muted);">Smallpdf</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr style="border-bottom:1px solid var(--border-color);">
+                                                        <td style="padding:0.65rem 0.6rem; font-weight:600;">Server Uploads</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:#10b981; font-weight:700;">Zero (0% Uploads)</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:#ef4444;">Uploads to Cloud Servers</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:#ef4444;">Uploads to Cloud Servers</td>
+                                                    </tr>
+                                                    <tr style="border-bottom:1px solid var(--border-color);">
+                                                        <td style="padding:0.65rem 0.6rem; font-weight:600;">Data Privacy &amp; Security</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:#10b981; font-weight:700;">100% In-Memory RAM Safe</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:var(--text-muted);">Stored on Remote Disks</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:var(--text-muted);">Stored on Remote Disks</td>
+                                                    </tr>
+                                                    <tr style="border-bottom:1px solid var(--border-color);">
+                                                        <td style="padding:0.65rem 0.6rem; font-weight:600;">Daily Usage Limits</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:#10b981; font-weight:700;">Unlimited Free Tasks</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:var(--text-muted);">Strict File Size Caps</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:#ef4444;">1–2 Tasks/Day Paywall</td>
+                                                    </tr>
+                                                    <tr style="border-bottom:1px solid var(--border-color);">
+                                                        <td style="padding:0.65rem 0.6rem; font-weight:600;">Pricing / Subscription</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:#10b981; font-weight:700;">100% Free Forever</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:var(--text-muted);">$48 – $84 / Year</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:var(--text-muted);">$108 / Year</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="padding:0.65rem 0.6rem; font-weight:600;">Offline Accessibility</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:#10b981; font-weight:700;">Works 100% Offline</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:#ef4444;">Requires Active Internet</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:#ef4444;">Requires Active Internet</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+
+                                    <!-- RELATED PDF & DOCUMENT UTILITIES INTERNAL SILO -->
+                                    <div class="pdf-silo-nav" style="margin-top: 1.5rem; padding: 1.25rem; background: var(--bg-hover); border-radius: 12px; border: 1px solid var(--border-color);">
+                                        <h3 style="font-size: 1.05rem; margin-bottom: 0.5rem; color: var(--text-color); display:flex; align-items:center; gap:0.5rem;">
+                                            📂 Related PDF &amp; Document Utilities
+                                        </h3>
+                                        <p style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 0.85rem;">
+                                            Switch to other free, client-side PDF and document processing tools without uploading:
+                                        </p>
+                                        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 0.65rem;">
+                                            <a href="/tools/merge-pdf" style="display:flex; align-items:center; gap:0.45rem; padding:0.55rem 0.75rem; background:var(--bg-card); border:1px solid var(--border-color); border-radius:8px; text-decoration:none; color:var(--text-color); font-size:0.83rem; font-weight:500;">
+                                                <span>➕</span> <strong>Merge PDF</strong>
+                                            </a>
+                                            <a href="/tools/split-pdf" style="display:flex; align-items:center; gap:0.45rem; padding:0.55rem 0.75rem; background:var(--bg-card); border:1px solid var(--border-color); border-radius:8px; text-decoration:none; color:var(--text-color); font-size:0.83rem; font-weight:500;">
+                                                <span>✂️</span> <strong>Split PDF</strong>
+                                            </a>
+                                            <a href="/tools/compress-pdf" style="display:flex; align-items:center; gap:0.45rem; padding:0.55rem 0.75rem; background:var(--bg-card); border:1px solid var(--border-color); border-radius:8px; text-decoration:none; color:var(--text-color); font-size:0.83rem; font-weight:500;">
+                                                <span>🗜️</span> <strong>Compress PDF</strong>
+                                            </a>
+                                            <a href="/tools/image-to-pdf" style="display:flex; align-items:center; gap:0.45rem; padding:0.55rem 0.75rem; background:var(--bg-card); border:1px solid var(--border-color); border-radius:8px; text-decoration:none; color:var(--text-color); font-size:0.83rem; font-weight:500;">
+                                                <span>🖼️</span> <strong>Image to PDF</strong>
+                                            </a>
+                                            <a href="/tools/pdf-to-image" style="display:flex; align-items:center; gap:0.45rem; padding:0.55rem 0.75rem; background:var(--bg-card); border:1px solid var(--border-color); border-radius:8px; text-decoration:none; color:var(--text-color); font-size:0.83rem; font-weight:500;">
+                                                <span>📄</span> <strong>PDF to Image</strong>
+                                            </a>
+                                            <a href="/tools/rotate-pdf" style="display:flex; align-items:center; gap:0.45rem; padding:0.55rem 0.75rem; background:var(--bg-card); border:1px solid var(--border-color); border-radius:8px; text-decoration:none; color:var(--text-color); font-size:0.83rem; font-weight:500;">
+                                                <span>🔄</span> <strong>Rotate PDF</strong>
+                                            </a>
+                                            <a href="/tools/protect-pdf" style="display:flex; align-items:center; gap:0.45rem; padding:0.55rem 0.75rem; background:var(--bg-card); border:1px solid var(--border-color); border-radius:8px; text-decoration:none; color:var(--text-color); font-size:0.83rem; font-weight:500;">
+                                                <span>🔒</span> <strong>Protect PDF</strong>
+                                            </a>
+                                            <a href="/tools/unlock-pdf" style="display:flex; align-items:center; gap:0.45rem; padding:0.55rem 0.75rem; background:var(--bg-card); border:1px solid var(--border-color); border-radius:8px; text-decoration:none; color:var(--text-color); font-size:0.83rem; font-weight:500;">
+                                                <span>🔓</span> <strong>Unlock PDF</strong>
+                                            </a>
+                                            <a href="/tools/remove-pdf-pages" style="display:flex; align-items:center; gap:0.45rem; padding:0.55rem 0.75rem; background:var(--bg-card); border:1px solid var(--border-color); border-radius:8px; text-decoration:none; color:var(--text-color); font-size:0.83rem; font-weight:500;">
+                                                <span>🗑️</span> <strong>Remove Pages</strong>
+                                            </a>
+                                            <a href="/tools/sign-pdf" style="display:flex; align-items:center; gap:0.45rem; padding:0.55rem 0.75rem; background:var(--bg-card); border:1px solid var(--border-color); border-radius:8px; text-decoration:none; color:var(--text-color); font-size:0.83rem; font-weight:500;">
+                                                <span>✍️</span> <strong>Sign PDF</strong>
+                                            </a>
+                                        </div>
+                                    </div>
+</div>
                             </article>
                         </section>
 
@@ -7721,7 +8711,106 @@
                                         <span class="faq-question">Q: Will external images load in my PDF?</span>
                                         <span class="faq-answer">Yes, but they must support cross-origin resource sharing (CORS), or be embedded directly as Base64 data URLs.</span>
                                     </div>
-                                </div>
+                                
+                                    <!-- UTILIFY VS ILOVEPDF & SMALLPDF COMPARISON CARD -->
+                                    <div class="competitor-comparison-box" style="margin: 2.25rem 0 1.5rem; padding: 1.5rem; background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 12px; box-shadow: 0 4px 14px rgba(0,0,0,0.04);">
+                                        <h3 style="display:flex; align-items:center; gap:0.5rem; font-size:1.15rem; margin-bottom:0.75rem; color:var(--text-color);">
+                                            🛡️ Why Choose Utilify Over iLovePDF &amp; Smallpdf?
+                                        </h3>
+                                        <p style="font-size:0.88rem; color:var(--text-muted); line-height:1.6; margin-bottom:1.25rem;">
+                                            When rendering and converting HTML code into PDF, traditional cloud services like <strong>iLovePDF</strong> and <strong>Smallpdf</strong> transmit your confidential files across the internet to remote cloud servers (AWS/Google Cloud). This introduces significant data exposure risks, corporate privacy violations, and rigid paywalls (Smallpdf limits free users to just 1–2 tasks per day before demanding $108/year).
+                                        </p>
+                                        <p style="font-size:0.88rem; color:var(--text-muted); line-height:1.6; margin-bottom:1.25rem;">
+                                            <strong>Utilify is built fundamentally differently:</strong> Our entire PDF engine executes <strong>100% client-side inside your browser's local memory (RAM)</strong> using WebAssembly and Web Crypto APIs. Your documents never touch our servers, are never logged, and never leave your machine.
+                                        </p>
+                                        <div style="overflow-x:auto;">
+                                            <table style="width:100%; border-collapse:collapse; font-size:0.85rem; text-align:left;">
+                                                <thead>
+                                                    <tr style="border-bottom: 2px solid var(--border-color); background: rgba(99,102,241,0.06);">
+                                                        <th style="padding:0.75rem 0.6rem;">Feature / Metric</th>
+                                                        <th style="padding:0.75rem 0.6rem; color:var(--indigo); font-weight:700;">Utilify (Offline-First)</th>
+                                                        <th style="padding:0.75rem 0.6rem; color:var(--text-muted);">iLovePDF</th>
+                                                        <th style="padding:0.75rem 0.6rem; color:var(--text-muted);">Smallpdf</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr style="border-bottom:1px solid var(--border-color);">
+                                                        <td style="padding:0.65rem 0.6rem; font-weight:600;">Server Uploads</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:#10b981; font-weight:700;">Zero (0% Uploads)</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:#ef4444;">Uploads to Cloud Servers</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:#ef4444;">Uploads to Cloud Servers</td>
+                                                    </tr>
+                                                    <tr style="border-bottom:1px solid var(--border-color);">
+                                                        <td style="padding:0.65rem 0.6rem; font-weight:600;">Data Privacy &amp; Security</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:#10b981; font-weight:700;">100% In-Memory RAM Safe</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:var(--text-muted);">Stored on Remote Disks</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:var(--text-muted);">Stored on Remote Disks</td>
+                                                    </tr>
+                                                    <tr style="border-bottom:1px solid var(--border-color);">
+                                                        <td style="padding:0.65rem 0.6rem; font-weight:600;">Daily Usage Limits</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:#10b981; font-weight:700;">Unlimited Free Tasks</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:var(--text-muted);">Strict File Size Caps</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:#ef4444;">1–2 Tasks/Day Paywall</td>
+                                                    </tr>
+                                                    <tr style="border-bottom:1px solid var(--border-color);">
+                                                        <td style="padding:0.65rem 0.6rem; font-weight:600;">Pricing / Subscription</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:#10b981; font-weight:700;">100% Free Forever</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:var(--text-muted);">$48 – $84 / Year</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:var(--text-muted);">$108 / Year</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="padding:0.65rem 0.6rem; font-weight:600;">Offline Accessibility</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:#10b981; font-weight:700;">Works 100% Offline</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:#ef4444;">Requires Active Internet</td>
+                                                        <td style="padding:0.65rem 0.6rem; color:#ef4444;">Requires Active Internet</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+
+                                    <!-- RELATED PDF & DOCUMENT UTILITIES INTERNAL SILO -->
+                                    <div class="pdf-silo-nav" style="margin-top: 1.5rem; padding: 1.25rem; background: var(--bg-hover); border-radius: 12px; border: 1px solid var(--border-color);">
+                                        <h3 style="font-size: 1.05rem; margin-bottom: 0.5rem; color: var(--text-color); display:flex; align-items:center; gap:0.5rem;">
+                                            📂 Related PDF &amp; Document Utilities
+                                        </h3>
+                                        <p style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 0.85rem;">
+                                            Switch to other free, client-side PDF and document processing tools without uploading:
+                                        </p>
+                                        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 0.65rem;">
+                                            <a href="/tools/merge-pdf" style="display:flex; align-items:center; gap:0.45rem; padding:0.55rem 0.75rem; background:var(--bg-card); border:1px solid var(--border-color); border-radius:8px; text-decoration:none; color:var(--text-color); font-size:0.83rem; font-weight:500;">
+                                                <span>➕</span> <strong>Merge PDF</strong>
+                                            </a>
+                                            <a href="/tools/split-pdf" style="display:flex; align-items:center; gap:0.45rem; padding:0.55rem 0.75rem; background:var(--bg-card); border:1px solid var(--border-color); border-radius:8px; text-decoration:none; color:var(--text-color); font-size:0.83rem; font-weight:500;">
+                                                <span>✂️</span> <strong>Split PDF</strong>
+                                            </a>
+                                            <a href="/tools/compress-pdf" style="display:flex; align-items:center; gap:0.45rem; padding:0.55rem 0.75rem; background:var(--bg-card); border:1px solid var(--border-color); border-radius:8px; text-decoration:none; color:var(--text-color); font-size:0.83rem; font-weight:500;">
+                                                <span>🗜️</span> <strong>Compress PDF</strong>
+                                            </a>
+                                            <a href="/tools/image-to-pdf" style="display:flex; align-items:center; gap:0.45rem; padding:0.55rem 0.75rem; background:var(--bg-card); border:1px solid var(--border-color); border-radius:8px; text-decoration:none; color:var(--text-color); font-size:0.83rem; font-weight:500;">
+                                                <span>🖼️</span> <strong>Image to PDF</strong>
+                                            </a>
+                                            <a href="/tools/pdf-to-image" style="display:flex; align-items:center; gap:0.45rem; padding:0.55rem 0.75rem; background:var(--bg-card); border:1px solid var(--border-color); border-radius:8px; text-decoration:none; color:var(--text-color); font-size:0.83rem; font-weight:500;">
+                                                <span>📄</span> <strong>PDF to Image</strong>
+                                            </a>
+                                            <a href="/tools/rotate-pdf" style="display:flex; align-items:center; gap:0.45rem; padding:0.55rem 0.75rem; background:var(--bg-card); border:1px solid var(--border-color); border-radius:8px; text-decoration:none; color:var(--text-color); font-size:0.83rem; font-weight:500;">
+                                                <span>🔄</span> <strong>Rotate PDF</strong>
+                                            </a>
+                                            <a href="/tools/protect-pdf" style="display:flex; align-items:center; gap:0.45rem; padding:0.55rem 0.75rem; background:var(--bg-card); border:1px solid var(--border-color); border-radius:8px; text-decoration:none; color:var(--text-color); font-size:0.83rem; font-weight:500;">
+                                                <span>🔒</span> <strong>Protect PDF</strong>
+                                            </a>
+                                            <a href="/tools/unlock-pdf" style="display:flex; align-items:center; gap:0.45rem; padding:0.55rem 0.75rem; background:var(--bg-card); border:1px solid var(--border-color); border-radius:8px; text-decoration:none; color:var(--text-color); font-size:0.83rem; font-weight:500;">
+                                                <span>🔓</span> <strong>Unlock PDF</strong>
+                                            </a>
+                                            <a href="/tools/remove-pdf-pages" style="display:flex; align-items:center; gap:0.45rem; padding:0.55rem 0.75rem; background:var(--bg-card); border:1px solid var(--border-color); border-radius:8px; text-decoration:none; color:var(--text-color); font-size:0.83rem; font-weight:500;">
+                                                <span>🗑️</span> <strong>Remove Pages</strong>
+                                            </a>
+                                            <a href="/tools/sign-pdf" style="display:flex; align-items:center; gap:0.45rem; padding:0.55rem 0.75rem; background:var(--bg-card); border:1px solid var(--border-color); border-radius:8px; text-decoration:none; color:var(--text-color); font-size:0.83rem; font-weight:500;">
+                                                <span>✍️</span> <strong>Sign PDF</strong>
+                                            </a>
+                                        </div>
+                                    </div>
+</div>
                             </article>
                         </section>
 
@@ -7939,9 +9028,9 @@
                         <div>
                             <h3 style="margin-top: 0; color: var(--indigo); border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem;">🗂️ PDF &amp; File Utilities</h3>
                             <ul style="list-style: none; padding-left: 0; display: flex; flex-direction: column; gap: 0.65rem; margin-top: 1rem;">
-                                <li><a href="/tools/pdf-merger" class="footer-view-link" data-view="tools" data-tool="pdfmerge" style="color: var(--text-color); text-decoration: none; font-weight: 600;">PDF Merger</a></li>
-                                <li><a href="/tools/pdf-splitter" class="footer-view-link" data-view="tools" data-tool="pdfsplit" style="color: var(--text-color); text-decoration: none; font-weight: 600;">PDF Splitter</a></li>
-                                <li><a href="/tools/pdf-page-rotator" class="footer-view-link" data-view="tools" data-tool="pdfrotate" style="color: var(--text-color); text-decoration: none; font-weight: 600;">PDF Page Rotator</a></li>
+                                <li><a href="/tools/merge-pdf" class="footer-view-link" data-view="tools" data-tool="pdfmerge" style="color: var(--text-color); text-decoration: none; font-weight: 600;">PDF Merger</a></li>
+                                <li><a href="/tools/split-pdf" class="footer-view-link" data-view="tools" data-tool="pdfsplit" style="color: var(--text-color); text-decoration: none; font-weight: 600;">PDF Splitter</a></li>
+                                <li><a href="/tools/rotate-pdf" class="footer-view-link" data-view="tools" data-tool="pdfrotate" style="color: var(--text-color); text-decoration: none; font-weight: 600;">PDF Page Rotator</a></li>
                                 <li><a href="/tools/image-compressor" class="footer-view-link" data-view="tools" data-tool="imgcomp" style="color: var(--text-color); text-decoration: none; font-weight: 600;">Image Compressor</a></li>
                                 <li><a href="/tools/image-resizer" class="footer-view-link" data-view="tools" data-tool="imgresize" style="color: var(--text-color); text-decoration: none; font-weight: 600;">Image Resizer</a></li>
                                 <li><a href="/tools/image-cropper" class="footer-view-link" data-view="tools" data-tool="imgcrop" style="color: var(--text-color); text-decoration: none; font-weight: 600;">Image Cropper</a></li>
@@ -7951,13 +9040,13 @@
                                 <li><a href="/tools/image-to-base64-converter" class="footer-view-link" data-view="tools" data-tool="imgtobase64" style="color: var(--text-color); text-decoration: none; font-weight: 600;">Image to Base64 String</a></li>
                                 <li><a href="/tools/exif-data-viewer-remover" class="footer-view-link" data-view="tools" data-tool="exif" style="color: var(--text-color); text-decoration: none; font-weight: 600;">EXIF Photo Data Viewer</a></li>
                                 <li><a href="/tools/image-merger-stitcher" class="footer-view-link" data-view="tools" data-tool="imgmerge" style="color: var(--text-color); text-decoration: none; font-weight: 600;">Two Image Merger</a></li>
-                                <li><a href="/tools/image-to-pdf-converter" class="footer-view-link" data-view="tools" data-tool="imagetopdf" style="color: var(--text-color); text-decoration: none; font-weight: 600;">Photos to PDF Converter</a></li>
-                                <li><a href="/tools/pdf-to-image-converter" class="footer-view-link" data-view="tools" data-tool="pdftoimage" style="color: var(--text-color); text-decoration: none; font-weight: 600;">PDF to Images Extractor</a></li>
-                                <li><a href="/tools/pdf-compressor" class="footer-view-link" data-view="tools" data-tool="pdfcompress" style="color: var(--text-color); text-decoration: none; font-weight: 600;">PDF File Size Reducer</a></li>
-                                <li><a href="/tools/pdf-password-protector" class="footer-view-link" data-view="tools" data-tool="pdfprotect" style="color: var(--text-color); text-decoration: none; font-weight: 600;">Protect PDF (Password)</a></li>
-                                <li><a href="/tools/pdf-password-remover" class="footer-view-link" data-view="tools" data-tool="pdfunlock" style="color: var(--text-color); text-decoration: none; font-weight: 600;">Unlock PDF Decrypter</a></li>
-                                <li><a href="/tools/pdf-page-remover" class="footer-view-link" data-view="tools" data-tool="pdfremove" style="color: var(--text-color); text-decoration: none; font-weight: 600;">Discard PDF Pages</a></li>
-                                <li><a href="/tools/digital-signature-creator" class="footer-view-link" data-view="tools" data-tool="digisign" style="color: var(--text-color); text-decoration: none; font-weight: 600;">Digital Document Signer</a></li>
+                                <li><a href="/tools/image-to-pdf" class="footer-view-link" data-view="tools" data-tool="imagetopdf" style="color: var(--text-color); text-decoration: none; font-weight: 600;">Photos to PDF Converter</a></li>
+                                <li><a href="/tools/pdf-to-image" class="footer-view-link" data-view="tools" data-tool="pdftoimage" style="color: var(--text-color); text-decoration: none; font-weight: 600;">PDF to Images Extractor</a></li>
+                                <li><a href="/tools/compress-pdf" class="footer-view-link" data-view="tools" data-tool="pdfcompress" style="color: var(--text-color); text-decoration: none; font-weight: 600;">PDF File Size Reducer</a></li>
+                                <li><a href="/tools/protect-pdf" class="footer-view-link" data-view="tools" data-tool="pdfprotect" style="color: var(--text-color); text-decoration: none; font-weight: 600;">Protect PDF (Password)</a></li>
+                                <li><a href="/tools/unlock-pdf" class="footer-view-link" data-view="tools" data-tool="pdfunlock" style="color: var(--text-color); text-decoration: none; font-weight: 600;">Unlock PDF Decrypter</a></li>
+                                <li><a href="/tools/remove-pdf-pages" class="footer-view-link" data-view="tools" data-tool="pdfremove" style="color: var(--text-color); text-decoration: none; font-weight: 600;">Discard PDF Pages</a></li>
+                                <li><a href="/tools/sign-pdf" class="footer-view-link" data-view="tools" data-tool="digisign" style="color: var(--text-color); text-decoration: none; font-weight: 600;">Digital Document Signer</a></li>
                                 <li><a href="/tools/image-watermark-tool" class="footer-view-link" data-view="tools" data-tool="imgwatermark" style="color: var(--text-color); text-decoration: none; font-weight: 600;">Photo Copyright Watermarker</a></li>
                                 <li><a href="/tools/html-to-pdf-converter" class="footer-view-link" data-view="tools" data-tool="htmltopdf" style="color: var(--text-color); text-decoration: none; font-weight: 600;">HTML to PDF Compiler</a></li>
                                 <li><a href="/tools/html-to-image-converter" class="footer-view-link" data-view="tools" data-tool="htmltoimage" style="color: var(--text-color); text-decoration: none; font-weight: 600;">HTML to Image Exporter</a></li>
@@ -8089,7 +9178,7 @@
                     <li><a href="/tools/seo-url-slug-generator" class="footer-view-link" data-view="tools" data-tool="slug">Slug Generator</a></li>
                     <li><a href="/tools/custom-qr-code-generator" class="footer-view-link" data-view="tools" data-tool="qr">QR Generator</a></li>
                     <li><a href="/tools/image-compressor" class="footer-view-link" data-view="tools" data-tool="imgcomp">Image Compressor</a></li>
-                    <li><a href="/tools/pdf-merger" class="footer-view-link" data-view="tools" data-tool="pdfmerge">PDF Merger</a></li>
+                    <li><a href="/tools/merge-pdf" class="footer-view-link" data-view="tools" data-tool="pdfmerge">PDF Merger</a></li>
                 </ul>
             </div>
 

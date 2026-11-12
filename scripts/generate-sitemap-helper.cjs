@@ -9,16 +9,16 @@ const seoToolUrls = {
     slug: "seo-url-slug-generator",
     qr: "custom-qr-code-generator",
     imgcomp: "image-compressor",
-    pdfmerge: "pdf-merger",
-    pdfsplit: "pdf-splitter",
-    pdfrotate: "pdf-page-rotator",
-    imagetopdf: "image-to-pdf-converter",
-    pdftoimage: "pdf-to-image-converter",
-    pdfcompress: "pdf-compressor",
-    pdfprotect: "pdf-password-protector",
-    pdfunlock: "pdf-password-remover",
-    pdfremove: "pdf-page-remover",
-    digisign: "digital-signature-creator",
+    pdfmerge: "merge-pdf",
+    pdfsplit: "split-pdf",
+    pdfrotate: "rotate-pdf",
+    imagetopdf: "image-to-pdf",
+    pdftoimage: "pdf-to-image",
+    pdfcompress: "compress-pdf",
+    pdfprotect: "protect-pdf",
+    pdfunlock: "unlock-pdf",
+    pdfremove: "remove-pdf-pages",
+    digisign: "sign-pdf",
     imgwatermark: "image-watermark-tool",
     htmltopdf: "html-to-pdf-converter",
     htmltoimage: "html-to-image-converter",
@@ -111,6 +111,23 @@ for (const toolKey in seoToolUrls) {
   </url>
 `;
 }
+
+// High-volume search aliases
+const highVolumeAliases = [
+    { slug: "jpg-to-pdf", comment: "JPG to PDF Converter Alias" },
+    { slug: "pdf-to-jpg", comment: "PDF to JPG Converter Alias" }
+];
+
+highVolumeAliases.forEach(alias => {
+    sitemap += `  <!-- Alias: ${alias.comment} -->
+  <url>
+    <loc>https://utilify.co.in/tools/${alias.slug}</loc>
+    <lastmod>${today}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+`;
+});
 
 sitemap += `</urlset>\n`;
 

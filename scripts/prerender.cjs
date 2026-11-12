@@ -9,16 +9,16 @@ const seoToolUrls = {
     slug: "seo-url-slug-generator",
     qr: "custom-qr-code-generator",
     imgcomp: "image-compressor",
-    pdfmerge: "pdf-merger",
-    pdfsplit: "pdf-splitter",
-    pdfrotate: "pdf-page-rotator",
-    imagetopdf: "image-to-pdf-converter",
-    pdftoimage: "pdf-to-image-converter",
-    pdfcompress: "pdf-compressor",
-    pdfprotect: "pdf-password-protector",
-    pdfunlock: "pdf-password-remover",
-    pdfremove: "pdf-page-remover",
-    digisign: "digital-signature-creator",
+    pdfmerge: "merge-pdf",
+    pdfsplit: "split-pdf",
+    pdfrotate: "rotate-pdf",
+    imagetopdf: "image-to-pdf",
+    pdftoimage: "pdf-to-image",
+    pdfcompress: "compress-pdf",
+    pdfprotect: "protect-pdf",
+    pdfunlock: "unlock-pdf",
+    pdfremove: "remove-pdf-pages",
+    digisign: "sign-pdf",
     imgwatermark: "image-watermark-tool",
     htmltopdf: "html-to-pdf-converter",
     htmltoimage: "html-to-image-converter",
@@ -67,6 +67,160 @@ const seoToolUrls = {
     pwdinspector: "password-strength-inspector-analyzer"
 };
 
+// Rich HowTo Schema Definitions for High-Converting Google Search Cards
+const toolHowToSteps = {
+    pdfmerge: {
+        name: "How to Merge Multiple PDF Files Online for Free",
+        description: "Combine multiple PDF documents into a single PDF file locally in your browser with zero server uploads.",
+        steps: [
+            { name: "Upload or Drop PDF Files", text: "Select or drag-and-drop multiple PDF files from your device into the upload dropzone." },
+            { name: "Reorder Documents", text: "Arrange your PDF files in the exact sequence you want them merged." },
+            { name: "Merge & Download", text: "Click 'Merge & Download PDF'. Your files are compiled instantly inside your browser RAM without uploading." }
+        ]
+    },
+    imagetopdf: {
+        name: "How to Convert Images to PDF Online",
+        description: "Convert JPG, PNG, and WebP images into a single PDF document client-side.",
+        steps: [
+            { name: "Select Images", text: "Choose or drag-and-drop your JPG, PNG, or WebP images into the tool." },
+            { name: "Configure Layout", text: "Set orientation, page margins, and fit options for your PDF document." },
+            { name: "Convert & Save", text: "Click 'Convert to PDF' and download your freshly created document instantly." }
+        ]
+    },
+    pdfcompress: {
+        name: "How to Compress and Reduce PDF File Size Online",
+        description: "Reduce PDF document file size with high visual quality in local browser memory.",
+        steps: [
+            { name: "Select PDF Document", text: "Upload the PDF file you wish to compress from your computer or phone." },
+            { name: "Choose Compression Level", text: "Select your preferred compression quality (Extreme, Recommended, or Low Compression)." },
+            { name: "Download Compressed PDF", text: "Click 'Compress PDF' and save the optimized, smaller PDF file immediately." }
+        ]
+    },
+    pdfsplit: {
+        name: "How to Split PDF Pages Online",
+        description: "Extract specific pages or page ranges from a PDF document privately.",
+        steps: [
+            { name: "Upload PDF", text: "Drop your PDF file into the browser workspace." },
+            { name: "Specify Page Range", text: "Enter the page numbers or ranges you wish to extract (e.g. 1-3, 5)." },
+            { name: "Export Split PDF", text: "Click 'Split PDF' to generate and download your extracted pages immediately." }
+        ]
+    },
+    pdftoimage: {
+        name: "How to Convert PDF Pages to JPG and PNG Images",
+        description: "Extract high-resolution image files from PDF pages client-side.",
+        steps: [
+            { name: "Open PDF Document", text: "Select the PDF file you want to convert into images." },
+            { name: "Choose Image Format", text: "Select PNG or JPG and set your desired DPI or resolution scale." },
+            { name: "Download Images", text: "Render all pages or specific pages and download as single images or a ZIP archive." }
+        ]
+    },
+    pdfrotate: {
+        name: "How to Permanently Rotate PDF Pages",
+        description: "Rotate individual pages or entire PDF documents 90, 180, or 270 degrees.",
+        steps: [
+            { name: "Select PDF", text: "Upload the PDF document needing page orientation adjustment." },
+            { name: "Select Rotation Angle", text: "Rotate individual pages or all pages 90° clockwise or counterclockwise." },
+            { name: "Save Rotated PDF", text: "Download the permanently rotated PDF file directly to your device." }
+        ]
+    },
+    pdfprotect: {
+        name: "How to Password Protect and Encrypt a PDF",
+        description: "Add a secure password and encryption to your PDF document client-side.",
+        steps: [
+            { name: "Select PDF", text: "Choose the confidential PDF document you want to secure." },
+            { name: "Enter Strong Password", text: "Type in your chosen user password and confirm it." },
+            { name: "Download Encrypted PDF", text: "Click 'Protect PDF' to encrypt locally and download the password-protected file." }
+        ]
+    },
+    pdfunlock: {
+        name: "How to Unlock and Remove Passwords from PDF",
+        description: "Remove passwords and security restrictions from PDF files client-side.",
+        steps: [
+            { name: "Upload Locked PDF", text: "Select the password-protected PDF document." },
+            { name: "Enter Current Password", text: "Provide the decryption password to unlock the document." },
+            { name: "Save Unlocked PDF", text: "Download the unrestricted, decrypted PDF file." }
+        ]
+    },
+    pdfremove: {
+        name: "How to Remove Pages from a PDF",
+        description: "Delete unwanted pages or blank sheets from any PDF file.",
+        steps: [
+            { name: "Upload PDF", text: "Drop your PDF file into the page remover workspace." },
+            { name: "Select Pages to Remove", text: "Click the pages or enter page numbers you want deleted." },
+            { name: "Download Clean PDF", text: "Export and save your modified PDF without the deleted pages." }
+        ]
+    },
+    digisign: {
+        name: "How to Digitally Sign a PDF Online",
+        description: "Create an electronic signature and stamp it onto PDF documents securely.",
+        steps: [
+            { name: "Upload Document", text: "Open the PDF document you need to sign in the viewer." },
+            { name: "Create Your Signature", text: "Draw your signature with your mouse/touchscreen, type your name, or upload an image." },
+            { name: "Stamp & Download", text: "Place the signature on the required page and download the signed PDF." }
+        ]
+    }
+};
+
+// High-Intent Search Aliases to Pre-render
+const aliasPages = [
+    {
+        aliasSlug: "jpg-to-pdf",
+        toolKey: "imagetopdf",
+        title: "JPG to PDF - Convert JPG Images to PDF Online Free | Utilify",
+        description: "Convert JPG to PDF online free. Combine multiple JPG images into a single PDF document in seconds with zero file uploads and 100% privacy.",
+        canonicalUrl: "https://utilify.co.in/tools/jpg-to-pdf"
+    },
+    {
+        aliasSlug: "pdf-to-jpg",
+        toolKey: "pdftoimage",
+        title: "PDF to JPG - Convert PDF Pages to JPG Online Free | Utilify",
+        description: "Convert PDF to JPG online free. Extract high-resolution JPG images from each page of your PDF document directly inside your browser memory.",
+        canonicalUrl: "https://utilify.co.in/tools/pdf-to-jpg"
+    },
+    {
+        aliasSlug: "pdf-merger",
+        toolKey: "pdfmerge",
+        title: "PDF Merger - Combine Multiple PDF Files Online Free | Utilify",
+        description: "Merge multiple PDF files into one single document client-side in seconds with complete privacy. 100% free with no uploads.",
+        canonicalUrl: "https://utilify.co.in/tools/merge-pdf"
+    },
+    {
+        aliasSlug: "pdf-compressor",
+        toolKey: "pdfcompress",
+        title: "PDF Compressor - Reduce PDF File Size Online Free | Utilify",
+        description: "Compress PDF documents online free without uploading. Reduce file size client-side while preserving crystal-clear quality.",
+        canonicalUrl: "https://utilify.co.in/tools/compress-pdf"
+    },
+    {
+        aliasSlug: "pdf-splitter",
+        toolKey: "pdfsplit",
+        title: "PDF Splitter - Extract PDF Pages Online Free | Utilify",
+        description: "Split PDF files and extract custom page ranges client-side without sending your documents to remote cloud servers.",
+        canonicalUrl: "https://utilify.co.in/tools/split-pdf"
+    },
+    {
+        aliasSlug: "image-to-pdf-converter",
+        toolKey: "imagetopdf",
+        title: "Image to PDF Converter - Convert Photos to PDF Free | Utilify",
+        description: "Convert images to PDF documents online free. Private client-side image conversion with no file size limits.",
+        canonicalUrl: "https://utilify.co.in/tools/image-to-pdf"
+    },
+    {
+        aliasSlug: "pdf-to-image-converter",
+        toolKey: "pdftoimage",
+        title: "PDF to Image Converter - Extract Pages as Images Free | Utilify",
+        description: "Convert PDF files into crisp PNG and JPG images client-side. Zero server uploads.",
+        canonicalUrl: "https://utilify.co.in/tools/pdf-to-image"
+    },
+    {
+        aliasSlug: "digital-signature-creator",
+        toolKey: "digisign",
+        title: "Digital Signature Creator - Sign PDFs Online Free | Utilify",
+        description: "Create your digital signature and sign PDF documents online free with total privacy.",
+        canonicalUrl: "https://utilify.co.in/tools/sign-pdf"
+    }
+];
+
 // Read routes and toolRoutes directly from app.js to ensure 100% synchronization
 const appJsPath = path.join(__dirname, '../app.js');
 const appJsContent = fs.readFileSync(appJsPath, 'utf8');
@@ -100,14 +254,15 @@ function escapeHtml(str) {
 let generatedToolsCount = 0;
 let generatedViewsCount = 0;
 
-// 1. Generate Pre-rendered Static Pages for all 63 Tools
-for (const [toolKey, seoSlug] of Object.entries(seoToolUrls)) {
+function generateToolPage(toolKey, seoSlug, customTitle, customDesc, canonicalOverride) {
     const meta = toolRoutes[toolKey];
-    if (!meta) continue;
+    if (!meta) return;
 
-    const toolUrl = `https://utilify.co.in/tools/${seoSlug}`;
-    const cleanTitle = escapeHtml(meta.title);
-    const cleanDesc = escapeHtml(meta.description);
+    const pageTitle = customTitle || meta.title;
+    const pageDesc = customDesc || meta.description;
+    const toolUrl = canonicalOverride || `https://utilify.co.in/tools/${seoSlug}`;
+    const cleanTitle = escapeHtml(pageTitle);
+    const cleanDesc = escapeHtml(pageDesc);
 
     let html = templateHtml;
 
@@ -130,88 +285,110 @@ for (const [toolKey, seoSlug] of Object.entries(seoToolUrls)) {
     html = html.replace(/<meta property="twitter:title" content="[\s\S]*?">/i, `<meta property="twitter:title" content="${cleanTitle}">`);
     html = html.replace(/<meta property="twitter:description" content="[\s\S]*?">/i, `<meta property="twitter:description" content="${cleanDesc}">`);
 
-    // Injected Structured Data: WebApplication + BreadcrumbList
-    const toolNameShort = meta.title.split(' - ')[0].trim();
-    const schemaJson = JSON.stringify({
-        "@context": "https://schema.org",
-        "@graph": [
-            {
-                "@type": "WebApplication",
-                "@id": `${toolUrl}#webapp`,
-                "url": toolUrl,
-                "name": cleanTitle,
-                "applicationCategory": "UtilitiesApplication",
-                "operatingSystem": "All",
-                "browserRequirements": "Requires JavaScript. Requires HTML5.",
-                "description": cleanDesc,
-                "offers": {
-                    "@type": "Offer",
-                    "price": "0",
-                    "priceCurrency": "USD"
-                },
-                "creator": {
-                    "@type": "Person",
-                    "name": "Rushikesh Wagh"
-                }
-            },
-            {
-                "@type": "BreadcrumbList",
-                "@id": `${toolUrl}#breadcrumbs`,
-                "itemListElement": [
-                    {
-                        "@type": "ListItem",
-                        "position": 1,
-                        "name": "Home",
-                        "item": "https://utilify.co.in/"
-                    },
-                    {
-                        "@type": "ListItem",
-                        "position": 2,
-                        "name": "Tools",
-                        "item": "https://utilify.co.in/#tools"
-                    },
-                    {
-                        "@type": "ListItem",
-                        "position": 3,
-                        "name": toolNameShort,
-                        "item": toolUrl
-                    }
-                ]
-            },
-            {
-                "@type": "FAQPage",
-                "@id": `${toolUrl}#faq`,
-                "mainEntity": [
-                    {
-                        "@type": "Question",
-                        "name": `Is the ${toolNameShort} tool free to use on Utilify?`,
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": `Yes, ${toolNameShort} on Utilify is 100% free with no usage limits, no credit card, and no signups required. All tasks execute directly inside your web browser.`
-                        }
-                    },
-                    {
-                        "@type": "Question",
-                        "name": `Are my files uploaded to a server when using ${toolNameShort}?`,
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": `No. Utilify is an offline-first privacy platform. Your files, text, and inputs are processed locally in your browser memory and are never uploaded to any remote server or cloud database.`
-                        }
-                    },
-                    {
-                        "@type": "Question",
-                        "name": `How does ${toolNameShort} work?`,
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": `${cleanDesc} Simply open the tool, input your content or choose your files, apply your preferred settings, and download or copy the result instantly.`
-                        }
-                    }
-                ]
-            }
-        ]
-    });
+    // Injected Structured Data: WebApplication + BreadcrumbList + FAQPage + HowTo
+    const toolNameShort = pageTitle.split(' - ')[0].trim();
 
-    const schemaTag = `<script type="application/ld+json">${schemaJson}</script>`;
+    const howToData = toolHowToSteps[toolKey] || {
+        name: `How to Use ${toolNameShort} Online`,
+        description: cleanDesc,
+        steps: [
+            { name: `Enter Inputs or Select Files`, text: `Open ${toolNameShort} and enter your content or select your input files in the workspace.` },
+            { name: `Configure Settings`, text: `Customize formatting, conversion parameters, or options to suit your preferences.` },
+            { name: `Generate and Export`, text: `Click the action button to process your data client-side and copy or download the results immediately.` }
+        ]
+    };
+
+    const schemaGraph = [
+        {
+            "@type": "WebApplication",
+            "@id": `${toolUrl}#webapp`,
+            "url": toolUrl,
+            "name": cleanTitle,
+            "applicationCategory": "UtilitiesApplication",
+            "operatingSystem": "All",
+            "browserRequirements": "Requires JavaScript. Requires HTML5.",
+            "description": cleanDesc,
+            "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "USD"
+            },
+            "creator": {
+                "@type": "Person",
+                "name": "Rushikesh Wagh"
+            }
+        },
+        {
+            "@type": "BreadcrumbList",
+            "@id": `${toolUrl}#breadcrumbs`,
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Home",
+                    "item": "https://utilify.co.in/"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "Tools",
+                    "item": "https://utilify.co.in/#tools"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 3,
+                    "name": toolNameShort,
+                    "item": toolUrl
+                }
+            ]
+        },
+        {
+            "@type": "FAQPage",
+            "@id": `${toolUrl}#faq`,
+            "mainEntity": [
+                {
+                    "@type": "Question",
+                    "name": `Is the ${toolNameShort} tool free to use on Utilify?`,
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": `Yes, ${toolNameShort} on Utilify is 100% free with no usage limits, no credit card, and no signups required. All tasks execute directly inside your web browser.`
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": `Are my files uploaded to a server when using ${toolNameShort}?`,
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": `No. Utilify is an offline-first privacy platform. Your files, text, and inputs are processed locally in your browser memory and are never uploaded to any remote server or cloud database.`
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": `How does ${toolNameShort} work?`,
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": `${cleanDesc} Simply open the tool, input your content or choose your files, apply your preferred settings, and download or copy the result instantly.`
+                    }
+                }
+            ]
+        },
+        {
+            "@type": "HowTo",
+            "@id": `${toolUrl}#howto`,
+            "name": howToData.name,
+            "description": howToData.description,
+            "totalTime": "PT1M",
+            "step": howToData.steps.map((st, sIdx) => ({
+                "@type": "HowToStep",
+                "position": sIdx + 1,
+                "name": st.name,
+                "text": st.text,
+                "url": `${toolUrl}#step${sIdx + 1}`
+            }))
+        }
+    ];
+
+    const schemaTag = `<script type="application/ld+json">${JSON.stringify({ "@context": "https://schema.org", "@graph": schemaGraph })}</script>`;
     html = html.replace('</head>', `${schemaTag}</head>`);
 
     // DOM Body modifications:
@@ -253,7 +430,17 @@ for (const [toolKey, seoSlug] of Object.entries(seoToolUrls)) {
     generatedToolsCount++;
 }
 
-// 2. Generate Pre-rendered Static Pages for the 6 views (about, privacy, terms, disclaimer, sitemap, contact)
+// 1. Generate Pre-rendered Static Pages for all 63 Canonical Tools
+for (const [toolKey, seoSlug] of Object.entries(seoToolUrls)) {
+    generateToolPage(toolKey, seoSlug);
+}
+
+// 2. Generate Pre-rendered Static Pages for High-Intent Search Aliases
+for (const alias of aliasPages) {
+    generateToolPage(alias.toolKey, alias.aliasSlug, alias.title, alias.description, alias.canonicalUrl);
+}
+
+// 3. Generate Pre-rendered Static Pages for the 6 views (about, privacy, terms, disclaimer, sitemap, contact)
 const views = ["about", "privacy", "terms", "disclaimer", "sitemap", "contact"];
 
 for (const viewName of views) {
@@ -326,4 +513,4 @@ for (const viewName of views) {
     generatedViewsCount++;
 }
 
-console.log(`[Pre-renderer] Generated ${generatedToolsCount} static tool pages and ${generatedViewsCount} static view pages!`);
+console.log(`[Pre-renderer] Generated ${generatedToolsCount} static tool/alias pages and ${generatedViewsCount} static view pages!`);

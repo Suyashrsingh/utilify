@@ -9,16 +9,16 @@ const seoToolUrls = {
     slug: "seo-url-slug-generator",
     qr: "custom-qr-code-generator",
     imgcomp: "image-compressor",
-    pdfmerge: "pdf-merger",
-    pdfsplit: "pdf-splitter",
-    pdfrotate: "pdf-page-rotator",
-    imagetopdf: "image-to-pdf-converter",
-    pdftoimage: "pdf-to-image-converter",
-    pdfcompress: "pdf-compressor",
-    pdfprotect: "pdf-password-protector",
-    pdfunlock: "pdf-password-remover",
-    pdfremove: "pdf-page-remover",
-    digisign: "digital-signature-creator",
+    pdfmerge: "merge-pdf",
+    pdfsplit: "split-pdf",
+    pdfrotate: "rotate-pdf",
+    imagetopdf: "image-to-pdf",
+    pdftoimage: "pdf-to-image",
+    pdfcompress: "compress-pdf",
+    pdfprotect: "protect-pdf",
+    pdfunlock: "unlock-pdf",
+    pdfremove: "remove-pdf-pages",
+    digisign: "sign-pdf",
     imgwatermark: "image-watermark-tool",
     htmltopdf: "html-to-pdf-converter",
     htmltoimage: "html-to-image-converter",
@@ -89,6 +89,25 @@ html = html.replace(regex, (match, toolKey) => {
     }
     return match;
 });
+
+// 3. Update legacy PDF tool URLs to high-intent search slugs
+const legacyReplacements = {
+    '/tools/pdf-merger': '/tools/merge-pdf',
+    '/tools/pdf-splitter': '/tools/split-pdf',
+    '/tools/pdf-page-rotator': '/tools/rotate-pdf',
+    '/tools/image-to-pdf-converter': '/tools/image-to-pdf',
+    '/tools/pdf-to-image-converter': '/tools/pdf-to-image',
+    '/tools/pdf-compressor': '/tools/compress-pdf',
+    '/tools/pdf-password-protector': '/tools/protect-pdf',
+    '/tools/pdf-password-remover': '/tools/unlock-pdf',
+    '/tools/pdf-page-remover': '/tools/remove-pdf-pages',
+    '/tools/digital-signature-creator': '/tools/sign-pdf'
+};
+
+for (const [oldUrl, newUrl] of Object.entries(legacyReplacements)) {
+    const oldRegex = new RegExp(`href=["']${oldUrl}["']`, 'g');
+    html = html.replace(oldRegex, `href="${newUrl}"`);
+}
 
 fs.writeFileSync(htmlPath, html, 'utf8');
 console.log(`Replaced standard routes and ${replacedCount} tool URLs inside index.html with clean path SEO URLs!`);
