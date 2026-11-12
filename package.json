@@ -6,7 +6,7 @@
   "main": "index.html",
   "scripts": {
     "dev": "vite",
-    "build": "node scripts/update-links-helper.cjs && node scripts/generate-sitemap-helper.cjs && vite build && node scripts/minify-html.cjs",
+    "build": "node scripts/update-links-helper.cjs && node scripts/generate-sitemap-helper.cjs && node scripts/generate-og-image.cjs && vite build && node scripts/minify-html.cjs && node scripts/prerender.cjs",
     "preview": "vite preview",
     "update-links": "node scripts/update-links-helper.cjs",
     "generate-sitemap": "node scripts/generate-sitemap-helper.cjs"

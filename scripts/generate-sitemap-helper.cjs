@@ -71,6 +71,7 @@ const views = ["about", "privacy", "terms", "disclaimer", "sitemap", "contact"];
 
 const today = new Date().toISOString().split('T')[0];
 
+// 1. Generate sitemap.xml
 let sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <!-- Primary Landing Page -->
@@ -113,3 +114,36 @@ const rootSitemapPath = path.join(__dirname, '../sitemap.xml');
 fs.writeFileSync(publicSitemapPath, sitemap, 'utf8');
 fs.writeFileSync(rootSitemapPath, sitemap, 'utf8');
 console.log('Successfully generated clean History API paths sitemap.xml in public/ and root folders!');
+
+// 2. Generate llms.txt for AI crawlers (GEO / AEO) with clean URLs
+let llmsTxt = `# Utilify - Premium Offline-First Toolbox
+
+Utilify is a privacy-focused collection of 63+ offline-first browser utilities designed for developers, creators, and students. All operations, computations, and conversions run completely client-side in the browser memory, ensuring 100% data security.
+
+## Core Resources
+
+- [Utilify Home](https://utilify.co.in/) - Main application dashboard and tool directory.
+- [HTML Sitemap Directory](https://utilify.co.in/sitemap) - Category-wise directory of all 63 utilities.
+- [About Utilify](https://utilify.co.in/about) - Architecture details, privacy safeguards, and credit attributions.
+- [Contact Us](https://utilify.co.in/contact) - Direct support inquiry form and credits details.
+- [Privacy Policy](https://utilify.co.in/privacy) - Privacy policies confirming offline local storage operation.
+- [Terms of Service](https://utilify.co.in/terms) - Platform usage terms.
+- [General Disclaimer](https://utilify.co.in/disclaimer) - Cryptographic and formatting limitations.
+
+---
+
+## Utility Tools Directory
+
+`;
+
+for (const [toolKey, slug] of Object.entries(seoToolUrls)) {
+    const formattedName = slug.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+    llmsTxt += `- [${formattedName}](https://utilify.co.in/tools/${slug}) - Clean offline-first browser utility.\n`;
+}
+
+const publicLlmsPath = path.join(__dirname, '../public/llms.txt');
+const rootLlmsPath = path.join(__dirname, '../llms.txt');
+
+fs.writeFileSync(publicLlmsPath, llmsTxt, 'utf8');
+fs.writeFileSync(rootLlmsPath, llmsTxt, 'utf8');
+console.log('Successfully generated clean llms.txt in public/ and root folders!');

@@ -1,4 +1,6 @@
 User-agent: *
 Allow: /
 
+# Sitemaps
 Sitemap: https://utilify.co.in/sitemap.xml
+Host: https://utilify.co.in

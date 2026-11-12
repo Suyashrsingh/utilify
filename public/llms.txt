@@ -5,60 +5,77 @@ Utilify is a privacy-focused collection of 63+ offline-first browser utilities d
 ## Core Resources
 
 - [Utilify Home](https://utilify.co.in/) - Main application dashboard and tool directory.
-- [HTML Sitemap Directory](https://utilify.co.in/#/sitemap) - Category-wise directory of all 63 utilities.
-- [About Utilify](https://utilify.co.in/#/about) - Architecture details, privacy safeguards, and credit attributions.
-- [Contact Us](https://utilify.co.in/#/contact) - Direct support inquiry form and credits details.
-- [Privacy Policy](https://utilify.co.in/#/privacy) - Privacy policies confirming offline local storage operation.
-- [Terms of Service](https://utilify.co.in/#/terms) - Platform usage terms.
+- [HTML Sitemap Directory](https://utilify.co.in/sitemap) - Category-wise directory of all 63 utilities.
+- [About Utilify](https://utilify.co.in/about) - Architecture details, privacy safeguards, and credit attributions.
+- [Contact Us](https://utilify.co.in/contact) - Direct support inquiry form and credits details.
+- [Privacy Policy](https://utilify.co.in/privacy) - Privacy policies confirming offline local storage operation.
+- [Terms of Service](https://utilify.co.in/terms) - Platform usage terms.
+- [General Disclaimer](https://utilify.co.in/disclaimer) - Cryptographic and formatting limitations.
 
 ---
 
 ## Utility Tools Directory
 
-### 🗂️ PDF & File Utilities
-- [PDF Merger](https://utilify.co.in/#/tools/pdfmerge) - Combine multiple PDF files client-side.
-- [PDF Splitter](https://utilify.co.in/#/tools/pdfsplit) - Split PDF files by page ranges.
-- [PDF Page Rotator](https://utilify.co.in/#/tools/pdfrotate) - Rotate individual or bulk PDF pages.
-- [PDF Compressor](https://utilify.co.in/#/tools/pdfcompress) - Optimize stream layout to compress PDF size.
-- [Protect PDF](https://utilify.co.in/#/tools/pdfprotect) - Add open security passwords using client-side encryption.
-- [Unlock PDF](https://utilify.co.in/#/tools/pdfunlock) - Remove passwords and security flags from local PDFs.
-- [Digital Signature](https://utilify.co.in/#/tools/digisign) - Annotate and sign PDF/image documents with custom signature elements.
-- [Image to PDF](https://utilify.co.in/#/tools/imgtopdf) - Convert PNG/JPG/WebP images to PDF document.
-- [PDF to Image](https://utilify.co.in/#/tools/pdftoimg) - Extract PDF pages as high-resolution images.
-- [Image Compressor](https://utilify.co.in/#/tools/imgcomp) - Compress photo dimensions and file sizes.
-- [Image Resizer](https://utilify.co.in/#/tools/imgresize) - Resize image dimensions in pixels.
-- [Image Cropper](https://utilify.co.in/#/tools/imgcrop) - Crop images visually with cropping bounds.
-- [Image Converter](https://utilify.co.in/#/tools/imgconvert) - Convert between PNG, JPEG, WEBP, and GIF formats.
-- [SVG to PNG](https://utilify.co.in/#/tools/svgtopng) - Convert vector drawings to raster PNGs.
-- [PNG to SVG](https://utilify.co.in/#/tools/pngtosvg) - Trace and vectorize raster images to SVG coordinates.
-- [EXIF Data Viewer](https://utilify.co.in/#/tools/exif) - Inspect and strip camera metadata from image files.
-
-### ⚙️ DevOps & Configuration
-- [Dockerfile Generator](https://utilify.co.in/#/tools/dockerfile) - Create production-ready Node/Python/Go Dockerfiles.
-- [Docker Compose Generator](https://utilify.co.in/#/tools/compose) - Build multi-container Docker Compose YAML files.
-- [Nginx Config Builder](https://utilify.co.in/#/tools/nginx) - Generate reverse proxy, SSL, and redirect rules.
-- [AWS IAM Policy Validator](https://utilify.co.in/#/tools/iam) - Validate IAM permission policy schemas.
-- [Cron Expression Editor](https://utilify.co.in/#/tools/cron) - Generate and inspect schedule timings.
-- [Linux Commands Cheat Sheet](https://utilify.co.in/#/tools/linuxcmd) - Interactive Unix shell commands quick reference.
-- [Text Diff Checker](https://utilify.co.in/#/tools/diff) - Compare two text snippets side-by-side.
-- [YAML ↔ JSON Converter](https://utilify.co.in/#/tools/yamljson) - Interconvert between structural formats.
-
-### ✍️ Text & Content Formatting
-- [Social Text Formatter](https://utilify.co.in/#/tools/social) - Format posts using bold/italic Unicode fonts.
-- [Rich Text Editor](https://utilify.co.in/#/tools/richtext) - Visual editor for documents and emails.
-- [Word Counter](https://utilify.co.in/#/tools/words) - Count words and analyze reading readability.
-- [Case Converter](https://utilify.co.in/#/tools/case) - Convert casings to camelCase, snake_case, or UPPERCASE.
-
-### 🎨 Graphic Design & Styling
-- [Box Shadow Generator](https://utilify.co.in/#/tools/boxshadow) - Visual shadow design tool with CSS code output.
-- [CSS Gradient Creator](https://utilify.co.in/#/tools/gradient) - Interactive gradient designer.
-- [Color Converter](https://utilify.co.in/#/tools/colorconv) - Convert HEX, RGB, and HSL values.
-- [Custom QR Generator](https://utilify.co.in/#/tools/qr) - Encode URLs into styled, downloadable QR codes.
-- [Watermark Image](https://utilify.co.in/#/tools/imgwatermark) - Add copyright text or logo overlays to photos.
-
-### 🧮 Calculators & Math
-- [Scientific Calculator](https://utilify.co.in/#/tools/calc) - Perform advanced mathematics and trigonometry offline.
-- [CGPA & GPA Tracker](https://utilify.co.in/#/tools/gpa) - Log semesters and calculate academic score averages.
-- [EMI Loan Calculator](https://utilify.co.in/#/tools/emi) - Compute interest rates and monthly mortgage payouts.
-- [GST Tax Calculator](https://utilify.co.in/#/tools/gst) - Calculate inclusive or exclusive sales taxes.
-- [Age & Date Difference](https://utilify.co.in/#/tools/age) - Calculate precise calendar differences between dates.
+- [Social Media Text Formatter](https://utilify.co.in/tools/social-media-text-formatter) - Clean offline-first browser utility.
+- [Rich Text Editor](https://utilify.co.in/tools/rich-text-editor) - Clean offline-first browser utility.
+- [Word Counter Readability Analyzer](https://utilify.co.in/tools/word-counter-readability-analyzer) - Clean offline-first browser utility.
+- [Smart Case Converter](https://utilify.co.in/tools/smart-case-converter) - Clean offline-first browser utility.
+- [Seo Url Slug Generator](https://utilify.co.in/tools/seo-url-slug-generator) - Clean offline-first browser utility.
+- [Custom Qr Code Generator](https://utilify.co.in/tools/custom-qr-code-generator) - Clean offline-first browser utility.
+- [Image Compressor](https://utilify.co.in/tools/image-compressor) - Clean offline-first browser utility.
+- [Pdf Merger](https://utilify.co.in/tools/pdf-merger) - Clean offline-first browser utility.
+- [Pdf Splitter](https://utilify.co.in/tools/pdf-splitter) - Clean offline-first browser utility.
+- [Pdf Page Rotator](https://utilify.co.in/tools/pdf-page-rotator) - Clean offline-first browser utility.
+- [Image To Pdf Converter](https://utilify.co.in/tools/image-to-pdf-converter) - Clean offline-first browser utility.
+- [Pdf To Image Converter](https://utilify.co.in/tools/pdf-to-image-converter) - Clean offline-first browser utility.
+- [Pdf Compressor](https://utilify.co.in/tools/pdf-compressor) - Clean offline-first browser utility.
+- [Pdf Password Protector](https://utilify.co.in/tools/pdf-password-protector) - Clean offline-first browser utility.
+- [Pdf Password Remover](https://utilify.co.in/tools/pdf-password-remover) - Clean offline-first browser utility.
+- [Pdf Page Remover](https://utilify.co.in/tools/pdf-page-remover) - Clean offline-first browser utility.
+- [Digital Signature Creator](https://utilify.co.in/tools/digital-signature-creator) - Clean offline-first browser utility.
+- [Image Watermark Tool](https://utilify.co.in/tools/image-watermark-tool) - Clean offline-first browser utility.
+- [Html To Pdf Converter](https://utilify.co.in/tools/html-to-pdf-converter) - Clean offline-first browser utility.
+- [Html To Image Converter](https://utilify.co.in/tools/html-to-image-converter) - Clean offline-first browser utility.
+- [Image Resizer](https://utilify.co.in/tools/image-resizer) - Clean offline-first browser utility.
+- [Image Cropper](https://utilify.co.in/tools/image-cropper) - Clean offline-first browser utility.
+- [Image Format Converter](https://utilify.co.in/tools/image-format-converter) - Clean offline-first browser utility.
+- [Svg To Png Converter](https://utilify.co.in/tools/svg-to-png-converter) - Clean offline-first browser utility.
+- [Png To Svg Converter](https://utilify.co.in/tools/png-to-svg-converter) - Clean offline-first browser utility.
+- [Image To Base64 Converter](https://utilify.co.in/tools/image-to-base64-converter) - Clean offline-first browser utility.
+- [Exif Data Viewer Remover](https://utilify.co.in/tools/exif-data-viewer-remover) - Clean offline-first browser utility.
+- [Image Merger Stitcher](https://utilify.co.in/tools/image-merger-stitcher) - Clean offline-first browser utility.
+- [Scientific Calculator](https://utilify.co.in/tools/scientific-calculator) - Clean offline-first browser utility.
+- [Cgpa Calculator](https://utilify.co.in/tools/cgpa-calculator) - Clean offline-first browser utility.
+- [Percentage Calculator](https://utilify.co.in/tools/percentage-calculator) - Clean offline-first browser utility.
+- [Attendance Calculator](https://utilify.co.in/tools/attendance-calculator) - Clean offline-first browser utility.
+- [Emi Loan Calculator](https://utilify.co.in/tools/emi-loan-calculator) - Clean offline-first browser utility.
+- [Gst Tax Calculator](https://utilify.co.in/tools/gst-tax-calculator) - Clean offline-first browser utility.
+- [Simple Loan Calculator](https://utilify.co.in/tools/simple-loan-calculator) - Clean offline-first browser utility.
+- [Age Date Of Birth Calculator](https://utilify.co.in/tools/age-date-of-birth-calculator) - Clean offline-first browser utility.
+- [Date Difference Calculator](https://utilify.co.in/tools/date-difference-calculator) - Clean offline-first browser utility.
+- [Universal Unit Converter](https://utilify.co.in/tools/universal-unit-converter) - Clean offline-first browser utility.
+- [Uuid V4 Guid Generator](https://utilify.co.in/tools/uuid-v4-guid-generator) - Clean offline-first browser utility.
+- [Secure Random Password Generator](https://utilify.co.in/tools/secure-random-password-generator) - Clean offline-first browser utility.
+- [Lorem Ipsum Text Generator](https://utilify.co.in/tools/lorem-ipsum-text-generator) - Clean offline-first browser utility.
+- [Regex Search Replace Text Cleaner](https://utilify.co.in/tools/regex-search-replace-text-cleaner) - Clean offline-first browser utility.
+- [Meta Tags Seo Generator](https://utilify.co.in/tools/meta-tags-seo-generator) - Clean offline-first browser utility.
+- [Robots Txt Generator](https://utilify.co.in/tools/robots-txt-generator) - Clean offline-first browser utility.
+- [Json Prettifier Validator](https://utilify.co.in/tools/json-prettifier-validator) - Clean offline-first browser utility.
+- [Yaml To Json Converter](https://utilify.co.in/tools/yaml-to-json-converter) - Clean offline-first browser utility.
+- [Jwt Debugger Decoder Encoder](https://utilify.co.in/tools/jwt-debugger-decoder-encoder) - Clean offline-first browser utility.
+- [Base64 Encoder Decoder](https://utilify.co.in/tools/base64-encoder-decoder) - Clean offline-first browser utility.
+- [Url Encoder Decoder](https://utilify.co.in/tools/url-encoder-decoder) - Clean offline-first browser utility.
+- [Cryptographic Hash Generator](https://utilify.co.in/tools/cryptographic-hash-generator) - Clean offline-first browser utility.
+- [Text Diff Checker Comparison](https://utilify.co.in/tools/text-diff-checker-comparison) - Clean offline-first browser utility.
+- [Dockerfile Generator Builder](https://utilify.co.in/tools/dockerfile-generator-builder) - Clean offline-first browser utility.
+- [Docker Compose Generator Builder](https://utilify.co.in/tools/docker-compose-generator-builder) - Clean offline-first browser utility.
+- [Github Actions Workflow Generator](https://utilify.co.in/tools/github-actions-workflow-generator) - Clean offline-first browser utility.
+- [Nginx Config Generator Builder](https://utilify.co.in/tools/nginx-config-generator-builder) - Clean offline-first browser utility.
+- [Aws Iam Policy Generator Builder](https://utilify.co.in/tools/aws-iam-policy-generator-builder) - Clean offline-first browser utility.
+- [Crontab Schedule Generator Helper](https://utilify.co.in/tools/crontab-schedule-generator-helper) - Clean offline-first browser utility.
+- [Linux Command Helper Reference](https://utilify.co.in/tools/linux-command-helper-reference) - Clean offline-first browser utility.
+- [Color Converter Hex Rgb Hsl](https://utilify.co.in/tools/color-converter-hex-rgb-hsl) - Clean offline-first browser utility.
+- [Css Box Shadow Generator Builder](https://utilify.co.in/tools/css-box-shadow-generator-builder) - Clean offline-first browser utility.
+- [Css Gradient Background Generator](https://utilify.co.in/tools/css-gradient-background-generator) - Clean offline-first browser utility.
+- [Caesar Rot13 Vigenere Cipher](https://utilify.co.in/tools/caesar-rot13-vigenere-cipher) - Clean offline-first browser utility.
+- [Password Strength Inspector Analyzer](https://utilify.co.in/tools/password-strength-inspector-analyzer) - Clean offline-first browser utility.

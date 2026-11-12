@@ -137,77 +137,97 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     const toolRoutes = {
-        social: { title: "Social Text Formatter - Unicode Bold & Italic Fonts | Utilify", description: "Convert standard text to bold, italics, cursive script, and gothic Unicode symbols for LinkedIn, X (Twitter), and Instagram captions." },
-        rich: { title: "Rich Text Editor - Custom HTML Font Colors & Highlights | Utilify", description: "WYSIWYG document editor to apply sizes, text colors, and highlights. Copy styled text directly to Gmail, Outlook, Word, and Notion." },
+        social: { title: "Social Text Formatter - Unicode Bold & Italic | Utilify", description: "Convert standard text to bold, italics, cursive script, and gothic Unicode symbols for LinkedIn, X (Twitter), and Instagram captions." },
+        rich: { title: "Rich Text Editor - Custom HTML Colors & Styles | Utilify", description: "WYSIWYG document editor to apply sizes, text colors, and highlights. Copy styled text directly to Gmail, Outlook, Word, and Notion." },
         words: { title: "Advanced Word Counter & Readability Level Analyzer | Utilify", description: "Calculate word and character metrics, estimates speaking/reading times, keyword density, and Flesch reading ease scores." },
-        case: { title: "Smart Case Converter - Title Case, camelCase, snake_case | Utilify", description: "Quickly convert text capitalization styles between sentence case, Title Case, camelCase, snake_case, kebab-case, and toggleCase." },
-        slug: { title: "SEO URL Slug Generator - Clean Web URLs | Utilify", description: "Convert titles and headlines to clean, URL-safe hyphenated lowercase strings to maximize Google ranking crawl indices." },
-        qr: { title: "Custom QR Code Generator - High-Res PNG Download | Utilify", description: "Generate vector QR codes from URLs or text strings with size selection and Reed-Solomon error correction presets." },
+        case: { title: "Case Converter - Title Case, camelCase & snake | Utilify", description: "Quickly convert text capitalization styles between sentence case, Title Case, camelCase, snake_case, kebab-case, and toggleCase." },
+        slug: { title: "SEO URL Slug Generator - Clean Web URLs | Utilify", description: "Convert titles and headlines into clean, SEO-optimized, hyphenated URL slugs online free. Boost search engine rankings with URL-safe strings." },
+        qr: { title: "Custom QR Code Generator - High-Res PNG Download | Utilify", description: "Generate custom vector QR codes online free with custom colors, size selection, and Reed-Solomon error correction presets for high scan reliability." },
         json: { title: "JSON Formatter, Prettifier, Parser & Validator | Utilify", description: "Prettify nested JSON objects with indentations, validate syntax schemas, minify strings, and diagnostic parser error highlights." },
-        base64: { title: "Base64 Encoder & Decoder - Offline Utility Tool | Utilify", description: "Convert raw text strings to Base64 format or decode Base64 data blocks to standard UTF-8 characters." },
-        url: { title: "URL Encoder & Decoder - Percent Encoding Tool | Utilify", description: "Percent-encode special query string parameters or decode encoded query addresses conforming to RFC 3986 specs." },
-        hash: { title: "Cryptographic Hash Generator - MD5 & SHA-256 Checksums | Utilify", description: "Compute standard MD5 checksum hashes and secure SHA-256 hash codes client-side using browser subtle digest interfaces." },
-        diff: { title: "Text Diff Checker - Side-by-Side Code Compare | Utilify", description: "Compare two text versions or source code scripts side-by-side to highlight line additions and deletion diff offsets." },
+        base64: { title: "Base64 Encoder & Decoder - Offline Utility Tool | Utilify", description: "Encode text and files to Base64 format or decode Base64 data blocks to UTF-8 characters online free. 100% private in browser memory." },
+        url: { title: "URL Encoder & Decoder - Percent Encoding Tool | Utilify", description: "Encode or decode URLs and query string parameters online free. Compliant with RFC 3986 percent-encoding standards for web developers." },
+        hash: { title: "Hash Generator - MD5 & SHA-256 Checksums Online | Utilify", description: "Generate MD5, SHA-1, SHA-256, and SHA-512 cryptographic checksum hashes online free using native browser Web Crypto API digest interfaces." },
+        diff: { title: "Text Diff Checker - Side-by-Side Code Compare | Utilify", description: "Compare two text snippets or source code files side-by-side online free. Highlight character, word, and line additions and deletion differences." },
         dockerfile: { title: "Dockerfile Generator - Multi-Stage Build Template | Utilify", description: "Generate optimized, production-ready multi-stage Dockerfiles for Node.js, Python, Go, Java, PHP, and Nginx with best-practice layer caching." },
-        compose: { title: "Docker Compose Builder - Multi-Service YAML Generator | Utilify", description: "Generate docker-compose.yml with Node.js, PostgreSQL, MySQL, Redis, MongoDB, and Nginx services in one click — fully client-side." },
-        ghactions: { title: "GitHub Actions Workflow Generator - CI/CD YAML Builder | Utilify", description: "Generate production-ready GitHub Actions CI/CD pipeline YAML files for Node.js, Python, Go, Java, and Docker deployments." },
-        cron: { title: "Cron Expression Generator & Explainer - Visual Schedule Builder | Utilify", description: "Build and explain cron schedule expressions visually for Linux crontab, GitHub Actions, AWS CloudWatch, Kubernetes CronJobs, and node-cron." },
-        yamljson: { title: "YAML to JSON Converter & JSON to YAML - Instant Converter | Utilify", description: "Convert YAML configuration files to JSON and back instantly, client-side. No uploads, no server processing — supports nested structures." },
-        jwt: { title: "JWT Decoder & Inspector - Decode JSON Web Tokens Safely | Utilify", description: "Decode and inspect JWT token headers, payload claims, expiry, and algorithm client-side. Never uploaded to servers." },
+        compose: { title: "Docker Compose Builder - Multi-Service YAML | Utilify", description: "Generate docker-compose.yml with Node.js, PostgreSQL, MySQL, Redis, MongoDB, and Nginx services in one click — fully client-side." },
+        ghactions: { title: "GitHub Actions Generator - CI/CD YAML Builder | Utilify", description: "Generate production-ready GitHub Actions CI/CD pipeline YAML files for Node.js, Python, Go, Java, and Docker deployments." },
+        cron: { title: "Cron Schedule Generator & Visual Crontab Builder | Utilify", description: "Build and explain cron schedule expressions visually for Linux crontab, GitHub Actions, AWS CloudWatch, Kubernetes CronJobs, and node-cron." },
+        yamljson: { title: "YAML to JSON Converter - Instant & Client-Side | Utilify", description: "Convert YAML configuration files to JSON and back instantly, client-side. No uploads, no server processing — supports nested structures." },
+        jwt: { title: "JWT Decoder & Inspector - Inspect Tokens Safely | Utilify", description: "Decode and inspect JWT token headers, payload claims, expiry, and signature algorithms online free. Safe and 100% offline in your browser." },
         boxshadow: { title: "CSS Box Shadow Generator - Live Preview Tool | Utilify", description: "Visually design CSS box shadows with real-time live preview. Control horizontal offset, vertical offset, blur, spread, color, and opacity." },
-        gradient: { title: "CSS Gradient Generator - Linear & Radial Backgrounds | Utilify", description: "Generate beautiful linear and radial CSS gradients with a live preview, angle controls, color pickers, and one-click CSS copy." },
-        colorconv: { title: "HEX to RGB to HSL Color Converter - Online Tool | Utilify", description: "Convert color codes between HEX, RGB, and HSL formats instantly with a live color preview and individual copy buttons." },
+        gradient: { title: "CSS Gradient Generator - Linear & Radial Styles | Utilify", description: "Generate beautiful linear and radial CSS gradients with a live preview, angle controls, color pickers, and one-click CSS copy." },
+        colorconv: { title: "HEX to RGB to HSL Color Converter - Online Tool | Utilify", description: "Convert color codes between HEX, RGB, HSL, and CMYK formats online free with live preview, alpha opacity, and one-click copy buttons." },
         uuid: { title: "UUID v4 Generator - Bulk RFC 4122 UUID Creator | Utilify", description: "Generate cryptographically secure UUID v4 strings using the browser's native crypto.randomUUID() API — single or bulk batches." },
-        password: { title: "Secure Password Generator - Custom Length & Character Sets | Utilify", description: "Generate strong, random passwords with custom length and character set controls — uppercase, lowercase, numbers, and symbols." },
-        lorem: { title: "Lorem Ipsum Generator - Placeholder Text by Paragraphs | Utilify", description: "Generate placeholder filler text by paragraph, word, or sentence count for UI mockups, wireframes, and design prototypes." },
-        textutils: { title: "Text Utilities Workspace - Sort, Dedupe, Reverse & Trim | Utilify", description: "Quick-action text processing: sort lines alphabetically, remove duplicates, reverse text, strip empty lines, trim spaces, and convert to CSV." },
-        metatag: { title: "SEO Meta Tag Generator - Open Graph & Twitter Card Builder | Utilify", description: "Generate complete HTML meta tags including Open Graph, Twitter Card, canonical URL, and author tags to maximize Google search rankings." },
+        password: { title: "Password Generator - Strong Random Passwords | Utilify", description: "Generate strong, random passwords with custom length and character set controls — uppercase, lowercase, numbers, and symbols." },
+        lorem: { title: "Lorem Ipsum Generator - Dummy Text by Paragraphs | Utilify", description: "Generate placeholder filler text by paragraph, word, or sentence count for UI mockups, wireframes, and design prototypes." },
+        textutils: { title: "Text Utilities - Sort, Dedupe, Reverse & Clean | Utilify", description: "Quick-action text processing: sort lines alphabetically, remove duplicates, reverse text, strip empty lines, trim spaces, and convert to CSV." },
+        metatag: { title: "SEO Meta Tag Generator - Open Graph & Twitter | Utilify", description: "Generate complete HTML meta tags including Open Graph, Twitter Card, canonical URL, and author tags to maximize Google search rankings." },
         robotstxt: { title: "Robots.txt Generator - Crawler Directives Builder | Utilify", description: "Generate a valid robots.txt file with custom crawler allow/disallow rules and sitemap location for Google, Bing, and other web bots." },
-        linuxcmd: { title: "Linux Command Builder - Visual Bash Command Generator | Utilify", description: "Build common Linux and Bash commands visually — find, grep, tar, chmod, curl, rsync, ssh, scp, ps, df, and du." },
+        linuxcmd: { title: "Linux Command Builder - Visual Bash Generator | Utilify", description: "Build common Linux and Bash commands visually with options and syntax help — find, grep, tar, chmod, curl, rsync, ssh, scp, ps, and du." },
         nginx: { title: "Nginx Config Generator - Reverse Proxy & SSL Setup | Utilify", description: "Generate production-ready Nginx server block configurations for static sites, reverse proxies, HTTPS with SSL certificates, and SPAs." },
-        iam: { title: "AWS IAM Policy Generator - S3, EC2, Lambda JSON Policies | Utilify", description: "Generate valid AWS IAM JSON policy documents for S3, EC2, Lambda, DynamoDB, CloudWatch, SNS, and SQS with read/write/full access." },
-        imgcomp: { title: "Vivid Image Compressor - Optimize PNG, JPG, and WebP Online | Utilify", description: "Optimize, compress, and resize JPEG, PNG, and WebP images client-side directly in your browser. Maintain aspect ratio, choose formats, and compare visual savings." },
-        pdfmerge: { title: "PDF Merge - Combine PDF Documents Online | Utilify", description: "Combine multiple PDF files client-side into a single document instantly." },
-        pdfsplit: { title: "PDF Splitter - Extract PDF Pages Online | Utilify", description: "Extract page ranges or individual pages from a PDF document securely in your browser." },
-        pdfrotate: { title: "PDF Rotator - Rotate PDF Pages Online | Utilify", description: "Rotate pages of your PDF document easily in the browser." },
-        imgresize: { title: "Image Resizer - Scale Dimensions Online | Utilify", description: "Scale image dimensions to custom pixel sizes client-side." },
-        imgcrop: { title: "Image Cropper - Crop Photos Online | Utilify", description: "Crop images visually with direct local canvas operations." },
-        imgconvert: { title: "Image Converter - Change Formats Online | Utilify", description: "Convert color profiles and image extensions locally inside canvas memory." },
-        svgtopng: { title: "SVG to PNG - Rasterize Vector Graphics | Utilify", description: "Rasterize vector graphics into high-resolution PNG images client-side." },
-        pngtosvg: { title: "PNG to SVG - Vectorize Raster Images | Utilify", description: "Wrap raster images inside vector SVG structures client-side." },
-        imgtobase64: { title: "Image to Base64 - Convert Images to Data URL | Utilify", description: "Convert local image files to base64 encoding strings for web embeddings." },
-        exif: { title: "EXIF Viewer - Extract Photo Metadata | Utilify", description: "Parse photographic camera configurations and geospatial EXIF metadata locally." },
-        scicalc: { title: "Scientific Calculator - Evaluate Math Online | Utilify", description: "Evaluate math expressions, trigonometric functions, and logs client-side." },
-        cgpacalc: { title: "CGPA Calculator - Academic GPA Tracker | Utilify", description: "Calculate academic grade point averages cleanly by semester courses." },
-        percentcalc: { title: "Percentage Calculator - Solve Percent Queries | Utilify", description: "Solve standard percentage queries and score percentages." },
-        attendcalc: { title: "Attendance Calculator - Track Class Goals | Utilify", description: "Calculate class counts needed to meet target percentage rules." },
-        emicalc: { title: "EMI Calculator - Loan & Mortgage Repayments | Utilify", description: "Compute monthly installments and overall interest payable." },
-        gstcalc: { title: "GST Calculator - Calculate Taxes Online | Utilify", description: "Add or remove GST tax values with complete CGPA/SGST components." },
-        loancalc: { title: "Loan Calculator - Amortization Tables | Utilify", description: "Analyze mortgage loan payments and full amortization tables." },
-        agecalc: { title: "Age Calculator - Exact Birthday Math | Utilify", description: "Compute exact age in years, months, days, and intervals from birthday calendar entries." },
-        datediff: { title: "Date Difference - Calculate Time Between Dates | Utilify", description: "Count total calendar days, weeks, and months between two selected dates." },
-        unitconv: { title: "Unit Converter - Weight, Length & Temp | Utilify", description: "Convert Length, Weight, Temperature, Area, Speed, and Data storage values." },
-        cipher: { title: "AES Text Encrypter & Decrypter - Secure Offline Cryptography | Utilify", description: "Locally encrypt and decrypt text messages using industry-standard Advanced Encryption Standard (AES-GCM/CBC) directly inside your browser memory." },
-        pwdinspector: { title: "Password Strength & Entropy Inspector - Real-time Complexity Analysis | Utilify", description: "Analyze password complexity, calculate Shannon entropy bits, check against dictionary patterns, and estimate brute-force crack times securely." },
-        imgmerge: { title: "Two Image Merger - Combine Images Side-by-Side | Utilify", description: "Merge two images horizontally or vertically with custom scaling, padding, and alignments completely offline in your browser." },
-        imagetopdf: { title: "Image to PDF Converter - Convert Photos to PDF | Utilify", description: "Convert JPG, PNG, and WebP images client-side into a single PDF document. Custom margins and page sizes." },
-        pdftoimage: { title: "PDF to Image - Extract PDF Pages as Images | Utilify", description: "Render and extract all pages of a PDF document into high-resolution JPG or PNG files offline." },
-        pdfcompress: { title: "Compress PDF - Reduce PDF File Size Online | Utilify", description: "Optimize and reduce PDF document sizes using client-side compression settings directly in your browser." },
-        pdfprotect: { title: "Protect PDF - Password Encrypt PDF Files | Utilify", description: "Secure PDF files by adding a strong password layer client-side before sharing or downloading." },
-        digisign: { title: "Digital Signature Creator - Sign PDFs & Documents | Utilify", description: "Draw or upload custom signatures, place them anywhere on your documents, and download securely." },
-        imgwatermark: { title: "Watermark Image - Add Watermarks to Photos | Utilify", description: "Protect copyright by embedding text or logo watermarks on photos with transparency controls." },
-        htmltopdf: { title: "HTML to PDF - Render HTML Code to PDF | Utilify", description: "Write or paste custom HTML/CSS code and convert it directly into a clean, paginated PDF document." },
-        htmltoimage: { title: "HTML to Image - Render HTML Code to Image | Utilify", description: "Compile custom HTML layouts, structures, or components client-side into PNG or JPG images." },
-        pdfunlock: { title: "Unlock PDF - Remove Password from PDF | Utilify", description: "Remove passwords, encryption, and permission restrictions from protected PDF documents client-side." },
-        pdfremove: { title: "Remove PDF Pages - Remove Pages from PDF | Utilify", description: "Remove specific pages or custom ranges of pages from your PDF documents client-side." }
+        iam: { title: "AWS IAM Policy Generator - S3, EC2 & Lambda | Utilify", description: "Generate valid AWS IAM JSON policy documents for S3, EC2, Lambda, DynamoDB, CloudWatch, SNS, and SQS with read/write/full access." },
+        imgcomp: { title: "Image Compressor - Optimize PNG, JPG & WebP | Utilify", description: "Optimize, compress, and resize JPEG, PNG, and WebP images client-side directly in your browser. Maintain aspect ratio, choose formats, and compare visual savings." },
+        pdfmerge: { title: "PDF Merge - Combine PDF Documents Online Free | Utilify", description: "Merge PDF files online free. Combine multiple PDF documents into a single file quickly, securely, and 100% in your browser without uploading." },
+        pdfsplit: { title: "PDF Splitter - Extract PDF Pages Online Free | Utilify", description: "Split PDF files online free. Extract custom page ranges or separate individual PDF pages instantly and securely inside your browser memory." },
+        pdfrotate: { title: "PDF Rotator - Rotate PDF Pages Online Free | Utilify", description: "Rotate PDF pages online free. Permanently rotate individual or all pages of your PDF document 90, 180, or 270 degrees client-side with no uploads." },
+        imgresize: { title: "Image Resizer - Scale Dimensions Online Free | Utilify", description: "Free online image resizer. Scale JPG, PNG, and WebP dimensions to exact custom pixels or percentages with aspect ratio lock client-side." },
+        imgcrop: { title: "Image Cropper - Crop Photos Online Free | Utilify", description: "Free online image cropper. Crop photos visually with custom aspect ratios, circular masks, and instant high-res PNG or JPG download." },
+        imgconvert: { title: "Image Converter - Change Formats Online Free | Utilify", description: "Convert image formats online free. Convert between JPG, PNG, WebP, GIF, and BMP locally in your browser memory without server uploads." },
+        svgtopng: { title: "SVG to PNG - Rasterize Vector Graphics Free | Utilify", description: "Convert SVG to PNG online free. Rasterize vector SVG graphics into high-resolution PNG images with transparent backgrounds client-side." },
+        pngtosvg: { title: "PNG to SVG - Vectorize Raster Images Free | Utilify", description: "Convert PNG to SVG online free. Wrap and vectorize raster images into clean, scalable SVG vector graphics directly in your browser." },
+        imgtobase64: { title: "Image to Base64 - Convert Images to Data URL Free | Utilify", description: "Convert images to Base64 data URI strings online free. Embed JPG, PNG, and WebP images directly into HTML and CSS stylesheets locally." },
+        exif: { title: "EXIF Viewer - Extract & Remove Photo Metadata | Utilify", description: "View and remove EXIF metadata from photos online free. Inspect camera settings, GPS location, and strip metadata for privacy protection." },
+        scicalc: { title: "Scientific Calculator - Evaluate Math Online Free | Utilify", description: "Free online scientific calculator. Calculate complex math expressions, trigonometry, logarithms, powers, and roots directly in your browser." },
+        cgpacalc: { title: "CGPA Calculator - Academic GPA Tracker Online | Utilify", description: "Free CGPA to percentage calculator. Calculate semester grade point averages, credit weights, and cumulative GPA for college students." },
+        percentcalc: { title: "Percentage Calculator - Solve Percent Queries Free | Utilify", description: "Free percentage calculator online. Calculate percentage increase, decrease, discounts, tips, and fractional differences instantly." },
+        attendcalc: { title: "Attendance Calculator - Track Class Goals Free | Utilify", description: "Free student attendance calculator. Calculate how many classes you can skip or need to attend to maintain your target attendance percentage." },
+        emicalc: { title: "EMI Calculator - Loan & Mortgage Repayments | Utilify", description: "Free EMI loan calculator online. Calculate monthly loan installments, total interest payable, and mortgage amortization breakdown instantly." },
+        gstcalc: { title: "GST Calculator - Calculate Taxes Online Free | Utilify", description: "Free GST calculator online. Calculate inclusive and exclusive GST tax amounts with detailed CGST and SGST splits for invoices and billing." },
+        loancalc: { title: "Loan Calculator - Amortization Tables Online | Utilify", description: "Free loan calculator with amortization schedule. Calculate monthly payments, interest rates, and loan payoffs for personal and home loans." },
+        agecalc: { title: "Age Calculator - Exact Birthday Math Online | Utilify", description: "Free age calculator online. Calculate your exact age in years, months, weeks, days, hours, and minutes from your date of birth accurately." },
+        datediff: { title: "Date Difference - Calculate Time Between Dates | Utilify", description: "Calculate date difference online free. Count exact business days, calendar days, weeks, and months between two selected calendar dates." },
+        unitconv: { title: "Unit Converter - Weight, Length & Temp Free | Utilify", description: "Universal unit converter online free. Instantly convert length, weight, temperature, speed, area, volume, and digital data storage units." },
+        cipher: { title: "AES Text Encrypter & Decrypter - Offline Crypto | Utilify", description: "Locally encrypt and decrypt text messages using industry-standard Advanced Encryption Standard (AES-GCM/CBC) directly inside your browser memory." },
+        pwdinspector: { title: "Password Strength & Entropy Inspector - Realtime | Utilify", description: "Analyze password complexity, calculate Shannon entropy bits, check against dictionary patterns, and estimate brute-force crack times securely." },
+        imgmerge: { title: "Image Merger - Combine Images Side-by-Side | Utilify", description: "Merge two images horizontally or vertically with custom scaling, padding, and alignments completely offline in your browser." },
+        imagetopdf: { title: "Image to PDF Converter - Convert Photos to PDF | Utilify", description: "Convert images to PDF online free. Combine JPG, PNG, and WebP photos into a single PDF document with custom margins, orientations, and page sizes." },
+        pdftoimage: { title: "PDF to Image - Extract PDF Pages as Images Free | Utilify", description: "Convert PDF to images online free. Extract and render all PDF pages into high-resolution JPG or PNG images directly in your browser offline." },
+        pdfcompress: { title: "Compress PDF - Reduce PDF File Size Online Free | Utilify", description: "Compress PDF files online free. Reduce PDF document file size with high visual quality using smart client-side compression without uploading." },
+        pdfprotect: { title: "Protect PDF - Password Encrypt PDF Files Free | Utilify", description: "Password protect PDF files online free. Encrypt your sensitive PDF documents with strong client-side security passwords before sharing." },
+        digisign: { title: "Digital Signature Creator - Sign PDFs Online | Utilify", description: "Create digital signature online free. Draw, type, or upload your signature and stamp it onto PDF and image documents securely and privately." },
+        imgwatermark: { title: "Watermark Image - Add Watermarks to Photos Free | Utilify", description: "Add watermark to photos online free. Protect copyright with custom text or logo image watermarks, opacity sliders, and position controls." },
+        htmltopdf: { title: "HTML to PDF - Render HTML Code to PDF Free | Utilify", description: "Convert HTML to PDF online free. Render raw HTML/CSS code or documents into clean, paginated PDF files with custom page formatting offline." },
+        htmltoimage: { title: "HTML to Image - Render HTML Code to Image Free | Utilify", description: "Convert HTML to image online free. Render and compile HTML and CSS code blocks into high-resolution PNG or JPG screenshots client-side." },
+        pdfunlock: { title: "Unlock PDF - Remove Password from PDF Free | Utilify", description: "Unlock PDF files online free. Remove passwords, permissions, and security restrictions from protected PDF documents client-side instantly." },
+        pdfremove: { title: "Remove PDF Pages - Remove Pages from PDF Free | Utilify", description: "Remove pages from PDF online free. Delete unwanted pages or custom page ranges from your PDF documents securely in your browser." }
     };
 
-    const updateSEO = (title, description) => {
+    const updateSEO = (title, description, canonicalPath) => {
         document.title = title;
         const metaDesc = document.querySelector('meta[name="description"]');
         if (metaDesc) {
             metaDesc.setAttribute("content", description);
         }
+
+        const fullUrl = window.location.origin + (canonicalPath || window.location.pathname);
+        let canonicalEl = document.querySelector('link[rel="canonical"]');
+        if (!canonicalEl) {
+            canonicalEl = document.createElement('link');
+            canonicalEl.setAttribute('rel', 'canonical');
+            document.head.appendChild(canonicalEl);
+        }
+        canonicalEl.setAttribute('href', fullUrl);
+
+        const setMeta = (selector, prop, val) => {
+            const el = document.querySelector(selector);
+            if (el) el.setAttribute(prop, val);
+        };
+        setMeta('meta[property="og:title"]', 'content', title);
+        setMeta('meta[property="og:description"]', 'content', description);
+        setMeta('meta[property="og:url"]', 'content', fullUrl);
+        setMeta('meta[property="twitter:title"]', 'content', title);
+        setMeta('meta[property="twitter:description"]', 'content', description);
+        setMeta('meta[property="twitter:url"]', 'content', fullUrl);
     };
 
     const switchToolPanel = (panelName) => {
@@ -374,21 +394,22 @@ document.addEventListener("DOMContentLoaded", () => {
             if (toolRoutes[toolKey]) {
                 navigateToView("tools");
                 switchToolPanel(toolKey);
-                updateSEO(toolRoutes[toolKey].title, toolRoutes[toolKey].description);
+                updateSEO(toolRoutes[toolKey].title, toolRoutes[toolKey].description, `/tools/${urlSlug}`);
             } else {
                 window.history.replaceState(null, "", "/");
                 navigateToView("home");
-                updateSEO(routes.home.title, routes.home.description);
+                updateSEO(routes.home.title, routes.home.description, "/");
             }
         } else {
             const viewName = cleanPath === "index.html" ? "home" : cleanPath;
             if (routes[viewName]) {
                 navigateToView(viewName);
-                updateSEO(routes[viewName].title, routes[viewName].description);
+                const targetPath = viewName === "home" ? "/" : `/${viewName}`;
+                updateSEO(routes[viewName].title, routes[viewName].description, targetPath);
             } else {
                 window.history.replaceState(null, "", "/");
                 navigateToView("home");
-                updateSEO(routes.home.title, routes.home.description);
+                updateSEO(routes.home.title, routes.home.description, "/");
             }
         }
     };
