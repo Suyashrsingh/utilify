@@ -179,6 +179,7 @@ body.light-theme ::-webkit-scrollbar-thumb {
     top: 0;
     left: 0;
     right: 0;
+    min-height: 64px;
     background-color: var(--bg-navbar);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
@@ -364,6 +365,7 @@ body.light-theme .moon-icon {
     padding: 6rem 1.5rem 4rem 1.5rem;
     text-align: center;
     position: relative;
+    min-height: 420px;
 }
 
 .hero-container {
@@ -373,6 +375,7 @@ body.light-theme .moon-icon {
     flex-direction: column;
     align-items: center;
     gap: 1.5rem;
+    min-height: 320px;
 }
 
 .badge-new {
@@ -1719,8 +1722,8 @@ body.light-theme .about-hero h2 {
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
 /* ================= MULTIPLE UTILITIES GRID & METRICS SYSTEMS ================= */

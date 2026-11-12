@@ -295,7 +295,7 @@ document.addEventListener("DOMContentLoaded", () => {
     };
     window.ensureToolAssets = ensureToolAssets;
 
-    const switchToolPanel = (panelName) => {
+    const switchToolPanel = (panelName, shouldScroll = true) => {
         // Trigger on-demand lazy loading for this specific tool's engines
         ensureToolAssets(panelName);
 
@@ -321,11 +321,13 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
 
-        // Smooth scroll to top
-        window.scrollTo({ top: 0, behavior: "smooth" });
+        // Smooth scroll to top only on intentional user navigation
+        if (shouldScroll) {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        }
     };
 
-    const navigateToView = (viewName) => {
+    const navigateToView = (viewName, shouldScroll = true) => {
         // Toggle view container panels
         viewPanels.forEach(panel => {
             if (panel.id === `view-${viewName}`) {
@@ -349,8 +351,10 @@ document.addEventListener("DOMContentLoaded", () => {
         updateLinksState(navLinks);
         updateLinksState(mobileNavLinks);
 
-        // Smooth scroll to top on nav click
-        window.scrollTo({ top: 0, behavior: "smooth" });
+        // Smooth scroll to top only on intentional user navigation
+        if (shouldScroll) {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        }
         
         // Close mobile dropdown menu if open
         mobileNavMenu.classList.remove("show");
@@ -456,10 +460,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const navigate = (urlPath) => {
         window.history.pushState(null, "", urlPath);
-        handleRouting();
+        handleRouting(false);
     };
 
-    const handleRouting = () => {
+    const handleRouting = (isInitial = false) => {
+        const shouldScroll = !isInitial;
         let path = window.location.pathname;
         
         // Handle legacy hash routing fallback
@@ -486,23 +491,23 @@ document.addEventListener("DOMContentLoaded", () => {
             const toolKey = urlToToolKey[urlSlug] || urlSlug;
             
             if (toolRoutes[toolKey]) {
-                navigateToView("tools");
-                switchToolPanel(toolKey);
+                navigateToView("tools", shouldScroll);
+                switchToolPanel(toolKey, shouldScroll);
                 updateSEO(toolRoutes[toolKey].title, toolRoutes[toolKey].description, `/tools/${urlSlug}`);
             } else {
                 window.history.replaceState(null, "", "/");
-                navigateToView("home");
+                navigateToView("home", shouldScroll);
                 updateSEO(routes.home.title, routes.home.description, "/");
             }
         } else {
             const viewName = cleanPath === "index.html" ? "home" : cleanPath;
             if (routes[viewName]) {
-                navigateToView(viewName);
+                navigateToView(viewName, shouldScroll);
                 const targetPath = viewName === "home" ? "/" : `/${viewName}`;
                 updateSEO(routes[viewName].title, routes[viewName].description, targetPath);
             } else {
                 window.history.replaceState(null, "", "/");
-                navigateToView("home");
+                navigateToView("home", shouldScroll);
                 updateSEO(routes.home.title, routes.home.description, "/");
             }
         }
@@ -7953,5 +7958,5 @@ ${withHealth ? `    healthcheck:
     // ================= INITIALIZE ON LOAD =================
     updateSocialPreviews();
     updateCounters();
-    handleRouting();
+    handleRouting(true);
 });

@@ -2,7 +2,7 @@
   "$schema": "https://agenticresource.org/schema/v1/ard.json",
   "name": "Utilify",
   "version": "2.0.0",
-  "description": "63+ free, private, offline-first client-side web utilities for developers, creators, and professionals. All data formatting, image processing, and PDF manipulations execute 100% in local browser memory.",
+  "description": "63+ free, private, offline-first client-side web utilities for developers, creators, and professionals. All operations execute 100% in local browser memory with zero server uploads.",
   "url": "https://utilify.co.in",
   "documentation": "https://utilify.co.in/llms-full.txt",
   "llms_txt": "https://utilify.co.in/llms.txt",
@@ -29,6 +29,162 @@
     "server_uploads": false,
     "privacy_policy": "https://utilify.co.in/privacy"
   },
+  "entries": [
+    {
+      "id": "merge-pdf",
+      "name": "Merge PDF",
+      "type": "tool",
+      "description": "Combine multiple PDF files client-side into a single document without server uploads.",
+      "url": "https://utilify.co.in/tools/merge-pdf"
+    },
+    {
+      "id": "compress-pdf",
+      "name": "Compress PDF",
+      "type": "tool",
+      "description": "Compress PDF documents in local browser memory with high visual quality preservation.",
+      "url": "https://utilify.co.in/tools/compress-pdf"
+    },
+    {
+      "id": "image-to-pdf",
+      "name": "Image to PDF",
+      "type": "tool",
+      "description": "Convert JPG, PNG, and WebP images to a single PDF document client-side.",
+      "url": "https://utilify.co.in/tools/image-to-pdf"
+    },
+    {
+      "id": "jpg-to-pdf",
+      "name": "JPG to PDF",
+      "type": "tool",
+      "description": "Convert JPG photos directly into a paginated PDF document offline in browser memory.",
+      "url": "https://utilify.co.in/tools/jpg-to-pdf"
+    },
+    {
+      "id": "pdf-to-image",
+      "name": "PDF to Image",
+      "type": "tool",
+      "description": "Extract and render all pages of a PDF document into JPG or PNG image files.",
+      "url": "https://utilify.co.in/tools/pdf-to-image"
+    },
+    {
+      "id": "pdf-to-jpg",
+      "name": "PDF to JPG",
+      "type": "tool",
+      "description": "Convert PDF documents to high-resolution JPG images client-side without cloud uploads.",
+      "url": "https://utilify.co.in/tools/pdf-to-jpg"
+    },
+    {
+      "id": "split-pdf",
+      "name": "Split PDF",
+      "type": "tool",
+      "description": "Extract custom page ranges or separate individual PDF pages client-side.",
+      "url": "https://utilify.co.in/tools/split-pdf"
+    },
+    {
+      "id": "rotate-pdf",
+      "name": "Rotate PDF",
+      "type": "tool",
+      "description": "Rotate PDF pages 90, 180, or 270 degrees clockwise or counterclockwise client-side.",
+      "url": "https://utilify.co.in/tools/rotate-pdf"
+    },
+    {
+      "id": "protect-pdf",
+      "name": "Protect PDF",
+      "type": "tool",
+      "description": "Encrypt PDF documents with custom passwords locally in browser memory.",
+      "url": "https://utilify.co.in/tools/protect-pdf"
+    },
+    {
+      "id": "unlock-pdf",
+      "name": "Unlock PDF",
+      "type": "tool",
+      "description": "Remove passwords and security restrictions from encrypted PDF documents.",
+      "url": "https://utilify.co.in/tools/unlock-pdf"
+    },
+    {
+      "id": "remove-pdf-pages",
+      "name": "Remove PDF Pages",
+      "type": "tool",
+      "description": "Delete unwanted pages or custom page ranges from any PDF document client-side.",
+      "url": "https://utilify.co.in/tools/remove-pdf-pages"
+    },
+    {
+      "id": "sign-pdf",
+      "name": "Sign PDF",
+      "type": "tool",
+      "description": "Create digital signatures and stamp them onto PDF documents client-side securely.",
+      "url": "https://utilify.co.in/tools/sign-pdf"
+    },
+    {
+      "id": "image-compressor",
+      "name": "Image Compressor",
+      "type": "tool",
+      "description": "Optimize and compress JPEG, PNG, and WebP images client-side directly in browser memory.",
+      "url": "https://utilify.co.in/tools/image-compressor"
+    },
+    {
+      "id": "image-resizer",
+      "name": "Image Resizer",
+      "type": "tool",
+      "description": "Scale and resize image dimensions to custom pixels or percentages with aspect ratio lock.",
+      "url": "https://utilify.co.in/tools/image-resizer"
+    },
+    {
+      "id": "image-cropper",
+      "name": "Image Cropper",
+      "type": "tool",
+      "description": "Crop images with interactive visual controls, aspect ratios, and instant export.",
+      "url": "https://utilify.co.in/tools/image-cropper"
+    },
+    {
+      "id": "image-format-converter",
+      "name": "Image Format Converter",
+      "type": "tool",
+      "description": "Convert between PNG, JPG, WebP, GIF, and BMP formats locally in browser canvas.",
+      "url": "https://utilify.co.in/tools/image-format-converter"
+    },
+    {
+      "id": "json-validator",
+      "name": "JSON Prettifier & Validator",
+      "type": "tool",
+      "description": "Prettify, format, validate, and minify JSON data structures client-side.",
+      "url": "https://utilify.co.in/tools/json-prettifier-validator"
+    },
+    {
+      "id": "social-formatter",
+      "name": "Social Text Formatter",
+      "type": "tool",
+      "description": "Convert plain text to Unicode bold, italic, and cursive for LinkedIn, X, and Instagram.",
+      "url": "https://utilify.co.in/tools/social-media-text-formatter"
+    },
+    {
+      "id": "word-counter",
+      "name": "Word Counter & Readability Analyzer",
+      "type": "tool",
+      "description": "Calculate word counts, character metrics, reading time, and Flesch readability scores.",
+      "url": "https://utilify.co.in/tools/word-counter-readability-analyzer"
+    },
+    {
+      "id": "qr-generator",
+      "name": "Custom QR Code Generator",
+      "type": "tool",
+      "description": "Generate high-resolution vector and PNG QR codes with custom error correction.",
+      "url": "https://utilify.co.in/tools/custom-qr-code-generator"
+    },
+    {
+      "id": "diff-checker",
+      "name": "Text Diff Checker",
+      "type": "tool",
+      "description": "Side-by-side text and code comparison highlighting word and line changes.",
+      "url": "https://utilify.co.in/tools/text-diff-checker-comparison"
+    },
+    {
+      "id": "hash-generator",
+      "name": "Cryptographic Hash Generator",
+      "type": "tool",
+      "description": "Generate MD5, SHA-1, SHA-256, and SHA-512 checksums using Web Crypto API.",
+      "url": "https://utilify.co.in/tools/cryptographic-hash-generator"
+    }
+  ],
   "resources": [
     {
       "id": "merge-pdf",
