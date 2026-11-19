@@ -127,13 +127,13 @@ document.addEventListener("DOMContentLoaded", () => {
     // ================= SPA VIEWS NAVIGATION & HASH ROUTER =================
     
     const routes = {
-        home: { title: "Utilify | Client-Side Browser Tools for Text, Files & Images", description: "Utilify has 63+ client-side browser tools to format text, files & images locally and privately. Fast, offline-first conversion. Developed by Rushikesh Wagh." },
-        about: { title: "About Us - Utilify Creators & Developers Info", description: "Learn about Utilify, our 100% client-side privacy sandbox commitment, optimized code speed, and under-the-hood web API designs by Rushikesh Wagh." },
-        privacy: { title: "Privacy Policy - Utilify Client-Side Sandbox Safety", description: "Read our strict privacy guarantees. All formatting, hashing, and encoding happen locally in your browser. No databases, no cloud retention." },
-        terms: { title: "Terms of Service Agreement - Utilify Tools Hub Rules", description: "Review terms of use, intellectual property copyrights of creator Rushikesh Wagh, and client-side utility limitations." },
-        disclaimer: { title: "General Disclaimer - Cryptographic & Formatting Limits", description: "Limits liability regarding Unicode text fonts rendering, browser mathematical symbols compatibility, and MD5 cryptographic security." },
-        sitemap: { title: "HTML Sitemap Directory - Utilify Tools Hub Index", description: "Crawlable list of all active online utilities, compliance views, and platform details." },
-        contact: { title: "Contact Us - Feedback & Custom Tool Requests", description: "Get in touch with Rushikesh Wagh for recommendations, bug reviews, and custom creator tool suggestions." }
+        home: { title: "Utilify (Utilify AI) | 63+ Client-Side Online Web Tools", description: "Utilify has 63+ client-side browser tools: sign PDF online free, convert image to PDF, extract PDF to image, format text & encrypt files offline with zero uploads." },
+        about: { title: "About Us - Architecture, Team & Mission | Utilify", description: "Learn about Utilify (Utilify AI), our offline-first client-side computing architecture, and our engineering team led by Rushikesh Wagh and Suyash Singh." },
+        privacy: { title: "Privacy Policy & Cookie Disclosure - AdSense & GDPR Compliant | Utilify", description: "Comprehensive privacy policy and cookie disclosure. Learn about our zero-upload RAM sandboxing, Google AdSense ad cookies, and GDPR/CCPA data rights." },
+        terms: { title: "Terms of Service Agreement - Legal & Fair Use Guidelines | Utilify", description: "Review our terms of service, acceptable use policies, intellectual property rights, and platform terms governing your use of Utilify's 63+ web utilities." },
+        disclaimer: { title: "General Disclaimer & Cookie Policy - Transparency Disclosures | Utilify", description: "Transparency disclosures regarding calculation accuracy, client-side cryptographic safety, Google AdSense advertising partners, and cookie management." },
+        sitemap: { title: "HTML Sitemap Directory - All 63+ Online Utilities | Utilify", description: "Crawlable index of all active online utilities, compliance views, and platform details hosted on Utilify." },
+        contact: { title: "Contact Us - Technical Support & Inquiries | Utilify", description: "Get in touch with the Utilify engineering and design team for technical inquiries, bug reports, feature requests, and partnership opportunities." }
     };
 
     const toolRoutes = {
@@ -663,6 +663,31 @@ document.addEventListener("DOMContentLoaded", () => {
             mobileNavToggle.setAttribute("aria-expanded", "false");
         }
     });
+
+    // ================= COOKIE & ADSENSE CONSENT BANNER =================
+    const cookieBanner = document.getElementById("cookie-consent-banner");
+    const cookieAcceptBtn = document.getElementById("cookie-accept-btn");
+    const cookieEssentialBtn = document.getElementById("cookie-essential-btn");
+
+    if (cookieBanner && !localStorage.getItem("utilify_cookie_consent")) {
+        setTimeout(() => {
+            cookieBanner.style.display = "block";
+        }, 1200);
+    }
+
+    if (cookieAcceptBtn) {
+        cookieAcceptBtn.addEventListener("click", () => {
+            localStorage.setItem("utilify_cookie_consent", "all");
+            if (cookieBanner) cookieBanner.style.display = "none";
+        });
+    }
+
+    if (cookieEssentialBtn) {
+        cookieEssentialBtn.addEventListener("click", () => {
+            localStorage.setItem("utilify_cookie_consent", "essential");
+            if (cookieBanner) cookieBanner.style.display = "none";
+        });
+    }
 
     // ================= RESPONSIVE SIDEBAR MOBILE toggles =================
     if (menuToggleBtn && sidebarCloseBtn && appSidebar) {

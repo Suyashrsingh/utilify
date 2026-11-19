@@ -53,60 +53,124 @@
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <link rel="apple-touch-icon" href="/favicon-192x192.png">
 
-    <!-- Schema Markup JSON-LD (WebApplication Schema) -->
+    <!-- Schema Markup JSON-LD Suite (Organization + WebSite + WebApplication + FAQPage for Google Gemini & AI Overviews) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "WebApplication",
-      "name": "Utilify",
-      "alternateName": ["Utilify AI", "utilifyai", "Utilify Tools", "Utilify App"],
-      "url": "https://utilify.co.in/",
-      "description": "Utilify (also known as Utilify AI / utilifyai) is a client-side browser utility suite with 63+ free online tools for PDFs, images, developers, and creators. Sign PDF online free, convert JPG to PDF, extract PDF to image, and format text offline with zero server uploads.",
-      "applicationCategory": "UtilitiesApplication",
-      "operatingSystem": "All",
-      "browserRequirements": "Requires JavaScript. Requires HTML5.",
-      "softwareVersion": "2.0.0",
-      "creator": {
-        "@type": "Person",
-        "name": "Rushikesh Wagh"
-      },
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD"
-      }
-    }
-    </script>
-    
-    <!-- FAQPage Schema Markup (Google Search FAQs integration) -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
+      "@graph": [
         {
-          "@type": "Question",
-          "name": "Can I format text with colors and custom sizes on LinkedIn and Twitter?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "No, social media platforms like LinkedIn, X (Twitter), Facebook, and Instagram do not support HTML or CSS formatting. If you paste colored or sized text, it will be pasted as plain text. The only way to format text on social media is using Unicode mathematical symbols (like bold, italics, or script), which Utilify provides in Social Media Mode."
-          }
+          "@type": "Organization",
+          "@id": "https://utilify.co.in/#organization",
+          "name": "Utilify",
+          "alternateName": ["Utilify AI", "utilifyai", "Utilify Tools"],
+          "url": "https://utilify.co.in/",
+          "logo": "https://utilify.co.in/favicon-192x192.png",
+          "founder": {
+            "@type": "Person",
+            "name": "Rushikesh Wagh",
+            "jobTitle": "Lead Systems Architect & Software Engineer"
+          },
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "email": "support@utilify.co.in",
+            "contactType": "Customer Support",
+            "availableLanguage": "English"
+          },
+          "knowsAbout": [
+            "Client-Side Cryptography",
+            "WebAssembly Execution",
+            "PDF Document Processing",
+            "Image Compression & Conversion",
+            "Developer Utilities & DevOps"
+          ]
         },
         {
-          "@type": "Question",
-          "name": "Why does Unicode formatted text look like blank boxes on some devices?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Unicode bold, italic, and cursive styles are represented by mathematical alphanumeric symbols. While 99% of modern smartphones and computers support them, very old operating systems or devices that lack updated font packages may show them as empty boxes (tofu) or question marks."
-          }
+          "@type": "WebSite",
+          "@id": "https://utilify.co.in/#website",
+          "url": "https://utilify.co.in/",
+          "name": "Utilify",
+          "description": "63+ private, offline-first client-side web utilities for developers, creators, and businesses.",
+          "publisher": {
+            "@id": "https://utilify.co.in/#organization"
+          },
+          "inLanguage": "en-US"
         },
         {
-          "@type": "Question",
-          "name": "Is Unicode styled text readable by screen readers for accessibility?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Screen readers read mathematical symbols by their literal math names (e.g., 'mathematical bold capital A') rather than reading the word itself. Therefore, it is highly recommended to use styled Unicode text only for accentuating single words or short phrases, rather than entire paragraphs, to preserve accessibility."
-          }
+          "@type": "WebApplication",
+          "@id": "https://utilify.co.in/#webapp",
+          "name": "Utilify",
+          "alternateName": ["Utilify AI", "utilifyai", "Utilify Tools", "Utilify App"],
+          "url": "https://utilify.co.in/",
+          "description": "Utilify (Utilify AI) is an offline-first browser utility suite with 63+ free online tools for PDFs, images, developers, and creators. Sign PDF online free, convert JPG to PDF, extract PDF to image, and format text offline with zero server uploads.",
+          "applicationCategory": "UtilitiesApplication",
+          "applicationSubCategory": "Developer & Productivity Suite",
+          "operatingSystem": "All",
+          "browserRequirements": "Requires JavaScript. Requires HTML5.",
+          "softwareVersion": "2.0.0",
+          "creator": {
+            "@type": "Person",
+            "name": "Rushikesh Wagh"
+          },
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+          },
+          "featureList": [
+            "Sign PDF Online Free (No Sign-Up)",
+            "Image to PDF Converter Free (JPG/PNG)",
+            "PDF to Image & PDF to JPG Extractor",
+            "Protect PDF with AES Password Encryption",
+            "Social Media Bold & Italic Unicode Text Formatter",
+            "JSON Prettifier & Schema Validator",
+            "AES-GCM Client-Side Cryptographic Cipher"
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://utilify.co.in/#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "What is Utilify (Utilify AI)?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Utilify is a next-generation browser utility platform offering 63+ free, client-side tools for developers, creators, and businesses. All tasks—including PDF signing, image conversion, text formatting, and cryptography—execute 100% locally in browser memory without sending data to cloud servers."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How does Utilify protect document and file privacy?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Utilify uses an offline-first architecture powered by WebAssembly, HTML5 Canvas, and the Web Crypto API. Your files, documents, and sensitive passwords are never uploaded to any remote server or database; all computation runs in your local device RAM and is destroyed on tab closure."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How can I sign a PDF online for free without sign up on Utilify?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Open the Sign PDF tool on Utilify, drop your PDF or contract into the workspace, draw or upload your signature, drag it onto the document, and click 'Save & Download Document'. The process is 100% free with no account registration or watermarks."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How can I convert JPG images to PDF without uploading them?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Utilify's Image to PDF converter processes JPG, PNG, and WebP images directly inside your browser memory. Drag your photos into the dropzone, configure page margins and orientation (A4, Letter, or Fit), and click generate to download your merged PDF instantly."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Are Utilify's utilities free for commercial and professional use?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. All 63+ tools on Utilify are completely free for personal, educational, and commercial workflows without usage caps, credit cards, or hidden fees."
+              }
+            }
+          ]
         }
       ]
     }
@@ -1041,6 +1105,73 @@
                             <button class="card-action-btn launch-tool-btn" data-tool="imgmerge">Open Tool ⚡</button>
                         </div>
                     </div>
+                </div>
+            </section>
+
+            <!-- SUBSTANTIAL EDITORIAL KNOWLEDGE BASE & PLATFORM GUIDE (ADSENSE & AI OPTIMIZATION) -->
+            <section class="homepage-editorial-guide card" id="about-platform" style="margin-top: 3.5rem; padding: 2.5rem; background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.06);">
+                <header style="margin-bottom: 2rem;">
+                    <span class="blog-tag" style="background: rgba(99, 102, 241, 0.15); color: var(--indigo); font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; padding: 0.35rem 0.75rem; border-radius: 50px;">Architectural Overview</span>
+                    <h2 style="font-family: var(--font-heading); font-size: 2rem; font-weight: 800; color: var(--text-color); margin-top: 0.75rem; margin-bottom: 0.75rem;">
+                        Enterprise-Grade Privacy &amp; The Future of Client-Side Web Computing
+                    </h2>
+                    <p style="font-size: 1.05rem; color: var(--text-muted); line-height: 1.6; max-width: 820px; margin: 0;">
+                        Discover how Utilify (Utilify AI) eliminates cloud data leaks, protects confidential corporate documents, and delivers desktop-level processing speeds directly inside your web browser.
+                    </p>
+                </header>
+
+                <div class="blog-content" style="color: var(--text-color); line-height: 1.7; font-size: 0.95rem;">
+                    <h3>🛡️ The Vulnerability of Cloud-Based Utility Portals</h3>
+                    <p>
+                        Every day, millions of creators, developers, legal teams, and businesses rely on web-based utility portals to convert images, sign PDF contracts, format sensitive configuration files, or generate cryptographic keys. However, traditional SaaS utility websites rely on an inherently vulnerable model: <strong>they require users to upload their documents to remote servers</strong>.
+                    </p>
+                    <p>
+                        When you upload a confidential employment contract to a remote PDF converter, your file travels across public internet backbones, passes through third-party load balancers, and resides on remote cloud disks (such as AWS S3 or Google Cloud Storage). Even if these platforms advertise that files are "deleted after 1 hour," your documents exist in remote databases where they are vulnerable to server-side breaches, misconfigured permissions, and unauthorized access.
+                    </p>
+                    <p>
+                        <strong>Utilify fundamentally eliminates this attack surface.</strong> Built on the strict engineering principle of <em>"In-Memory Execution Only"</em>, Utilify brings advanced binary parsers, image manipulators, and cryptographic engines straight into your browser sandbox. <strong>Your documents, photos, text payloads, and encryption keys never travel across the internet.</strong>
+                    </p>
+
+                    <h3 style="margin-top: 2rem;">🚀 Explore Our 5 Core Engineering Ecosystems</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin: 1.5rem 0 2rem;">
+                        <div style="padding: 1.5rem; background: var(--bg-hover); border-radius: 12px; border: 1px solid var(--border-color);">
+                            <h4 style="margin: 0 0 0.5rem 0; font-size: 1.1rem; color: var(--indigo);">📄 1. Digital Document &amp; PDF Suite</h4>
+                            <p style="font-size: 0.88rem; color: var(--text-muted); margin: 0; line-height: 1.6;">
+                                Complete legal and professional document workflows. <strong>Sign PDF Online Free</strong> without sign-up using digital signature pads, merge multi-page contracts, extract PDF pages to high-resolution JPG/PNG images, compress file sizes, and encrypt confidential reports with AES password protection.
+                            </p>
+                        </div>
+                        <div style="padding: 1.5rem; background: var(--bg-hover); border-radius: 12px; border: 1px solid var(--border-color);">
+                            <h4 style="margin: 0 0 0.5rem 0; font-size: 1.1rem; color: var(--indigo);">🖼️ 2. Studio Image &amp; Visual Studio</h4>
+                            <p style="font-size: 0.88rem; color: var(--text-muted); margin: 0; line-height: 1.6;">
+                                High-performance visual processing. <strong>Image to PDF Converter Free</strong> combines multiple photos into paginated PDF documents with custom margins. Includes lossless image compression, format converters (JPG, PNG, WebP, SVG), photo croppers, and privacy EXIF metadata removers.
+                            </p>
+                        </div>
+                        <div style="padding: 1.5rem; background: var(--bg-hover); border-radius: 12px; border: 1px solid var(--border-color);">
+                            <h4 style="margin: 0 0 0.5rem 0; font-size: 1.1rem; color: var(--indigo);">⚙️ 3. DevOps &amp; Developer Infrastructure</h4>
+                            <p style="font-size: 0.88rem; color: var(--text-muted); margin: 0; line-height: 1.6;">
+                                Accelerate deployment workflows. Production-grade Dockerfile builders, Docker Compose generators, GitHub Actions CI/CD pipeline scaffolding, Nginx reverse proxy configuration generators, AWS IAM least-privilege policy validators, and crontab schedule helpers.
+                            </p>
+                        </div>
+                        <div style="padding: 1.5rem; background: var(--bg-hover); border-radius: 12px; border: 1px solid var(--border-color);">
+                            <h4 style="margin: 0 0 0.5rem 0; font-size: 1.1rem; color: var(--indigo);">🔐 4. Cryptography, Security &amp; Encoding</h4>
+                            <p style="font-size: 0.88rem; color: var(--text-muted); margin: 0; line-height: 1.6;">
+                                Hardware-accelerated security tools relying on the W3C Web Cryptography API. Client-side AES-GCM text encrypter, SHA-256 and SHA-512 cryptographic hashers, JWT token debuggers, Base64 converters, UUID v4 generators, and Shannon entropy password inspectors.
+                            </p>
+                        </div>
+                    </div>
+
+                    <h3 style="margin-top: 2rem;">💼 Enterprise Security Alignment (GDPR, HIPAA &amp; SOC 2 Compatible)</h3>
+                    <p>
+                        For healthcare providers, financial institutions, and corporate legal departments, standard compliance regulations (such as HIPAA in the United States and GDPR in Europe) strictly regulate where Protected Health Information (PHI) and Personally Identifiable Information (PII) can be transmitted.
+                    </p>
+                    <p>
+                        Because Utilify does not transmit data over the network, <strong>our platform is inherently compatible with stringent compliance requirements</strong>. You can safely format medical records, sign freelance non-disclosure agreements, and process confidential financial ledgers directly within your internal intranet environment without triggering third-party data processing agreements (DPAs).
+                    </p>
+
+                    <h3 style="margin-top: 2rem;">⚡ Zero-Latency Performance Powered by Your Local Hardware</h3>
+                    <p>
+                        Cloud-based tools are fundamentally bottlenecked by your internet upload speed. Uploading a 50MB PDF document or a batch of 20 high-resolution camera photos can take minutes on standard broadband connections. With Utilify, operations run locally on your device's multi-core CPU. Document rendering, image parsing, and cryptographic hashing complete in milliseconds—enabling instant productivity with zero bandwidth consumption.
+                    </p>
                 </div>
             </section>
         </div>
@@ -8928,19 +9059,56 @@
         <!-- About Page View -->
         <div class="view-panel" id="view-about">
             <section class="about-hero" style="text-align: center; padding: 4rem 2rem; background: var(--bg-hover); border-radius: 12px; margin-bottom: 2rem;">
-                <h2 style="font-family: var(--font-heading); font-size: 2.5rem; font-weight: 800; color: var(--text-color); margin-bottom: 1rem;">About Utilify</h2>
-                <p style="font-size: 1.1rem; color: var(--text-muted); max-width: 700px; margin: 0 auto;">Premium collection of utility web tools built for speed, privacy, and flawless text, image, and data formatting.</p>
+                <h2 style="font-family: var(--font-heading); font-size: 2.5rem; font-weight: 800; color: var(--text-color); margin-bottom: 1rem;">About Utilify (Utilify AI)</h2>
+                <p style="font-size: 1.1rem; color: var(--text-muted); max-width: 750px; margin: 0 auto;">Pioneering offline-first web computing with 63+ professional utilities for creators, developers, and businesses—engineered for speed, algorithmic accuracy, and 100% client-side privacy.</p>
+                <div style="font-size:0.85rem; color:var(--text-muted); margin-top:1rem;">Founded &amp; Maintained by <strong>Rushikesh Wagh</strong> • Co-Designed by <strong>Suyash Singh</strong></div>
             </section>
             <article class="blog-card" style="margin-top: 0;">
                 <div class="blog-content">
-                    <p>Utilify is a next-generation developer and creator workspace built with a single philosophy: <strong>100% Client-Side Privacy</strong>. In today’s connected world, standard formatting utilities force users to upload their configuration files, code blocks, images, and text payloads to remote servers. This introduces significant risks of database leaks, identity theft, and corporate security breaches.</p>
-                    <p>Designed and engineered by <strong>Rushikesh Wagh</strong>, Utilify completely removes the remote server dependency. All conversions, compressions, mathematical calculations, and parsing tools run fully offline inside your browser's local sandbox memory. This architecture ensures that your data remains in your system's RAM, with zero trackers, cookies, or remote analytics logs.</p>
-                    <h3>💡 Core Platform Highlights</h3>
+                    <h3>🌟 Our Origin &amp; The Privacy Crisis in Web Utilities</h3>
+                    <p>Every single day, millions of creators, software engineers, and remote professionals use online tools to perform everyday tasks: convert an image to a PDF, sign an NDA contract, inspect a JSON payload, format text for social media, or generate a secure password. Tragically, the overwhelming majority of traditional web utilities operate on an antiquated and hazardous model: <strong>they force users to upload their confidential files to remote third-party cloud servers</strong>.</p>
+                    <p>This server-dependent architecture creates massive privacy vulnerabilities: sensitive legal contracts, corporate financial spreadsheets, personal identification photos, and proprietary source code are transmitted across public networks and stored on cloud disks. These databases are vulnerable to data breaches, unauthorized employee access, and corporate data harvesting.</p>
+                    <p><strong>Utilify was founded to permanently solve this problem.</strong> Built on the foundational engineering philosophy of <em>"Local Execution First, Zero Remote Knowledge"</em>, Utilify brings desktop-grade computing power straight into your web browser sandbox. Every single operation—whether encrypting a PDF with AES, signing a contract, compressing high-resolution photos, or decoding cryptographic tokens—executes <strong>100% client-side in your device's local memory (RAM)</strong>.</p>
+
+                    <h3>⚡ The Technical Architecture Behind Utilify</h3>
+                    <p>Building high-performance client-side utilities capable of handling large binary files and complex computations without a backend server requires bleeding-edge web technologies:</p>
                     <ul>
-                        <li><strong>Zero Server Uploads:</strong> Absolute privacy for your database files, image assets, and password generations.</li>
-                        <li><strong>Offline-First Speed:</strong> Process files at the maximum performance speed of your local CPU.</li>
-                        <li><strong>Elegant Design:</strong> Dark-themed modern layout with glassmorphic elements built for long developer sessions.</li>
+                        <li><strong>WebAssembly (Wasm) Engine:</strong> By running compiled binary bytecode directly inside modern browser runtimes, our PDF manipulation and image compression algorithms achieve near-native C/C++ execution speeds without hardware throttling.</li>
+                        <li><strong>W3C Web Cryptography API:</strong> Cryptographic hashing (SHA-256, SHA-512) and symmetric encryption (AES-GCM/CBC) utilize your operating system’s hardware-accelerated cryptographic primitives, guaranteeing mathematically verified security without key transmission.</li>
+                        <li><strong>HTML5 Canvas &amp; Vector Rasterization:</strong> Document previewing, digital signature stamping, and image conversion are handled via hardware-accelerated 2D canvas contexts, ensuring pixel-perfect fidelity and instant responsiveness.</li>
+                        <li><strong>Ephemeral In-Memory Lifecycle:</strong> Files and inputs exist exclusively within your browser's transient memory heap. The moment you refresh the page or navigate away, the browser's native garbage collector irreversibly destroys all memory buffers.</li>
                     </ul>
+
+                    <h3>👥 Engineering &amp; Design Leadership</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin: 1.5rem 0 2rem;">
+                        <div style="padding: 1.5rem; background: var(--bg-hover); border-radius: 12px; border: 1px solid var(--border-color);">
+                            <div style="font-size: 2rem; margin-bottom: 0.5rem;">👨‍💻</div>
+                            <h4 style="margin: 0 0 0.35rem 0; font-size: 1.15rem; color: var(--text-color);">Rushikesh Wagh</h4>
+                            <div style="font-size: 0.85rem; color: var(--indigo); font-weight: 600; margin-bottom: 0.75rem;">Founder, Lead Systems Architect &amp; Software Engineer</div>
+                            <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.6; margin: 0;">
+                                Specializing in full-stack architecture, client-side cryptography, and distributed systems. Rushikesh architected Utilify's offline-first execution framework, ensuring that all 63+ tools operate without network dependencies, data storage, or server bottlenecks.
+                            </p>
+                        </div>
+                        <div style="padding: 1.5rem; background: var(--bg-hover); border-radius: 12px; border: 1px solid var(--border-color);">
+                            <div style="font-size: 2rem; margin-bottom: 0.5rem;">🎨</div>
+                            <h4 style="margin: 0 0 0.35rem 0; font-size: 1.15rem; color: var(--text-color);">Suyash Singh</h4>
+                            <div style="font-size: 0.85rem; color: var(--indigo); font-weight: 600; margin-bottom: 0.75rem;">Co-Designer &amp; UI/UX Director</div>
+                            <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.6; margin: 0;">
+                                Passionate about ergonomic interface design, design tokens, and digital accessibility. Suyash engineered Utilify's Executive dark-mode aesthetics, responsive typography scales, and WCAG 2.1 AA accessibility standards for effortless multi-device usage.
+                            </p>
+                        </div>
+                    </div>
+
+                    <h3>🛡️ Editorial Standards &amp; Quality Verification</h3>
+                    <p>Maintaining a platform of 63+ utilities requires ongoing curation, rigorous mathematical verification, and structural maintenance. Every tool on Utilify is subject to strict quality assurance:</p>
+                    <ul>
+                        <li><strong>Algorithmic Validation:</strong> Cryptographic tools are verified against official NIST (National Institute of Standards and Technology) test vectors. Calculators (GST, EMI, CGPA, Attendance) are audited against statutory financial formulas.</li>
+                        <li><strong>Multi-Browser Compatibility:</strong> Verified across the latest versions of Chromium (Google Chrome, Microsoft Edge, Brave), Gecko (Mozilla Firefox), and WebKit (Apple Safari on iOS and macOS).</li>
+                        <li><strong>Zero Monetization Paywalls:</strong> We believe essential computing tools should be accessible to everyone worldwide—from students in developing nations to remote engineers—without credit cards, trial expirations, or file watermarks.</li>
+                    </ul>
+
+                    <h3>🏢 Community, Feedback &amp; Contact</h3>
+                    <p>Utilify is continuously evolving. We welcome feature requests, technical bug reports, security disclosures, and suggestions from developers and creators across the world. Reach our core engineering team directly through our <a href="/contact/">Contact Us Page</a> or via email at <a href="mailto:support@utilify.co.in">support@utilify.co.in</a>.</p>
                 </div>
             </article>
         </div>
@@ -8948,16 +9116,71 @@
         <!-- Privacy Policy View -->
         <div class="view-panel" id="view-privacy">
             <section class="about-hero" style="text-align: center; padding: 4rem 2rem; background: var(--bg-hover); border-radius: 12px; margin-bottom: 2rem;">
-                <h2 style="font-family: var(--font-heading); font-size: 2.5rem; font-weight: 800; color: var(--text-color); margin-bottom: 1rem;">Privacy Policy</h2>
-                <p style="font-size: 1.1rem; color: var(--text-muted); max-width: 700px; margin: 0 auto;">Read our strict GDPR-compliant guarantees. All parsing and calculations happen locally inside your browser sandbox.</p>
+                <h2 style="font-family: var(--font-heading); font-size: 2.5rem; font-weight: 800; color: var(--text-color); margin-bottom: 1rem;">Privacy Policy &amp; Cookie Disclosure</h2>
+                <p style="font-size: 1.1rem; color: var(--text-muted); max-width: 700px; margin: 0 auto;">Comprehensive legal privacy statement, client-side data processing guarantees, Google AdSense advertising disclosures, and GDPR/CCPA compliance.</p>
+                <div style="font-size:0.85rem; color:var(--text-muted); margin-top:1rem;">Last Updated: November 19, 2026 • Effective Date: January 1, 2026</div>
             </section>
             <article class="blog-card" style="margin-top: 0;">
                 <div class="blog-content">
-                    <p>At Utilify, your privacy is our highest priority. Because our utilities operate entirely on the client side, we do not collect, process, or store any personal data, configuration blocks, or assets that you enter or upload.</p>
-                    <h3>1. Data Processing and RAM Sandboxing</h3>
-                    <p>Any text, passwords, image files, or PDF documents you load into Utilify are processed in your local web browser's memory buffer. No data is sent over the internet. You can disconnect your device from the network after loading the page, and the application will remain fully functional.</p>
-                    <h3>2. Third-Party Analytics and Cookies</h3>
-                    <p>We do not use tracking cookies, analytics pixels, or advertisement widgets. The settings you toggle (such as your active UI theme preference) are stored locally on your device using browser localStorage options.</p>
+                    <p>Welcome to <strong>Utilify</strong> (accessible at <a href="https://utilify.co.in/">https://utilify.co.in/</a>, also referred to as "Utilify AI", "we", "our", or "the Platform"). Protecting the privacy and confidentiality of our visitors is our paramount commitment. This comprehensive Privacy Policy documents the types of information that are collected and recorded by Utilify, how we use it, our strict offline-first zero-storage architecture, and our disclosures regarding third-party advertising partners including Google AdSense.</p>
+                    <p>If you have additional questions or require more information about our Privacy Policy or data protection practices, do not hesitate to contact our team via email at <a href="mailto:support@utilify.co.in">support@utilify.co.in</a>.</p>
+
+                    <h3>1. Groundbreaking Client-Side Sandboxing (Zero Server Uploads)</h3>
+                    <p>Unlike conventional web utility websites that upload your files, documents, and sensitive payloads to remote cloud servers (such as AWS, Google Cloud, or Microsoft Azure), <strong>Utilify operates entirely client-side inside your web browser's local memory (RAM)</strong> using WebAssembly, HTML5 Canvas, and the Web Crypto API.</p>
+                    <ul>
+                        <li><strong>No Document Transmission:</strong> PDF documents, digital signatures, images, photos, and files loaded into any of our 63+ utility tools are parsed and executed locally on your device. They are NEVER uploaded to any remote server or cloud database.</li>
+                        <li><strong>No File Logging or Persistence:</strong> As soon as you refresh or close your browser tab, all temporary in-memory buffers holding your file data are instantly and irreversibly deleted by your browser's native garbage collector.</li>
+                        <li><strong>Offline Execution Capability:</strong> Once the page is loaded, you can disconnect your device from the internet (airplane mode) and continue formatting text, signing PDFs, compressing images, or computing hashes with 100% functionality.</li>
+                    </ul>
+
+                    <h3>2. Google AdSense &amp; Third-Party Advertising Partners</h3>
+                    <p>To keep our collection of 63+ developer and creator utilities 100% free forever without paywalls or mandatory subscriptions, Utilify partners with third-party advertising vendors, predominantly <strong>Google AdSense</strong>.</p>
+                    <p>Third-party vendors, including Google, use cookies, web beacons, and JavaScript scripts to serve ads based on a user's prior visits to Utilify or other websites across the internet. These technologies allow advertising networks to automatically receive your IP address, measure the effectiveness of their advertising campaigns, and personalize the advertising content that you see.</p>
+                    <p><strong>Important Note:</strong> Utilify has no access to or control over the cookies that are used by third-party advertisers. Our client-side tools do not pass any document content, text input, or file data to Google AdSense or any external ad partner.</p>
+
+                    <h3>3. The Google DoubleClick DART Cookie</h3>
+                    <p>Google is one of our third-party vendors. Google uses cookies, specifically the <strong>DoubleClick DART cookie</strong>, to serve ads to our site visitors based upon their visit to <a href="https://utilify.co.in/">https://utilify.co.in/</a> and other sites on the Internet.</p>
+                    <p>Visitors may choose to opt out of the use of the DART cookie and personalized advertising by visiting the Google Ad and Content Network Privacy Policy at the following URL: <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener noreferrer">https://policies.google.com/technologies/ads</a> or through Google's Ads Settings page at <a href="https://adssettings.google.com/" target="_blank" rel="noopener noreferrer">https://adssettings.google.com/</a>.</p>
+                    <p>Alternatively, users can opt out of third-party vendor cookies for personalized advertising by visiting the Digital Advertising Alliance Consumer Choice tool at <a href="https://www.aboutads.info/choices/" target="_blank" rel="noopener noreferrer">https://www.aboutads.info/choices/</a> or the Network Advertising Initiative opt-out page at <a href="https://optout.networkadvertising.org/" target="_blank" rel="noopener noreferrer">https://optout.networkadvertising.org/</a>.</p>
+
+                    <h3>4. Cookie Usage &amp; Local Storage (localStorage)</h3>
+                    <p>Like any modern web application, Utilify uses minimal browser storage mechanisms solely to deliver essential user experience features:</p>
+                    <ul>
+                        <li><strong>Theme Preference:</strong> We store a simple string in your browser's local storage (<code>theme = "dark"</code> or <code>"light"</code>) so that your preferred visual theme persists between visits.</li>
+                        <li><strong>Cookie Consent Status:</strong> We store your consent preference in local storage (<code>utilify_cookie_consent</code>) so you are not repeatedly prompted on every page load.</li>
+                        <li><strong>Advertising Cookies:</strong> Cookies set by Google AdSense and its certified advertising partners to deliver non-intrusive contextual or personalized ads in accordance with your consent preferences.</li>
+                    </ul>
+                    <p>You can choose to disable or selectively delete cookies through your individual browser options (Chrome, Firefox, Safari, Edge). Detailed information about cookie management with specific web browsers can be found at the browsers' respective websites.</p>
+
+                    <h3>5. Server Log Files &amp; Edge Network Infrastructure</h3>
+                    <p>Utilify follows a standard procedure of utilizing server log files provided by our edge CDN hosting provider (Cloudflare Pages). The information collected by log files includes internet protocol (IP) addresses, browser type, Internet Service Provider (ISP), date and time stamp, referring/exit pages, and possibly the number of clicks. These are not linked to any information that is personally identifiable. The purpose of the information is for analyzing trends, administering the site, tracking users' aggregated movement around the website, and gathering broad demographic information to optimize edge delivery speeds.</p>
+
+                    <h3>6. GDPR Data Protection Rights (European Users)</h3>
+                    <p>Under the European Union General Data Protection Regulation (GDPR), every user is entitled to specific fundamental data rights. Because Utilify operates on a zero-knowledge, client-side basis, we do not store your personal documents. Nevertheless, we fully guarantee and respect all rights:</p>
+                    <ul>
+                        <li><strong>The right to access:</strong> You have the right to request copies of your personal data.</li>
+                        <li><strong>The right to rectification:</strong> You have the right to request that we correct any information you believe is inaccurate.</li>
+                        <li><strong>The right to erasure:</strong> You have the right to request that we erase your personal data under certain conditions.</li>
+                        <li><strong>The right to restrict processing:</strong> You have the right to request that we restrict the processing of your personal data.</li>
+                        <li><strong>The right to object to processing:</strong> You have the right to object to our processing of your personal data.</li>
+                        <li><strong>The right to data portability:</strong> You have the right to request that we transfer the data that we have collected to another organization, or directly to you.</li>
+                    </ul>
+                    <p>If you make a request, we have one month to respond to you. If you would like to exercise any of these rights, please contact us at <a href="mailto:support@utilify.co.in">support@utilify.co.in</a>.</p>
+
+                    <h3>7. CCPA Privacy Rights (Do Not Sell My Personal Information)</h3>
+                    <p>Under the California Consumer Privacy Act (CCPA), California consumers have the right to:</p>
+                    <ul>
+                        <li>Request that a business that collects a consumer's personal data disclose the categories and specific pieces of personal data that a business has collected about consumers.</li>
+                        <li>Request that a business delete any personal data about the consumer that a business has collected.</li>
+                        <li>Request that a business that sells a consumer's personal data, not sell the consumer's personal data. <strong>Utilify does NOT sell personal data or uploaded file contents under any circumstances.</strong></li>
+                    </ul>
+                    <p>If you make a CCPA request, we will respond within 45 days. Contact us at <a href="mailto:support@utilify.co.in">support@utilify.co.in</a>.</p>
+
+                    <h3>8. Children's Online Privacy Protection Act (COPPA)</h3>
+                    <p>Another part of our priority is adding protection for children while using the internet. We encourage parents and guardians to observe, participate in, and/or monitor and guide their online activity. Utilify does not knowingly collect any Personal Identifiable Information from children under the age of 13. If you think that your child provided this kind of information on our website, we strongly encourage you to contact us immediately and we will do our best efforts to promptly remove such information from our records.</p>
+
+                    <h3>9. Consent</h3>
+                    <p>By using our website, you hereby consent to our Privacy Policy and agree to its terms. If you do not agree with any part of this policy, please discontinue use of our platform.</p>
                 </div>
             </article>
         </div>
@@ -8966,15 +9189,44 @@
         <div class="view-panel" id="view-terms">
             <section class="about-hero" style="text-align: center; padding: 4rem 2rem; background: var(--bg-hover); border-radius: 12px; margin-bottom: 2rem;">
                 <h2 style="font-family: var(--font-heading); font-size: 2.5rem; font-weight: 800; color: var(--text-color); margin-bottom: 1rem;">Terms of Service</h2>
-                <p style="font-size: 1.1rem; color: var(--text-muted); max-width: 700px; margin: 0 auto;">Review the rules and guidelines for using the Utilify utility web hub.</p>
+                <p style="font-size: 1.1rem; color: var(--text-muted); max-width: 700px; margin: 0 auto;">Legal agreement, acceptable use policies, intellectual property rights, and platform terms governing your use of Utilify.</p>
+                <div style="font-size:0.85rem; color:var(--text-muted); margin-top:1rem;">Last Updated: November 19, 2026 • Effective Date: January 1, 2026</div>
             </section>
             <article class="blog-card" style="margin-top: 0;">
                 <div class="blog-content">
-                    <p>By using the Utilify website, you agree to comply with and be bound by the following terms of service agreement. This platform is provided free of charge for individual and commercial development purposes.</p>
-                    <h3>1. Permitted Use</h3>
-                    <p>You may use Utilify's client-side utilities to format, validate, convert, compress, and inspect files. All intellectual property, UI designs, code elements, and assets are owned by developer <strong>Rushikesh Wagh</strong>.</p>
-                    <h3>2. Disclaimer of Warranties</h3>
-                    <p>This software is provided "as is" and "as available" without any warranty of any kind, express or implied. We do not guarantee that the mathematical algorithms or formatting engines will be 100% error-free for all browser engines.</p>
+                    <p>These Terms of Service ("Terms") constitute a legally binding agreement made between you, whether personally or on behalf of an entity ("you") and <strong>Utilify</strong> ("we", "us", or "our"), concerning your access to and use of the <a href="https://utilify.co.in/">https://utilify.co.in/</a> website as well as any other media form, channel, mobile website, or related utility application (collectively, the "Site").</p>
+                    <p>By accessing or using the Site, you acknowledge that you have read, understood, and agreed to be bound by all of these Terms of Service. If you do not agree with all of these terms, you are expressly prohibited from using the Site and must discontinue use immediately.</p>
+
+                    <h3>1. Intellectual Property &amp; Platform Ownership</h3>
+                    <p>Unless otherwise indicated, the Site, its proprietary software source code, algorithms, databases, functionality, web designs, audio, video, text, photographs, and graphics on the Site (collectively, the "Content") and the trademarks, service marks, and logos contained therein are owned or controlled by developer <strong>Rushikesh Wagh</strong> and co-designer <strong>Suyash Singh</strong>, and are protected by copyright and trademark laws.</p>
+                    <p>Provided that you are eligible to use the Site, you are granted a limited, non-exclusive, revocable license to access and use the Site and to process your personal or commercial files for non-commercial or commercial development purposes.</p>
+
+                    <h3>2. Permitted &amp; Fair Use</h3>
+                    <p>Utilify provides client-side utility tools free of charge for creators, software developers, students, and businesses. You are permitted to:</p>
+                    <ul>
+                        <li>Use any of the 63+ tools to format text, convert images, sign PDF documents, encrypt files, calculate financial figures, or inspect tokens for personal or corporate business workflows.</li>
+                        <li>Embed outputted graphics, signatures, formatted text, and converted PDFs in your own commercial publications, legal contracts, or websites without attributing Utilify.</li>
+                    </ul>
+
+                    <h3>3. Prohibited Activities</h3>
+                    <p>You may not access or use the Site for any purpose other than that for which we make the Site available. Prohibited activities include, but are not limited to:</p>
+                    <ul>
+                        <li>Attempting to bypass, disable, or interfere with security-related features of the Site or features that prevent or restrict the copying of Content.</li>
+                        <li>Using automated scripts, bots, spiders, or scrapers to overwhelm edge server infrastructure or generate malicious traffic.</li>
+                        <li>Using the platform to forge unauthorized signatures on fraudulent legal instruments or engage in deceptive practices.</li>
+                    </ul>
+
+                    <h3>4. Third-Party Advertisements &amp; Google AdSense</h3>
+                    <p>The Site displays third-party advertisements served by <strong>Google AdSense</strong> to support free ongoing operational costs. We do not endorse or make any representations regarding any third-party products, services, or websites linked in advertisements. Your interactions with advertisers are solely between you and the respective third party.</p>
+
+                    <h3>5. Disclaimer of Warranties</h3>
+                    <p>THE SITE AND ALL 63+ UTILITIES ARE PROVIDED ON AN "AS-IS" AND "AS-AVAILABLE" BASIS. YOU AGREE THAT YOUR USE OF THE SITE AND OUR SERVICES WILL BE AT YOUR SOLE RISK. TO THE FULLEST EXTENT PERMITTED BY LAW, WE DISCLAIM ALL WARRANTIES, EXPRESS OR IMPLIED, IN CONNECTION WITH THE SITE AND YOUR USE THEREOF, INCLUDING, WITHOUT LIMITATION, THE IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, ACCURACY, AND NON-INFRINGEMENT.</p>
+
+                    <h3>6. Limitation of Liability</h3>
+                    <p>IN NO EVENT WILL UTILIFY, ITS FOUNDER RUSHIKESH WAGH, OR ITS CONTRIBUTORS BE LIABLE TO YOU OR ANY THIRD PARTY FOR ANY DIRECT, INDIRECT, CONSEQUENTIAL, EXEMPLARY, INCIDENTAL, SPECIAL, OR PUNITIVE DAMAGES, INCLUDING LOST PROFIT, LOST REVENUE, LOSS OF DATA, OR OTHER DAMAGES ARISING FROM YOUR USE OF THE SITE, EVEN IF WE HAVE BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.</p>
+
+                    <h3>7. Governing Law &amp; Jurisdiction</h3>
+                    <p>These Terms and your use of the Site are governed by and construed in accordance with the laws of India, applicable to agreements made and to be entirely performed within the State of Maharashtra, without regard to its conflict of law principles. Any legal action shall be brought exclusively in the courts located in Pune, Maharashtra, India.</p>
                 </div>
             </article>
         </div>
@@ -8982,16 +9234,64 @@
         <!-- Disclaimer View -->
         <div class="view-panel" id="view-disclaimer">
             <section class="about-hero" style="text-align: center; padding: 4rem 2rem; background: var(--bg-hover); border-radius: 12px; margin-bottom: 2rem;">
-                <h2 style="font-family: var(--font-heading); font-size: 2.5rem; font-weight: 800; color: var(--text-color); margin-bottom: 1rem;">General Disclaimer</h2>
-                <p style="font-size: 1.1rem; color: var(--text-muted); max-width: 700px; margin: 0 auto;">Limitations of liability regarding Unicode text fonts rendering, browser compatibility, and cryptographic safety.</p>
+                <h2 style="font-family: var(--font-heading); font-size: 2.5rem; font-weight: 800; color: var(--text-color); margin-bottom: 1rem;">General Disclaimer &amp; Cookie Policy</h2>
+                <p style="font-size: 1.1rem; color: var(--text-muted); max-width: 700px; margin: 0 auto;">Transparency disclosures regarding tool calculation accuracy, client-side cryptographic safety, advertising partners, and cookie management.</p>
+                <div style="font-size:0.85rem; color:var(--text-muted); margin-top:1rem;">Last Updated: November 19, 2026</div>
             </section>
             <article class="blog-card" style="margin-top: 0;">
                 <div class="blog-content">
-                    <p>The information and utilities provided on the Utilify platform are intended for educational and general formatting purposes only. We do not host, store, or monitor any of the files you process.</p>
-                    <h3>1. Formatting and Browser Rendering</h3>
-                    <p>Unicode text conversions (like bold, italic, and cursive scripts) depend on system font libraries. Some operating systems or browser versions may not render certain Unicode blocks correctly. Always verify outputs before publishing.</p>
-                    <h3>2. Cryptographic and Password Security</h3>
-                    <p>Symmetric ciphers, SHA checksum digests, and password generation tools rely on standard Web Crypto specifications. Users are responsible for backup management; once the browser window is closed, generated data is permanently deleted from RAM.</p>
+                    <h3>1. Informational &amp; Technical Utility Disclaimer</h3>
+                    <p>The information, calculations, and software algorithms provided on <strong>Utilify</strong> (<a href="https://utilify.co.in/">https://utilify.co.in/</a>) are provided for general educational, productivity, and developer utility purposes only. While we make every reasonable effort to ensure algorithmic precision across all 63+ tools, we make no representations or warranties of any kind regarding completeness, accuracy, reliability, or suitability.</p>
+
+                    <h3>2. Financial, Tax &amp; Academic Calculators Disclaimer</h3>
+                    <p>The calculators hosted on Utilify—including the <strong>GST Tax Calculator</strong>, <strong>EMI Loan Calculator</strong>, <strong>Simple Loan Calculator</strong>, and <strong>CGPA Calculator</strong>—produce mathematical estimates based on user-supplied variables. These tools do NOT constitute licensed financial, tax, legal, or investment advice. Always consult a certified financial advisor or official statutory guidelines before making monetary commitments.</p>
+
+                    <h3>3. Cryptographic Safety &amp; Password Management</h3>
+                    <p>Utilify provides client-side cryptographic utilities including AES-GCM encryption, cryptographic hash generators (SHA-256/512), and secure password generators relying on the W3C Web Cryptography API. Because Utilify operates on a zero-storage principle, <strong>we cannot recover forgotten passwords, decryption keys, or lost files under any circumstances</strong>. Users are solely responsible for securely storing their credentials.</p>
+
+                    <h3>4. Third-Party Advertising &amp; Google AdSense Transparency</h3>
+                    <p>To fund ongoing infrastructure, domain registration, edge hosting, and maintenance of our 63+ utilities, Utilify displays advertisements provided by Google AdSense. Google AdSense uses cookies to serve ads based on user browsing history. We are committed to transparency and adhere strictly to Google's Advertising Policies and Spam Policies for web search.</p>
+
+                    <h3>5. Comprehensive Cookie Breakdown &amp; Management Table</h3>
+                    <p>Below is a transparent audit of all cookies and storage mechanisms associated with Utilify:</p>
+                    <div style="overflow-x: auto; margin: 1.5rem 0;">
+                        <table style="width: 100%; border-collapse: collapse; font-size: 0.88rem; text-align: left;">
+                            <thead>
+                                <tr style="border-bottom: 2px solid var(--border-color); background: rgba(99,102,241,0.06);">
+                                    <th style="padding: 0.75rem 0.6rem;">Storage / Cookie</th>
+                                    <th style="padding: 0.75rem 0.6rem;">Provider</th>
+                                    <th style="padding: 0.75rem 0.6rem;">Purpose &amp; Description</th>
+                                    <th style="padding: 0.75rem 0.6rem;">Expiry</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr style="border-bottom: 1px solid var(--border-color);">
+                                    <td style="padding: 0.65rem 0.6rem; font-weight: 600;">theme</td>
+                                    <td style="padding: 0.65rem 0.6rem;">Utilify (localStorage)</td>
+                                    <td style="padding: 0.65rem 0.6rem;">Stores your preferred Dark/Light UI theme mode.</td>
+                                    <td style="padding: 0.65rem 0.6rem;">Persistent</td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid var(--border-color);">
+                                    <td style="padding: 0.65rem 0.6rem; font-weight: 600;">utilify_cookie_consent</td>
+                                    <td style="padding: 0.65rem 0.6rem;">Utilify (localStorage)</td>
+                                    <td style="padding: 0.65rem 0.6rem;">Records whether the user acknowledged the cookie banner.</td>
+                                    <td style="padding: 0.65rem 0.6rem;">Persistent</td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid var(--border-color);">
+                                    <td style="padding: 0.65rem 0.6rem; font-weight: 600;">_gads, __gpi</td>
+                                    <td style="padding: 0.65rem 0.6rem;">Google AdSense</td>
+                                    <td style="padding: 0.65rem 0.6rem;">Serves non-intrusive contextual/personalized advertisements.</td>
+                                    <td style="padding: 0.65rem 0.6rem;">13 months</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 0.65rem 0.6rem; font-weight: 600;">IDE (doubleclick.net)</td>
+                                    <td style="padding: 0.65rem 0.6rem;">Google DoubleClick</td>
+                                    <td style="padding: 0.65rem 0.6rem;">Measures ad performance and prevents ad repetition.</td>
+                                    <td style="padding: 0.65rem 0.6rem;">1 year</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </article>
         </div>
@@ -9264,6 +9564,23 @@
             <p>© 2026 Utilify. Designed & Engineered with ❤️ by <strong>Rushikesh Wagh</strong>. All rights reserved.</p>
         </div>
     </footer>
+
+    <!-- GDPR & Google AdSense Cookie Consent Notice Banner -->
+    <div id="cookie-consent-banner" class="cookie-consent-banner" style="display:none; position:fixed; bottom:20px; left:20px; right:20px; max-width:540px; margin:0 auto; background:var(--bg-card); border:1px solid var(--border-color); box-shadow:0 16px 40px rgba(0,0,0,0.35); border-radius:12px; padding:1.25rem; z-index:99999; backdrop-filter:blur(10px);">
+        <div style="display:flex; align-items:flex-start; gap:0.85rem;">
+            <span style="font-size:1.6rem; line-height:1;" aria-hidden="true">🍪</span>
+            <div style="flex:1;">
+                <h4 style="margin:0 0 0.35rem 0; font-size:0.95rem; font-weight:700; color:var(--text-color);">Cookie &amp; Advertising Notice</h4>
+                <p style="margin:0 0 0.85rem 0; font-size:0.82rem; color:var(--text-muted); line-height:1.5;">
+                    Utilify uses cookies and local storage to personalize your experience, remember theme preferences, and deliver non-intrusive advertisements via Google AdSense. All document and file computations remain 100% private in local device RAM. Read our <a href="/privacy/" style="color:var(--indigo); text-decoration:underline;">Privacy Policy</a>.
+                </p>
+                <div style="display:flex; gap:0.65rem; flex-wrap:wrap;">
+                    <button id="cookie-accept-btn" style="background:var(--indigo); color:#ffffff; border:none; border-radius:6px; padding:0.45rem 1rem; font-size:0.82rem; font-weight:600; cursor:pointer;">Accept All Cookies</button>
+                    <button id="cookie-essential-btn" style="background:transparent; color:var(--text-muted); border:1px solid var(--border-color); border-radius:6px; padding:0.45rem 0.85rem; font-size:0.82rem; font-weight:500; cursor:pointer;">Essential Only</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Notification Toast -->
     <div class="toast" id="toast" role="alert" aria-live="assertive">Copied to clipboard!</div>
