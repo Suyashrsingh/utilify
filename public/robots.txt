@@ -38,3 +38,8 @@ Allow: /
 # Sitemap & LLMs Discovery
 Sitemap: https://utilify.co.in/sitemap.xml
 Host: https://utilify.co.in
+
+# Machine-Readable AI Agent & Context Endpoints
+Allow: /llms.txt
+Allow: /llms-full.txt
+Allow: /.well-known/ard.json

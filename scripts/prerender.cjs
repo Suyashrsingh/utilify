@@ -79,12 +79,12 @@ const toolHowToSteps = {
         ]
     },
     imagetopdf: {
-        name: "How to Convert Images to PDF Online",
-        description: "Convert JPG, PNG, and WebP images into a single PDF document client-side.",
+        name: "How to Convert JPG and Images to PDF Online Free",
+        description: "Convert JPG, PNG, and photos to a clean PDF document online free without file limits or server uploads.",
         steps: [
-            { name: "Select Images", text: "Choose or drag-and-drop your JPG, PNG, or WebP images into the tool." },
-            { name: "Configure Layout", text: "Set orientation, page margins, and fit options for your PDF document." },
-            { name: "Convert & Save", text: "Click 'Convert to PDF' and download your freshly created document instantly." }
+            { name: "Select Images or Photos", text: "Choose or drag-and-drop your JPG, PNG, or WebP images into the upload dropzone." },
+            { name: "Configure Page Settings", text: "Select your preferred orientation (Portrait/Landscape), page size (A4, Letter, Fit), and margin padding." },
+            { name: "Generate & Download PDF", text: "Click 'Generate & Download PDF' to compile all photos into a single PDF document in browser RAM." }
         ]
     },
     pdfcompress: {
@@ -106,12 +106,12 @@ const toolHowToSteps = {
         ]
     },
     pdftoimage: {
-        name: "How to Convert PDF Pages to JPG and PNG Images",
-        description: "Extract high-resolution image files from PDF pages client-side.",
+        name: "How to Convert PDF to JPG and PNG Images Online Free",
+        description: "Extract high-resolution JPG and PNG image files from PDF pages client-side with 100% data privacy.",
         steps: [
-            { name: "Open PDF Document", text: "Select the PDF file you want to convert into images." },
-            { name: "Choose Image Format", text: "Select PNG or JPG and set your desired DPI or resolution scale." },
-            { name: "Download Images", text: "Render all pages or specific pages and download as single images or a ZIP archive." }
+            { name: "Upload PDF Document", text: "Drop the PDF file you want to convert into the browser workspace." },
+            { name: "Choose Format & Resolution", text: "Select PNG or JPG and set your desired resolution scale (1x, 1.5x, or 2x High Definition)." },
+            { name: "Download Extracted Images", text: "Render all pages or individual pages and download as single images or a complete ZIP package." }
         ]
     },
     pdfrotate: {
@@ -124,12 +124,12 @@ const toolHowToSteps = {
         ]
     },
     pdfprotect: {
-        name: "How to Password Protect and Encrypt a PDF",
-        description: "Add a secure password and encryption to your PDF document client-side.",
+        name: "How to Password Protect and Encrypt a PDF Online Free",
+        description: "Add a secure password and strong client-side encryption to your confidential PDF documents before sharing.",
         steps: [
-            { name: "Select PDF", text: "Choose the confidential PDF document you want to secure." },
-            { name: "Enter Strong Password", text: "Type in your chosen user password and confirm it." },
-            { name: "Download Encrypted PDF", text: "Click 'Protect PDF' to encrypt locally and download the password-protected file." }
+            { name: "Select PDF Document", text: "Choose the confidential PDF contract or document you want to encrypt." },
+            { name: "Enter Strong Password", text: "Type your secret document-open password and confirm it." },
+            { name: "Encrypt & Download PDF", text: "Click 'Protect PDF' to encrypt locally in memory and download the secure file." }
         ]
     },
     pdfunlock: {
@@ -151,12 +151,13 @@ const toolHowToSteps = {
         ]
     },
     digisign: {
-        name: "How to Digitally Sign a PDF Online",
-        description: "Create an electronic signature and stamp it onto PDF documents securely.",
+        name: "How to Sign a PDF Online for Free (No Sign-Up Required)",
+        description: "Sign PDF documents online free with zero signup or file uploads. Create, draw, or upload a digital signature and stamp it securely in browser memory.",
         steps: [
-            { name: "Upload Document", text: "Open the PDF document you need to sign in the viewer." },
-            { name: "Create Your Signature", text: "Draw your signature with your mouse/touchscreen, type your name, or upload an image." },
-            { name: "Stamp & Download", text: "Place the signature on the required page and download the signed PDF." }
+            { name: "Upload Document or Contract", text: "Drop your PDF contract or document into the secure workspace. Files load instantly in local browser RAM without cloud uploads." },
+            { name: "Create Signature with Digital Pad", text: "Draw your digital signature with your mouse, finger, or stylus, or upload a transparent signature image (PNG/JPG)." },
+            { name: "Place, Resize & Edit Signature", text: "Position your signature overlay anywhere on the document and use the resize handle to adjust its dimensions perfectly." },
+            { name: "Download Signed PDF Instantly", text: "Click 'Save & Download Document' to export your legally binding signed PDF file with 100% privacy." }
         ]
     }
 };
@@ -168,56 +169,120 @@ const aliasPages = [
         toolKey: "imagetopdf",
         title: "JPG to PDF - Convert JPG Images to PDF Online Free | Utilify",
         description: "Convert JPG to PDF online free. Combine multiple JPG images into a single PDF document in seconds with zero file uploads and 100% privacy.",
-        canonicalUrl: "https://utilify.co.in/tools/jpg-to-pdf"
+        canonicalUrl: "https://utilify.co.in/tools/image-to-pdf/"
     },
     {
         aliasSlug: "pdf-to-jpg",
         toolKey: "pdftoimage",
         title: "PDF to JPG - Convert PDF Pages to JPG Online Free | Utilify",
         description: "Convert PDF to JPG online free. Extract high-resolution JPG images from each page of your PDF document directly inside your browser memory.",
-        canonicalUrl: "https://utilify.co.in/tools/pdf-to-jpg"
+        canonicalUrl: "https://utilify.co.in/tools/pdf-to-image/"
     },
     {
         aliasSlug: "pdf-merger",
         toolKey: "pdfmerge",
         title: "PDF Merger - Combine Multiple PDF Files Online Free | Utilify",
         description: "Merge multiple PDF files into one single document client-side in seconds with complete privacy. 100% free with no uploads.",
-        canonicalUrl: "https://utilify.co.in/tools/merge-pdf"
+        canonicalUrl: "https://utilify.co.in/tools/merge-pdf/"
     },
     {
         aliasSlug: "pdf-compressor",
         toolKey: "pdfcompress",
         title: "PDF Compressor - Reduce PDF File Size Online Free | Utilify",
         description: "Compress PDF documents online free without uploading. Reduce file size client-side while preserving crystal-clear quality.",
-        canonicalUrl: "https://utilify.co.in/tools/compress-pdf"
+        canonicalUrl: "https://utilify.co.in/tools/compress-pdf/"
     },
     {
         aliasSlug: "pdf-splitter",
         toolKey: "pdfsplit",
         title: "PDF Splitter - Extract PDF Pages Online Free | Utilify",
         description: "Split PDF files and extract custom page ranges client-side without sending your documents to remote cloud servers.",
-        canonicalUrl: "https://utilify.co.in/tools/split-pdf"
+        canonicalUrl: "https://utilify.co.in/tools/split-pdf/"
     },
     {
         aliasSlug: "image-to-pdf-converter",
         toolKey: "imagetopdf",
         title: "Image to PDF Converter - Convert Photos to PDF Free | Utilify",
         description: "Convert images to PDF documents online free. Private client-side image conversion with no file size limits.",
-        canonicalUrl: "https://utilify.co.in/tools/image-to-pdf"
+        canonicalUrl: "https://utilify.co.in/tools/image-to-pdf/"
     },
     {
         aliasSlug: "pdf-to-image-converter",
         toolKey: "pdftoimage",
         title: "PDF to Image Converter - Extract Pages as Images Free | Utilify",
         description: "Convert PDF files into crisp PNG and JPG images client-side. Zero server uploads.",
-        canonicalUrl: "https://utilify.co.in/tools/pdf-to-image"
+        canonicalUrl: "https://utilify.co.in/tools/pdf-to-image/"
     },
     {
         aliasSlug: "digital-signature-creator",
         toolKey: "digisign",
         title: "Digital Signature Creator - Sign PDFs Online Free | Utilify",
         description: "Create your digital signature and sign PDF documents online free with total privacy.",
-        canonicalUrl: "https://utilify.co.in/tools/sign-pdf"
+        canonicalUrl: "https://utilify.co.in/tools/sign-pdf/"
+    },
+    // GSC Targeted Search Aliases
+    {
+        aliasSlug: "pdf-signature-creator",
+        toolKey: "digisign",
+        title: "PDF Signature Creator - Create & Sign PDFs Online Free | Utilify",
+        description: "Free online PDF signature creator. Draw, type, or upload your signature to sign contracts and documents online with zero registration.",
+        canonicalUrl: "https://utilify.co.in/tools/sign-pdf/"
+    },
+    {
+        aliasSlug: "online-signature-pdf",
+        toolKey: "digisign",
+        title: "Online Signature PDF - Sign PDF Documents Online Free | Utilify",
+        description: "Create an online signature for PDF documents free. Draw or upload signatures and place them anywhere on your documents privately.",
+        canonicalUrl: "https://utilify.co.in/tools/sign-pdf/"
+    },
+    {
+        aliasSlug: "sign-pdf-online-free",
+        toolKey: "digisign",
+        title: "Sign PDF Online Free - Digital Signature Without Sign Up | Utilify",
+        description: "Sign PDF online free without sign-up, login, or subscriptions. Create digital signatures and sign PDF contracts securely in browser memory.",
+        canonicalUrl: "https://utilify.co.in/tools/sign-pdf/"
+    },
+    {
+        aliasSlug: "sign-pdf-free",
+        toolKey: "digisign",
+        title: "Sign PDF Free Online - Electronic Signature Creator | Utilify",
+        description: "Sign PDF free online without creating an account or paying fees. Fast in-browser electronic signatures with total privacy.",
+        canonicalUrl: "https://utilify.co.in/tools/sign-pdf/"
+    },
+    {
+        aliasSlug: "signed-pdf-edit",
+        toolKey: "digisign",
+        title: "Edit Signed PDF - Place & Adjust Signatures on PDF Free | Utilify",
+        description: "Edit signed PDF documents online free. Adjust signature position, scale, and add digital stamps client-side without cloud uploads.",
+        canonicalUrl: "https://utilify.co.in/tools/sign-pdf/"
+    },
+    {
+        aliasSlug: "digital-signature-online",
+        toolKey: "digisign",
+        title: "Digital Signature Online - Sign Documents & PDFs Free | Utilify",
+        description: "Generate digital signatures online free. Draw your e-signature or upload an image and apply it to PDF and image documents securely.",
+        canonicalUrl: "https://utilify.co.in/tools/sign-pdf/"
+    },
+    {
+        aliasSlug: "jpg-to-pdf-converter-online",
+        toolKey: "imagetopdf",
+        title: "JPG to PDF Converter Online - Convert JPG to PDF Free | Utilify",
+        description: "Free online JPG to PDF converter. Combine multiple JPG pictures into a single polished PDF document client-side in seconds.",
+        canonicalUrl: "https://utilify.co.in/tools/image-to-pdf/"
+    },
+    {
+        aliasSlug: "image-to-pdf-converter-free",
+        toolKey: "imagetopdf",
+        title: "Image to PDF Converter Free - Turn Photos to PDF Online | Utilify",
+        description: "Convert photos and images to PDF online free without file limits or watermarks. Works locally in your browser with 100% data confidentiality.",
+        canonicalUrl: "https://utilify.co.in/tools/image-to-pdf/"
+    },
+    {
+        aliasSlug: "protect-pdf-online",
+        toolKey: "pdfprotect",
+        title: "Protect PDF Online Free - Password Encrypt PDF Documents | Utilify",
+        description: "Password protect PDF documents online free. Strong client-side encryption ensures confidential files are locked before sharing.",
+        canonicalUrl: "https://utilify.co.in/tools/protect-pdf/"
     }
 ];
 
@@ -260,7 +325,7 @@ function generateToolPage(toolKey, seoSlug, customTitle, customDesc, canonicalOv
 
     const pageTitle = customTitle || meta.title;
     const pageDesc = customDesc || meta.description;
-    const toolUrl = canonicalOverride || `https://utilify.co.in/tools/${seoSlug}`;
+    const toolUrl = canonicalOverride || (seoSlug.endsWith('/') ? `https://utilify.co.in/tools/${seoSlug}` : `https://utilify.co.in/tools/${seoSlug}/`);
     const cleanTitle = escapeHtml(pageTitle);
     const cleanDesc = escapeHtml(pageDesc);
 
@@ -304,6 +369,7 @@ function generateToolPage(toolKey, seoSlug, customTitle, customDesc, canonicalOv
             "@id": `${toolUrl}#webapp`,
             "url": toolUrl,
             "name": cleanTitle,
+            "alternateName": ["Utilify", "Utilify AI", "utilifyai"],
             "applicationCategory": "UtilitiesApplication",
             "operatingSystem": "All",
             "browserRequirements": "Requires JavaScript. Requires HTML5.",
@@ -447,7 +513,7 @@ for (const viewName of views) {
     const meta = routes[viewName];
     if (!meta) continue;
 
-    const viewUrl = `https://utilify.co.in/${viewName}`;
+    const viewUrl = `https://utilify.co.in/${viewName}/`;
     const cleanTitle = escapeHtml(meta.title);
     const cleanDesc = escapeHtml(meta.description);
 

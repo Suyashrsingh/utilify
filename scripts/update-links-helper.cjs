@@ -70,42 +70,55 @@ const seoToolUrls = {
 const htmlPath = path.join(__dirname, '../index.html');
 let html = fs.readFileSync(htmlPath, 'utf8');
 
-// 1. Replace header and footer sitemaps/standard paths
-html = html.replace(/href="#\/about"/g, 'href="/about"');
-html = html.replace(/href="#\/privacy"/g, 'href="/privacy"');
-html = html.replace(/href="#\/terms"/g, 'href="/terms"');
-html = html.replace(/href="#\/disclaimer"/g, 'href="/disclaimer"');
-html = html.replace(/href="#\/sitemap"/g, 'href="/sitemap"');
-html = html.replace(/href="#\/contact"/g, 'href="/contact"');
+// 1. Replace header and footer sitemaps/standard paths with trailing slash for 200 OK responses
+html = html.replace(/href="#\/about"/g, 'href="/about/"');
+html = html.replace(/href="#\/privacy"/g, 'href="/privacy/"');
+html = html.replace(/href="#\/terms"/g, 'href="/terms/"');
+html = html.replace(/href="#\/disclaimer"/g, 'href="/disclaimer/"');
+html = html.replace(/href="#\/sitemap"/g, 'href="/sitemap/"');
+html = html.replace(/href="#\/contact"/g, 'href="/contact/"');
 html = html.replace(/href="#\/home"/g, 'href="/"');
 
-// 2. Replace tool paths
+// Also normalize any non-trailing slash links
+const viewNames = ["about", "privacy", "terms", "disclaimer", "sitemap", "contact"];
+viewNames.forEach(view => {
+    const viewRegex = new RegExp(`href=["']/${view}["']`, 'g');
+    html = html.replace(viewRegex, `href="/${view}/"`);
+});
+
+// 2. Replace tool paths with trailing slash
 const regex = /href="#\/tools\/([a-zA-Z0-9_-]+)"/g;
 let replacedCount = 0;
 html = html.replace(regex, (match, toolKey) => {
     if (seoToolUrls[toolKey]) {
         replacedCount++;
-        return `href="/tools/${seoToolUrls[toolKey]}"`;
+        return `href="/tools/${seoToolUrls[toolKey]}/"`;
     }
     return match;
 });
 
-// 3. Update legacy PDF tool URLs to high-intent search slugs
+// Normalize existing /tools/xxx without trailing slash to /tools/xxx/
+for (const [toolKey, slug] of Object.entries(seoToolUrls)) {
+    const toolRegex = new RegExp(`href=["']/tools/${slug}["']`, 'g');
+    html = html.replace(toolRegex, `href="/tools/${slug}/"`);
+}
+
+// 3. Update legacy PDF tool URLs to high-intent search slugs with trailing slashes
 const legacyReplacements = {
-    '/tools/pdf-merger': '/tools/merge-pdf',
-    '/tools/pdf-splitter': '/tools/split-pdf',
-    '/tools/pdf-page-rotator': '/tools/rotate-pdf',
-    '/tools/image-to-pdf-converter': '/tools/image-to-pdf',
-    '/tools/pdf-to-image-converter': '/tools/pdf-to-image',
-    '/tools/pdf-compressor': '/tools/compress-pdf',
-    '/tools/pdf-password-protector': '/tools/protect-pdf',
-    '/tools/pdf-password-remover': '/tools/unlock-pdf',
-    '/tools/pdf-page-remover': '/tools/remove-pdf-pages',
-    '/tools/digital-signature-creator': '/tools/sign-pdf'
+    '/tools/pdf-merger': '/tools/merge-pdf/',
+    '/tools/pdf-splitter': '/tools/split-pdf/',
+    '/tools/pdf-page-rotator': '/tools/rotate-pdf/',
+    '/tools/image-to-pdf-converter': '/tools/image-to-pdf/',
+    '/tools/pdf-to-image-converter': '/tools/pdf-to-image/',
+    '/tools/pdf-compressor': '/tools/compress-pdf/',
+    '/tools/pdf-password-protector': '/tools/protect-pdf/',
+    '/tools/pdf-password-remover': '/tools/unlock-pdf/',
+    '/tools/pdf-page-remover': '/tools/remove-pdf-pages/',
+    '/tools/digital-signature-creator': '/tools/sign-pdf/'
 };
 
 for (const [oldUrl, newUrl] of Object.entries(legacyReplacements)) {
-    const oldRegex = new RegExp(`href=["']${oldUrl}["']`, 'g');
+    const oldRegex = new RegExp(`href=["']${oldUrl}/?["']`, 'g');
     html = html.replace(oldRegex, `href="${newUrl}"`);
 }
 

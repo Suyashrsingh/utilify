@@ -190,11 +190,11 @@ document.addEventListener("DOMContentLoaded", () => {
         cipher: { title: "AES Text Encrypter & Decrypter - Offline Crypto | Utilify", description: "Locally encrypt and decrypt text messages using industry-standard Advanced Encryption Standard (AES-GCM/CBC) directly inside your browser memory." },
         pwdinspector: { title: "Password Strength & Entropy Inspector - Realtime | Utilify", description: "Analyze password complexity, calculate Shannon entropy bits, check against dictionary patterns, and estimate brute-force crack times securely." },
         imgmerge: { title: "Image Merger - Combine Images Side-by-Side | Utilify", description: "Merge two images horizontally or vertically with custom scaling, padding, and alignments completely offline in your browser." },
-        imagetopdf: { title: "Image to PDF - Convert JPG & PNG to PDF Online Free | Utilify", description: "Convert JPG and PNG images to PDF online free. Combine multiple photos into a single PDF document in your browser with custom page sizes and zero server uploads." },
-        pdftoimage: { title: "PDF to Image - Convert PDF to JPG & PNG Online Free | Utilify", description: "Convert PDF to JPG and PNG images online free. Extract and render all PDF pages into high-resolution images directly in your browser offline." },
+        imagetopdf: { title: "Image to PDF Converter Free - Convert JPG to PDF Online | Utilify", description: "Convert images to PDF online free. Fast JPG and PNG to PDF converter with custom page orientation, margins, and zero file uploads. 100% free with no limits." },
+        pdftoimage: { title: "PDF to Image Converter Free - Convert PDF to JPG & PNG Online | Utilify", description: "Convert PDF to image online free. Extract high-resolution JPG and PNG pages from any PDF document client-side without size limits or server storage." },
         pdfcompress: { title: "Compress PDF Online Free - Reduce PDF File Size | Utilify", description: "Compress PDF files online free. Reduce PDF document file size with high visual quality using smart client-side compression without uploading." },
-        pdfprotect: { title: "Protect PDF - Password Encrypt PDF Online Free | Utilify", description: "Password protect PDF files online free. Encrypt your sensitive PDF documents with strong client-side security passwords before sharing." },
-        digisign: { title: "Sign PDF Online Free - Digital Signature Creator | Utilify", description: "Sign PDF documents online free. Draw, type, or upload your signature and stamp it onto PDF and image documents securely and privately." },
+        pdfprotect: { title: "Protect PDF Online Free - Password Protect & Encrypt PDF | Utilify", description: "Protect PDF files online free. Encrypt confidential PDF documents with strong client-side passwords before sharing. No cloud uploads, 100% private." },
+        digisign: { title: "Sign PDF Online Free - Digital Signature Creator & PDF Signer (No Sign-Up) | Utilify", description: "Sign PDF online free without sign-up or registration. Create, draw, or upload digital signatures and edit signed PDFs directly in browser memory. 100% private." },
         imgwatermark: { title: "Watermark Image - Add Watermarks to Photos Free | Utilify", description: "Add watermark to photos online free. Protect copyright with custom text or logo image watermarks, opacity sliders, and position controls." },
         htmltopdf: { title: "HTML to PDF - Render HTML Code to PDF Free | Utilify", description: "Convert HTML to PDF online free. Render raw HTML/CSS code or documents into clean, paginated PDF files with custom page formatting offline." },
         htmltoimage: { title: "HTML to Image - Render HTML Code to Image Free | Utilify", description: "Convert HTML to image online free. Render and compile HTML and CSS code blocks into high-resolution PNG or JPG screenshots client-side." },
@@ -209,7 +209,11 @@ document.addEventListener("DOMContentLoaded", () => {
             metaDesc.setAttribute("content", description);
         }
 
-        const fullUrl = window.location.origin + (canonicalPath || window.location.pathname);
+        let normalizedPath = canonicalPath || window.location.pathname;
+        if (normalizedPath !== "/" && !normalizedPath.endsWith("/")) {
+            normalizedPath += "/";
+        }
+        const fullUrl = window.location.origin + normalizedPath;
         let canonicalEl = document.querySelector('link[rel="canonical"]');
         if (!canonicalEl) {
             canonicalEl = document.createElement('link');
@@ -454,7 +458,16 @@ document.addEventListener("DOMContentLoaded", () => {
         "pdf-password-remover": "pdfunlock",
         "pdf-page-remover": "pdfremove",
         "digital-signature-creator": "digisign",
-        "pdf-signer": "digisign"
+        "pdf-signer": "digisign",
+        "pdf-signature-creator": "digisign",
+        "online-signature-pdf": "digisign",
+        "sign-pdf-online-free": "digisign",
+        "sign-pdf-free": "digisign",
+        "signed-pdf-edit": "digisign",
+        "digital-signature-online": "digisign",
+        "jpg-to-pdf-converter-online": "imagetopdf",
+        "image-to-pdf-converter-free": "imagetopdf",
+        "protect-pdf-online": "pdfprotect"
     };
     Object.assign(urlToToolKey, slugAliases);
 
@@ -473,11 +486,11 @@ document.addEventListener("DOMContentLoaded", () => {
             if (cleanHash.startsWith("tools/")) {
                 const toolName = cleanHash.replace("tools/", "");
                 const seoSlug = seoToolUrls[toolName] || toolName;
-                window.history.replaceState(null, "", `/tools/${seoSlug}`);
-                path = `/tools/${seoSlug}`;
+                window.history.replaceState(null, "", `/tools/${seoSlug}/`);
+                path = `/tools/${seoSlug}/`;
             } else if (routes[cleanHash]) {
-                window.history.replaceState(null, "", `/${cleanHash}`);
-                path = `/${cleanHash}`;
+                window.history.replaceState(null, "", `/${cleanHash}/`);
+                path = `/${cleanHash}/`;
             } else if (cleanHash === "home") {
                 window.history.replaceState(null, "", "/");
                 path = "/";
@@ -493,7 +506,7 @@ document.addEventListener("DOMContentLoaded", () => {
             if (toolRoutes[toolKey]) {
                 navigateToView("tools", shouldScroll);
                 switchToolPanel(toolKey, shouldScroll);
-                updateSEO(toolRoutes[toolKey].title, toolRoutes[toolKey].description, `/tools/${urlSlug}`);
+                updateSEO(toolRoutes[toolKey].title, toolRoutes[toolKey].description, `/tools/${urlSlug}/`);
             } else {
                 window.history.replaceState(null, "", "/");
                 navigateToView("home", shouldScroll);
@@ -503,7 +516,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const viewName = cleanPath === "index.html" ? "home" : cleanPath;
             if (routes[viewName]) {
                 navigateToView(viewName, shouldScroll);
-                const targetPath = viewName === "home" ? "/" : `/${viewName}`;
+                const targetPath = viewName === "home" ? "/" : `/${viewName}/`;
                 updateSEO(routes[viewName].title, routes[viewName].description, targetPath);
             } else {
                 window.history.replaceState(null, "", "/");
@@ -534,7 +547,7 @@ document.addEventListener("DOMContentLoaded", () => {
             if (targetView === "tools") {
                 scrollToToolsShowcase();
             } else {
-                navigate(`/${targetView}`);
+                navigate(`/${targetView}/`);
             }
         });
     });
@@ -546,7 +559,7 @@ document.addEventListener("DOMContentLoaded", () => {
             if (targetView === "tools") {
                 scrollToToolsShowcase();
             } else {
-                navigate(`/${targetView}`);
+                navigate(`/${targetView}/`);
             }
         });
     });
@@ -560,12 +573,12 @@ document.addEventListener("DOMContentLoaded", () => {
             if (targetView === "tools") {
                 if (toolType) {
                     const seoSlug = seoToolUrls[toolType] || toolType;
-                    navigate(`/tools/${seoSlug}`);
+                    navigate(`/tools/${seoSlug}/`);
                 } else {
                     scrollToToolsShowcase();
                 }
             } else {
-                navigate(`/${targetView}`);
+                navigate(`/${targetView}/`);
             }
         });
     });
@@ -578,7 +591,7 @@ document.addEventListener("DOMContentLoaded", () => {
             e.preventDefault();
             const tool = btn.getAttribute("data-tool");
             const seoSlug = seoToolUrls[tool] || tool;
-            navigate(`/tools/${seoSlug}`);
+            navigate(`/tools/${seoSlug}/`);
         });
     });
 
@@ -588,7 +601,7 @@ document.addEventListener("DOMContentLoaded", () => {
             e.preventDefault();
             const tool = item.getAttribute("data-tool");
             const seoSlug = seoToolUrls[tool] || tool;
-            navigate(`/tools/${seoSlug}`);
+            navigate(`/tools/${seoSlug}/`);
         });
     });
 
