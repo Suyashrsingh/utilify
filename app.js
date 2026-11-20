@@ -336,8 +336,10 @@ document.addEventListener("DOMContentLoaded", () => {
         viewPanels.forEach(panel => {
             if (panel.id === `view-${viewName}`) {
                 panel.classList.add("active-view");
+                panel.style.display = "";
             } else {
                 panel.classList.remove("active-view");
+                panel.style.display = "";
             }
         });
 
@@ -546,6 +548,8 @@ document.addEventListener("DOMContentLoaded", () => {
             const targetView = link.getAttribute("data-view");
             if (targetView === "tools") {
                 scrollToToolsShowcase();
+            } else if (targetView === "home") {
+                navigate("/");
             } else {
                 navigate(`/${targetView}/`);
             }
@@ -558,6 +562,8 @@ document.addEventListener("DOMContentLoaded", () => {
             const targetView = link.getAttribute("data-view");
             if (targetView === "tools") {
                 scrollToToolsShowcase();
+            } else if (targetView === "home") {
+                navigate("/");
             } else {
                 navigate(`/${targetView}/`);
             }

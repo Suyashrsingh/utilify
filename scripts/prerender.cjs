@@ -555,11 +555,11 @@ for (const viewName of views) {
     // Demote home hero h1 to p on view subpages
     html = html.replace(/<h1\b([^>]*)class="([^"]*hero-title[^"]*)"([^>]*)>([\s\S]*?)<\/h1>/i, '<p$1class="$2"$3>$4</p>');
 
-    // Switch active view
-    html = html.replace('id="view-home" class="view-panel active-view"', 'id="view-home" class="view-panel"');
-    html = html.replace('class="view-panel active-view" id="view-home"', 'class="view-panel" id="view-home"');
-    html = html.replace(`id="view-${viewName}" class="view-panel"`, `id="view-${viewName}" class="view-panel active-view"`);
-    html = html.replace(`class="view-panel" id="view-${viewName}"`, `class="view-panel active-view" id="view-${viewName}"`);
+    // Switch active view with explicit inline display style for instant SSR visibility
+    html = html.replace('id="view-home" class="view-panel active-view"', 'id="view-home" class="view-panel" style="display:none;"');
+    html = html.replace('class="view-panel active-view" id="view-home"', 'class="view-panel" id="view-home" style="display:none;"');
+    html = html.replace(`id="view-${viewName}" class="view-panel"`, `id="view-${viewName}" class="view-panel active-view" style="display:block;"`);
+    html = html.replace(`class="view-panel" id="view-${viewName}"`, `class="view-panel active-view" id="view-${viewName}" style="display:block;"`);
 
     // Upgrade this view's h2 to h1
     const viewStart = html.indexOf(`id="view-${viewName}"`);

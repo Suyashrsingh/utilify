@@ -1,5 +1,6 @@
 {
-  "$schema": "https://agenticresource.org/schema/v1/ard.json",
+  "$schema": "https://agenticresourcediscovery.org/schema/v1/ard.json",
+  "@context": "https://agenticresourcediscovery.org/context/v1",
   "name": "Utilify",
   "version": "2.0.0",
   "description": "63+ free, private, offline-first client-side web utilities for developers, creators, and professionals. All operations execute 100% in local browser memory with zero server uploads.",
@@ -10,230 +11,1207 @@
     "name": "Rushikesh Wagh",
     "url": "https://utilify.co.in/about"
   },
-  "capabilities": [
-    "pdf-merging",
-    "pdf-compression",
-    "pdf-splitting",
-    "image-to-pdf",
-    "pdf-to-image",
-    "image-compression",
-    "image-conversion",
-    "text-analysis",
-    "markdown-formatting",
-    "cryptographic-hashing",
-    "unit-conversion"
-  ],
-  "privacy": {
-    "data_collection": "none",
-    "execution_location": "client-side-browser-memory",
-    "server_uploads": false,
-    "privacy_policy": "https://utilify.co.in/privacy"
-  },
   "entries": [
     {
-      "id": "merge-pdf",
-      "name": "Merge PDF",
-      "type": "tool",
-      "description": "Combine multiple PDF files client-side into a single document without server uploads.",
-      "url": "https://utilify.co.in/tools/merge-pdf/"
+      "identifier": "urn:air:utilify.co.in:tools:sign-pdf",
+      "displayName": "Sign PDF Online Free",
+      "type": "text/html",
+      "url": "https://utilify.co.in/tools/sign-pdf/",
+      "description": "Sign PDF documents online free with zero signup or file uploads. Draw, type, or upload digital signatures and edit signed PDFs in private browser memory.",
+      "representativeQueries": [
+        "sign pdf online free",
+        "pdf signature creator",
+        "online signature pdf",
+        "signed pdf edit",
+        "digital signature online"
+      ],
+      "tags": [
+        "pdf",
+        "sign-pdf",
+        "utility",
+        "client-side",
+        "offline-first"
+      ]
     },
     {
-      "id": "compress-pdf",
-      "name": "Compress PDF",
-      "type": "tool",
-      "description": "Compress PDF documents in local browser memory with high visual quality preservation.",
-      "url": "https://utilify.co.in/tools/compress-pdf/"
+      "identifier": "urn:air:utilify.co.in:tools:merge-pdf",
+      "displayName": "Merge PDF",
+      "type": "text/html",
+      "url": "https://utilify.co.in/tools/merge-pdf/",
+      "description": "Combine multiple PDF documents into a single organized file in local browser memory without server uploads.",
+      "representativeQueries": [
+        "merge pdf online free",
+        "combine pdf files",
+        "merge pdf without upload",
+        "pdf joiner"
+      ],
+      "tags": [
+        "pdf",
+        "merge-pdf",
+        "utility",
+        "client-side",
+        "offline-first"
+      ]
     },
     {
-      "id": "image-to-pdf",
-      "name": "Image to PDF",
-      "type": "tool",
-      "description": "Convert JPG, PNG, and WebP images to a single PDF document client-side.",
-      "url": "https://utilify.co.in/tools/image-to-pdf/"
+      "identifier": "urn:air:utilify.co.in:tools:compress-pdf",
+      "displayName": "Compress PDF",
+      "type": "text/html",
+      "url": "https://utilify.co.in/tools/compress-pdf/",
+      "description": "Reduce PDF document file size with high visual quality in local browser memory without privacy leaks.",
+      "representativeQueries": [
+        "compress pdf online free",
+        "reduce pdf size",
+        "shrink pdf file",
+        "pdf size reducer"
+      ],
+      "tags": [
+        "pdf",
+        "compress-pdf",
+        "utility",
+        "client-side",
+        "offline-first"
+      ]
     },
     {
-      "id": "jpg-to-pdf",
-      "name": "JPG to PDF",
-      "type": "tool",
-      "description": "Convert JPG photos directly into a paginated PDF document offline in browser memory.",
-      "url": "https://utilify.co.in/tools/jpg-to-pdf/"
+      "identifier": "urn:air:utilify.co.in:tools:pdf-to-image",
+      "displayName": "PDF to Image Converter",
+      "type": "text/html",
+      "url": "https://utilify.co.in/tools/pdf-to-image/",
+      "description": "Extract and convert PDF pages into high-resolution JPG or PNG images client-side with 100% data privacy.",
+      "representativeQueries": [
+        "pdf to image",
+        "pdf to image converter",
+        "pdf to jpg",
+        "convert pdf to png free"
+      ],
+      "tags": [
+        "pdf",
+        "pdf-to-image",
+        "utility",
+        "client-side",
+        "offline-first"
+      ]
     },
     {
-      "id": "pdf-to-image",
-      "name": "PDF to Image",
-      "type": "tool",
-      "description": "Extract and render all pages of a PDF document into JPG or PNG image files.",
-      "url": "https://utilify.co.in/tools/pdf-to-image/"
+      "identifier": "urn:air:utilify.co.in:tools:image-to-pdf",
+      "displayName": "Image to PDF Converter",
+      "type": "text/html",
+      "url": "https://utilify.co.in/tools/image-to-pdf/",
+      "description": "Convert JPG, PNG, and WebP images to a clean, paginated PDF document directly in browser memory.",
+      "representativeQueries": [
+        "image to pdf",
+        "jpg to pdf converter online",
+        "image to pdf converter free",
+        "jpg to pdf"
+      ],
+      "tags": [
+        "pdf",
+        "image-to-pdf",
+        "utility",
+        "client-side",
+        "offline-first"
+      ]
     },
     {
-      "id": "pdf-to-jpg",
-      "name": "PDF to JPG",
-      "type": "tool",
-      "description": "Convert PDF documents to high-resolution JPG images client-side without cloud uploads.",
-      "url": "https://utilify.co.in/tools/pdf-to-jpg/"
+      "identifier": "urn:air:utilify.co.in:tools:split-pdf",
+      "displayName": "Split PDF",
+      "type": "text/html",
+      "url": "https://utilify.co.in/tools/split-pdf/",
+      "description": "Extract specific page ranges or split individual pages from PDF documents securely client-side.",
+      "representativeQueries": [
+        "split pdf online free",
+        "extract pages from pdf",
+        "separate pdf pages",
+        "pdf cutter"
+      ],
+      "tags": [
+        "pdf",
+        "split-pdf",
+        "utility",
+        "client-side",
+        "offline-first"
+      ]
     },
     {
-      "id": "split-pdf",
-      "name": "Split PDF",
-      "type": "tool",
-      "description": "Extract custom page ranges or separate individual PDF pages client-side.",
-      "url": "https://utilify.co.in/tools/split-pdf/"
+      "identifier": "urn:air:utilify.co.in:tools:rotate-pdf",
+      "displayName": "Rotate PDF",
+      "type": "text/html",
+      "url": "https://utilify.co.in/tools/rotate-pdf/",
+      "description": "Permanently rotate individual pages or entire PDF files 90, 180, or 270 degrees client-side.",
+      "representativeQueries": [
+        "rotate pdf online free",
+        "turn pdf pages",
+        "fix pdf orientation",
+        "rotate pdf permanently"
+      ],
+      "tags": [
+        "pdf",
+        "rotate-pdf",
+        "utility",
+        "client-side",
+        "offline-first"
+      ]
     },
     {
-      "id": "rotate-pdf",
-      "name": "Rotate PDF",
-      "type": "tool",
-      "description": "Rotate PDF pages 90, 180, or 270 degrees clockwise or counterclockwise client-side.",
-      "url": "https://utilify.co.in/tools/rotate-pdf/"
+      "identifier": "urn:air:utilify.co.in:tools:protect-pdf",
+      "displayName": "Protect PDF Online",
+      "type": "text/html",
+      "url": "https://utilify.co.in/tools/protect-pdf/",
+      "description": "Encrypt and password protect confidential PDF documents client-side using strong local cryptography.",
+      "representativeQueries": [
+        "protect pdf",
+        "protect pdf online",
+        "add password to pdf",
+        "encrypt pdf free"
+      ],
+      "tags": [
+        "pdf",
+        "protect-pdf",
+        "utility",
+        "client-side",
+        "offline-first"
+      ]
     },
     {
-      "id": "protect-pdf",
-      "name": "Protect PDF",
-      "type": "tool",
-      "description": "Encrypt PDF documents with custom passwords locally in browser memory.",
-      "url": "https://utilify.co.in/tools/protect-pdf/"
+      "identifier": "urn:air:utilify.co.in:tools:unlock-pdf",
+      "displayName": "Unlock PDF",
+      "type": "text/html",
+      "url": "https://utilify.co.in/tools/unlock-pdf/",
+      "description": "Remove passwords and security restrictions from encrypted PDF documents client-side.",
+      "representativeQueries": [
+        "unlock pdf online free",
+        "remove password from pdf",
+        "decrypt pdf",
+        "pdf password remover"
+      ],
+      "tags": [
+        "pdf",
+        "unlock-pdf",
+        "utility",
+        "client-side",
+        "offline-first"
+      ]
     },
     {
-      "id": "unlock-pdf",
-      "name": "Unlock PDF",
-      "type": "tool",
-      "description": "Remove passwords and security restrictions from encrypted PDF documents.",
-      "url": "https://utilify.co.in/tools/unlock-pdf/"
+      "identifier": "urn:air:utilify.co.in:tools:remove-pdf-pages",
+      "displayName": "Remove PDF Pages",
+      "type": "text/html",
+      "url": "https://utilify.co.in/tools/remove-pdf-pages/",
+      "description": "Delete unwanted pages or blank sheets from any PDF document client-side without re-uploading.",
+      "representativeQueries": [
+        "remove pages from pdf",
+        "delete pdf pages online",
+        "discard pdf pages",
+        "clean pdf document"
+      ],
+      "tags": [
+        "pdf",
+        "remove-pdf-pages",
+        "utility",
+        "client-side",
+        "offline-first"
+      ]
     },
     {
-      "id": "remove-pdf-pages",
-      "name": "Remove PDF Pages",
-      "type": "tool",
-      "description": "Delete unwanted pages or custom page ranges from any PDF document client-side.",
-      "url": "https://utilify.co.in/tools/remove-pdf-pages/"
+      "identifier": "urn:air:utilify.co.in:tools:image-compressor",
+      "displayName": "Image Compressor",
+      "type": "text/html",
+      "url": "https://utilify.co.in/tools/image-compressor/",
+      "description": "Compress and optimize JPEG, PNG, and WebP images client-side directly in browser memory.",
+      "representativeQueries": [
+        "compress image online free",
+        "reduce photo size",
+        "image optimizer",
+        "compress png jpg"
+      ],
+      "tags": [
+        "image",
+        "image-compressor",
+        "utility",
+        "client-side",
+        "offline-first"
+      ]
     },
     {
-      "id": "sign-pdf",
-      "name": "Sign PDF",
-      "type": "tool",
-      "description": "Create digital signatures and stamp them onto PDF documents client-side securely.",
-      "url": "https://utilify.co.in/tools/sign-pdf/"
+      "identifier": "urn:air:utilify.co.in:tools:image-resizer",
+      "displayName": "Image Resizer",
+      "type": "text/html",
+      "url": "https://utilify.co.in/tools/image-resizer/",
+      "description": "Resize photos and image dimensions to custom pixels or percentages with aspect ratio lock.",
+      "representativeQueries": [
+        "resize image online",
+        "photo dimension resizer",
+        "scale image pixels",
+        "image size changer"
+      ],
+      "tags": [
+        "image",
+        "image-resizer",
+        "utility",
+        "client-side",
+        "offline-first"
+      ]
     },
     {
-      "id": "image-compressor",
-      "name": "Image Compressor",
-      "type": "tool",
-      "description": "Optimize and compress JPEG, PNG, and WebP images client-side directly in browser memory.",
-      "url": "https://utilify.co.in/tools/image-compressor/"
+      "identifier": "urn:air:utilify.co.in:tools:image-cropper",
+      "displayName": "Image Cropper",
+      "type": "text/html",
+      "url": "https://utilify.co.in/tools/image-cropper/",
+      "description": "Crop pictures and graphics with custom aspect ratios (1:1, 16:9, 4:3) and visual preview controls.",
+      "representativeQueries": [
+        "crop image online free",
+        "photo cropper",
+        "crop square image",
+        "picture cutter"
+      ],
+      "tags": [
+        "image",
+        "image-cropper",
+        "utility",
+        "client-side",
+        "offline-first"
+      ]
     },
     {
-      "id": "image-resizer",
-      "name": "Image Resizer",
-      "type": "tool",
-      "description": "Scale and resize image dimensions to custom pixels or percentages with aspect ratio lock.",
-      "url": "https://utilify.co.in/tools/image-resizer/"
+      "identifier": "urn:air:utilify.co.in:tools:image-format-converter",
+      "displayName": "Image Format Converter",
+      "type": "text/html",
+      "url": "https://utilify.co.in/tools/image-format-converter/",
+      "description": "Convert images seamlessly between PNG, JPG, WebP, GIF, and BMP formats in browser canvas.",
+      "representativeQueries": [
+        "convert image format",
+        "png to jpg converter",
+        "webp to png",
+        "image type converter"
+      ],
+      "tags": [
+        "image",
+        "image-format-converter",
+        "utility",
+        "client-side",
+        "offline-first"
+      ]
     },
     {
-      "id": "image-cropper",
-      "name": "Image Cropper",
-      "type": "tool",
-      "description": "Crop images with interactive visual controls, aspect ratios, and instant export.",
-      "url": "https://utilify.co.in/tools/image-cropper/"
+      "identifier": "urn:air:utilify.co.in:tools:svg-to-png-converter",
+      "displayName": "SVG to PNG Converter",
+      "type": "text/html",
+      "url": "https://utilify.co.in/tools/svg-to-png-converter/",
+      "description": "Convert vector SVG graphics into high-resolution raster PNG images with custom DPI scaling.",
+      "representativeQueries": [
+        "svg to png converter",
+        "convert svg to raster",
+        "export svg as png",
+        "vector to png"
+      ],
+      "tags": [
+        "image",
+        "svg-to-png-converter",
+        "utility",
+        "client-side",
+        "offline-first"
+      ]
     },
     {
-      "id": "image-format-converter",
-      "name": "Image Format Converter",
-      "type": "tool",
-      "description": "Convert between PNG, JPG, WebP, GIF, and BMP formats locally in browser canvas.",
-      "url": "https://utilify.co.in/tools/image-format-converter/"
+      "identifier": "urn:air:utilify.co.in:tools:png-to-svg-converter",
+      "displayName": "PNG to SVG Converter",
+      "type": "text/html",
+      "url": "https://utilify.co.in/tools/png-to-svg-converter/",
+      "description": "Vectorize PNG and JPG images into scalable SVG vector paths with auto-tracing.",
+      "representativeQueries": [
+        "png to svg converter",
+        "vectorize image free",
+        "convert raster to svg",
+        "image trace to svg"
+      ],
+      "tags": [
+        "image",
+        "png-to-svg-converter",
+        "utility",
+        "client-side",
+        "offline-first"
+      ]
     },
     {
-      "id": "json-validator",
-      "name": "JSON Prettifier & Validator",
-      "type": "tool",
-      "description": "Prettify, format, validate, and minify JSON data structures client-side.",
-      "url": "https://utilify.co.in/tools/json-prettifier-validator/"
+      "identifier": "urn:air:utilify.co.in:tools:image-to-base64-converter",
+      "displayName": "Image to Base64 Converter",
+      "type": "text/html",
+      "url": "https://utilify.co.in/tools/image-to-base64-converter/",
+      "description": "Convert image files into Base64 data URI strings for CSS, HTML, and web applications.",
+      "representativeQueries": [
+        "image to base64",
+        "convert photo to base64 uri",
+        "base64 image encoder",
+        "data uri generator"
+      ],
+      "tags": [
+        "image",
+        "image-to-base64-converter",
+        "utility",
+        "client-side",
+        "offline-first"
+      ]
     },
     {
-      "id": "social-formatter",
-      "name": "Social Text Formatter",
-      "type": "tool",
-      "description": "Convert plain text to Unicode bold, italic, and cursive for LinkedIn, X, and Instagram.",
-      "url": "https://utilify.co.in/tools/social-media-text-formatter/"
+      "identifier": "urn:air:utilify.co.in:tools:exif-data-viewer-remover",
+      "displayName": "EXIF Data Viewer & Remover",
+      "type": "text/html",
+      "url": "https://utilify.co.in/tools/exif-data-viewer-remover/",
+      "description": "View and strip GPS location, camera settings, and privacy metadata from photos before sharing.",
+      "representativeQueries": [
+        "view exif data online",
+        "remove photo gps metadata",
+        "exif stripper",
+        "photo privacy cleaner"
+      ],
+      "tags": [
+        "image",
+        "exif-data-viewer-remover",
+        "utility",
+        "client-side",
+        "offline-first"
+      ]
     },
     {
-      "id": "word-counter",
-      "name": "Word Counter & Readability Analyzer",
-      "type": "tool",
-      "description": "Calculate word counts, character metrics, reading time, and Flesch readability scores.",
-      "url": "https://utilify.co.in/tools/word-counter-readability-analyzer/"
+      "identifier": "urn:air:utilify.co.in:tools:image-merger-stitcher",
+      "displayName": "Image Merger & Stitcher",
+      "type": "text/html",
+      "url": "https://utilify.co.in/tools/image-merger-stitcher/",
+      "description": "Combine two or more images side-by-side (horizontally) or stacked (vertically) into a single picture.",
+      "representativeQueries": [
+        "merge two images online",
+        "stitch photos side by side",
+        "combine pictures vertically",
+        "photo joiner"
+      ],
+      "tags": [
+        "image",
+        "image-merger-stitcher",
+        "utility",
+        "client-side",
+        "offline-first"
+      ]
     },
     {
-      "id": "qr-generator",
-      "name": "Custom QR Code Generator",
-      "type": "tool",
-      "description": "Generate high-resolution vector and PNG QR codes with custom error correction.",
-      "url": "https://utilify.co.in/tools/custom-qr-code-generator/"
+      "identifier": "urn:air:utilify.co.in:tools:social-media-text-formatter",
+      "displayName": "Social Media Text Formatter",
+      "type": "text/html",
+      "url": "https://utilify.co.in/tools/social-media-text-formatter/",
+      "description": "Convert plain text into bold, italic, gothic, and cursive Unicode fonts for LinkedIn, X, and Instagram.",
+      "representativeQueries": [
+        "bold text for linkedin",
+        "italic text generator",
+        "fancy font converter",
+        "social media fonts"
+      ],
+      "tags": [
+        "text",
+        "social-media-text-formatter",
+        "utility",
+        "client-side",
+        "offline-first"
+      ]
     },
     {
-      "id": "diff-checker",
-      "name": "Text Diff Checker",
-      "type": "tool",
-      "description": "Side-by-side text and code comparison highlighting word and line changes.",
-      "url": "https://utilify.co.in/tools/text-diff-checker-comparison/"
+      "identifier": "urn:air:utilify.co.in:tools:rich-text-editor",
+      "displayName": "Rich Text Editor",
+      "type": "text/html",
+      "url": "https://utilify.co.in/tools/rich-text-editor/",
+      "description": "Browser-based WYSIWYG rich text editor with HTML, Markdown, and formatted clipboard export.",
+      "representativeQueries": [
+        "online rich text editor",
+        "wysiwyg web editor",
+        "format text online",
+        "html rich text builder"
+      ],
+      "tags": [
+        "text",
+        "rich-text-editor",
+        "utility",
+        "client-side",
+        "offline-first"
+      ]
     },
     {
-      "id": "hash-generator",
-      "name": "Cryptographic Hash Generator",
-      "type": "tool",
-      "description": "Generate MD5, SHA-1, SHA-256, and SHA-512 checksums using Web Crypto API.",
-      "url": "https://utilify.co.in/tools/cryptographic-hash-generator/"
-    }
-  ],
-  "resources": [
-    {
-      "id": "merge-pdf",
-      "name": "Merge PDF",
-      "type": "utility",
-      "description": "Combine multiple PDF files client-side into a single document without server uploads.",
-      "url": "https://utilify.co.in/tools/merge-pdf/"
+      "identifier": "urn:air:utilify.co.in:tools:word-counter-readability-analyzer",
+      "displayName": "Word Counter & Readability Analyzer",
+      "type": "text/html",
+      "url": "https://utilify.co.in/tools/word-counter-readability-analyzer/",
+      "description": "Calculate words, characters, sentences, reading time, and Flesch Reading Ease scores in real-time.",
+      "representativeQueries": [
+        "word counter online",
+        "character count tool",
+        "flesch reading ease score",
+        "readability checker"
+      ],
+      "tags": [
+        "text",
+        "word-counter-readability-analyzer",
+        "utility",
+        "client-side",
+        "offline-first"
+      ]
     },
     {
-      "id": "compress-pdf",
-      "name": "Compress PDF",
-      "type": "utility",
-      "description": "Compress PDF documents in local browser memory with visual quality preservation.",
-      "url": "https://utilify.co.in/tools/compress-pdf/"
+      "identifier": "urn:air:utilify.co.in:tools:smart-case-converter",
+      "displayName": "Smart Case Converter",
+      "type": "text/html",
+      "url": "https://utilify.co.in/tools/smart-case-converter/",
+      "description": "Convert text capitalization between UPPERCASE, lowercase, Title Case, camelCase, snake_case, and kebab-case.",
+      "representativeQueries": [
+        "case converter online",
+        "title case converter",
+        "camelCase converter",
+        "snake_case to camelCase"
+      ],
+      "tags": [
+        "text",
+        "smart-case-converter",
+        "utility",
+        "client-side",
+        "offline-first"
+      ]
     },
     {
-      "id": "image-to-pdf",
-      "name": "Image to PDF",
-      "type": "utility",
-      "description": "Convert JPG, PNG, and WebP images to a single PDF document client-side.",
-      "url": "https://utilify.co.in/tools/image-to-pdf/"
+      "identifier": "urn:air:utilify.co.in:tools:seo-url-slug-generator",
+      "displayName": "SEO URL Slug Generator",
+      "type": "text/html",
+      "url": "https://utilify.co.in/tools/seo-url-slug-generator/",
+      "description": "Convert titles and article headlines into clean, URL-safe, hyphenated slugs for web optimization.",
+      "representativeQueries": [
+        "url slug generator",
+        "seo slug creator",
+        "clean url builder",
+        "generate slug from title"
+      ],
+      "tags": [
+        "text",
+        "seo-url-slug-generator",
+        "utility",
+        "client-side",
+        "offline-first"
+      ]
     },
     {
-      "id": "pdf-to-image",
-      "name": "PDF to Image",
-      "type": "utility",
-      "description": "Extract and render all pages of a PDF document into JPG or PNG image files.",
-      "url": "https://utilify.co.in/tools/pdf-to-image/"
+      "identifier": "urn:air:utilify.co.in:tools:lorem-ipsum-text-generator",
+      "displayName": "Lorem Ipsum Text Generator",
+      "type": "text/html",
+      "url": "https://utilify.co.in/tools/lorem-ipsum-text-generator/",
+      "description": "Generate customizable placeholder text paragraphs, sentences, words, and list items for mockups.",
+      "representativeQueries": [
+        "lorem ipsum generator",
+        "placeholder text builder",
+        "dummy text generator",
+        "latin filler text"
+      ],
+      "tags": [
+        "text",
+        "lorem-ipsum-text-generator",
+        "utility",
+        "client-side",
+        "offline-first"
+      ]
     },
     {
-      "id": "split-pdf",
-      "name": "Split PDF",
-      "type": "utility",
-      "description": "Extract custom page ranges or separate individual PDF pages client-side.",
-      "url": "https://utilify.co.in/tools/split-pdf/"
+      "identifier": "urn:air:utilify.co.in:tools:regex-search-replace-text-cleaner",
+      "displayName": "Regex Search & Replace Text Cleaner",
+      "type": "text/html",
+      "url": "https://utilify.co.in/tools/regex-search-replace-text-cleaner/",
+      "description": "Powerful regular expression pattern tester, bulk replacement, and text sanitization utility.",
+      "representativeQueries": [
+        "regex tester online",
+        "regular expression replace",
+        "regex string cleaner",
+        "text regex search"
+      ],
+      "tags": [
+        "text",
+        "regex-search-replace-text-cleaner",
+        "utility",
+        "client-side",
+        "offline-first"
+      ]
     },
     {
-      "id": "image-compressor",
-      "name": "Image Compressor",
-      "type": "utility",
-      "description": "Optimize and compress JPEG, PNG, and WebP images client-side directly in browser memory.",
-      "url": "https://utilify.co.in/tools/image-compressor/"
+      "identifier": "urn:air:utilify.co.in:tools:json-prettifier-validator",
+      "displayName": "JSON Prettifier & Validator",
+      "type": "text/html",
+      "url": "https://utilify.co.in/tools/json-prettifier-validator/",
+      "description": "Prettify, validate, format, and minify JSON data structures with syntax highlighting and tree view.",
+      "representativeQueries": [
+        "json prettifier online",
+        "json validator free",
+        "format json payload",
+        "json lint validator"
+      ],
+      "tags": [
+        "developer",
+        "json-prettifier-validator",
+        "utility",
+        "client-side",
+        "offline-first"
+      ]
     },
     {
-      "id": "json-validator",
-      "name": "JSON Prettifier & Validator",
-      "type": "utility",
-      "description": "Prettify, format, validate, and minify JSON data structures client-side.",
-      "url": "https://utilify.co.in/tools/json-prettifier-validator/"
+      "identifier": "urn:air:utilify.co.in:tools:yaml-to-json-converter",
+      "displayName": "YAML to JSON Converter",
+      "type": "text/html",
+      "url": "https://utilify.co.in/tools/yaml-to-json-converter/",
+      "description": "Bi-directional conversion between YAML and JSON formatted documents client-side.",
+      "representativeQueries": [
+        "yaml to json converter",
+        "json to yaml online",
+        "convert yaml to json",
+        "yaml parser"
+      ],
+      "tags": [
+        "developer",
+        "yaml-to-json-converter",
+        "utility",
+        "client-side",
+        "offline-first"
+      ]
+    },
+    {
+      "identifier": "urn:air:utilify.co.in:tools:jwt-debugger-decoder-encoder",
+      "displayName": "JWT Debugger & Decoder",
+      "type": "text/html",
+      "url": "https://utilify.co.in/tools/jwt-debugger-decoder-encoder/",
+      "description": "Decode and inspect JSON Web Tokens (JWT) headers, claims, expiration timestamps, and payloads locally.",
+      "representativeQueries": [
+        "jwt decoder online",
+        "jwt debugger free",
+        "decode json web token",
+        "inspect jwt claims"
+      ],
+      "tags": [
+        "developer",
+        "jwt-debugger-decoder-encoder",
+        "utility",
+        "client-side",
+        "offline-first"
+      ]
+    },
+    {
+      "identifier": "urn:air:utilify.co.in:tools:base64-encoder-decoder",
+      "displayName": "Base64 Encoder & Decoder",
+      "type": "text/html",
+      "url": "https://utilify.co.in/tools/base64-encoder-decoder/",
+      "description": "Encode and decode UTF-8 text strings and binary data into Base64 representations securely.",
+      "representativeQueries": [
+        "base64 encoder online",
+        "base64 decoder free",
+        "convert string to base64",
+        "decode base64 text"
+      ],
+      "tags": [
+        "developer",
+        "base64-encoder-decoder",
+        "utility",
+        "client-side",
+        "offline-first"
+      ]
+    },
+    {
+      "identifier": "urn:air:utilify.co.in:tools:url-encoder-decoder",
+      "displayName": "URL Encoder & Decoder",
+      "type": "text/html",
+      "url": "https://utilify.co.in/tools/url-encoder-decoder/",
+      "description": "Encode URI components and decode percent-encoded URLs according to RFC 3986 standards.",
+      "representativeQueries": [
+        "url encoder online",
+        "url decoder tool",
+        "percent encode url",
+        "decode uri component"
+      ],
+      "tags": [
+        "developer",
+        "url-encoder-decoder",
+        "utility",
+        "client-side",
+        "offline-first"
+      ]
+    },
+    {
+      "identifier": "urn:air:utilify.co.in:tools:cryptographic-hash-generator",
+      "displayName": "Cryptographic Hash Generator",
+      "type": "text/html",
+      "url": "https://utilify.co.in/tools/cryptographic-hash-generator/",
+      "description": "Compute MD5, SHA-1, SHA-256, and SHA-512 cryptographic digests using the native Web Crypto API.",
+      "representativeQueries": [
+        "sha256 hash generator",
+        "md5 generator online",
+        "sha512 checksum tool",
+        "cryptographic hash online"
+      ],
+      "tags": [
+        "security",
+        "cryptographic-hash-generator",
+        "utility",
+        "client-side",
+        "offline-first"
+      ]
+    },
+    {
+      "identifier": "urn:air:utilify.co.in:tools:text-diff-checker-comparison",
+      "displayName": "Text Diff Checker & Comparison",
+      "type": "text/html",
+      "url": "https://utilify.co.in/tools/text-diff-checker-comparison/",
+      "description": "Side-by-side text and code difference viewer with line-by-line and word-by-word visual highlighting.",
+      "representativeQueries": [
+        "text diff checker",
+        "compare two texts online",
+        "code diff comparison",
+        "diff viewer free"
+      ],
+      "tags": [
+        "developer",
+        "text-diff-checker-comparison",
+        "utility",
+        "client-side",
+        "offline-first"
+      ]
+    },
+    {
+      "identifier": "urn:air:utilify.co.in:tools:dockerfile-generator-builder",
+      "displayName": "Dockerfile Generator & Builder",
+      "type": "text/html",
+      "url": "https://utilify.co.in/tools/dockerfile-generator-builder/",
+      "description": "Generate multi-stage production-ready Dockerfiles for Node.js, Python, Go, Rust, Java, and PHP.",
+      "representativeQueries": [
+        "dockerfile generator",
+        "build dockerfile online",
+        "docker container config builder",
+        "dockerfile template"
+      ],
+      "tags": [
+        "developer",
+        "dockerfile-generator-builder",
+        "utility",
+        "client-side",
+        "offline-first"
+      ]
+    },
+    {
+      "identifier": "urn:air:utilify.co.in:tools:docker-compose-generator-builder",
+      "displayName": "Docker Compose Generator",
+      "type": "text/html",
+      "url": "https://utilify.co.in/tools/docker-compose-generator-builder/",
+      "description": "Interactive visual builder for multi-service docker-compose.yml files with databases and caching.",
+      "representativeQueries": [
+        "docker compose generator",
+        "docker compose builder",
+        "generate docker-compose.yml",
+        "docker compose template"
+      ],
+      "tags": [
+        "developer",
+        "docker-compose-generator-builder",
+        "utility",
+        "client-side",
+        "offline-first"
+      ]
+    },
+    {
+      "identifier": "urn:air:utilify.co.in:tools:github-actions-workflow-generator",
+      "displayName": "GitHub Actions Workflow Generator",
+      "type": "text/html",
+      "url": "https://utilify.co.in/tools/github-actions-workflow-generator/",
+      "description": "Create CI/CD workflow YAML pipelines for automated testing, linting, building, and deployment.",
+      "representativeQueries": [
+        "github actions generator",
+        "ci cd workflow builder",
+        "github workflow yaml creator",
+        "actions template"
+      ],
+      "tags": [
+        "developer",
+        "github-actions-workflow-generator",
+        "utility",
+        "client-side",
+        "offline-first"
+      ]
+    },
+    {
+      "identifier": "urn:air:utilify.co.in:tools:nginx-config-generator-builder",
+      "displayName": "Nginx Config Generator",
+      "type": "text/html",
+      "url": "https://utilify.co.in/tools/nginx-config-generator-builder/",
+      "description": "Generate secure, high-performance Nginx server blocks with reverse proxy, SSL, and gzip caching.",
+      "representativeQueries": [
+        "nginx config generator",
+        "nginx reverse proxy builder",
+        "nginx configuration generator",
+        "nginx conf template"
+      ],
+      "tags": [
+        "developer",
+        "nginx-config-generator-builder",
+        "utility",
+        "client-side",
+        "offline-first"
+      ]
+    },
+    {
+      "identifier": "urn:air:utilify.co.in:tools:aws-iam-policy-generator-builder",
+      "displayName": "AWS IAM Policy Generator",
+      "type": "text/html",
+      "url": "https://utilify.co.in/tools/aws-iam-policy-generator-builder/",
+      "description": "Generate and validate least-privilege AWS IAM JSON policy documents for S3, EC2, Lambda, and DynamoDB.",
+      "representativeQueries": [
+        "aws iam policy generator",
+        "iam policy builder",
+        "s3 bucket policy generator",
+        "aws json policy creator"
+      ],
+      "tags": [
+        "security",
+        "aws-iam-policy-generator-builder",
+        "utility",
+        "client-side",
+        "offline-first"
+      ]
+    },
+    {
+      "identifier": "urn:air:utilify.co.in:tools:crontab-schedule-generator-helper",
+      "displayName": "Crontab Schedule Generator",
+      "type": "text/html",
+      "url": "https://utilify.co.in/tools/crontab-schedule-generator-helper/",
+      "description": "Generate, visualize, and translate 5-part cron schedule expressions into plain English schedules.",
+      "representativeQueries": [
+        "crontab generator",
+        "cron expression generator",
+        "cron schedule builder",
+        "cron syntax translator"
+      ],
+      "tags": [
+        "developer",
+        "crontab-schedule-generator-helper",
+        "utility",
+        "client-side",
+        "offline-first"
+      ]
+    },
+    {
+      "identifier": "urn:air:utilify.co.in:tools:linux-command-helper-reference",
+      "displayName": "Linux Command Helper & Reference",
+      "type": "text/html",
+      "url": "https://utilify.co.in/tools/linux-command-helper-reference/",
+      "description": "Comprehensive cheat-sheet and search engine for everyday Linux bash commands, flags, and examples.",
+      "representativeQueries": [
+        "linux command cheat sheet",
+        "linux bash reference",
+        "ubuntu commands list",
+        "linux terminal helper"
+      ],
+      "tags": [
+        "developer",
+        "linux-command-helper-reference",
+        "utility",
+        "client-side",
+        "offline-first"
+      ]
+    },
+    {
+      "identifier": "urn:air:utilify.co.in:tools:color-converter-hex-rgb-hsl",
+      "displayName": "Color Converter (HEX, RGB, HSL)",
+      "type": "text/html",
+      "url": "https://utilify.co.in/tools/color-converter-hex-rgb-hsl/",
+      "description": "Interactive color palette picker and instant converter between HEX, RGB, RGBA, HSL, and HSV formats.",
+      "representativeQueries": [
+        "hex to rgb converter",
+        "color code converter",
+        "rgb to hsl converter",
+        "color palette picker"
+      ],
+      "tags": [
+        "design",
+        "color-converter-hex-rgb-hsl",
+        "utility",
+        "client-side",
+        "offline-first"
+      ]
+    },
+    {
+      "identifier": "urn:air:utilify.co.in:tools:css-box-shadow-generator-builder",
+      "displayName": "CSS Box Shadow Generator",
+      "type": "text/html",
+      "url": "https://utilify.co.in/tools/css-box-shadow-generator-builder/",
+      "description": "Design layered, smooth CSS box-shadows visually with blur, spread, elevation, and CSS export.",
+      "representativeQueries": [
+        "css box shadow generator",
+        "smooth shadow generator",
+        "box shadow builder",
+        "css shadow effect"
+      ],
+      "tags": [
+        "design",
+        "css-box-shadow-generator-builder",
+        "utility",
+        "client-side",
+        "offline-first"
+      ]
+    },
+    {
+      "identifier": "urn:air:utilify.co.in:tools:css-gradient-background-generator",
+      "displayName": "CSS Gradient Background Generator",
+      "type": "text/html",
+      "url": "https://utilify.co.in/tools/css-gradient-background-generator/",
+      "description": "Create beautiful linear and radial CSS gradients with multi-stop color pickers and CSS output.",
+      "representativeQueries": [
+        "css gradient generator",
+        "linear gradient builder",
+        "radial gradient creator",
+        "css background gradient"
+      ],
+      "tags": [
+        "design",
+        "css-gradient-background-generator",
+        "utility",
+        "client-side",
+        "offline-first"
+      ]
+    },
+    {
+      "identifier": "urn:air:utilify.co.in:tools:custom-qr-code-generator",
+      "displayName": "Custom QR Code Generator",
+      "type": "text/html",
+      "url": "https://utilify.co.in/tools/custom-qr-code-generator/",
+      "description": "Create high-resolution vector SVG and PNG QR codes with custom error correction levels and colors.",
+      "representativeQueries": [
+        "custom qr code generator",
+        "qr code creator online free",
+        "high resolution qr code",
+        "vector qr generator"
+      ],
+      "tags": [
+        "marketing",
+        "custom-qr-code-generator",
+        "utility",
+        "client-side",
+        "offline-first"
+      ]
+    },
+    {
+      "identifier": "urn:air:utilify.co.in:tools:meta-tags-seo-generator",
+      "displayName": "Meta Tags SEO Generator",
+      "type": "text/html",
+      "url": "https://utilify.co.in/tools/meta-tags-seo-generator/",
+      "description": "Generate complete OpenGraph, Twitter Card, and Google Search meta tags with live snippet previews.",
+      "representativeQueries": [
+        "meta tag generator",
+        "open graph generator",
+        "twitter card generator",
+        "seo meta builder"
+      ],
+      "tags": [
+        "marketing",
+        "meta-tags-seo-generator",
+        "utility",
+        "client-side",
+        "offline-first"
+      ]
+    },
+    {
+      "identifier": "urn:air:utilify.co.in:tools:robots-txt-generator",
+      "displayName": "Robots.txt Generator",
+      "type": "text/html",
+      "url": "https://utilify.co.in/tools/robots-txt-generator/",
+      "description": "Build clean, crawlable robots.txt directives for Googlebot, Bingbot, and AI agent web crawlers.",
+      "representativeQueries": [
+        "robots.txt generator",
+        "create robots.txt online",
+        "googlebot robots.txt builder",
+        "robots directive creator"
+      ],
+      "tags": [
+        "marketing",
+        "robots-txt-generator",
+        "utility",
+        "client-side",
+        "offline-first"
+      ]
+    },
+    {
+      "identifier": "urn:air:utilify.co.in:tools:scientific-calculator",
+      "displayName": "Scientific Calculator",
+      "type": "text/html",
+      "url": "https://utilify.co.in/tools/scientific-calculator/",
+      "description": "Full-featured client-side scientific calculator supporting trigonometric functions, logarithms, and powers.",
+      "representativeQueries": [
+        "scientific calculator online",
+        "online math calculator",
+        "trigonometry calculator",
+        "scientific calc free"
+      ],
+      "tags": [
+        "calculator",
+        "scientific-calculator",
+        "utility",
+        "client-side",
+        "offline-first"
+      ]
+    },
+    {
+      "identifier": "urn:air:utilify.co.in:tools:cgpa-calculator",
+      "displayName": "CGPA Calculator",
+      "type": "text/html",
+      "url": "https://utilify.co.in/tools/cgpa-calculator/",
+      "description": "Calculate semester GPA and cumulative CGPA across university grading scales (10-point, 4-point).",
+      "representativeQueries": [
+        "cgpa calculator online",
+        "gpa calculator university",
+        "calculate semester gpa",
+        "cgpa to percentage"
+      ],
+      "tags": [
+        "calculator",
+        "cgpa-calculator",
+        "utility",
+        "client-side",
+        "offline-first"
+      ]
+    },
+    {
+      "identifier": "urn:air:utilify.co.in:tools:percentage-calculator",
+      "displayName": "Percentage Calculator",
+      "type": "text/html",
+      "url": "https://utilify.co.in/tools/percentage-calculator/",
+      "description": "Calculate percentage increases, percentage discounts, difference between values, and markups.",
+      "representativeQueries": [
+        "percentage calculator online",
+        "percent increase calculator",
+        "percentage discount calculator",
+        "calculate percent"
+      ],
+      "tags": [
+        "calculator",
+        "percentage-calculator",
+        "utility",
+        "client-side",
+        "offline-first"
+      ]
+    },
+    {
+      "identifier": "urn:air:utilify.co.in:tools:attendance-calculator",
+      "displayName": "Attendance Target Calculator",
+      "type": "text/html",
+      "url": "https://utilify.co.in/tools/attendance-calculator/",
+      "description": "Calculate how many classes you must attend or can safely miss to maintain 75% or 80% college attendance.",
+      "representativeQueries": [
+        "attendance calculator college",
+        "75 percent attendance calculator",
+        "how many classes can i miss",
+        "bunk calculator"
+      ],
+      "tags": [
+        "calculator",
+        "attendance-calculator",
+        "utility",
+        "client-side",
+        "offline-first"
+      ]
+    },
+    {
+      "identifier": "urn:air:utilify.co.in:tools:emi-loan-calculator",
+      "displayName": "EMI Loan Calculator",
+      "type": "text/html",
+      "url": "https://utilify.co.in/tools/emi-loan-calculator/",
+      "description": "Calculate monthly Equated Monthly Installment (EMI), total interest payable, and amortization schedules.",
+      "representativeQueries": [
+        "emi calculator online",
+        "home loan emi calculator",
+        "car loan emi calculator",
+        "monthly emi calculation"
+      ],
+      "tags": [
+        "calculator",
+        "emi-loan-calculator",
+        "utility",
+        "client-side",
+        "offline-first"
+      ]
+    },
+    {
+      "identifier": "urn:air:utilify.co.in:tools:gst-tax-calculator",
+      "displayName": "GST Tax Calculator",
+      "type": "text/html",
+      "url": "https://utilify.co.in/tools/gst-tax-calculator/",
+      "description": "Calculate inclusive and exclusive Goods and Services Tax (GST) across 5%, 12%, 18%, and 28% tax slabs.",
+      "representativeQueries": [
+        "gst calculator online",
+        "calculate gst 18 percent",
+        "gst reverse calculator",
+        "gst tax calculation"
+      ],
+      "tags": [
+        "calculator",
+        "gst-tax-calculator",
+        "utility",
+        "client-side",
+        "offline-first"
+      ]
+    },
+    {
+      "identifier": "urn:air:utilify.co.in:tools:simple-loan-calculator",
+      "displayName": "Simple Loan Calculator",
+      "type": "text/html",
+      "url": "https://utilify.co.in/tools/simple-loan-calculator/",
+      "description": "Compare total cost of loans, principal payback schedules, and interest rates for personal finances.",
+      "representativeQueries": [
+        "loan calculator online",
+        "personal loan calculator",
+        "simple interest calculator",
+        "loan comparison tool"
+      ],
+      "tags": [
+        "calculator",
+        "simple-loan-calculator",
+        "utility",
+        "client-side",
+        "offline-first"
+      ]
+    },
+    {
+      "identifier": "urn:air:utilify.co.in:tools:age-date-of-birth-calculator",
+      "displayName": "Age & Date of Birth Calculator",
+      "type": "text/html",
+      "url": "https://utilify.co.in/tools/age-date-of-birth-calculator/",
+      "description": "Calculate exact chronological age in years, months, weeks, days, hours, and minutes from birthdate.",
+      "representativeQueries": [
+        "age calculator online",
+        "calculate exact age from date of birth",
+        "dob calculator",
+        "chronological age finder"
+      ],
+      "tags": [
+        "calculator",
+        "age-date-of-birth-calculator",
+        "utility",
+        "client-side",
+        "offline-first"
+      ]
+    },
+    {
+      "identifier": "urn:air:utilify.co.in:tools:date-difference-calculator",
+      "displayName": "Date Difference Calculator",
+      "type": "text/html",
+      "url": "https://utilify.co.in/tools/date-difference-calculator/",
+      "description": "Calculate exact number of days, weeks, months, and business working days between two dates.",
+      "representativeQueries": [
+        "date difference calculator",
+        "days between two dates",
+        "business days calculator",
+        "calculate days until"
+      ],
+      "tags": [
+        "calculator",
+        "date-difference-calculator",
+        "utility",
+        "client-side",
+        "offline-first"
+      ]
+    },
+    {
+      "identifier": "urn:air:utilify.co.in:tools:universal-unit-converter",
+      "displayName": "Universal Unit Converter",
+      "type": "text/html",
+      "url": "https://utilify.co.in/tools/universal-unit-converter/",
+      "description": "Instant converter for length, mass, temperature, area, volume, digital storage, and time units.",
+      "representativeQueries": [
+        "unit converter online",
+        "length converter cm to inches",
+        "kg to lbs converter",
+        "metric unit converter"
+      ],
+      "tags": [
+        "calculator",
+        "universal-unit-converter",
+        "utility",
+        "client-side",
+        "offline-first"
+      ]
+    },
+    {
+      "identifier": "urn:air:utilify.co.in:tools:uuid-v4-guid-generator",
+      "displayName": "UUID v4 & GUID Generator",
+      "type": "text/html",
+      "url": "https://utilify.co.in/tools/uuid-v4-guid-generator/",
+      "description": "Generate cryptographically secure Version 4 UUIDs (Universally Unique Identifiers) in bulk.",
+      "representativeQueries": [
+        "uuid generator online",
+        "guid generator free",
+        "generate random uuid v4",
+        "bulk uuid creator"
+      ],
+      "tags": [
+        "developer",
+        "uuid-v4-guid-generator",
+        "utility",
+        "client-side",
+        "offline-first"
+      ]
+    },
+    {
+      "identifier": "urn:air:utilify.co.in:tools:secure-random-password-generator",
+      "displayName": "Secure Random Password Generator",
+      "type": "text/html",
+      "url": "https://utilify.co.in/tools/secure-random-password-generator/",
+      "description": "Generate cryptographically secure random passwords and passphrases with entropy scores in browser memory.",
+      "representativeQueries": [
+        "secure password generator",
+        "random password creator",
+        "generate strong password online",
+        "crypto password maker"
+      ],
+      "tags": [
+        "security",
+        "secure-random-password-generator",
+        "utility",
+        "client-side",
+        "offline-first"
+      ]
+    },
+    {
+      "identifier": "urn:air:utilify.co.in:tools:caesar-rot13-vigenere-cipher",
+      "displayName": "AES & Classical Cipher Tool",
+      "type": "text/html",
+      "url": "https://utilify.co.in/tools/caesar-rot13-vigenere-cipher/",
+      "description": "Encrypt and decrypt text messages with AES-GCM, Caesar shift, ROT13, and Vigenère ciphers locally.",
+      "representativeQueries": [
+        "caesar cipher online",
+        "rot13 decoder",
+        "vigenere cipher tool",
+        "aes text encrypter"
+      ],
+      "tags": [
+        "security",
+        "caesar-rot13-vigenere-cipher",
+        "utility",
+        "client-side",
+        "offline-first"
+      ]
+    },
+    {
+      "identifier": "urn:air:utilify.co.in:tools:password-strength-inspector-analyzer",
+      "displayName": "Password Strength Inspector",
+      "type": "text/html",
+      "url": "https://utilify.co.in/tools/password-strength-inspector-analyzer/",
+      "description": "Analyze password security, Shannon entropy, crack time estimations, and common dictionary vulnerabilities.",
+      "representativeQueries": [
+        "password strength checker",
+        "test password security",
+        "password entropy calculator",
+        "how secure is my password"
+      ],
+      "tags": [
+        "security",
+        "password-strength-inspector-analyzer",
+        "utility",
+        "client-side",
+        "offline-first"
+      ]
     }
   ]
 }
