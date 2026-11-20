@@ -59,7 +59,7 @@ Author: Rushikesh Wagh
 - [Protect PDF Online Free](https://utilify.co.in/tools/protect-pdf/): Protect PDF files online free. Encrypt confidential PDF documents with strong client-side passwords before sharing. No cloud uploads, 100% private.
 - [Unlock PDF](https://utilify.co.in/tools/unlock-pdf/): Unlock PDF files online free. Remove passwords, permissions, and security restrictions from protected PDF documents client-side instantly.
 - [Remove PDF Pages](https://utilify.co.in/tools/remove-pdf-pages/): Remove pages from PDF online free. Delete unwanted pages or custom page ranges from your PDF documents securely in your browser.
-- [Sign PDF Online Free](https://utilify.co.in/tools/sign-pdf/): Sign PDF online free without sign-up or registration. Create, draw, or upload digital signatures and edit signed PDFs directly in browser memory. 100% private.
+- [Sign PDF Online Free (100% Secure & Private) – No Sign-Up | Utilify](https://utilify.co.in/tools/sign-pdf/): Sign PDF documents online 100% free with no sign-up or registration. Draw, type, or upload digital signatures and edit signed PDFs directly in browser memory. Zero server uploads.
 - [Watermark Image](https://utilify.co.in/tools/image-watermark-tool/): Add watermark to photos online free. Protect copyright with custom text or logo image watermarks, opacity sliders, and position controls.
 - [HTML to PDF](https://utilify.co.in/tools/html-to-pdf-converter/): Convert HTML to PDF online free. Render raw HTML/CSS code or documents into clean, paginated PDF files with custom page formatting offline.
 - [HTML to Image](https://utilify.co.in/tools/html-to-image-converter/): Convert HTML to image online free. Render and compile HTML and CSS code blocks into high-resolution PNG or JPG screenshots client-side.
@@ -106,6 +106,12 @@ Author: Rushikesh Wagh
 - [CSS Gradient Generator](https://utilify.co.in/tools/css-gradient-background-generator/): Generate beautiful linear and radial CSS gradients with a live preview, angle controls, color pickers, and one-click CSS copy.
 - [AES Text Encrypter & Decrypter](https://utilify.co.in/tools/caesar-rot13-vigenere-cipher/): Locally encrypt and decrypt text messages using industry-standard Advanced Encryption Standard (AES-GCM/CBC) directly inside your browser memory.
 - [Password Strength & Entropy Inspector](https://utilify.co.in/tools/password-strength-inspector-analyzer/): Analyze password complexity, calculate Shannon entropy bits, check against dictionary patterns, and estimate brute-force crack times securely.
+- [JPG to PDF Converter Free – Convert Images to PDF in Seconds | Utilify](https://utilify.co.in/tools/jpg-to-pdf/): Convert JPG to PDF online 100% free with no file limits. Combine multiple JPG, PNG, and photos into a clean PDF document in seconds. 100% private in browser memory.
+- [PDF to JPG Converter Free – Extract High Quality JPGs Online | Utilify](https://utilify.co.in/tools/pdf-to-jpg/): Convert PDF to JPG online 100% free. Extract crystal-clear JPG and PNG images from each page of your PDF document directly inside your browser memory.
+- [PDF to Text Converter Free – Extract Text from PDF Online | Utilify](https://utilify.co.in/tools/pdf-to-text/): Extract text from PDF documents online 100% free with no sign-up. Fast in-browser text extraction from all or selected pages. Zero server uploads.
+- [Add Page Numbers to PDF Free – Number PDF Pages Online | Utilify](https://utilify.co.in/tools/add-page-numbers-to-pdf/): Add page numbers to PDF files online 100% free. Choose position, numbering format (Page X of Y), starting page, and font size in browser RAM.
+- [Watermark PDF Online Free – Add Watermark to PDF Documents | Utilify](https://utilify.co.in/tools/watermark-pdf/): Add watermark to PDF files online 100% free. Stamp text or logos diagonally or horizontally with custom opacity, color, and font size in browser RAM.
+- [Text to PDF Converter Free – Convert Notes & Text to PDF | Utilify](https://utilify.co.in/tools/text-to-pdf/): Convert plain text and notes to PDF documents online 100% free. Customize font, margin, and page size with instant in-browser export.
 
 ## LLM Context Full Documentation
 - [Full Technical Documentation (llms-full.txt)](https://utilify.co.in/llms-full.txt): Complete detailed specifications, parameters, and inputs for AI systems.

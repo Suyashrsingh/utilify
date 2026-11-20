@@ -1212,6 +1212,126 @@
         "client-side",
         "offline-first"
       ]
+    },
+    {
+      "identifier": "urn:air:utilify.co.in:tools:jpg-to-pdf",
+      "displayName": "JPG to PDF Converter Free",
+      "type": "text/html",
+      "url": "https://utilify.co.in/tools/jpg-to-pdf/",
+      "description": "Convert JPG and PNG images into clean PDF documents in seconds client-side with zero uploads.",
+      "representativeQueries": [
+        "jpg to pdf",
+        "convert jpg to pdf",
+        "jpg to pdf converter online",
+        "image to pdf free"
+      ],
+      "tags": [
+        "pdf",
+        "jpg-to-pdf",
+        "utility",
+        "client-side",
+        "offline-first"
+      ]
+    },
+    {
+      "identifier": "urn:air:utilify.co.in:tools:pdf-to-jpg",
+      "displayName": "PDF to JPG Converter Free",
+      "type": "text/html",
+      "url": "https://utilify.co.in/tools/pdf-to-jpg/",
+      "description": "Extract high-resolution JPG images from each page of your PDF document directly inside your browser memory.",
+      "representativeQueries": [
+        "pdf to jpg",
+        "convert pdf to jpg",
+        "pdf to jpg converter online free",
+        "extract images from pdf"
+      ],
+      "tags": [
+        "pdf",
+        "pdf-to-jpg",
+        "utility",
+        "client-side",
+        "offline-first"
+      ]
+    },
+    {
+      "identifier": "urn:air:utilify.co.in:tools:pdf-to-text",
+      "displayName": "PDF to Text Converter Free",
+      "type": "text/html",
+      "url": "https://utilify.co.in/tools/pdf-to-text/",
+      "description": "Extract text from PDF documents online 100% free with no sign-up. Fast in-browser text extraction with zero server uploads.",
+      "representativeQueries": [
+        "pdf to text",
+        "extract text from pdf",
+        "pdf to txt",
+        "convert pdf to text online free"
+      ],
+      "tags": [
+        "pdf",
+        "pdf-to-text",
+        "utility",
+        "client-side",
+        "offline-first"
+      ]
+    },
+    {
+      "identifier": "urn:air:utilify.co.in:tools:add-page-numbers-to-pdf",
+      "displayName": "Add Page Numbers to PDF",
+      "type": "text/html",
+      "url": "https://utilify.co.in/tools/add-page-numbers-to-pdf/",
+      "description": "Add page numbers to PDF files online 100% free with custom position, format (Page X of Y), and font size in browser RAM.",
+      "representativeQueries": [
+        "add page numbers to pdf",
+        "number pdf pages",
+        "pdf page numberer online free",
+        "paginate pdf"
+      ],
+      "tags": [
+        "pdf",
+        "add-page-numbers-to-pdf",
+        "utility",
+        "client-side",
+        "offline-first"
+      ]
+    },
+    {
+      "identifier": "urn:air:utilify.co.in:tools:watermark-pdf",
+      "displayName": "Watermark PDF Online Free",
+      "type": "text/html",
+      "url": "https://utilify.co.in/tools/watermark-pdf/",
+      "description": "Add watermark to PDF documents online 100% free with custom diagonal or horizontal text, opacity, and color in browser RAM.",
+      "representativeQueries": [
+        "watermark pdf",
+        "add watermark to pdf",
+        "pdf watermark online free",
+        "confidential stamp pdf"
+      ],
+      "tags": [
+        "pdf",
+        "watermark-pdf",
+        "utility",
+        "client-side",
+        "offline-first"
+      ]
+    },
+    {
+      "identifier": "urn:air:utilify.co.in:tools:text-to-pdf",
+      "displayName": "Text to PDF Converter Free",
+      "type": "text/html",
+      "url": "https://utilify.co.in/tools/text-to-pdf/",
+      "description": "Convert plain text, notes, and code into formatted PDF documents online 100% free with instant in-browser generation.",
+      "representativeQueries": [
+        "text to pdf",
+        "convert text to pdf",
+        "txt to pdf online free",
+        "notes to pdf"
+      ],
+      "tags": [
+        "pdf",
+        "text-to-pdf",
+        "utility",
+        "client-side",
+        "offline-first"
+      ]
     }
   ]
 }

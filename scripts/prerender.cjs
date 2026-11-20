@@ -64,7 +64,13 @@ const seoToolUrls = {
     boxshadow: "css-box-shadow-generator-builder",
     gradient: "css-gradient-background-generator",
     cipher: "caesar-rot13-vigenere-cipher",
-    pwdinspector: "password-strength-inspector-analyzer"
+    pwdinspector: "password-strength-inspector-analyzer",
+    jpgtopdf: "jpg-to-pdf",
+    pdftojpg: "pdf-to-jpg",
+    pdftotext: "pdf-to-text",
+    pdfpagenumber: "add-page-numbers-to-pdf",
+    pdfwatermark: "watermark-pdf",
+    texttopdf: "text-to-pdf"
 };
 
 // Rich HowTo Schema Definitions for High-Converting Google Search Cards
@@ -159,25 +165,65 @@ const toolHowToSteps = {
             { name: "Place, Resize & Edit Signature", text: "Position your signature overlay anywhere on the document and use the resize handle to adjust its dimensions perfectly." },
             { name: "Download Signed PDF Instantly", text: "Click 'Save & Download Document' to export your legally binding signed PDF file with 100% privacy." }
         ]
+    },
+    pdftotext: {
+        name: "How to Convert PDF to Text Online for Free",
+        description: "Extract readable text from all or specific pages of any PDF document in browser RAM with zero server uploads.",
+        steps: [
+            { name: "Upload PDF File", text: "Drag and drop your PDF file into the upload zone or choose it from your device." },
+            { name: "Select Page Range", text: "Choose to extract all pages, first page only, or enter a custom page range." },
+            { name: "Extract & Copy Text", text: "Click 'Extract Text from PDF' to parse and view text immediately, then copy or download as .txt." }
+        ]
+    },
+    pdfpagenumber: {
+        name: "How to Add Page Numbers to PDF Online for Free",
+        description: "Add customized page numbers to PDF documents in local browser memory without uploading.",
+        steps: [
+            { name: "Upload PDF", text: "Select or drop your PDF document into the workspace." },
+            { name: "Choose Position & Style", text: "Select position (Bottom Center, Bottom Right, Top Right) and numbering format (Page X of Y)." },
+            { name: "Download Numbered PDF", text: "Click 'Add Page Numbers & Download PDF' to export your paginated document." }
+        ]
+    },
+    pdfwatermark: {
+        name: "How to Watermark PDF Documents Online for Free",
+        description: "Add custom text watermarks diagonally or horizontally across all PDF pages.",
+        steps: [
+            { name: "Upload PDF File", text: "Select your PDF document requiring copyright protection." },
+            { name: "Configure Watermark Text", text: "Type your watermark text, choose rotation angle, color, opacity, and font size." },
+            { name: "Apply & Download PDF", text: "Click 'Apply Watermark & Download PDF' to save your watermarked document." }
+        ]
+    },
+    texttopdf: {
+        name: "How to Convert Plain Text to PDF Online for Free",
+        description: "Convert text notes and documents into formatted PDF files in browser memory.",
+        steps: [
+            { name: "Paste Text Content", text: "Type or paste your text notes into the editor." },
+            { name: "Configure Layout", text: "Select font family, font size, margins, and page orientation." },
+            { name: "Export to PDF", text: "Click 'Convert to PDF & Download' to generate a clean A4 PDF file." }
+        ]
+    },
+    jpgtopdf: {
+        name: "How to Convert JPG to PDF Online for Free",
+        description: "Combine multiple JPG images into a single PDF document in seconds with zero file uploads.",
+        steps: [
+            { name: "Select JPG Photos", text: "Upload one or multiple JPG images into the converter." },
+            { name: "Set Page Size & Margins", text: "Choose A4, Letter, or Fit to Image page sizes." },
+            { name: "Download PDF", text: "Click 'Generate & Download PDF' to export your compiled document." }
+        ]
+    },
+    pdftojpg: {
+        name: "How to Convert PDF to JPG Online for Free",
+        description: "Extract high-resolution JPG images from each page of your PDF document directly inside your browser memory.",
+        steps: [
+            { name: "Upload PDF Document", text: "Select the PDF file you want converted to JPG." },
+            { name: "Choose JPG Quality", text: "Set resolution scale to 1x, 1.5x, or 2x HD." },
+            { name: "Download JPG Images", text: "Download all converted pages as individual JPGs or a complete ZIP package." }
+        ]
     }
 };
 
 // High-Intent Search Aliases to Pre-render
 const aliasPages = [
-    {
-        aliasSlug: "jpg-to-pdf",
-        toolKey: "imagetopdf",
-        title: "JPG to PDF - Convert JPG Images to PDF Online Free | Utilify",
-        description: "Convert JPG to PDF online free. Combine multiple JPG images into a single PDF document in seconds with zero file uploads and 100% privacy.",
-        canonicalUrl: "https://utilify.co.in/tools/image-to-pdf/"
-    },
-    {
-        aliasSlug: "pdf-to-jpg",
-        toolKey: "pdftoimage",
-        title: "PDF to JPG - Convert PDF Pages to JPG Online Free | Utilify",
-        description: "Convert PDF to JPG online free. Extract high-resolution JPG images from each page of your PDF document directly inside your browser memory.",
-        canonicalUrl: "https://utilify.co.in/tools/pdf-to-image/"
-    },
     {
         aliasSlug: "pdf-merger",
         toolKey: "pdfmerge",
@@ -468,9 +514,10 @@ function generateToolPage(toolKey, seoSlug, customTitle, customDesc, canonicalOv
     html = html.replace('class="view-panel" id="view-tools"', 'class="view-panel active-view" id="view-tools"');
 
     // 2. Hide all other panels in view-tools and display the current tool panel
+    const actualPanelKey = (toolKey === "jpgtopdf") ? "imagetopdf" : (toolKey === "pdftojpg") ? "pdftoimage" : toolKey;
     html = html.replace(/class="panel active"/g, 'class="panel"');
-    html = html.replace(`id="panel-${toolKey}" class="panel"`, `id="panel-${toolKey}" class="panel active" style="display:block;"`);
-    html = html.replace(`class="panel" id="panel-${toolKey}"`, `class="panel active" id="panel-${toolKey}" style="display:block;"`);
+    html = html.replace(`id="panel-${actualPanelKey}" class="panel"`, `id="panel-${actualPanelKey}" class="panel active" style="display:block;"`);
+    html = html.replace(`class="panel" id="panel-${actualPanelKey}"`, `class="panel active" id="panel-${actualPanelKey}" style="display:block;"`);
 
     // 3. Highlight the active menu item in sidebar
     html = html.replace(/class="menu-item active" aria-current="page"/g, 'class="menu-item"');
@@ -478,13 +525,18 @@ function generateToolPage(toolKey, seoSlug, customTitle, customDesc, canonicalOv
     html = html.replace(`data-panel="${toolKey}"`, `data-panel="${toolKey}" class="menu-item active" aria-current="page"`);
 
     // 4. Ensure the tool panel's main heading is treated as primary topic (h1)
-    const panelStart = html.indexOf(`id="panel-${toolKey}"`);
+    const panelStart = html.indexOf(`id="panel-${actualPanelKey}"`);
     if (panelStart !== -1) {
         const nextH2 = html.indexOf('<h2', panelStart);
         const nextH2End = html.indexOf('</h2>', nextH2);
         const nextPanel = html.indexOf('id="panel-', panelStart + 15);
         if (nextH2 !== -1 && (nextPanel === -1 || nextH2 < nextPanel)) {
-            const h2Substring = html.substring(nextH2, nextH2End + 5);
+            let h2Substring = html.substring(nextH2, nextH2End + 5);
+            if (toolKey === "jpgtopdf") {
+                h2Substring = '<h2>JPG to PDF Converter Free - Convert JPG Images to PDF Online</h2>';
+            } else if (toolKey === "pdftojpg") {
+                h2Substring = '<h2>PDF to JPG Converter Free - Extract High Quality JPG Images Online</h2>';
+            }
             const h1Replacement = h2Substring.replace('<h2', '<h1 class="tool-seo-heading" style="font-size: 1.75rem; font-weight: 700; margin: 0;"').replace('</h2>', '</h1>');
             html = html.substring(0, nextH2) + h1Replacement + html.substring(nextH2End + 5);
         }

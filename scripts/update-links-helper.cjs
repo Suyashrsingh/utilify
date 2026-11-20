@@ -64,7 +64,13 @@ const seoToolUrls = {
     boxshadow: "css-box-shadow-generator-builder",
     gradient: "css-gradient-background-generator",
     cipher: "caesar-rot13-vigenere-cipher",
-    pwdinspector: "password-strength-inspector-analyzer"
+    pwdinspector: "password-strength-inspector-analyzer",
+    jpgtopdf: "jpg-to-pdf",
+    pdftojpg: "pdf-to-jpg",
+    pdftotext: "pdf-to-text",
+    pdfpagenumber: "add-page-numbers-to-pdf",
+    pdfwatermark: "watermark-pdf",
+    texttopdf: "text-to-pdf"
 };
 
 const htmlPath = path.join(__dirname, '../index.html');

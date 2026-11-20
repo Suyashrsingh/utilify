@@ -422,6 +422,48 @@ const ardEntries = [
         category: "security",
         description: "Analyze password security, Shannon entropy, crack time estimations, and common dictionary vulnerabilities.",
         queries: ["password strength checker", "test password security", "password entropy calculator", "how secure is my password"]
+    },
+    {
+        slug: "jpg-to-pdf",
+        name: "JPG to PDF Converter Free",
+        category: "pdf",
+        description: "Convert JPG and PNG images into clean PDF documents in seconds client-side with zero uploads.",
+        queries: ["jpg to pdf", "convert jpg to pdf", "jpg to pdf converter online", "image to pdf free"]
+    },
+    {
+        slug: "pdf-to-jpg",
+        name: "PDF to JPG Converter Free",
+        category: "pdf",
+        description: "Extract high-resolution JPG images from each page of your PDF document directly inside your browser memory.",
+        queries: ["pdf to jpg", "convert pdf to jpg", "pdf to jpg converter online free", "extract images from pdf"]
+    },
+    {
+        slug: "pdf-to-text",
+        name: "PDF to Text Converter Free",
+        category: "pdf",
+        description: "Extract text from PDF documents online 100% free with no sign-up. Fast in-browser text extraction with zero server uploads.",
+        queries: ["pdf to text", "extract text from pdf", "pdf to txt", "convert pdf to text online free"]
+    },
+    {
+        slug: "add-page-numbers-to-pdf",
+        name: "Add Page Numbers to PDF",
+        category: "pdf",
+        description: "Add page numbers to PDF files online 100% free with custom position, format (Page X of Y), and font size in browser RAM.",
+        queries: ["add page numbers to pdf", "number pdf pages", "pdf page numberer online free", "paginate pdf"]
+    },
+    {
+        slug: "watermark-pdf",
+        name: "Watermark PDF Online Free",
+        category: "pdf",
+        description: "Add watermark to PDF documents online 100% free with custom diagonal or horizontal text, opacity, and color in browser RAM.",
+        queries: ["watermark pdf", "add watermark to pdf", "pdf watermark online free", "confidential stamp pdf"]
+    },
+    {
+        slug: "text-to-pdf",
+        name: "Text to PDF Converter Free",
+        category: "pdf",
+        description: "Convert plain text, notes, and code into formatted PDF documents online 100% free with instant in-browser generation.",
+        queries: ["text to pdf", "convert text to pdf", "txt to pdf online free", "notes to pdf"]
     }
 ];
 

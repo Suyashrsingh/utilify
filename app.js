@@ -194,7 +194,13 @@ document.addEventListener("DOMContentLoaded", () => {
         pdftoimage: { title: "PDF to Image Converter Free - Convert PDF to JPG & PNG Online | Utilify", description: "Convert PDF to image online free. Extract high-resolution JPG and PNG pages from any PDF document client-side without size limits or server storage." },
         pdfcompress: { title: "Compress PDF Online Free - Reduce PDF File Size | Utilify", description: "Compress PDF files online free. Reduce PDF document file size with high visual quality using smart client-side compression without uploading." },
         pdfprotect: { title: "Protect PDF Online Free - Password Protect & Encrypt PDF | Utilify", description: "Protect PDF files online free. Encrypt confidential PDF documents with strong client-side passwords before sharing. No cloud uploads, 100% private." },
-        digisign: { title: "Sign PDF Online Free - Digital Signature Creator & PDF Signer (No Sign-Up) | Utilify", description: "Sign PDF online free without sign-up or registration. Create, draw, or upload digital signatures and edit signed PDFs directly in browser memory. 100% private." },
+        digisign: { title: "Sign PDF Online Free (100% Secure & Private) – No Sign-Up | Utilify", description: "Sign PDF documents online 100% free with no sign-up or registration. Draw, type, or upload digital signatures and edit signed PDFs directly in browser memory. Zero server uploads." },
+        jpgtopdf: { title: "JPG to PDF Converter Free – Convert Images to PDF in Seconds | Utilify", description: "Convert JPG to PDF online 100% free with no file limits. Combine multiple JPG, PNG, and photos into a clean PDF document in seconds. 100% private in browser memory." },
+        pdftojpg: { title: "PDF to JPG Converter Free – Extract High Quality JPGs Online | Utilify", description: "Convert PDF to JPG online 100% free. Extract crystal-clear JPG and PNG images from each page of your PDF document directly inside your browser memory." },
+        pdftotext: { title: "PDF to Text Converter Free – Extract Text from PDF Online | Utilify", description: "Extract text from PDF documents online 100% free with no sign-up. Fast in-browser text extraction from all or selected pages. Zero server uploads." },
+        pdfpagenumber: { title: "Add Page Numbers to PDF Free – Number PDF Pages Online | Utilify", description: "Add page numbers to PDF files online 100% free. Choose position, numbering format (Page X of Y), starting page, and font size in browser RAM." },
+        pdfwatermark: { title: "Watermark PDF Online Free – Add Watermark to PDF Documents | Utilify", description: "Add watermark to PDF files online 100% free. Stamp text or logos diagonally or horizontally with custom opacity, color, and font size in browser RAM." },
+        texttopdf: { title: "Text to PDF Converter Free – Convert Notes & Text to PDF | Utilify", description: "Convert plain text and notes to PDF documents online 100% free. Customize font, margin, and page size with instant in-browser export." },
         imgwatermark: { title: "Watermark Image - Add Watermarks to Photos Free | Utilify", description: "Add watermark to photos online free. Protect copyright with custom text or logo image watermarks, opacity sliders, and position controls." },
         htmltopdf: { title: "HTML to PDF - Render HTML Code to PDF Free | Utilify", description: "Convert HTML to PDF online free. Render raw HTML/CSS code or documents into clean, paginated PDF files with custom page formatting offline." },
         htmltoimage: { title: "HTML to Image - Render HTML Code to Image Free | Utilify", description: "Convert HTML to image online free. Render and compile HTML and CSS code blocks into high-resolution PNG or JPG screenshots client-side." },
@@ -288,7 +294,13 @@ document.addEventListener("DOMContentLoaded", () => {
         htmltopdf: [
             "https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js",
             "https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"
-        ]
+        ],
+        pdftotext: ["https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.min.js"],
+        pdfpagenumber: ["https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js"],
+        pdfwatermark: ["https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js"],
+        texttopdf: ["https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js"],
+        jpgtopdf: ["https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js"],
+        pdftojpg: ["https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.min.js"]
     };
 
     const ensureToolAssets = (panelName) => {
@@ -303,9 +315,12 @@ document.addEventListener("DOMContentLoaded", () => {
         // Trigger on-demand lazy loading for this specific tool's engines
         ensureToolAssets(panelName);
 
+        // Map canonical tools that share visual engines
+        const targetPanelId = (panelName === "jpgtopdf") ? "imagetopdf" : (panelName === "pdftojpg") ? "pdftoimage" : panelName;
+
         // Toggle menu items active state
         sidebarMenuItems.forEach(item => {
-            if (item.getAttribute("data-panel") === panelName) {
+            if (item.getAttribute("data-panel") === panelName || item.getAttribute("data-panel") === targetPanelId) {
                 item.classList.add("active");
                 item.setAttribute("aria-current", "page");
             } else {
@@ -316,7 +331,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // Toggle panel display active state
         workspacePanels.forEach(panel => {
-            if (panel.id === `panel-${panelName}`) {
+            if (panel.id === `panel-${targetPanelId}`) {
                 panel.style.display = "block";
                 setTimeout(() => panel.classList.add("active"), 50);
             } else {
@@ -430,7 +445,13 @@ document.addEventListener("DOMContentLoaded", () => {
         boxshadow: "css-box-shadow-generator-builder",
         gradient: "css-gradient-background-generator",
         cipher: "caesar-rot13-vigenere-cipher",
-        pwdinspector: "password-strength-inspector-analyzer"
+        pwdinspector: "password-strength-inspector-analyzer",
+        jpgtopdf: "jpg-to-pdf",
+        pdftojpg: "pdf-to-jpg",
+        pdftotext: "pdf-to-text",
+        pdfpagenumber: "add-page-numbers-to-pdf",
+        pdfwatermark: "watermark-pdf",
+        texttopdf: "text-to-pdf"
     };
 
     const urlToToolKey = {};
@@ -8003,4 +8024,560 @@ ${withHealth ? `    healthcheck:
     updateSocialPreviews();
     updateCounters();
     handleRouting(true);
+
+
+// ==========================================
+// 1. PDF TO TEXT CONVERTER
+// ==========================================
+const pdftotextDropzone = document.getElementById("pdftotext-dropzone");
+const pdftotextFile = document.getElementById("pdftotext-file");
+const pdftotextMeta = document.getElementById("pdftotext-meta");
+const pdftotextFilename = document.getElementById("pdftotext-filename");
+const pdftotextPages = document.getElementById("pdftotext-pages");
+const pdftotextRange = document.getElementById("pdftotext-range");
+const pdftotextCustomBox = document.getElementById("pdftotext-custom-box");
+const pdftotextCustomInput = document.getElementById("pdftotext-custom-input");
+const pdftotextExtractBtn = document.getElementById("pdftotext-extract-btn");
+const pdftotextOutput = document.getElementById("pdftotext-output");
+const pdftotextCopyBtn = document.getElementById("pdftotext-copy-btn");
+const pdftotextDownloadBtn = document.getElementById("pdftotext-download-btn");
+const pdftotextWordsCount = document.getElementById("pdftotext-words-count");
+const pdftotextCharsCount = document.getElementById("pdftotext-chars-count");
+
+let activePdfToTextDoc = null;
+let activePdfToTextBytes = null;
+
+if (pdftotextDropzone && pdftotextFile) {
+    pdftotextDropzone.addEventListener("click", () => pdftotextFile.click());
+    pdftotextDropzone.addEventListener("dragover", (e) => { e.preventDefault(); pdftotextDropzone.classList.add("drag-over"); });
+    pdftotextDropzone.addEventListener("dragleave", () => pdftotextDropzone.classList.remove("drag-over"));
+    pdftotextDropzone.addEventListener("drop", (e) => {
+        e.preventDefault();
+        pdftotextDropzone.classList.remove("drag-over");
+        if (e.dataTransfer.files.length) handlePdfToTextUpload(e.dataTransfer.files[0]);
+    });
+    pdftotextFile.addEventListener("change", (e) => {
+        if (e.target.files.length) handlePdfToTextUpload(e.target.files[0]);
+    });
+}
+
+if (pdftotextRange) {
+    pdftotextRange.addEventListener("change", () => {
+        pdftotextCustomBox.style.display = pdftotextRange.value === "custom" ? "block" : "none";
+    });
+}
+
+async function handlePdfToTextUpload(file) {
+    if (file.type !== "application/pdf") {
+        alert("Please select a valid PDF file.");
+        return;
+    }
+    pdftotextFilename.textContent = file.name;
+    pdftotextExtractBtn.disabled = true;
+    pdftotextExtractBtn.innerHTML = "<span>⏳ Reading PDF...</span>";
+
+    try {
+        await ensureToolAssets("pdftoimage");
+        if (window.pdfjsLib && !pdfjsLib.GlobalWorkerOptions.workerSrc) {
+            pdfjsLib.GlobalWorkerOptions.workerSrc = "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.worker.min.js";
+        }
+        activePdfToTextBytes = await file.arrayBuffer();
+        const loadingTask = pdfjsLib.getDocument({ data: activePdfToTextBytes });
+        activePdfToTextDoc = await loadingTask.promise;
+        pdftotextPages.textContent = activePdfToTextDoc.numPages;
+        pdftotextMeta.style.display = "block";
+        pdftotextExtractBtn.disabled = false;
+        pdftotextExtractBtn.innerHTML = "<span>⚡ Extract Text from PDF</span>";
+    } catch (err) {
+        console.error(err);
+        pdftotextExtractBtn.innerHTML = "<span>❌ Error Loading PDF</span>";
+    }
+}
+
+if (pdftotextExtractBtn) {
+    pdftotextExtractBtn.addEventListener("click", async () => {
+        if (!activePdfToTextDoc) return;
+        pdftotextExtractBtn.disabled = true;
+        pdftotextExtractBtn.innerHTML = "<span>⏳ Extracting Text...</span>";
+        pdftotextOutput.value = "";
+
+        try {
+            const total = activePdfToTextDoc.numPages;
+            let targetPages = [];
+            const mode = pdftotextRange.value;
+            if (mode === "first") {
+                targetPages = [1];
+            } else if (mode === "custom") {
+                const parts = (pdftotextCustomInput.value || "").split(",");
+                parts.forEach(p => {
+                    p = p.trim();
+                    if (p.includes("-")) {
+                        const [s, e] = p.split("-").map(n => parseInt(n.trim()));
+                        if (!isNaN(s) && !isNaN(e)) {
+                            for (let i = Math.max(1, s); i <= Math.min(total, e); i++) targetPages.push(i);
+                        }
+                    } else {
+                        const n = parseInt(p);
+                        if (!isNaN(n) && n >= 1 && n <= total) targetPages.push(n);
+                    }
+                });
+                targetPages = [...new Set(targetPages)].sort((a,b) => a - b);
+                if (!targetPages.length) targetPages = [1];
+            } else {
+                for (let i = 1; i <= total; i++) targetPages.push(i);
+            }
+
+            let fullText = "";
+            for (const pageNum of targetPages) {
+                const page = await activePdfToTextDoc.getPage(pageNum);
+                const textContent = await page.getTextContent();
+                const pageText = textContent.items.map(item => item.str).join(" ");
+                if (targetPages.length > 1) {
+                    fullText += `--- Page ${pageNum} of ${total} ---\n${pageText}\n\n`;
+                } else {
+                    fullText += `${pageText}\n\n`;
+                }
+            }
+
+            pdftotextOutput.value = fullText.trim();
+            const words = fullText.trim() ? fullText.trim().split(/\s+/).length : 0;
+            const chars = fullText.length;
+            pdftotextWordsCount.textContent = words.toLocaleString();
+            pdftotextCharsCount.textContent = chars.toLocaleString();
+            pdftotextCopyBtn.disabled = !fullText.trim();
+            pdftotextDownloadBtn.disabled = !fullText.trim();
+            pdftotextExtractBtn.innerHTML = "<span>✅ Extracted Successfully!</span>";
+            setTimeout(() => {
+                pdftotextExtractBtn.disabled = false;
+                pdftotextExtractBtn.innerHTML = "<span>⚡ Extract Text from PDF</span>";
+            }, 2000);
+        } catch (err) {
+            console.error(err);
+            pdftotextExtractBtn.disabled = false;
+            pdftotextExtractBtn.innerHTML = "<span>❌ Extraction Failed</span>";
+        }
+    });
+}
+
+if (pdftotextCopyBtn) {
+    pdftotextCopyBtn.addEventListener("click", () => {
+        if (!pdftotextOutput.value) return;
+        navigator.clipboard.writeText(pdftotextOutput.value);
+        const orig = pdftotextCopyBtn.textContent;
+        pdftotextCopyBtn.textContent = "✅ Copied!";
+        setTimeout(() => pdftotextCopyBtn.textContent = orig, 2000);
+    });
+}
+
+if (pdftotextDownloadBtn) {
+    pdftotextDownloadBtn.addEventListener("click", () => {
+        if (!pdftotextOutput.value) return;
+        const blob = new Blob([pdftotextOutput.value], { type: "text/plain;charset=utf-8" });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.href = url;
+        const origName = pdftotextFilename.textContent || "extracted";
+        a.download = origName.replace(/\.pdf$/i, "") + "-text.txt";
+        a.click();
+        URL.revokeObjectURL(url);
+    });
+}
+
+// ==========================================
+// 2. ADD PAGE NUMBERS TO PDF
+// ==========================================
+const pdfpagenumberDropzone = document.getElementById("pdfpagenumber-dropzone");
+const pdfpagenumberFile = document.getElementById("pdfpagenumber-file");
+const pdfpagenumberMeta = document.getElementById("pdfpagenumber-meta");
+const pdfpagenumberFilename = document.getElementById("pdfpagenumber-filename");
+const pdfpagenumberPages = document.getElementById("pdfpagenumber-pages");
+const pdfpagenumberPosition = document.getElementById("pdfpagenumber-position");
+const pdfpagenumberFormat = document.getElementById("pdfpagenumber-format");
+const pdfpagenumberStart = document.getElementById("pdfpagenumber-start");
+const pdfpagenumberSize = document.getElementById("pdfpagenumber-size");
+const pdfpagenumberApplyBtn = document.getElementById("pdfpagenumber-apply-btn");
+
+let activePageNumberBytes = null;
+let activePageNumberName = "";
+
+if (pdfpagenumberDropzone && pdfpagenumberFile) {
+    pdfpagenumberDropzone.addEventListener("click", () => pdfpagenumberFile.click());
+    pdfpagenumberDropzone.addEventListener("dragover", (e) => { e.preventDefault(); pdfpagenumberDropzone.classList.add("drag-over"); });
+    pdfpagenumberDropzone.addEventListener("dragleave", () => pdfpagenumberDropzone.classList.remove("drag-over"));
+    pdfpagenumberDropzone.addEventListener("drop", (e) => {
+        e.preventDefault();
+        pdfpagenumberDropzone.classList.remove("drag-over");
+        if (e.dataTransfer.files.length) handlePageNumberUpload(e.dataTransfer.files[0]);
+    });
+    pdfpagenumberFile.addEventListener("change", (e) => {
+        if (e.target.files.length) handlePageNumberUpload(e.target.files[0]);
+    });
+}
+
+async function handlePageNumberUpload(file) {
+    if (file.type !== "application/pdf") {
+        alert("Please select a valid PDF file.");
+        return;
+    }
+    activePageNumberName = file.name;
+    pdfpagenumberFilename.textContent = file.name;
+    pdfpagenumberApplyBtn.disabled = true;
+    pdfpagenumberApplyBtn.innerHTML = "<span>⏳ Reading PDF...</span>";
+
+    try {
+        await ensureToolAssets("pdfmerge");
+        const { PDFDocument } = window.PDFLib;
+        activePageNumberBytes = await file.arrayBuffer();
+        const pdfDoc = await PDFDocument.load(activePageNumberBytes);
+        pdfpagenumberPages.textContent = pdfDoc.getPageCount();
+        pdfpagenumberMeta.style.display = "block";
+        pdfpagenumberApplyBtn.disabled = false;
+        pdfpagenumberApplyBtn.innerHTML = "<span>⚡ Add Page Numbers &amp; Download PDF</span>";
+    } catch (err) {
+        console.error(err);
+        pdfpagenumberApplyBtn.innerHTML = "<span>❌ Error Loading PDF</span>";
+    }
+}
+
+if (pdfpagenumberApplyBtn) {
+    pdfpagenumberApplyBtn.addEventListener("click", async () => {
+        if (!activePageNumberBytes) return;
+        pdfpagenumberApplyBtn.disabled = true;
+        pdfpagenumberApplyBtn.innerHTML = "<span>⏳ Numbering Pages...</span>";
+
+        try {
+            await ensureToolAssets("pdfmerge");
+            const { PDFDocument, rgb, StandardFonts } = window.PDFLib;
+            const pdfDoc = await PDFDocument.load(activePageNumberBytes);
+            const helveticaFont = await pdfDoc.embedFont(StandardFonts.Helvetica);
+            const pages = pdfDoc.getPages();
+            const total = pages.length;
+            const pos = pdfpagenumberPosition.value;
+            const formatStr = pdfpagenumberFormat.value;
+            const startNum = parseInt(pdfpagenumberStart.value) || 1;
+            const fontSize = parseInt(pdfpagenumberSize.value) || 12;
+
+            pages.forEach((page, idx) => {
+                const { width, height } = page.getSize();
+                const curPageNum = startNum + idx;
+                let text = formatStr.replace("{n}", curPageNum).replace("{total}", total);
+                const textWidth = helveticaFont.widthOfTextAtSize(text, fontSize);
+                let x = (width - textWidth) / 2;
+                let y = 25;
+
+                if (pos === "bottom-right") {
+                    x = width - textWidth - 35;
+                    y = 25;
+                } else if (pos === "top-right") {
+                    x = width - textWidth - 35;
+                    y = height - 35;
+                } else if (pos === "top-center") {
+                    x = (width - textWidth) / 2;
+                    y = height - 35;
+                }
+
+                page.drawText(text, {
+                    x,
+                    y,
+                    size: fontSize,
+                    font: helveticaFont,
+                    color: rgb(0.2, 0.2, 0.2)
+                });
+            });
+
+            const pdfBytes = await pdfDoc.save();
+            const blob = new Blob([pdfBytes], { type: "application/pdf" });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement("a");
+            a.href = url;
+            a.download = activePageNumberName.replace(/\.pdf$/i, "") + "-numbered.pdf";
+            a.click();
+            URL.revokeObjectURL(url);
+
+            pdfpagenumberApplyBtn.innerHTML = "<span>✅ Numbered &amp; Downloaded!</span>";
+            setTimeout(() => {
+                pdfpagenumberApplyBtn.disabled = false;
+                pdfpagenumberApplyBtn.innerHTML = "<span>⚡ Add Page Numbers &amp; Download PDF</span>";
+            }, 2500);
+        } catch (err) {
+            console.error(err);
+            pdfpagenumberApplyBtn.disabled = false;
+            pdfpagenumberApplyBtn.innerHTML = "<span>❌ Failed to Number</span>";
+        }
+    });
+}
+
+// ==========================================
+// 3. WATERMARK PDF ONLINE
+// ==========================================
+const pdfwatermarkDropzone = document.getElementById("pdfwatermark-dropzone");
+const pdfwatermarkFile = document.getElementById("pdfwatermark-file");
+const pdfwatermarkMeta = document.getElementById("pdfwatermark-meta");
+const pdfwatermarkFilename = document.getElementById("pdfwatermark-filename");
+const pdfwatermarkPages = document.getElementById("pdfwatermark-pages");
+const pdfwatermarkText = document.getElementById("pdfwatermark-text");
+const pdfwatermarkAngle = document.getElementById("pdfwatermark-angle");
+const pdfwatermarkColor = document.getElementById("pdfwatermark-color");
+const pdfwatermarkSize = document.getElementById("pdfwatermark-size");
+const pdfwatermarkOpacity = document.getElementById("pdfwatermark-opacity");
+const pdfwatermarkApplyBtn = document.getElementById("pdfwatermark-apply-btn");
+
+let activeWatermarkBytes = null;
+let activeWatermarkName = "";
+
+if (pdfwatermarkDropzone && pdfwatermarkFile) {
+    pdfwatermarkDropzone.addEventListener("click", () => pdfwatermarkFile.click());
+    pdfwatermarkDropzone.addEventListener("dragover", (e) => { e.preventDefault(); pdfwatermarkDropzone.classList.add("drag-over"); });
+    pdfwatermarkDropzone.addEventListener("dragleave", () => pdfwatermarkDropzone.classList.remove("drag-over"));
+    pdfwatermarkDropzone.addEventListener("drop", (e) => {
+        e.preventDefault();
+        pdfwatermarkDropzone.classList.remove("drag-over");
+        if (e.dataTransfer.files.length) handleWatermarkUpload(e.dataTransfer.files[0]);
+    });
+    pdfwatermarkFile.addEventListener("change", (e) => {
+        if (e.target.files.length) handleWatermarkUpload(e.target.files[0]);
+    });
+}
+
+async function handleWatermarkUpload(file) {
+    if (file.type !== "application/pdf") {
+        alert("Please select a valid PDF file.");
+        return;
+    }
+    activeWatermarkName = file.name;
+    pdfwatermarkFilename.textContent = file.name;
+    pdfwatermarkApplyBtn.disabled = true;
+    pdfwatermarkApplyBtn.innerHTML = "<span>⏳ Reading PDF...</span>";
+
+    try {
+        await ensureToolAssets("pdfmerge");
+        const { PDFDocument } = window.PDFLib;
+        activeWatermarkBytes = await file.arrayBuffer();
+        const pdfDoc = await PDFDocument.load(activeWatermarkBytes);
+        pdfwatermarkPages.textContent = pdfDoc.getPageCount();
+        pdfwatermarkMeta.style.display = "block";
+        pdfwatermarkApplyBtn.disabled = false;
+        pdfwatermarkApplyBtn.innerHTML = "<span>⚡ Apply Watermark &amp; Download PDF</span>";
+    } catch (err) {
+        console.error(err);
+        pdfwatermarkApplyBtn.innerHTML = "<span>❌ Error Loading PDF</span>";
+    }
+}
+
+if (pdfwatermarkApplyBtn) {
+    pdfwatermarkApplyBtn.addEventListener("click", async () => {
+        if (!activeWatermarkBytes) return;
+        const text = (pdfwatermarkText.value || "CONFIDENTIAL").trim();
+        if (!text) {
+            alert("Please enter watermark text.");
+            return;
+        }
+
+        pdfwatermarkApplyBtn.disabled = true;
+        pdfwatermarkApplyBtn.innerHTML = "<span>⏳ Stamping Watermark...</span>";
+
+        try {
+            await ensureToolAssets("pdfmerge");
+            const { PDFDocument, rgb, degrees, StandardFonts } = window.PDFLib;
+            const pdfDoc = await PDFDocument.load(activeWatermarkBytes);
+            const helveticaBold = await pdfDoc.embedFont(StandardFonts.HelveticaBold);
+            const pages = pdfDoc.getPages();
+            const angleMode = pdfwatermarkAngle.value;
+            const colorMode = pdfwatermarkColor.value;
+            const fontSize = parseInt(pdfwatermarkSize.value) || 48;
+            const opacity = parseFloat(pdfwatermarkOpacity.value) || 0.25;
+
+            let colorObj = rgb(0.94, 0.27, 0.27); // red
+            if (colorMode === "indigo") colorObj = rgb(0.39, 0.40, 0.95);
+            else if (colorMode === "black") colorObj = rgb(0.12, 0.16, 0.22);
+
+            const textWidth = helveticaBold.widthOfTextAtSize(text, fontSize);
+            const textHeight = helveticaBold.heightAtSize(fontSize);
+
+            pages.forEach(page => {
+                const { width, height } = page.getSize();
+                if (angleMode === "diagonal") {
+                    const rotAngle = 45;
+                    const rad = rotAngle * (Math.PI / 180);
+                    const cosA = Math.cos(rad);
+                    const sinA = Math.sin(rad);
+                    const x = (width / 2) - ((textWidth / 2) * cosA - (textHeight / 2) * sinA);
+                    const y = (height / 2) - ((textWidth / 2) * sinA + (textHeight / 2) * cosA);
+
+                    page.drawText(text, {
+                        x,
+                        y,
+                        size: fontSize,
+                        font: helveticaBold,
+                        color: colorObj,
+                        rotate: degrees(rotAngle),
+                        opacity
+                    });
+                } else {
+                    const x = (width - textWidth) / 2;
+                    const y = (height - textHeight) / 2;
+                    page.drawText(text, {
+                        x,
+                        y,
+                        size: fontSize,
+                        font: helveticaBold,
+                        color: colorObj,
+                        opacity
+                    });
+                }
+            });
+
+            const pdfBytes = await pdfDoc.save();
+            const blob = new Blob([pdfBytes], { type: "application/pdf" });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement("a");
+            a.href = url;
+            a.download = activeWatermarkName.replace(/\.pdf$/i, "") + "-watermarked.pdf";
+            a.click();
+            URL.revokeObjectURL(url);
+
+            pdfwatermarkApplyBtn.innerHTML = "<span>✅ Watermarked &amp; Downloaded!</span>";
+            setTimeout(() => {
+                pdfwatermarkApplyBtn.disabled = false;
+                pdfwatermarkApplyBtn.innerHTML = "<span>⚡ Apply Watermark &amp; Download PDF</span>";
+            }, 2500);
+        } catch (err) {
+            console.error(err);
+            pdfwatermarkApplyBtn.disabled = false;
+            pdfwatermarkApplyBtn.innerHTML = "<span>❌ Stamping Failed</span>";
+        }
+    });
+}
+
+// ==========================================
+// 4. TEXT TO PDF CONVERTER
+// ==========================================
+const texttopdfTitle = document.getElementById("texttopdf-title");
+const texttopdfInput = document.getElementById("texttopdf-input");
+const texttopdfFont = document.getElementById("texttopdf-font");
+const texttopdfSize = document.getElementById("texttopdf-size");
+const texttopdfMargin = document.getElementById("texttopdf-margin");
+const texttopdfOrientation = document.getElementById("texttopdf-orientation");
+const texttopdfGenerateBtn = document.getElementById("texttopdf-generate-btn");
+
+if (texttopdfGenerateBtn) {
+    texttopdfGenerateBtn.addEventListener("click", async () => {
+        const rawContent = (texttopdfInput.value || "").trim();
+        if (!rawContent) {
+            alert("Please type or paste some text to convert into PDF.");
+            return;
+        }
+
+        texttopdfGenerateBtn.disabled = true;
+        texttopdfGenerateBtn.innerHTML = "<span>⏳ Generating PDF...</span>";
+
+        try {
+            await ensureToolAssets("pdfmerge");
+            const { PDFDocument, rgb, StandardFonts } = window.PDFLib;
+            const pdfDoc = await PDFDocument.create();
+
+            let fontName = StandardFonts.Helvetica;
+            if (texttopdfFont.value === "TimesRoman") fontName = StandardFonts.TimesRoman;
+            else if (texttopdfFont.value === "Courier") fontName = StandardFonts.Courier;
+
+            const font = await pdfDoc.embedFont(fontName);
+            const fontBold = await pdfDoc.embedFont(StandardFonts.HelveticaBold);
+
+            const fontSize = parseInt(texttopdfSize.value) || 12;
+            const lineHeight = fontSize * 1.5;
+            const isLandscape = texttopdfOrientation.value === "landscape";
+            const pageWidth = isLandscape ? 841.89 : 595.28;
+            const pageHeight = isLandscape ? 595.28 : 841.89;
+            const margin = texttopdfMargin.value === "narrow" ? 36 : 54;
+            const maxLineWidth = pageWidth - (margin * 2);
+
+            // Simple text wrapping
+            const wrapText = (text, maxWidth, fontRef, size) => {
+                const words = text.split(" ");
+                const lines = [];
+                let currentLine = "";
+
+                words.forEach(word => {
+                    const testLine = currentLine ? `${currentLine} ${word}` : word;
+                    const testWidth = fontRef.widthOfTextAtSize(testLine, size);
+                    if (testWidth <= maxWidth) {
+                        currentLine = testLine;
+                    } else {
+                        if (currentLine) lines.push(currentLine);
+                        currentLine = word;
+                    }
+                });
+                if (currentLine) lines.push(currentLine);
+                return lines;
+            };
+
+            const docTitle = (texttopdfTitle.value || "").trim();
+            const paragraphs = rawContent.split("\n");
+            const allLines = [];
+
+            paragraphs.forEach(p => {
+                if (!p.trim()) {
+                    allLines.push("");
+                } else {
+                    const wrapped = wrapText(p, maxLineWidth, font, fontSize);
+                    allLines.push(...wrapped);
+                }
+            });
+
+            let curPage = pdfDoc.addPage([pageWidth, pageHeight]);
+            let y = pageHeight - margin;
+
+            if (docTitle) {
+                const titleSize = fontSize + 6;
+                curPage.drawText(docTitle, {
+                    x: margin,
+                    y,
+                    size: titleSize,
+                    font: fontBold,
+                    color: rgb(0.12, 0.16, 0.22)
+                });
+                y -= (titleSize * 1.8);
+            }
+
+            for (const line of allLines) {
+                if (y < margin + lineHeight) {
+                    curPage = pdfDoc.addPage([pageWidth, pageHeight]);
+                    y = pageHeight - margin;
+                }
+                if (line) {
+                    curPage.drawText(line, {
+                        x: margin,
+                        y,
+                        size: fontSize,
+                        font,
+                        color: rgb(0.15, 0.15, 0.15)
+                    });
+                }
+                y -= lineHeight;
+            }
+
+            const pdfBytes = await pdfDoc.save();
+            const blob = new Blob([pdfBytes], { type: "application/pdf" });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement("a");
+            a.href = url;
+            const fileName = docTitle ? docTitle.toLowerCase().replace(/[^a-z0-9]+/g, "-") : "document";
+            a.download = `${fileName}.pdf`;
+            a.click();
+            URL.revokeObjectURL(url);
+
+            texttopdfGenerateBtn.innerHTML = "<span>✅ Generated &amp; Downloaded!</span>";
+            setTimeout(() => {
+                texttopdfGenerateBtn.disabled = false;
+                texttopdfGenerateBtn.innerHTML = "<span>⚡ Convert to PDF &amp; Download</span>";
+            }, 2500);
+        } catch (err) {
+            console.error(err);
+            texttopdfGenerateBtn.disabled = false;
+            texttopdfGenerateBtn.innerHTML = "<span>❌ Failed to Generate</span>";
+        }
+    });
+}
+
+
 });

@@ -49,11 +49,17 @@ fs.writeFileSync(distHtmlPath, minified, 'utf8');
 const distFallbackPath = path.join(__dirname, '../dist/200.html');
 fs.writeFileSync(distFallbackPath, minified, 'utf8');
 
-// Ensure _headers and .well-known/ard.json are copied to dist
+// Ensure _headers, _redirects and .well-known/ard.json are copied to dist
 const publicHeaders = path.join(__dirname, '../public/_headers');
 const distHeaders = path.join(__dirname, '../dist/_headers');
 if (fs.existsSync(publicHeaders)) {
     fs.copyFileSync(publicHeaders, distHeaders);
+}
+
+const publicRedirects = path.join(__dirname, '../public/_redirects');
+const distRedirects = path.join(__dirname, '../dist/_redirects');
+if (fs.existsSync(publicRedirects)) {
+    fs.copyFileSync(publicRedirects, distRedirects);
 }
 
 const publicArd = path.join(__dirname, '../public/.well-known/ard.json');

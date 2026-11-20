@@ -250,6 +250,13 @@
                         <!-- Column 4: PDF & Image Tools -->
                         <div class="dropdown-category">
                             <span class="dropdown-category-title">📄 PDF & Image</span>
+                            <a href="/tools/sign-pdf/" class="dropdown-item" data-view="tools" data-tool="digisign">Sign PDF Online</a>
+                            <a href="/tools/jpg-to-pdf/" class="dropdown-item" data-view="tools" data-tool="jpgtopdf">JPG to PDF</a>
+                            <a href="/tools/pdf-to-jpg/" class="dropdown-item" data-view="tools" data-tool="pdftojpg">PDF to JPG</a>
+                            <a href="/tools/pdf-to-text/" class="dropdown-item" data-view="tools" data-tool="pdftotext">PDF to Text</a>
+                            <a href="/tools/add-page-numbers-to-pdf/" class="dropdown-item" data-view="tools" data-tool="pdfpagenumber">Number PDF</a>
+                            <a href="/tools/watermark-pdf/" class="dropdown-item" data-view="tools" data-tool="pdfwatermark">Watermark PDF</a>
+                            <a href="/tools/text-to-pdf/" class="dropdown-item" data-view="tools" data-tool="texttopdf">Text to PDF</a>
                             <a href="/tools/merge-pdf/" class="dropdown-item" data-view="tools" data-tool="pdfmerge">PDF Merge</a>
                             <a href="/tools/split-pdf/" class="dropdown-item" data-view="tools" data-tool="pdfsplit">PDF Split</a>
                             <a href="/tools/rotate-pdf/" class="dropdown-item" data-view="tools" data-tool="pdfrotate">PDF Rotate</a>
@@ -857,9 +864,75 @@
                         <div class="card-icon-wrapper">✍️</div>
                         <div class="card-info">
                             <div class="card-status-row"><span class="status-badge live">Live</span><span class="card-tag">PDF</span></div>
-                            <h3>Digital Signature</h3>
-                            <p>Draw or upload custom signatures, place them anywhere on your documents, and download securely.</p>
+                            <h3>Sign PDF Online</h3>
+                            <p>Sign PDF documents online 100% free. Draw, type, or upload signatures with zero cloud uploads.</p>
                             <button class="card-action-btn launch-tool-btn" data-tool="digisign">Open Tool ⚡</button>
+                        </div>
+                    </div>
+
+                    <!-- JPG to PDF -->
+                    <div class="showcase-card card" data-card-category="pdf">
+                        <div class="card-icon-wrapper">🖼️</div>
+                        <div class="card-info">
+                            <div class="card-status-row"><span class="status-badge live">Live</span><span class="card-tag">PDF</span></div>
+                            <h3>JPG to PDF Converter</h3>
+                            <p>Convert JPG images to PDF documents online in seconds with custom margins and zero file uploads.</p>
+                            <button class="card-action-btn launch-tool-btn" data-tool="jpgtopdf">Open Tool ⚡</button>
+                        </div>
+                    </div>
+
+                    <!-- PDF to JPG -->
+                    <div class="showcase-card card" data-card-category="pdf">
+                        <div class="card-icon-wrapper">🖼️</div>
+                        <div class="card-info">
+                            <div class="card-status-row"><span class="status-badge live">Live</span><span class="card-tag">PDF</span></div>
+                            <h3>PDF to JPG Converter</h3>
+                            <p>Extract high-resolution JPG images from each page of your PDF document directly inside your browser.</p>
+                            <button class="card-action-btn launch-tool-btn" data-tool="pdftojpg">Open Tool ⚡</button>
+                        </div>
+                    </div>
+
+                    <!-- PDF to Text -->
+                    <div class="showcase-card card" data-card-category="pdf">
+                        <div class="card-icon-wrapper">📄</div>
+                        <div class="card-info">
+                            <div class="card-status-row"><span class="status-badge live">Live</span><span class="card-tag">PDF</span></div>
+                            <h3>PDF to Text Converter</h3>
+                            <p>Extract clean editable text from all or selected pages of any PDF document in browser RAM.</p>
+                            <button class="card-action-btn launch-tool-btn" data-tool="pdftotext">Open Tool ⚡</button>
+                        </div>
+                    </div>
+
+                    <!-- Add Page Numbers to PDF -->
+                    <div class="showcase-card card" data-card-category="pdf">
+                        <div class="card-icon-wrapper">🔢</div>
+                        <div class="card-info">
+                            <div class="card-status-row"><span class="status-badge live">Live</span><span class="card-tag">PDF</span></div>
+                            <h3>Add Page Numbers</h3>
+                            <p>Number PDF pages online free with custom positions, Page X of Y formats, and font sizes.</p>
+                            <button class="card-action-btn launch-tool-btn" data-tool="pdfpagenumber">Open Tool ⚡</button>
+                        </div>
+                    </div>
+
+                    <!-- Watermark PDF -->
+                    <div class="showcase-card card" data-card-category="pdf">
+                        <div class="card-icon-wrapper">💧</div>
+                        <div class="card-info">
+                            <div class="card-status-row"><span class="status-badge live">Live</span><span class="card-tag">PDF</span></div>
+                            <h3>Watermark PDF Online</h3>
+                            <p>Protect PDF files with diagonal or horizontal text watermarks, custom opacity, and colors.</p>
+                            <button class="card-action-btn launch-tool-btn" data-tool="pdfwatermark">Open Tool ⚡</button>
+                        </div>
+                    </div>
+
+                    <!-- Text to PDF -->
+                    <div class="showcase-card card" data-card-category="pdf">
+                        <div class="card-icon-wrapper">📝</div>
+                        <div class="card-info">
+                            <div class="card-status-row"><span class="status-badge live">Live</span><span class="card-tag">PDF</span></div>
+                            <h3>Text to PDF Converter</h3>
+                            <p>Convert plain text notes and code into formatted A4 PDF documents with automatic pagination.</p>
+                            <button class="card-action-btn launch-tool-btn" data-tool="texttopdf">Open Tool ⚡</button>
                         </div>
                     </div>
 
@@ -1417,6 +1490,30 @@
                             <a href="/tools/rotate-pdf/" class="menu-item" data-panel="pdfrotate">
                                 <span class="item-icon" aria-hidden="true">🔄</span>
                                 <div class="item-details"><span class="item-name">PDF Rotate</span><span class="item-desc">Rotate PDF pages</span></div>
+                            </a>
+                            <a href="/tools/jpg-to-pdf/" class="menu-item" data-panel="jpgtopdf">
+                                <span class="item-icon" aria-hidden="true">🖼️</span>
+                                <div class="item-details"><span class="item-name">JPG to PDF</span><span class="item-desc">Convert JPG to PDF online</span></div>
+                            </a>
+                            <a href="/tools/pdf-to-jpg/" class="menu-item" data-panel="pdftojpg">
+                                <span class="item-icon" aria-hidden="true">🖼️</span>
+                                <div class="item-details"><span class="item-name">PDF to JPG</span><span class="item-desc">Extract JPG from PDF pages</span></div>
+                            </a>
+                            <a href="/tools/pdf-to-text/" class="menu-item" data-panel="pdftotext">
+                                <span class="item-icon" aria-hidden="true">📄</span>
+                                <div class="item-details"><span class="item-name">PDF to Text</span><span class="item-desc">Extract text from PDF online</span></div>
+                            </a>
+                            <a href="/tools/add-page-numbers-to-pdf/" class="menu-item" data-panel="pdfpagenumber">
+                                <span class="item-icon" aria-hidden="true">🔢</span>
+                                <div class="item-details"><span class="item-name">Number PDF</span><span class="item-desc">Add page numbers to PDF</span></div>
+                            </a>
+                            <a href="/tools/watermark-pdf/" class="menu-item" data-panel="pdfwatermark">
+                                <span class="item-icon" aria-hidden="true">💧</span>
+                                <div class="item-details"><span class="item-name">Watermark PDF</span><span class="item-desc">Add watermark to PDF pages</span></div>
+                            </a>
+                            <a href="/tools/text-to-pdf/" class="menu-item" data-panel="texttopdf">
+                                <span class="item-icon" aria-hidden="true">📝</span>
+                                <div class="item-details"><span class="item-name">Text to PDF</span><span class="item-desc">Convert notes &amp; text to PDF</span></div>
                             </a>
                             <a href="/tools/image-to-pdf/" class="menu-item" data-panel="imagetopdf">
                                 <span class="item-icon" aria-hidden="true">🖼️</span>
@@ -9051,6 +9148,486 @@
                             </article>
                         </section>
 
+                        <!-- 1. PDF TO TEXT CONVERTER PANEL -->
+                        <section class="panel" id="panel-pdftotext" role="tabpanel" aria-labelledby="sidebar-menu">
+                            <header class="app-header">
+                                <div class="logo-area-desktop">
+                                    <span class="logo-icon">📄</span>
+                                    <h2>PDF to Text Converter Free - Extract Text from PDF Online</h2>
+                                </div>
+                                <p class="tagline">Extract text from PDF documents online 100% free. Copy or download editable text from all or specific PDF pages directly inside your browser memory with zero server uploads.</p>
+                            </header>
+                            <div class="tool-split-layout">
+                                <div class="tool-left-col">
+                                    <div class="input-card card" style="padding: 1.5rem;">
+                                        <h3>📥 Upload PDF Document</h3>
+                                        <div class="premium-dropzone" id="pdftotext-dropzone" style="margin-top: 1rem;">
+                                            <span>📁 Click or Drag PDF here to Extract Text</span>
+                                            <input type="file" id="pdftotext-file" accept="application/pdf" style="display:none;">
+                                        </div>
+                                        <div id="pdftotext-meta" style="display:none; margin-top: 1rem; font-size: 0.9rem; color: var(--text-muted);">
+                                            <p>File: <strong id="pdftotext-filename" style="color:var(--text-color);"></strong> (<span id="pdftotext-pages"></span> pages)</p>
+                                        </div>
+                                        <div style="margin-top: 1.25rem;">
+                                            <label style="display:block; font-size:0.88rem; font-weight:600; margin-bottom:0.4rem;">Pages to Extract:</label>
+                                            <select id="pdftotext-range" class="custom-select" style="width: 100%; padding: 0.6rem; border-radius: 8px; border: 1px solid var(--border-color); background: var(--bg-card); color: var(--text-color);">
+                                                <option value="all">Extract All Pages</option>
+                                                <option value="first">First Page Only</option>
+                                                <option value="custom">Custom Page Range</option>
+                                            </select>
+                                        </div>
+                                        <div id="pdftotext-custom-box" style="display:none; margin-top: 0.85rem;">
+                                            <label style="display:block; font-size:0.82rem; margin-bottom:0.3rem;">Page Numbers (e.g. 1-3, 5):</label>
+                                            <input type="text" id="pdftotext-custom-input" placeholder="e.g. 1-3, 5" style="width: 100%; padding: 0.6rem; border-radius: 8px; border: 1px solid var(--border-color); background: var(--bg-card); color: var(--text-color);">
+                                        </div>
+                                        <div style="margin-top: 1.5rem;">
+                                            <button id="pdftotext-extract-btn" class="primary-btn" disabled style="width: 100%; padding: 0.8rem; font-weight: 600; font-size: 1rem; border-radius: 8px; display: flex; align-items: center; justify-content: center; gap: 0.5rem;">
+                                                <span>⚡ Extract Text from PDF</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tool-right-col">
+                                    <div class="output-card card" style="padding: 1.5rem; height: 100%; display: flex; flex-direction: column;">
+                                        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 0.75rem; flex-wrap:wrap; gap:0.5rem;">
+                                            <h3>📄 Extracted Text Content</h3>
+                                            <div style="display:flex; gap:0.5rem;">
+                                                <button id="pdftotext-copy-btn" class="secondary-btn" disabled style="padding: 0.4rem 0.75rem; font-size: 0.82rem; border-radius: 6px;">📋 Copy Text</button>
+                                                <button id="pdftotext-download-btn" class="secondary-btn" disabled style="padding: 0.4rem 0.75rem; font-size: 0.82rem; border-radius: 6px;">💾 Download .TXT</button>
+                                            </div>
+                                        </div>
+                                        <div style="display:flex; gap:1rem; font-size:0.8rem; color:var(--text-muted); margin-bottom:0.5rem;">
+                                            <span>Words: <strong id="pdftotext-words-count" style="color:var(--text-color);">0</strong></span>
+                                            <span>Characters: <strong id="pdftotext-chars-count" style="color:var(--text-color);">0</strong></span>
+                                        </div>
+                                        <textarea id="pdftotext-output" readonly placeholder="Extracted text will appear here once you click 'Extract Text'..." style="width: 100%; flex: 1; min-height: 280px; padding: 0.85rem; border-radius: 8px; border: 1px solid var(--border-color); background: var(--bg-hover); color: var(--text-color); font-family: monospace; font-size: 0.88rem; line-height: 1.6; resize: vertical;"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <article class="blog-card">
+                                <header>
+                                    <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem;">
+                                        <span class="blog-tag" style="background: rgba(99, 102, 241, 0.15); color: var(--indigo); font-size:0.75rem; font-weight:700; text-transform:uppercase; letter-spacing:1px; padding:0.35rem 0.75rem; border-radius:50px;">Document Extraction</span>
+                                        <span style="font-size:0.8rem; color:var(--text-muted); font-weight:500;">⏱️ 3 min read • Client-Side PDF to Text</span>
+                                    </div>
+                                    <h2>Extracting Text from PDF Documents Offline in Browser RAM</h2>
+                                    <div style="font-size:0.85rem; color:var(--text-muted); margin-top:0.5rem;">Written by <strong>Rushikesh Wagh</strong> • Updated: July 2026</div>
+                                </header>
+                                <div class="blog-content">
+                                    <p>
+                                        Extracting readable text from PDF documents is one of the most critical daily tasks for developers, students, legal analysts, and data researchers. Whether parsing contracts, research papers, financial invoices, or ebooks, converting rigid PDF files into clean, editable text allows easy copying, editing, and feeding into search algorithms or Large Language Models (LLMs).
+                                    </p>
+                                    <p>
+                                        Unlike conventional cloud tools that upload your sensitive documents to remote servers, <strong>Utilify's PDF to Text Converter</strong> executes <strong>100% client-side inside your browser's local memory (RAM)</strong> using Mozilla's high-performance <code>pdf.js</code> engine. Your documents are never transmitted over the internet, ensuring total confidentiality for medical, financial, and legal documents.
+                                    </p>
+                                    <h3>📝 How to Convert PDF to Text Online for Free</h3>
+                                    <ul>
+                                        <li><strong>Step 1 (Upload PDF):</strong> Drag and drop your PDF file into the dropzone above or click to select from your device.</li>
+                                        <li><strong>Step 2 (Select Page Scope):</strong> Choose whether to extract all pages, the first page, or enter a custom page range (e.g., 1-5, 8).</li>
+                                        <li><strong>Step 3 (Extract Text):</strong> Click the <em>⚡ Extract Text from PDF</em> button. The client-side parser reconstructs paragraph streams in real time.</li>
+                                        <li><strong>Step 4 (Copy or Download):</strong> Review word and character counts, click <em>📋 Copy Text</em> to paste anywhere, or click <em>💾 Download .TXT</em> to save your text file locally.</li>
+                                    </ul>
+                                    <h3>Frequently Asked Questions (FAQ)</h3>
+                                    <div class="faq-item">
+                                        <span class="faq-question">Q: Is it safe to extract text from confidential or legal PDFs on Utilify?</span>
+                                        <span class="faq-answer">Yes, 100%. Utilify processes your PDF document entirely within your device's browser memory (Web Workers). No data or text is uploaded to any remote server or third-party cloud.</span>
+                                    </div>
+                                    <div class="faq-item">
+                                        <span class="faq-question">Q: Can I extract text from scanned PDFs?</span>
+                                        <span class="faq-answer">This tool extracts text layers from digitally created PDFs. For scanned image-only PDFs, ensure the document has an embedded OCR text layer.</span>
+                                    </div>
+                                    <div class="faq-item">
+                                        <span class="faq-question">Q: Are there any file size or daily page limits?</span>
+                                        <span class="faq-answer">No. Because computing is performed locally on your machine, there are zero daily task limits or file size paywalls.</span>
+                                    </div>
+
+                                    <!-- COMPARISON CARD -->
+                                    <div class="competitor-comparison-box" style="margin: 2rem 0 1.5rem; padding: 1.5rem; background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 12px;">
+                                        <h3 style="font-size:1.15rem; margin-bottom:0.75rem; color:var(--text-color);">🛡️ Utilify vs Cloud Converters (iLovePDF &amp; Smallpdf)</h3>
+                                        <p style="font-size:0.88rem; color:var(--text-muted); line-height:1.6; margin-bottom:1rem;">
+                                            Most online PDF to text utilities send your entire PDF over unencrypted networks to remote servers, exposing private contracts and financial records. Utilify keeps 100% of your data on your device, with instantaneous processing and zero queue waiting times.
+                                        </p>
+                                    </div>
+
+                                    <!-- RELATED TOOLS -->
+                                    <div class="pdf-silo-nav" style="margin-top: 1.5rem; padding: 1.25rem; background: var(--bg-hover); border-radius: 12px; border: 1px solid var(--border-color);">
+                                        <h3 style="font-size: 1.05rem; margin-bottom: 0.5rem; color: var(--text-color);">📂 Related PDF Utilities</h3>
+                                        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 0.65rem;">
+                                            <a href="/tools/sign-pdf/" style="padding:0.55rem 0.75rem; background:var(--bg-card); border:1px solid var(--border-color); border-radius:8px; text-decoration:none; color:var(--text-color); font-size:0.83rem; font-weight:500;">✍️ Sign PDF Online</a>
+                                            <a href="/tools/split-pdf/" style="padding:0.55rem 0.75rem; background:var(--bg-card); border:1px solid var(--border-color); border-radius:8px; text-decoration:none; color:var(--text-color); font-size:0.83rem; font-weight:500;">✂️ Split PDF</a>
+                                            <a href="/tools/text-to-pdf/" style="padding:0.55rem 0.75rem; background:var(--bg-card); border:1px solid var(--border-color); border-radius:8px; text-decoration:none; color:var(--text-color); font-size:0.83rem; font-weight:500;">📝 Text to PDF</a>
+                                            <a href="/tools/word-counter-readability-analyzer/" style="padding:0.55rem 0.75rem; background:var(--bg-card); border:1px solid var(--border-color); border-radius:8px; text-decoration:none; color:var(--text-color); font-size:0.83rem; font-weight:500;">📊 Word Counter</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+                        </section>
+
+                        <!-- 2. ADD PAGE NUMBERS TO PDF PANEL -->
+                        <section class="panel" id="panel-pdfpagenumber" role="tabpanel" aria-labelledby="sidebar-menu">
+                            <header class="app-header">
+                                <div class="logo-area-desktop">
+                                    <span class="logo-icon">🔢</span>
+                                    <h2>Add Page Numbers to PDF Free - Number PDF Pages Online</h2>
+                                </div>
+                                <p class="tagline">Add page numbers to PDF documents online 100% free. Choose position, numbering style (Page X of Y), starting index, and font size directly in your browser memory.</p>
+                            </header>
+                            <div class="tool-split-layout">
+                                <div class="tool-left-col">
+                                    <div class="input-card card" style="padding: 1.5rem;">
+                                        <h3>📥 Upload PDF Document</h3>
+                                        <div class="premium-dropzone" id="pdfpagenumber-dropzone" style="margin-top: 1rem;">
+                                            <span>📁 Click or Drag PDF here to Add Page Numbers</span>
+                                            <input type="file" id="pdfpagenumber-file" accept="application/pdf" style="display:none;">
+                                        </div>
+                                        <div id="pdfpagenumber-meta" style="display:none; margin-top: 1rem; font-size: 0.9rem; color: var(--text-muted);">
+                                            <p>File: <strong id="pdfpagenumber-filename" style="color:var(--text-color);"></strong> (<span id="pdfpagenumber-pages"></span> pages)</p>
+                                        </div>
+                                        <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1.25rem;">
+                                            <div>
+                                                <label style="display:block; font-size:0.88rem; font-weight:600; margin-bottom:0.4rem;">Position:</label>
+                                                <select id="pdfpagenumber-position" class="custom-select" style="width: 100%; padding: 0.6rem; border-radius: 8px; border: 1px solid var(--border-color); background: var(--bg-card); color: var(--text-color);">
+                                                    <option value="bottom-center" selected>Bottom Center</option>
+                                                    <option value="bottom-right">Bottom Right</option>
+                                                    <option value="top-right">Top Right</option>
+                                                    <option value="top-center">Top Center</option>
+                                                </select>
+                                            </div>
+                                            <div>
+                                                <label style="display:block; font-size:0.88rem; font-weight:600; margin-bottom:0.4rem;">Format Style:</label>
+                                                <select id="pdfpagenumber-format" class="custom-select" style="width: 100%; padding: 0.6rem; border-radius: 8px; border: 1px solid var(--border-color); background: var(--bg-card); color: var(--text-color);">
+                                                    <option value="Page {n} of {total}" selected>Page {n} of {total}</option>
+                                                    <option value="{n} / {total}">{n} / {total}</option>
+                                                    <option value="Page {n}">Page {n}</option>
+                                                    <option value="{n}">Simple Number ({n})</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem;">
+                                            <div>
+                                                <label style="display:block; font-size:0.88rem; font-weight:600; margin-bottom:0.4rem;">Start Numbering From:</label>
+                                                <input type="number" id="pdfpagenumber-start" value="1" min="1" style="width: 100%; padding: 0.6rem; border-radius: 8px; border: 1px solid var(--border-color); background: var(--bg-card); color: var(--text-color);">
+                                            </div>
+                                            <div>
+                                                <label style="display:block; font-size:0.88rem; font-weight:600; margin-bottom:0.4rem;">Font Size:</label>
+                                                <select id="pdfpagenumber-size" class="custom-select" style="width: 100%; padding: 0.6rem; border-radius: 8px; border: 1px solid var(--border-color); background: var(--bg-card); color: var(--text-color);">
+                                                    <option value="10">Small (10pt)</option>
+                                                    <option value="12" selected>Medium (12pt)</option>
+                                                    <option value="14">Large (14pt)</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div style="margin-top: 1.5rem;">
+                                            <button id="pdfpagenumber-apply-btn" class="primary-btn" disabled style="width: 100%; padding: 0.8rem; font-weight: 600; font-size: 1rem; border-radius: 8px; display: flex; align-items: center; justify-content: center; gap: 0.5rem;">
+                                                <span>⚡ Add Page Numbers &amp; Download PDF</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tool-right-col">
+                                    <div class="output-card card" style="padding: 1.5rem; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
+                                        <div style="font-size: 3rem; margin-bottom: 1rem;">🔢</div>
+                                        <h3 style="margin-bottom: 0.5rem;">Instant Page Numbering</h3>
+                                        <p style="font-size: 0.88rem; color: var(--text-muted); max-width: 320px; line-height: 1.6;">
+                                            Upload your PDF, customize numbering positions and formats, and download your numbered PDF instantly. Stamped directly with crisp vector typography.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <article class="blog-card">
+                                <header>
+                                    <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem;">
+                                        <span class="blog-tag" style="background: rgba(99, 102, 241, 0.15); color: var(--indigo); font-size:0.75rem; font-weight:700; text-transform:uppercase; letter-spacing:1px; padding:0.35rem 0.75rem; border-radius:50px;">Document Formatting</span>
+                                        <span style="font-size:0.8rem; color:var(--text-muted); font-weight:500;">⏱️ 3 min read • Number PDF Pages</span>
+                                    </div>
+                                    <h2>How to Add Page Numbers to PDF Documents Online Free</h2>
+                                    <div style="font-size:0.85rem; color:var(--text-muted); margin-top:0.5rem;">Written by <strong>Rushikesh Wagh</strong> • Updated: July 2026</div>
+                                </header>
+                                <div class="blog-content">
+                                    <p>
+                                        Proper page numbering is mandatory for professional proposals, legal briefs, academic dissertations, and corporate reports. Without clear pagination, referencing specific sections or printing multipage documents leads to disorder.
+                                    </p>
+                                    <p>
+                                        Utilify's <strong>Add Page Numbers to PDF</strong> utility lets you customize position, starting indices, and formatting style (such as <em>Page 1 of 24</em>) without sending your files to third-party servers. All operations execute inside your browser's local memory via <code>pdf-lib</code> WebAssembly binaries.
+                                    </p>
+                                    <h3>📝 How to Number PDF Pages in 3 Simple Steps</h3>
+                                    <ul>
+                                        <li><strong>Step 1:</strong> Drag and drop your PDF into the upload area above.</li>
+                                        <li><strong>Step 2:</strong> Select your preferred position (Bottom Center, Bottom Right, Top Right) and numbering format.</li>
+                                        <li><strong>Step 3:</strong> Click <em>⚡ Add Page Numbers &amp; Download PDF</em> to export your paginated document immediately.</li>
+                                    </ul>
+                                    <h3>Frequently Asked Questions (FAQ)</h3>
+                                    <div class="faq-item">
+                                        <span class="faq-question">Q: Can I start numbering from a page other than 1?</span>
+                                        <span class="faq-answer">Yes, you can adjust the "Start Numbering From" field to any integer, which is ideal when numbering subsequent volumes or appendices.</span>
+                                    </div>
+                                    <div class="faq-item">
+                                        <span class="faq-question">Q: Does adding page numbers reduce document quality?</span>
+                                        <span class="faq-answer">No. Page numbers are rendered as native vector font streams on top of existing pages without recompressing or rasterizing your images.</span>
+                                    </div>
+
+                                    <!-- RELATED TOOLS -->
+                                    <div class="pdf-silo-nav" style="margin-top: 1.5rem; padding: 1.25rem; background: var(--bg-hover); border-radius: 12px; border: 1px solid var(--border-color);">
+                                        <h3 style="font-size: 1.05rem; margin-bottom: 0.5rem; color: var(--text-color);">📂 Related PDF Utilities</h3>
+                                        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 0.65rem;">
+                                            <a href="/tools/merge-pdf/" style="padding:0.55rem 0.75rem; background:var(--bg-card); border:1px solid var(--border-color); border-radius:8px; text-decoration:none; color:var(--text-color); font-size:0.83rem; font-weight:500;">➕ Merge PDF</a>
+                                            <a href="/tools/watermark-pdf/" style="padding:0.55rem 0.75rem; background:var(--bg-card); border:1px solid var(--border-color); border-radius:8px; text-decoration:none; color:var(--text-color); font-size:0.83rem; font-weight:500;">💧 Watermark PDF</a>
+                                            <a href="/tools/split-pdf/" style="padding:0.55rem 0.75rem; background:var(--bg-card); border:1px solid var(--border-color); border-radius:8px; text-decoration:none; color:var(--text-color); font-size:0.83rem; font-weight:500;">✂️ Split PDF</a>
+                                            <a href="/tools/protect-pdf/" style="padding:0.55rem 0.75rem; background:var(--bg-card); border:1px solid var(--border-color); border-radius:8px; text-decoration:none; color:var(--text-color); font-size:0.83rem; font-weight:500;">🔒 Protect PDF</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+                        </section>
+
+                        <!-- 3. WATERMARK PDF PANEL -->
+                        <section class="panel" id="panel-pdfwatermark" role="tabpanel" aria-labelledby="sidebar-menu">
+                            <header class="app-header">
+                                <div class="logo-area-desktop">
+                                    <span class="logo-icon">💧</span>
+                                    <h2>Watermark PDF Online Free - Add Watermark to PDF Documents</h2>
+                                </div>
+                                <p class="tagline">Add watermark to PDF documents online 100% free. Protect copyright with custom diagonal or horizontal text watermarks, opacity sliders, and font size controls directly in browser memory.</p>
+                            </header>
+                            <div class="tool-split-layout">
+                                <div class="tool-left-col">
+                                    <div class="input-card card" style="padding: 1.5rem;">
+                                        <h3>📥 Upload PDF Document</h3>
+                                        <div class="premium-dropzone" id="pdfwatermark-dropzone" style="margin-top: 1rem;">
+                                            <span>📁 Click or Drag PDF here to Add Watermark</span>
+                                            <input type="file" id="pdfwatermark-file" accept="application/pdf" style="display:none;">
+                                        </div>
+                                        <div id="pdfwatermark-meta" style="display:none; margin-top: 1rem; font-size: 0.9rem; color: var(--text-muted);">
+                                            <p>File: <strong id="pdfwatermark-filename" style="color:var(--text-color);"></strong> (<span id="pdfwatermark-pages"></span> pages)</p>
+                                        </div>
+                                        <div style="margin-top: 1.25rem;">
+                                            <label style="display:block; font-size:0.88rem; font-weight:600; margin-bottom:0.4rem;">Watermark Text:</label>
+                                            <input type="text" id="pdfwatermark-text" value="CONFIDENTIAL" placeholder="e.g. CONFIDENTIAL, DRAFT, DO NOT COPY" style="width: 100%; padding: 0.6rem; border-radius: 8px; border: 1px solid var(--border-color); background: var(--bg-card); color: var(--text-color); font-weight: 600;">
+                                        </div>
+                                        <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem;">
+                                            <div>
+                                                <label style="display:block; font-size:0.88rem; font-weight:600; margin-bottom:0.4rem;">Layout Orientation:</label>
+                                                <select id="pdfwatermark-angle" class="custom-select" style="width: 100%; padding: 0.6rem; border-radius: 8px; border: 1px solid var(--border-color); background: var(--bg-card); color: var(--text-color);">
+                                                    <option value="diagonal" selected>Diagonal (45°)</option>
+                                                    <option value="horizontal">Horizontal (0°)</option>
+                                                </select>
+                                            </div>
+                                            <div>
+                                                <label style="display:block; font-size:0.88rem; font-weight:600; margin-bottom:0.4rem;">Watermark Color:</label>
+                                                <select id="pdfwatermark-color" class="custom-select" style="width: 100%; padding: 0.6rem; border-radius: 8px; border: 1px solid var(--border-color); background: var(--bg-card); color: var(--text-color);">
+                                                    <option value="red" selected>Red Stamp (#ef4444)</option>
+                                                    <option value="indigo">Indigo Accent (#6366f1)</option>
+                                                    <option value="black">Dark Gray (#1f2937)</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem;">
+                                            <div>
+                                                <label style="display:block; font-size:0.88rem; font-weight:600; margin-bottom:0.4rem;">Font Size:</label>
+                                                <select id="pdfwatermark-size" class="custom-select" style="width: 100%; padding: 0.6rem; border-radius: 8px; border: 1px solid var(--border-color); background: var(--bg-card); color: var(--text-color);">
+                                                    <option value="36">Small (36pt)</option>
+                                                    <option value="48" selected>Medium (48pt)</option>
+                                                    <option value="60">Large (60pt)</option>
+                                                    <option value="72">Extra Large (72pt)</option>
+                                                </select>
+                                            </div>
+                                            <div>
+                                                <label style="display:block; font-size:0.88rem; font-weight:600; margin-bottom:0.4rem;">Opacity Transparency:</label>
+                                                <select id="pdfwatermark-opacity" class="custom-select" style="width: 100%; padding: 0.6rem; border-radius: 8px; border: 1px solid var(--border-color); background: var(--bg-card); color: var(--text-color);">
+                                                    <option value="0.15">Subtle (15%)</option>
+                                                    <option value="0.25" selected>Standard (25%)</option>
+                                                    <option value="0.40">Bold (40%)</option>
+                                                    <option value="0.60">Strong (60%)</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div style="margin-top: 1.5rem;">
+                                            <button id="pdfwatermark-apply-btn" class="primary-btn" disabled style="width: 100%; padding: 0.8rem; font-weight: 600; font-size: 1rem; border-radius: 8px; display: flex; align-items: center; justify-content: center; gap: 0.5rem;">
+                                                <span>⚡ Apply Watermark &amp; Download PDF</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tool-right-col">
+                                    <div class="output-card card" style="padding: 1.5rem; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
+                                        <div style="font-size: 3rem; margin-bottom: 1rem;">💧</div>
+                                        <h3 style="margin-bottom: 0.5rem;">Protected &amp; Watermarked</h3>
+                                        <p style="font-size: 0.88rem; color: var(--text-muted); max-width: 320px; line-height: 1.6;">
+                                            Add professional copyright notices, draft stamps, and confidential markers across every page of your PDF with semi-transparent vector text.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <article class="blog-card">
+                                <header>
+                                    <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem;">
+                                        <span class="blog-tag" style="background: rgba(99, 102, 241, 0.15); color: var(--indigo); font-size:0.75rem; font-weight:700; text-transform:uppercase; letter-spacing:1px; padding:0.35rem 0.75rem; border-radius:50px;">Document Security</span>
+                                        <span style="font-size:0.8rem; color:var(--text-muted); font-weight:500;">⏱️ 3 min read • Watermark PDF Online</span>
+                                    </div>
+                                    <h2>How to Watermark PDF Documents Online Free with Total Privacy</h2>
+                                    <div style="font-size:0.85rem; color:var(--text-muted); margin-top:0.5rem;">Written by <strong>Rushikesh Wagh</strong> • Updated: July 2026</div>
+                                </header>
+                                <div class="blog-content">
+                                    <p>
+                                        Watermarking documents prevents unauthorized distribution, preserves intellectual copyright, and indicates document confidentiality status (such as <em>CONFIDENTIAL</em>, <em>PRELIMINARY DRAFT</em>, or <em>SAMPLE ONLY</em>).
+                                    </p>
+                                    <p>
+                                        Utilify's <strong>Watermark PDF Tool</strong> stamps high-precision vector text diagonally or horizontally across every page of your PDF. Because processing takes place 100% in local browser memory via WebAssembly, your confidential contracts never leave your machine.
+                                    </p>
+                                    <h3>📝 How to Watermark a PDF Online in 3 Steps</h3>
+                                    <ul>
+                                        <li><strong>Step 1:</strong> Upload your PDF file to the workstation.</li>
+                                        <li><strong>Step 2:</strong> Enter your custom watermark text and select rotation angle, font size, color, and opacity.</li>
+                                        <li><strong>Step 3:</strong> Click <em>⚡ Apply Watermark &amp; Download PDF</em> to immediately save your protected document.</li>
+                                    </ul>
+                                    <h3>Frequently Asked Questions (FAQ)</h3>
+                                    <div class="faq-item">
+                                        <span class="faq-question">Q: Can watermarks be added to password-protected PDFs?</span>
+                                        <span class="faq-answer">If your PDF has an open password, use our free <a href="/tools/unlock-pdf/">Unlock PDF Tool</a> to decrypt it first, apply your watermark, and then re-encrypt it with <a href="/tools/protect-pdf/">Protect PDF</a>.</span>
+                                    </div>
+                                    <div class="faq-item">
+                                        <span class="faq-question">Q: Will watermarking damage the quality of text or photos in the PDF?</span>
+                                        <span class="faq-answer">No. The watermark is overlaid as an independent transparent vector layer without recompressing existing document content.</span>
+                                    </div>
+
+                                    <!-- RELATED TOOLS -->
+                                    <div class="pdf-silo-nav" style="margin-top: 1.5rem; padding: 1.25rem; background: var(--bg-hover); border-radius: 12px; border: 1px solid var(--border-color);">
+                                        <h3 style="font-size: 1.05rem; margin-bottom: 0.5rem; color: var(--text-color);">📂 Related PDF Utilities</h3>
+                                        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 0.65rem;">
+                                            <a href="/tools/sign-pdf/" style="padding:0.55rem 0.75rem; background:var(--bg-card); border:1px solid var(--border-color); border-radius:8px; text-decoration:none; color:var(--text-color); font-size:0.83rem; font-weight:500;">✍️ Sign PDF Online</a>
+                                            <a href="/tools/protect-pdf/" style="padding:0.55rem 0.75rem; background:var(--bg-card); border:1px solid var(--border-color); border-radius:8px; text-decoration:none; color:var(--text-color); font-size:0.83rem; font-weight:500;">🔒 Protect PDF</a>
+                                            <a href="/tools/compress-pdf/" style="padding:0.55rem 0.75rem; background:var(--bg-card); border:1px solid var(--border-color); border-radius:8px; text-decoration:none; color:var(--text-color); font-size:0.83rem; font-weight:500;">🗜️ Compress PDF</a>
+                                            <a href="/tools/add-page-numbers-to-pdf/" style="padding:0.55rem 0.75rem; background:var(--bg-card); border:1px solid var(--border-color); border-radius:8px; text-decoration:none; color:var(--text-color); font-size:0.83rem; font-weight:500;">🔢 Add Page Numbers</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+                        </section>
+
+                        <!-- 4. TEXT TO PDF CONVERTER PANEL -->
+                        <section class="panel" id="panel-texttopdf" role="tabpanel" aria-labelledby="sidebar-menu">
+                            <header class="app-header">
+                                <div class="logo-area-desktop">
+                                    <span class="logo-icon">📝</span>
+                                    <h2>Text to PDF Converter Free - Convert Text &amp; Notes to PDF Online</h2>
+                                </div>
+                                <p class="tagline">Convert plain text, notes, and code snippets into polished PDF documents online 100% free. Customize font, margins, and page orientation with instant in-browser generation.</p>
+                            </header>
+                            <div class="tool-split-layout">
+                                <div class="tool-left-col">
+                                    <div class="input-card card" style="padding: 1.5rem;">
+                                        <h3>✍️ Enter or Paste Your Text</h3>
+                                        <div style="margin-top: 1rem;">
+                                            <label style="display:block; font-size:0.88rem; font-weight:600; margin-bottom:0.4rem;">Document Title (Optional):</label>
+                                            <input type="text" id="texttopdf-title" placeholder="e.g. Meeting Minutes, Project Notes, Draft Agreement" style="width: 100%; padding: 0.6rem; border-radius: 8px; border: 1px solid var(--border-color); background: var(--bg-card); color: var(--text-color);">
+                                        </div>
+                                        <div style="margin-top: 1rem;">
+                                            <label style="display:block; font-size:0.88rem; font-weight:600; margin-bottom:0.4rem;">Body Text:</label>
+                                            <textarea id="texttopdf-input" placeholder="Type or paste your text here..." style="width: 100%; height: 220px; padding: 0.85rem; border-radius: 8px; border: 1px solid var(--border-color); background: var(--bg-hover); color: var(--text-color); font-size: 0.9rem; line-height: 1.6; resize: vertical;"></textarea>
+                                        </div>
+                                        <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem;">
+                                            <div>
+                                                <label style="display:block; font-size:0.88rem; font-weight:600; margin-bottom:0.4rem;">Font Family:</label>
+                                                <select id="texttopdf-font" class="custom-select" style="width: 100%; padding: 0.6rem; border-radius: 8px; border: 1px solid var(--border-color); background: var(--bg-card); color: var(--text-color);">
+                                                    <option value="Helvetica" selected>Helvetica (Clean Sans)</option>
+                                                    <option value="TimesRoman">Times Roman (Serif)</option>
+                                                    <option value="Courier">Courier (Monospace/Code)</option>
+                                                </select>
+                                            </div>
+                                            <div>
+                                                <label style="display:block; font-size:0.88rem; font-weight:600; margin-bottom:0.4rem;">Font Size:</label>
+                                                <select id="texttopdf-size" class="custom-select" style="width: 100%; padding: 0.6rem; border-radius: 8px; border: 1px solid var(--border-color); background: var(--bg-card); color: var(--text-color);">
+                                                    <option value="10">Compact (10pt)</option>
+                                                    <option value="12" selected>Standard (12pt)</option>
+                                                    <option value="14">Large (14pt)</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem;">
+                                            <div>
+                                                <label style="display:block; font-size:0.88rem; font-weight:600; margin-bottom:0.4rem;">Page Margins:</label>
+                                                <select id="texttopdf-margin" class="custom-select" style="width: 100%; padding: 0.6rem; border-radius: 8px; border: 1px solid var(--border-color); background: var(--bg-card); color: var(--text-color);">
+                                                    <option value="normal" selected>Standard (0.75 in)</option>
+                                                    <option value="narrow">Narrow (0.5 in)</option>
+                                                </select>
+                                            </div>
+                                            <div>
+                                                <label style="display:block; font-size:0.88rem; font-weight:600; margin-bottom:0.4rem;">Page Orientation:</label>
+                                                <select id="texttopdf-orientation" class="custom-select" style="width: 100%; padding: 0.6rem; border-radius: 8px; border: 1px solid var(--border-color); background: var(--bg-card); color: var(--text-color);">
+                                                    <option value="portrait" selected>Portrait</option>
+                                                    <option value="landscape">Landscape</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div style="margin-top: 1.5rem;">
+                                            <button id="texttopdf-generate-btn" class="primary-btn" style="width: 100%; padding: 0.8rem; font-weight: 600; font-size: 1rem; border-radius: 8px; display: flex; align-items: center; justify-content: center; gap: 0.5rem;">
+                                                <span>⚡ Convert to PDF &amp; Download</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tool-right-col">
+                                    <div class="output-card card" style="padding: 1.5rem; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
+                                        <div style="font-size: 3rem; margin-bottom: 1rem;">📝</div>
+                                        <h3 style="margin-bottom: 0.5rem;">Formatted PDF Documents</h3>
+                                        <p style="font-size: 0.88rem; color: var(--text-muted); max-width: 320px; line-height: 1.6;">
+                                            Paste your notes, essay, or documentation to immediately generate standard A4 PDF pages with automatic line-wrapping and pagination.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <article class="blog-card">
+                                <header>
+                                    <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem;">
+                                        <span class="blog-tag" style="background: rgba(99, 102, 241, 0.15); color: var(--indigo); font-size:0.75rem; font-weight:700; text-transform:uppercase; letter-spacing:1px; padding:0.35rem 0.75rem; border-radius:50px;">Document Authoring</span>
+                                        <span style="font-size:0.8rem; color:var(--text-muted); font-weight:500;">⏱️ 3 min read • Text to PDF</span>
+                                    </div>
+                                    <h2>Converting Plain Text and Notes to Clean PDF Documents Online</h2>
+                                    <div style="font-size:0.85rem; color:var(--text-muted); margin-top:0.5rem;">Written by <strong>Rushikesh Wagh</strong> • Updated: July 2026</div>
+                                </header>
+                                <div class="blog-content">
+                                    <p>
+                                        Sharing raw text files (.txt) or unformatted code across email and chat platforms often causes irregular font wrapping and broken layouts. Converting plain text to PDF guarantees consistent presentation across mobile devices, tablets, desktop workstations, and physical printouts.
+                                    </p>
+                                    <p>
+                                        Utilify's <strong>Text to PDF Converter</strong> enables real-time document creation right inside your browser without installing heavy word processors like Microsoft Word or LibreOffice.
+                                    </p>
+                                    <h3>📝 How to Convert Text to PDF Online in 3 Steps</h3>
+                                    <ul>
+                                        <li><strong>Step 1:</strong> Type or paste your text into the editor.</li>
+                                        <li><strong>Step 2:</strong> Configure typography (font family, font size, margins, and orientation).</li>
+                                        <li><strong>Step 3:</strong> Click <em>⚡ Convert to PDF &amp; Download</em> to export your formatted PDF instantly.</li>
+                                    </ul>
+                                    <h3>Frequently Asked Questions (FAQ)</h3>
+                                    <div class="faq-item">
+                                        <span class="faq-question">Q: How does automatic pagination work for long texts?</span>
+                                        <span class="faq-answer">Our client-side engine calculates line heights and margins dynamically. When content reaches the bottom of an A4 page, a new page is automatically created.</span>
+                                    </div>
+                                    <div class="faq-item">
+                                        <span class="faq-question">Q: Can I use this for source code snippets?</span>
+                                        <span class="faq-answer">Yes, select the Courier (Monospace) font to preserve indentation and code readability.</span>
+                                    </div>
+
+                                    <!-- RELATED TOOLS -->
+                                    <div class="pdf-silo-nav" style="margin-top: 1.5rem; padding: 1.25rem; background: var(--bg-hover); border-radius: 12px; border: 1px solid var(--border-color);">
+                                        <h3 style="font-size: 1.05rem; margin-bottom: 0.5rem; color: var(--text-color);">📂 Related PDF Utilities</h3>
+                                        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 0.65rem;">
+                                            <a href="/tools/pdf-to-text/" style="padding:0.55rem 0.75rem; background:var(--bg-card); border:1px solid var(--border-color); border-radius:8px; text-decoration:none; color:var(--text-color); font-size:0.83rem; font-weight:500;">📄 PDF to Text</a>
+                                            <a href="/tools/sign-pdf/" style="padding:0.55rem 0.75rem; background:var(--bg-card); border:1px solid var(--border-color); border-radius:8px; text-decoration:none; color:var(--text-color); font-size:0.83rem; font-weight:500;">✍️ Sign PDF Online</a>
+                                            <a href="/tools/image-to-pdf/" style="padding:0.55rem 0.75rem; background:var(--bg-card); border:1px solid var(--border-color); border-radius:8px; text-decoration:none; color:var(--text-color); font-size:0.83rem; font-weight:500;">🖼️ Image to PDF</a>
+                                            <a href="/tools/rich-text-editor/" style="padding:0.55rem 0.75rem; background:var(--bg-card); border:1px solid var(--border-color); border-radius:8px; text-decoration:none; color:var(--text-color); font-size:0.83rem; font-weight:500;">🖋️ Rich Text Editor</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+                        </section>
+
+
+
             </div>
         </div>
     </div>
@@ -9365,6 +9942,13 @@
                         <div>
                             <h3 style="margin-top: 0; color: var(--indigo); border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem;">🗂️ PDF &amp; File Utilities</h3>
                             <ul style="list-style: none; padding-left: 0; display: flex; flex-direction: column; gap: 0.65rem; margin-top: 1rem;">
+                                <li><a href="/tools/sign-pdf/" class="footer-view-link" data-view="tools" data-tool="digisign" style="color: var(--text-color); text-decoration: none; font-weight: 600;">Sign PDF Online</a></li>
+                                <li><a href="/tools/jpg-to-pdf/" class="footer-view-link" data-view="tools" data-tool="jpgtopdf" style="color: var(--text-color); text-decoration: none; font-weight: 600;">JPG to PDF Converter</a></li>
+                                <li><a href="/tools/pdf-to-jpg/" class="footer-view-link" data-view="tools" data-tool="pdftojpg" style="color: var(--text-color); text-decoration: none; font-weight: 600;">PDF to JPG Converter</a></li>
+                                <li><a href="/tools/pdf-to-text/" class="footer-view-link" data-view="tools" data-tool="pdftotext" style="color: var(--text-color); text-decoration: none; font-weight: 600;">PDF to Text Converter</a></li>
+                                <li><a href="/tools/add-page-numbers-to-pdf/" class="footer-view-link" data-view="tools" data-tool="pdfpagenumber" style="color: var(--text-color); text-decoration: none; font-weight: 600;">Add Page Numbers to PDF</a></li>
+                                <li><a href="/tools/watermark-pdf/" class="footer-view-link" data-view="tools" data-tool="pdfwatermark" style="color: var(--text-color); text-decoration: none; font-weight: 600;">Watermark PDF Online</a></li>
+                                <li><a href="/tools/text-to-pdf/" class="footer-view-link" data-view="tools" data-tool="texttopdf" style="color: var(--text-color); text-decoration: none; font-weight: 600;">Text to PDF Converter</a></li>
                                 <li><a href="/tools/merge-pdf/" class="footer-view-link" data-view="tools" data-tool="pdfmerge" style="color: var(--text-color); text-decoration: none; font-weight: 600;">PDF Merger</a></li>
                                 <li><a href="/tools/split-pdf/" class="footer-view-link" data-view="tools" data-tool="pdfsplit" style="color: var(--text-color); text-decoration: none; font-weight: 600;">PDF Splitter</a></li>
                                 <li><a href="/tools/rotate-pdf/" class="footer-view-link" data-view="tools" data-tool="pdfrotate" style="color: var(--text-color); text-decoration: none; font-weight: 600;">PDF Page Rotator</a></li>
@@ -9517,6 +10101,13 @@
                     <li><a href="/tools/seo-url-slug-generator/" class="footer-view-link" data-view="tools" data-tool="slug">Slug Generator</a></li>
                     <li><a href="/tools/custom-qr-code-generator/" class="footer-view-link" data-view="tools" data-tool="qr">QR Generator</a></li>
                     <li><a href="/tools/image-compressor/" class="footer-view-link" data-view="tools" data-tool="imgcomp">Image Compressor</a></li>
+                    <li><a href="/tools/sign-pdf/" class="footer-view-link" data-view="tools" data-tool="digisign">Sign PDF Online</a></li>
+                    <li><a href="/tools/jpg-to-pdf/" class="footer-view-link" data-view="tools" data-tool="jpgtopdf">JPG to PDF</a></li>
+                    <li><a href="/tools/pdf-to-jpg/" class="footer-view-link" data-view="tools" data-tool="pdftojpg">PDF to JPG</a></li>
+                    <li><a href="/tools/pdf-to-text/" class="footer-view-link" data-view="tools" data-tool="pdftotext">PDF to Text</a></li>
+                    <li><a href="/tools/add-page-numbers-to-pdf/" class="footer-view-link" data-view="tools" data-tool="pdfpagenumber">Number PDF</a></li>
+                    <li><a href="/tools/watermark-pdf/" class="footer-view-link" data-view="tools" data-tool="pdfwatermark">Watermark PDF</a></li>
+                    <li><a href="/tools/text-to-pdf/" class="footer-view-link" data-view="tools" data-tool="texttopdf">Text to PDF</a></li>
                     <li><a href="/tools/merge-pdf/" class="footer-view-link" data-view="tools" data-tool="pdfmerge">PDF Merger</a></li>
                 </ul>
             </div>
