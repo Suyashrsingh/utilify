@@ -464,6 +464,27 @@ const ardEntries = [
         category: "pdf",
         description: "Convert plain text, notes, and code into formatted PDF documents online 100% free with instant in-browser generation.",
         queries: ["text to pdf", "convert text to pdf", "txt to pdf online free", "notes to pdf"]
+    },
+    {
+        slug: "youtube-thumbnail-downloader",
+        name: "YouTube Thumbnail Downloader Free",
+        category: "creator",
+        description: "Extract and download official original YouTube video and Shorts thumbnails in 4K, 1080p Full HD, and 720p with 1-click download.",
+        queries: ["youtube thumbnail downloader", "download youtube thumbnail", "get youtube thumbnail hd", "youtube thumbnail grabber", "download yt thumbnail"]
+    },
+    {
+        slug: "instagram-font-generator",
+        name: "Instagram Font Generator Free",
+        category: "social",
+        description: "Generate 35+ stylish aesthetic, cursive, bold, and gothic Unicode fonts for your Instagram Bio, reels, and captions with 1-click copy.",
+        queries: ["instagram fonts", "font generator for instagram", "fancy font for bio", "ig fonts generator", "aesthetic fonts instagram"]
+    },
+    {
+        slug: "youtube-tag-extractor",
+        name: "YouTube Tag Extractor Free",
+        category: "seo",
+        description: "Discover and copy hidden SEO tags, keywords, and metadata from public YouTube videos for YouTube Studio.",
+        queries: ["youtube tag extractor", "extract youtube tags", "youtube tags finder", "see youtube tags online", "youtube keywords extractor"]
     }
 ];
 
@@ -473,7 +494,7 @@ const ardManifest = {
     "@context": "https://agenticresourcediscovery.org/context/v1",
     "name": "Utilify",
     "version": "2.0.0",
-    "description": "63+ free, private, offline-first client-side web utilities for developers, creators, and professionals. All operations execute 100% in local browser memory with zero server uploads.",
+    "description": "70+ free, private, offline-first client-side web utilities for developers, creators, and professionals. All operations execute 100% in local browser memory with zero server uploads.",
     "url": "https://utilify.co.in",
     "documentation": "https://utilify.co.in/llms-full.txt",
     "llms_txt": "https://utilify.co.in/llms.txt",

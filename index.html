@@ -9626,6 +9626,375 @@
                             </article>
                         </section>
 
+                        <!-- ================= 1. YOUTUBE THUMBNAIL DOWNLOADER ================= -->
+                        <section class="panel" id="panel-ytthumb" role="tabpanel" aria-labelledby="sidebar-menu">
+                            <header class="app-header">
+                                <div class="logo-area-desktop">
+                                    <span class="logo-icon">📺</span>
+                                    <h2>YouTube Thumbnail Downloader Free – Download 4K & HD Thumbnails</h2>
+                                </div>
+                                <p class="tagline">Extract and download high-resolution YouTube video thumbnails in 4K, 1080p Full HD, 720p, and SD. Supports standard videos and YouTube Shorts. 100% free with 1-click download and copy.</p>
+                            </header>
+                            
+                            <div class="tool-split-layout">
+                                <div class="tool-left-col">
+                                    <div class="input-card card" style="padding: 1.5rem;">
+                                        <h3>🔗 Enter YouTube Video or Shorts URL</h3>
+                                        <div style="margin-top: 1rem;">
+                                            <input type="text" id="ytthumb-url-input" placeholder="e.g. https://www.youtube.com/watch?v=dQw4w9WgXcQ or youtu.be/..." style="width:100%; padding: 0.85rem; border-radius: 8px; border: 1px solid var(--border-color); background: var(--bg-hover); color: var(--text-color); font-size: 0.95rem;">
+                                        </div>
+                                        <div style="margin-top: 1rem; display: flex; gap: 0.75rem;">
+                                            <button id="ytthumb-fetch-btn" class="primary-btn" style="flex:1; padding: 0.85rem; font-weight: 600; font-size: 1rem; border-radius: 8px; display: flex; align-items: center; justify-content: center; gap: 0.5rem;">
+                                                <span>⚡ Get Thumbnails</span>
+                                            </button>
+                                            <button id="ytthumb-clear-btn" class="secondary-btn" style="padding: 0.85rem 1.25rem; font-size: 0.9rem; border-radius: 8px;">
+                                                Clear
+                                            </button>
+                                        </div>
+                                        <div style="margin-top: 1.25rem; padding: 0.85rem; background: var(--bg-card); border-radius: 8px; border: 1px solid var(--border-color); font-size: 0.85rem; color: var(--text-muted); line-height: 1.5;">
+                                            <strong style="color:var(--text-color);">💡 Supported Formats:</strong>
+                                            <ul style="margin: 0.4rem 0 0 1.2rem; padding: 0;">
+                                                <li>Standard: <code>youtube.com/watch?v=ID</code></li>
+                                                <li>Short Link: <code>youtu.be/ID</code></li>
+                                                <li>YouTube Shorts: <code>youtube.com/shorts/ID</code></li>
+                                                <li>Embed: <code>youtube.com/embed/ID</code></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tool-right-col">
+                                    <div class="output-card card" style="padding: 1.5rem; height: 100%; display: flex; flex-direction: column;">
+                                        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 1rem; flex-wrap:wrap; gap:0.5rem;">
+                                            <h3>🖼️ Available Resolutions</h3>
+                                            <span id="ytthumb-video-id-badge" style="font-size:0.82rem; color:var(--text-muted); display:none;">Video ID: <strong id="ytthumb-vid-text" style="color:var(--primary-color);"></strong></span>
+                                        </div>
+                                        <div id="ytthumb-placeholder" style="flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; padding: 3rem 1rem; text-align:center; color: var(--text-muted); border: 2px dashed var(--border-color); border-radius: 12px;">
+                                            <span style="font-size: 3rem; margin-bottom: 0.75rem;">🖼️</span>
+                                            <p style="font-size: 1.05rem; font-weight: 500; color: var(--text-color);">No YouTube URL entered yet</p>
+                                            <p style="font-size: 0.88rem; max-width: 380px;">Paste any YouTube video or Shorts link on the left and click "Get Thumbnails" to view and download all resolutions.</p>
+                                        </div>
+                                        <div id="ytthumb-results-grid" style="display:none; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.25rem;">
+                                            <!-- Maxres (1080p / 4K) -->
+                                            <div class="thumb-res-card" style="border: 1px solid var(--border-color); border-radius: 10px; overflow: hidden; background: var(--bg-hover); display: flex; flex-direction: column;">
+                                                <div style="padding: 0.6rem 0.85rem; background: var(--bg-card); display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-color);">
+                                                    <strong style="font-size: 0.88rem;">Ultra HD (1080p / 4K)</strong>
+                                                    <span style="font-size: 0.75rem; padding: 0.15rem 0.45rem; background: rgba(16, 185, 129, 0.15); color: #10b981; border-radius: 4px; font-weight: 600;">1920×1080</span>
+                                                </div>
+                                                <div style="position: relative; width: 100%; aspect-ratio: 16/9; background: #000; overflow: hidden;">
+                                                    <img id="ytthumb-img-max" alt="YouTube Thumbnail Ultra HD 1080p" style="width: 100%; height: 100%; object-fit: cover;">
+                                                </div>
+                                                <div style="padding: 0.75rem; display: flex; gap: 0.5rem; margin-top: auto;">
+                                                    <a id="ytthumb-dl-max" download="thumbnail_1080p.jpg" target="_blank" class="primary-btn" style="flex:1; padding: 0.5rem; font-size: 0.82rem; text-align: center; border-radius: 6px; text-decoration: none;">💾 Download</a>
+                                                    <button id="ytthumb-copy-max" class="secondary-btn" style="padding: 0.5rem 0.75rem; font-size: 0.82rem; border-radius: 6px;">📋 Copy</button>
+                                                </div>
+                                            </div>
+
+                                            <!-- High (720p) -->
+                                            <div class="thumb-res-card" style="border: 1px solid var(--border-color); border-radius: 10px; overflow: hidden; background: var(--bg-hover); display: flex; flex-direction: column;">
+                                                <div style="padding: 0.6rem 0.85rem; background: var(--bg-card); display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-color);">
+                                                    <strong style="font-size: 0.88rem;">High Definition (HD)</strong>
+                                                    <span style="font-size: 0.75rem; padding: 0.15rem 0.45rem; background: rgba(14, 165, 233, 0.15); color: #0ea5e9; border-radius: 4px; font-weight: 600;">1280×720</span>
+                                                </div>
+                                                <div style="position: relative; width: 100%; aspect-ratio: 16/9; background: #000; overflow: hidden;">
+                                                    <img id="ytthumb-img-hq" alt="YouTube Thumbnail HD 720p" style="width: 100%; height: 100%; object-fit: cover;">
+                                                </div>
+                                                <div style="padding: 0.75rem; display: flex; gap: 0.5rem; margin-top: auto;">
+                                                    <a id="ytthumb-dl-hq" download="thumbnail_720p.jpg" target="_blank" class="primary-btn" style="flex:1; padding: 0.5rem; font-size: 0.82rem; text-align: center; border-radius: 6px; text-decoration: none;">💾 Download</a>
+                                                    <button id="ytthumb-copy-hq" class="secondary-btn" style="padding: 0.5rem 0.75rem; font-size: 0.82rem; border-radius: 6px;">📋 Copy</button>
+                                                </div>
+                                            </div>
+
+                                            <!-- Standard (480p) -->
+                                            <div class="thumb-res-card" style="border: 1px solid var(--border-color); border-radius: 10px; overflow: hidden; background: var(--bg-hover); display: flex; flex-direction: column;">
+                                                <div style="padding: 0.6rem 0.85rem; background: var(--bg-card); display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-color);">
+                                                    <strong style="font-size: 0.88rem;">Standard Definition</strong>
+                                                    <span style="font-size: 0.75rem; padding: 0.15rem 0.45rem; background: rgba(245, 158, 11, 0.15); color: #f59e0b; border-radius: 4px; font-weight: 600;">640×480</span>
+                                                </div>
+                                                <div style="position: relative; width: 100%; aspect-ratio: 16/9; background: #000; overflow: hidden;">
+                                                    <img id="ytthumb-img-sd" alt="YouTube Thumbnail SD 480p" style="width: 100%; height: 100%; object-fit: cover;">
+                                                </div>
+                                                <div style="padding: 0.75rem; display: flex; gap: 0.5rem; margin-top: auto;">
+                                                    <a id="ytthumb-dl-sd" download="thumbnail_480p.jpg" target="_blank" class="primary-btn" style="flex:1; padding: 0.5rem; font-size: 0.82rem; text-align: center; border-radius: 6px; text-decoration: none;">💾 Download</a>
+                                                    <button id="ytthumb-copy-sd" class="secondary-btn" style="padding: 0.5rem 0.75rem; font-size: 0.82rem; border-radius: 6px;">📋 Copy</button>
+                                                </div>
+                                            </div>
+
+                                            <!-- Medium (360p) -->
+                                            <div class="thumb-res-card" style="border: 1px solid var(--border-color); border-radius: 10px; overflow: hidden; background: var(--bg-hover); display: flex; flex-direction: column;">
+                                                <div style="padding: 0.6rem 0.85rem; background: var(--bg-card); display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-color);">
+                                                    <strong style="font-size: 0.88rem;">Medium Quality</strong>
+                                                    <span style="font-size: 0.75rem; padding: 0.15rem 0.45rem; background: rgba(168, 85, 247, 0.15); color: #a855f7; border-radius: 4px; font-weight: 600;">320×180</span>
+                                                </div>
+                                                <div style="position: relative; width: 100%; aspect-ratio: 16/9; background: #000; overflow: hidden;">
+                                                    <img id="ytthumb-img-mq" alt="YouTube Thumbnail MQ 360p" style="width: 100%; height: 100%; object-fit: cover;">
+                                                </div>
+                                                <div style="padding: 0.75rem; display: flex; gap: 0.5rem; margin-top: auto;">
+                                                    <a id="ytthumb-dl-mq" download="thumbnail_360p.jpg" target="_blank" class="primary-btn" style="flex:1; padding: 0.5rem; font-size: 0.82rem; text-align: center; border-radius: 6px; text-decoration: none;">💾 Download</a>
+                                                    <button id="ytthumb-copy-mq" class="secondary-btn" style="padding: 0.5rem 0.75rem; font-size: 0.82rem; border-radius: 6px;">📋 Copy</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <article class="blog-card" style="margin-top: 2rem;">
+                                <header>
+                                    <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem;">
+                                        <span class="badge" style="background: rgba(239, 68, 68, 0.15); color: #ef4444; border: 1px solid rgba(239, 68, 68, 0.3);">YouTube Creator Tool</span>
+                                        <span style="font-size: 0.85rem; color: var(--text-muted);">100% Free • No Watermarks • Instant HD & 4K</span>
+                                    </div>
+                                    <h3 style="margin-top: 0.75rem; font-size: 1.4rem;">YouTube Thumbnail Downloader: Extract Full HD & 4K Thumbnails in Seconds</h3>
+                                </header>
+                                <div class="blog-content">
+                                    <p>The <strong>Utilify YouTube Thumbnail Downloader</strong> allows content creators, designers, and marketers to instantly grab and download original YouTube video cover images across all official resolutions. Whether you need inspiration for your next video, wish to analyze competitor thumbnail typography, or require a high-resolution preview for blog post hero banners, our tool grabs the exact uncompressed source image directly from YouTube's Content Delivery Network (CDN).</p>
+
+                                    <h4>⚡ How to Download YouTube Video Thumbnails Online</h4>
+                                    <ol>
+                                        <li><strong>Copy YouTube URL:</strong> Copy the link of any YouTube video or YouTube Shorts from your browser address bar or mobile share menu.</li>
+                                        <li><strong>Paste & Fetch:</strong> Paste the URL into the input field above and click <em>"Get Thumbnails"</em>.</li>
+                                        <li><strong>Choose Your Resolution:</strong> Preview all 4 official quality tiers (1080p Full HD, 720p HD, 480p SD, and 360p MQ).</li>
+                                        <li><strong>Download or Copy:</strong> Click <em>"Download"</em> to save the clean JPG directly to your device, or click <em>"Copy"</em> to paste the image directly into Figma, Photoshop, or Canva.</li>
+                                    </ol>
+
+                                    <h4>🛡️ Why Choose Utilify Over Other Thumbnail Downloaders?</h4>
+                                    <div class="comparison-table-wrapper" style="overflow-x: auto; margin: 1.25rem 0;">
+                                        <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem; border: 1px solid var(--border-color);">
+                                            <thead>
+                                                <tr style="background: var(--bg-hover); text-align: left;">
+                                                    <th style="padding: 0.75rem; border: 1px solid var(--border-color);">Feature</th>
+                                                    <th style="padding: 0.75rem; border: 1px solid var(--border-color); color: #10b981;">Utilify Thumbnail Tool</th>
+                                                    <th style="padding: 0.75rem; border: 1px solid var(--border-color); color: #ef4444;">Other Download Sites</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td style="padding: 0.75rem; border: 1px solid var(--border-color);"><strong>Pop-ups & Spam Ads</strong></td>
+                                                    <td style="padding: 0.75rem; border: 1px solid var(--border-color); color: #10b981;">🚫 Zero Popups / Clean UI</td>
+                                                    <td style="padding: 0.75rem; border: 1px solid var(--border-color); color: #ef4444;">⚠️ 5–10 Aggressive Popunder Ads</td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="padding: 0.75rem; border: 1px solid var(--border-color);"><strong>YouTube Shorts Support</strong></td>
+                                                    <td style="padding: 0.75rem; border: 1px solid var(--border-color); color: #10b981;">✅ Yes (Automatic Shorts Parser)</td>
+                                                    <td style="padding: 0.75rem; border: 1px solid var(--border-color); color: #ef4444;">❌ Usually Fails on Shorts</td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="padding: 0.75rem; border: 1px solid var(--border-color);"><strong>1-Click Clipboard Copy</strong></td>
+                                                    <td style="padding: 0.75rem; border: 1px solid var(--border-color); color: #10b981;">✅ Yes (Instant Copy to Memory)</td>
+                                                    <td style="padding: 0.75rem; border: 1px solid var(--border-color); color: #ef4444;">❌ Download Only</td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="padding: 0.75rem; border: 1px solid var(--border-color);"><strong>Original 4K/1080p Quality</strong></td>
+                                                    <td style="padding: 0.75rem; border: 1px solid var(--border-color); color: #10b981;">✅ 100% Uncompressed MaxRes</td>
+                                                    <td style="padding: 0.75rem; border: 1px solid var(--border-color); color: #ef4444;">⚠️ Compressed or Downscaled</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                    <h4>❓ Frequently Asked Questions (FAQ)</h4>
+                                    <div class="faq-accordion" style="display:flex; flex-direction:column; gap:0.75rem; margin-top:1rem;">
+                                        <div class="faq-item" style="padding: 1rem; border-radius: 8px; border: 1px solid var(--border-color); background: var(--bg-hover);">
+                                            <h5 style="margin:0 0 0.4rem 0; font-size:0.95rem; font-weight:600; color:var(--text-color);">What is the standard YouTube thumbnail size and aspect ratio?</h5>
+                                            <p style="margin:0; font-size:0.88rem; color:var(--text-muted); line-height:1.5;">YouTube recommends an aspect ratio of <strong>16:9</strong> with ideal dimensions of <strong>1280 × 720 pixels</strong> (with a minimum width of 640 pixels). MaxRes thumbnails upload at <strong>1920 × 1080 pixels</strong> for crisp rendering on Retina screens and 4K smart TVs.</p>
+                                        </div>
+                                        <div class="faq-item" style="padding: 1rem; border-radius: 8px; border: 1px solid var(--border-color); background: var(--bg-hover);">
+                                            <h5 style="margin:0 0 0.4rem 0; font-size:0.95rem; font-weight:600; color:var(--text-color);">Is it legal to download and use YouTube thumbnails?</h5>
+                                            <p style="margin:0; font-size:0.88rem; color:var(--text-muted); line-height:1.5;">Downloading YouTube thumbnails for fair use (such as commentary, reviews, research, design reference, or blog citation) is generally acceptable. However, republishing someone else's thumbnail as your own video's cover image without modification is a copyright infringement.</p>
+                                        </div>
+                                        <div class="faq-item" style="padding: 1rem; border-radius: 8px; border: 1px solid var(--border-color); background: var(--bg-hover);">
+                                            <h5 style="margin:0 0 0.4rem 0; font-size:0.95rem; font-weight:600; color:var(--text-color);">Why does the 1080p Ultra HD thumbnail sometimes not show?</h5>
+                                            <p style="margin:0; font-size:0.88rem; color:var(--text-muted); line-height:1.5;">YouTube only generates the <code>maxresdefault</code> (1080p) image if the creator uploaded a high-resolution custom thumbnail. For older videos or low-resolution uploads, YouTube defaults to High Definition (720p) or Standard (480p).</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+                        </section>
+
+                        <!-- ================= 2. INSTAGRAM FONT GENERATOR ================= -->
+                        <section class="panel" id="panel-instafont" role="tabpanel" aria-labelledby="sidebar-menu">
+                            <header class="app-header">
+                                <div class="logo-area-desktop">
+                                    <span class="logo-icon">✨</span>
+                                    <h2>Instagram Font Generator Free – Fancy Fonts for Bio, Captions & Reels</h2>
+                                </div>
+                                <p class="tagline">Generate 35+ stylish aesthetic fonts for your Instagram Bio, Reels captions, Stories, and TikTok profiles. 100% free with 1-click copy, live character counter, and bio limit tracking.</p>
+                            </header>
+
+                            <div class="tool-split-layout">
+                                <div class="tool-left-col">
+                                    <div class="input-card card" style="padding: 1.5rem;">
+                                        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 0.5rem;">
+                                            <h3>✍️ Type or Paste Your Text</h3>
+                                            <span style="font-size:0.82rem; color:var(--text-muted);">Bio Limit: <strong id="instafont-bio-count" style="color:var(--text-color);">0</strong>/150</span>
+                                        </div>
+                                        <textarea id="instafont-input" placeholder="Type something cool here to generate fancy fonts... (e.g. Dreamer | Creator | Coffee Lover)" style="width:100%; min-height: 120px; padding: 0.85rem; border-radius: 8px; border: 1px solid var(--border-color); background: var(--bg-hover); color: var(--text-color); font-size: 0.95rem; line-height: 1.5; resize: vertical;"></textarea>
+                                        
+                                        <!-- Category filter buttons -->
+                                        <div style="margin-top: 1rem;">
+                                            <label style="display:block; font-size:0.85rem; font-weight:600; margin-bottom:0.5rem; color:var(--text-muted);">Filter Font Styles:</label>
+                                            <div style="display:flex; flex-wrap:wrap; gap:0.4rem;" id="instafont-filter-tray">
+                                                <button class="instafont-filter-btn active" data-filter="all" style="padding: 0.35rem 0.75rem; font-size: 0.82rem; border-radius: 20px; border: 1px solid var(--primary-color); background: var(--primary-color); color: #fff; cursor: pointer;">All Styles (35+)</button>
+                                                <button class="instafont-filter-btn" data-filter="aesthetic" style="padding: 0.35rem 0.75rem; font-size: 0.82rem; border-radius: 20px; border: 1px solid var(--border-color); background: var(--bg-card); color: var(--text-color); cursor: pointer;">🌸 Aesthetic</button>
+                                                <button class="instafont-filter-btn" data-filter="bold" style="padding: 0.35rem 0.75rem; font-size: 0.82rem; border-radius: 20px; border: 1px solid var(--border-color); background: var(--bg-card); color: var(--text-color); cursor: pointer;">𝗕𝗼𝗹𝗱</button>
+                                                <button class="instafont-filter-btn" data-filter="cursive" style="padding: 0.35rem 0.75rem; font-size: 0.82rem; border-radius: 20px; border: 1px solid var(--border-color); background: var(--bg-card); color: var(--text-color); cursor: pointer;">𝓒𝓾𝓻𝓼𝓲𝓿𝓮</button>
+                                                <button class="instafont-filter-btn" data-filter="gothic" style="padding: 0.35rem 0.75rem; font-size: 0.82rem; border-radius: 20px; border: 1px solid var(--border-color); background: var(--bg-card); color: var(--text-color); cursor: pointer;">𝕲𝖔𝖙𝖍𝖎𝖈</button>
+                                                <button class="instafont-filter-btn" data-filter="symbols" style="padding: 0.35rem 0.75rem; font-size: 0.82rem; border-radius: 20px; border: 1px solid var(--border-color); background: var(--bg-card); color: var(--text-color); cursor: pointer;">★ Symbols</button>
+                                            </div>
+                                        </div>
+
+                                        <div style="margin-top: 1.25rem; padding: 0.75rem; background: var(--bg-card); border-radius: 8px; border: 1px solid var(--border-color); font-size: 0.82rem; color: var(--text-muted);">
+                                            💡 <strong>Bio Tip:</strong> Instagram allows a maximum of <strong>150 characters</strong> in your bio. All generated fonts use standard Unicode symbols that work on iOS, Android, and Web without installing apps.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tool-right-col">
+                                    <div class="output-card card" style="padding: 1.5rem; height: 100%; display: flex; flex-direction: column;">
+                                        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 0.75rem;">
+                                            <h3>📋 Generated Fancy Fonts</h3>
+                                            <span style="font-size:0.82rem; color:var(--text-muted);"><strong id="instafont-results-count">35</strong> Variations</span>
+                                        </div>
+                                        <div id="instafont-results-container" style="flex:1; max-height: 520px; overflow-y: auto; display: flex; flex-direction: column; gap: 0.75rem; padding-right: 0.25rem;">
+                                            <!-- Dynamically populated style cards -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <article class="blog-card" style="margin-top: 2rem;">
+                                <header>
+                                    <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem;">
+                                        <span class="badge" style="background: rgba(168, 85, 247, 0.15); color: #a855f7; border: 1px solid rgba(168, 85, 247, 0.3);">Social Media Styling</span>
+                                        <span style="font-size: 0.85rem; color: var(--text-muted);">Unicode Compliant • Works on Instagram, TikTok & Twitter</span>
+                                    </div>
+                                    <h3 style="margin-top: 0.75rem; font-size: 1.4rem;">Instagram Font Generator: How to Change Fonts in Your Bio & Captions</h3>
+                                </header>
+                                <div class="blog-content">
+                                    <p>Standard Instagram settings only offer one default font for your profile bio and caption descriptions. With the <strong>Utilify Instagram Font Generator</strong>, you can transform plain text into over 35 eye-catching typographic styles including cursive script, bold serif, old English gothic, double-struck blackboard, aesthetic spaced letters, and circled bubbles.</p>
+
+                                    <h4>✨ How Does the Instagram Font Generator Work?</h4>
+                                    <p>This tool does not install custom font files on your device; instead, it leverages the universal <strong>Unicode Standard</strong>. Unicode contains tens of thousands of unique mathematical alphanumeric symbols, scripts, and decorative glyphs that modern smartphones (iPhone & Android) and web browsers render natively as characters. Because they are valid Unicode characters, you can copy and paste them directly into Instagram Bios, Reels captions, Stories, TikTok bios, Twitter/X posts, and Discord messages.</p>
+
+                                    <h4>🚀 How to Add Custom Fonts to Your Instagram Bio</h4>
+                                    <ol>
+                                        <li>Type your bio text, business slogan, or quote into the editor above.</li>
+                                        <li>Filter styles by <em>Aesthetic</em>, <em>Cursive</em>, <em>Bold</em>, or <em>Gothic</em>.</li>
+                                        <li>Click the <strong>"Copy"</strong> button next to your favorite font variation.</li>
+                                        <li>Open the Instagram app &rarr; Go to your Profile &rarr; Tap <strong>"Edit Profile"</strong> &rarr; Paste your text into the <strong>Bio</strong> field &rarr; Tap <strong>Done</strong>.</li>
+                                    </ol>
+
+                                    <h4>❓ Frequently Asked Questions (FAQ)</h4>
+                                    <div class="faq-accordion" style="display:flex; flex-direction:column; gap:0.75rem; margin-top:1rem;">
+                                        <div class="faq-item" style="padding: 1rem; border-radius: 8px; border: 1px solid var(--border-color); background: var(--bg-hover);">
+                                            <h5 style="margin:0 0 0.4rem 0; font-size:0.95rem; font-weight:600; color:var(--text-color);">Will everyone be able to see these fancy fonts on their phones?</h5>
+                                            <p style="margin:0; font-size:0.88rem; color:var(--text-muted); line-height:1.5;">Yes! Over 99% of modern smartphones, including all Apple iPhones (iOS 10+) and Android devices, natively support standard Unicode glyphs. Your followers do not need to install any special apps or fonts to see your styled bio.</p>
+                                        </div>
+                                        <div class="faq-item" style="padding: 1rem; border-radius: 8px; border: 1px solid var(--border-color); background: var(--bg-hover);">
+                                            <h5 style="margin:0 0 0.4rem 0; font-size:0.95rem; font-weight:600; color:var(--text-color);">Can I use these fancy fonts on TikTok, Twitter/X, and WhatsApp?</h5>
+                                            <p style="margin:0; font-size:0.88rem; color:var(--text-muted); line-height:1.5;">Absolutely. Since all output is pure Unicode text, you can copy and paste it into TikTok bios, WhatsApp statuses and chats, Twitter/X posts, Facebook updates, and YouTube video descriptions.</p>
+                                        </div>
+                                        <div class="faq-item" style="padding: 1rem; border-radius: 8px; border: 1px solid var(--border-color); background: var(--bg-hover);">
+                                            <h5 style="margin:0 0 0.4rem 0; font-size:0.95rem; font-weight:600; color:var(--text-color);">Does using custom fonts hurt Instagram SEO or searchability?</h5>
+                                            <p style="margin:0; font-size:0.88rem; color:var(--text-muted); line-height:1.5;">For your profile <strong>Name</strong> field (which acts as a primary search keyword on Instagram), we recommend keeping the primary keyword in standard text and using fancy fonts in your <strong>Bio</strong> lines and call-to-actions.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+                        </section>
+
+                        <!-- ================= 3. YOUTUBE TAG EXTRACTOR ================= -->
+                        <section class="panel" id="panel-yttags" role="tabpanel" aria-labelledby="sidebar-menu">
+                            <header class="app-header">
+                                <div class="logo-area-desktop">
+                                    <span class="logo-icon">🏷️</span>
+                                    <h2>YouTube Tag Extractor Free – Find & Copy Video Keywords Online</h2>
+                                </div>
+                                <p class="tagline">Extract hidden SEO tags, keywords, and metadata from any public YouTube video. Copy comma-separated tags directly into YouTube Studio with character counting and keyword analysis.</p>
+                            </header>
+
+                            <div class="tool-split-layout">
+                                <div class="tool-left-col">
+                                    <div class="input-card card" style="padding: 1.5rem;">
+                                        <h3>🔗 Enter YouTube Video URL</h3>
+                                        <div style="margin-top: 1rem;">
+                                            <input type="text" id="yttags-url-input" placeholder="e.g. https://www.youtube.com/watch?v=... or youtu.be/..." style="width:100%; padding: 0.85rem; border-radius: 8px; border: 1px solid var(--border-color); background: var(--bg-hover); color: var(--text-color); font-size: 0.95rem;">
+                                        </div>
+                                        <div style="margin-top: 1rem; display: flex; gap: 0.75rem;">
+                                            <button id="yttags-extract-btn" class="primary-btn" style="flex:1; padding: 0.85rem; font-weight: 600; font-size: 1rem; border-radius: 8px; display: flex; align-items: center; justify-content: center; gap: 0.5rem;">
+                                                <span>⚡ Extract Tags</span>
+                                            </button>
+                                            <button id="yttags-clear-btn" class="secondary-btn" style="padding: 0.85rem 1.25rem; font-size: 0.9rem; border-radius: 8px;">
+                                                Clear
+                                            </button>
+                                        </div>
+
+                                        <div style="margin-top: 1.5rem; border-top: 1px solid var(--border-color); padding-top: 1.25rem;">
+                                            <h4 style="font-size: 0.95rem; margin-bottom: 0.5rem;">📝 Or Paste Tags Manually to Inspect & Count:</h4>
+                                            <textarea id="yttags-manual-input" placeholder="Paste comma-separated tags or keywords here to clean and count for YouTube Studio limits..." style="width:100%; min-height: 80px; padding: 0.75rem; border-radius: 8px; border: 1px solid var(--border-color); background: var(--bg-hover); color: var(--text-color); font-size: 0.88rem;"></textarea>
+                                            <button id="yttags-format-btn" class="secondary-btn" style="margin-top: 0.5rem; width: 100%; padding: 0.6rem; font-size: 0.85rem; border-radius: 6px;">Format & Count Tags</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tool-right-col">
+                                    <div class="output-card card" style="padding: 1.5rem; height: 100%; display: flex; flex-direction: column;">
+                                        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 0.75rem; flex-wrap:wrap; gap:0.5rem;">
+                                            <h3>🏷️ Extracted Video Tags</h3>
+                                            <div style="display:flex; gap:0.5rem;">
+                                                <button id="yttags-copy-all-btn" class="primary-btn" disabled style="padding: 0.4rem 0.75rem; font-size: 0.82rem; border-radius: 6px;">📋 Copy All Tags</button>
+                                                <button id="yttags-download-btn" class="secondary-btn" disabled style="padding: 0.4rem 0.75rem; font-size: 0.82rem; border-radius: 6px;">💾 Download .TXT</button>
+                                            </div>
+                                        </div>
+                                        <div style="display:flex; gap:1.25rem; font-size:0.82rem; color:var(--text-muted); margin-bottom:0.75rem;">
+                                            <span>Total Tags: <strong id="yttags-count" style="color:var(--text-color);">0</strong></span>
+                                            <span>Studio Limit: <strong id="yttags-chars" style="color:var(--text-color);">0</strong> / 500 chars</span>
+                                        </div>
+                                        <div id="yttags-chips-container" style="flex:1; min-height: 180px; max-height: 280px; overflow-y: auto; display: flex; flex-wrap: wrap; gap: 0.5rem; padding: 0.85rem; border: 1px solid var(--border-color); border-radius: 8px; background: var(--bg-hover); align-content: flex-start;">
+                                            <span style="color: var(--text-muted); font-size: 0.88rem; margin: auto;">Extracted tags will appear here as clickable chips...</span>
+                                        </div>
+                                        <div style="margin-top: 1rem;">
+                                            <label style="display:block; font-size:0.82rem; font-weight:600; margin-bottom:0.3rem;">Comma-Separated Format (Ready for YouTube Studio):</label>
+                                            <textarea id="yttags-raw-output" readonly placeholder="tag1, tag2, tag3..." style="width: 100%; height: 90px; padding: 0.65rem; border-radius: 8px; border: 1px solid var(--border-color); background: var(--bg-card); color: var(--text-color); font-size: 0.85rem; resize: none;"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <article class="blog-card" style="margin-top: 2rem;">
+                                <header>
+                                    <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem;">
+                                        <span class="badge" style="background: rgba(59, 130, 246, 0.15); color: #3b82f6; border: 1px solid rgba(59, 130, 246, 0.3);">YouTube SEO</span>
+                                        <span style="font-size: 0.85rem; color: var(--text-muted);">Metadata Research • 500-Character Counter</span>
+                                    </div>
+                                    <h3 style="margin-top: 0.75rem; font-size: 1.4rem;">YouTube Tag Extractor: Reverse Engineer Video Keywords for Higher Rankings</h3>
+                                </header>
+                                <div class="blog-content">
+                                    <p>Discover what keywords top-performing creators use to rank their videos on YouTube Search and Google Suggested Videos. The <strong>Utilify YouTube Tag Extractor</strong> parses public video metadata to reveal all associated ranking tags, helping you identify high-intent search terms and optimize your own content.</p>
+
+                                    <h4>🔍 How to Use Extracted Tags for YouTube SEO</h4>
+                                    <ol>
+                                        <li>Find 2–3 high-ranking videos in your niche that address the exact topic of your upcoming video.</li>
+                                        <li>Extract their tags using the tool above and examine repeating keyword patterns.</li>
+                                        <li>Select relevant tags that accurately describe your video content.</li>
+                                        <li>Paste them into your video's <strong>Tags</strong> section in YouTube Studio, ensuring you stay under the <strong>500-character limit</strong>.</li>
+                                    </ol>
+
+                                    <h4>❓ Frequently Asked Questions (FAQ)</h4>
+                                    <div class="faq-accordion" style="display:flex; flex-direction:column; gap:0.75rem; margin-top:1rem;">
+                                        <div class="faq-item" style="padding: 1rem; border-radius: 8px; border: 1px solid var(--border-color); background: var(--bg-hover);">
+                                            <h5 style="margin:0 0 0.4rem 0; font-size:0.95rem; font-weight:600; color:var(--text-color);">Do YouTube tags still help video rankings in 2026?</h5>
+                                            <p style="margin:0; font-size:0.88rem; color:var(--text-muted); line-height:1.5;">According to YouTube, tags play an important role when users misspell search terms, and they help YouTube's recommendation algorithm classify video context and niche during the initial publication window.</p>
+                                        </div>
+                                        <div class="faq-item" style="padding: 1rem; border-radius: 8px; border: 1px solid var(--border-color); background: var(--bg-hover);">
+                                            <h5 style="margin:0 0 0.4rem 0; font-size:0.95rem; font-weight:600; color:var(--text-color);">What is the maximum tag character limit in YouTube Studio?</h5>
+                                            <p style="margin:0; font-size:0.88rem; color:var(--text-muted); line-height:1.5;">YouTube enforces a strict limit of <strong>500 characters</strong> across all tags combined (including separating commas). Our tool tracks this limit in real-time so your tags are never rejected on upload.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+                        </section>
+
+
+
 
 
             </div>

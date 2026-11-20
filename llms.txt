@@ -112,6 +112,9 @@ Author: Rushikesh Wagh
 - [Add Page Numbers to PDF Free – Number PDF Pages Online | Utilify](https://utilify.co.in/tools/add-page-numbers-to-pdf/): Add page numbers to PDF files online 100% free. Choose position, numbering format (Page X of Y), starting page, and font size in browser RAM.
 - [Watermark PDF Online Free – Add Watermark to PDF Documents | Utilify](https://utilify.co.in/tools/watermark-pdf/): Add watermark to PDF files online 100% free. Stamp text or logos diagonally or horizontally with custom opacity, color, and font size in browser RAM.
 - [Text to PDF Converter Free – Convert Notes & Text to PDF | Utilify](https://utilify.co.in/tools/text-to-pdf/): Convert plain text and notes to PDF documents online 100% free. Customize font, margin, and page size with instant in-browser export.
+- [YouTube Thumbnail Downloader Free – Download 4K & HD Thumbnails | Utilify](https://utilify.co.in/tools/youtube-thumbnail-downloader/): Download high-resolution YouTube video thumbnails in 4K, 1080p Full HD, 720p, and SD. Supports standard videos and Shorts. 1-click download with zero ads.
+- [Instagram Font Generator Free – Fancy Fonts for Bio, Captions & Reels | Utilify](https://utilify.co.in/tools/instagram-font-generator/): Generate 35+ stylish fancy fonts for Instagram bio, reels, captions, and stories. Instant 1-click copy with bold, cursive, gothic, aesthetic, and symbol styles.
+- [YouTube Tag Extractor Free – Find & Copy Video Keywords Online | Utilify](https://utilify.co.in/tools/youtube-tag-extractor/): Extract YouTube video tags, keywords, and metadata online for free. Copy comma-separated tags for YouTube Studio with character counter and SEO analysis.
 
 ## LLM Context Full Documentation
 - [Full Technical Documentation (llms-full.txt)](https://utilify.co.in/llms-full.txt): Complete detailed specifications, parameters, and inputs for AI systems.

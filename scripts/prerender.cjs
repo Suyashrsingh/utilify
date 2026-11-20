@@ -70,7 +70,10 @@ const seoToolUrls = {
     pdftotext: "pdf-to-text",
     pdfpagenumber: "add-page-numbers-to-pdf",
     pdfwatermark: "watermark-pdf",
-    texttopdf: "text-to-pdf"
+    texttopdf: "text-to-pdf",
+    ytthumb: "youtube-thumbnail-downloader",
+    instafont: "instagram-font-generator",
+    yttags: "youtube-tag-extractor"
 };
 
 // Rich HowTo Schema Definitions for High-Converting Google Search Cards
@@ -218,6 +221,33 @@ const toolHowToSteps = {
             { name: "Upload PDF Document", text: "Select the PDF file you want converted to JPG." },
             { name: "Choose JPG Quality", text: "Set resolution scale to 1x, 1.5x, or 2x HD." },
             { name: "Download JPG Images", text: "Download all converted pages as individual JPGs or a complete ZIP package." }
+        ]
+    },
+    ytthumb: {
+        name: "How to Download High Quality YouTube Thumbnails Free",
+        description: "Extract and download official original YouTube video and Shorts thumbnails in 4K, 1080p Full HD, and 720p with 1-click download.",
+        steps: [
+            { name: "Copy Video Link", text: "Copy any YouTube video, Shorts, or youtu.be link from your browser or mobile app." },
+            { name: "Paste and Fetch", text: "Paste the URL into the input bar and click 'Get Thumbnails' to instantly retrieve all 4 resolutions." },
+            { name: "Download or Copy", text: "Click 'Download' to save the original high-resolution JPG directly to your device, or click 'Copy' to copy to clipboard." }
+        ]
+    },
+    instafont: {
+        name: "How to Generate and Use Fancy Fonts on Instagram",
+        description: "Create over 35 stylish aesthetic, cursive, bold, and gothic Unicode fonts for your Instagram Bio and captions.",
+        steps: [
+            { name: "Type or Paste Text", text: "Type your bio or caption text into the editor. The tool tracks your characters against the 150-char bio limit." },
+            { name: "Select Font Style", text: "Filter by Aesthetic, Bold, Cursive, or Gothic to find your desired aesthetic." },
+            { name: "Copy & Paste into Instagram", text: "Click 'Copy' next to your chosen font and paste directly into your Instagram Bio or caption field." }
+        ]
+    },
+    yttags: {
+        name: "How to Extract and Find YouTube SEO Tags Online Free",
+        description: "Discover the hidden SEO tags and keywords used by top-ranking YouTube videos to boost your video optimization.",
+        steps: [
+            { name: "Enter Video URL", text: "Paste the URL of any public YouTube video you want to analyze." },
+            { name: "Extract Keywords", text: "Click 'Extract Tags' to parse video metadata, ranking keywords, and creator tags." },
+            { name: "Format & Copy", text: "Review the tag cloud and click 'Copy All Tags' formatted with commas ready for YouTube Studio." }
         ]
     }
 };

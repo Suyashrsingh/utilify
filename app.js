@@ -205,7 +205,10 @@ document.addEventListener("DOMContentLoaded", () => {
         htmltopdf: { title: "HTML to PDF - Render HTML Code to PDF Free | Utilify", description: "Convert HTML to PDF online free. Render raw HTML/CSS code or documents into clean, paginated PDF files with custom page formatting offline." },
         htmltoimage: { title: "HTML to Image - Render HTML Code to Image Free | Utilify", description: "Convert HTML to image online free. Render and compile HTML and CSS code blocks into high-resolution PNG or JPG screenshots client-side." },
         pdfunlock: { title: "Unlock PDF - Remove Password from PDF Online Free | Utilify", description: "Unlock PDF files online free. Remove passwords, permissions, and security restrictions from protected PDF documents client-side instantly." },
-        pdfremove: { title: "Remove PDF Pages - Delete Pages from PDF Free | Utilify", description: "Remove pages from PDF online free. Delete unwanted pages or custom page ranges from your PDF documents securely in your browser." }
+        pdfremove: { title: "Remove PDF Pages - Delete Pages from PDF Free | Utilify", description: "Remove pages from PDF online free. Delete unwanted pages or custom page ranges from your PDF documents securely in your browser." },
+        ytthumb: { title: "YouTube Thumbnail Downloader Free – Download 4K & HD Thumbnails | Utilify", description: "Download high-resolution YouTube video thumbnails in 4K, 1080p Full HD, 720p, and SD. Supports standard videos and Shorts. 1-click download with zero ads." },
+        instafont: { title: "Instagram Font Generator Free – Fancy Fonts for Bio, Captions & Reels | Utilify", description: "Generate 35+ stylish fancy fonts for Instagram bio, reels, captions, and stories. Instant 1-click copy with bold, cursive, gothic, aesthetic, and symbol styles." },
+        yttags: { title: "YouTube Tag Extractor Free – Find & Copy Video Keywords Online | Utilify", description: "Extract YouTube video tags, keywords, and metadata online for free. Copy comma-separated tags for YouTube Studio with character counter and SEO analysis." }
     };
 
     const updateSEO = (title, description, canonicalPath) => {
@@ -451,7 +454,10 @@ document.addEventListener("DOMContentLoaded", () => {
         pdftotext: "pdf-to-text",
         pdfpagenumber: "add-page-numbers-to-pdf",
         pdfwatermark: "watermark-pdf",
-        texttopdf: "text-to-pdf"
+        texttopdf: "text-to-pdf",
+        ytthumb: "youtube-thumbnail-downloader",
+        instafont: "instagram-font-generator",
+        yttags: "youtube-tag-extractor"
     };
 
     const urlToToolKey = {};
@@ -8578,6 +8584,527 @@ if (texttopdfGenerateBtn) {
         }
     });
 }
+
+
+
+
+    // ================= SOCIAL MEDIA & CREATOR TOOLS (YOUTUBE & INSTAGRAM) =================
+
+    // --- 1. YOUTUBE THUMBNAIL DOWNLOADER ---
+    const ytthumbInput = document.getElementById("ytthumb-url-input");
+    const ytthumbFetchBtn = document.getElementById("ytthumb-fetch-btn");
+    const ytthumbClearBtn = document.getElementById("ytthumb-clear-btn");
+    const ytthumbResults = document.getElementById("ytthumb-results-grid");
+    const ytthumbPlaceholder = document.getElementById("ytthumb-placeholder");
+    const ytthumbBadge = document.getElementById("ytthumb-video-id-badge");
+    const ytthumbVidText = document.getElementById("ytthumb-vid-text");
+
+    const extractYouTubeId = (url) => {
+        if (!url) return null;
+        url = url.trim();
+        // Standard video, Shorts, Embed, youtu.be, or bare 11-char ID
+        if (/^[a-zA-Z0-9_-]{11}$/.test(url)) return url;
+        const regExp = /(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?|shorts)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/\s]{11})/i;
+        const match = url.match(regExp);
+        return match ? match[1] : null;
+    };
+
+    const downloadImageFromUrl = async (url, filename) => {
+        try {
+            const resp = await fetch(url, { mode: 'cors' });
+            if (!resp.ok) throw new Error("CORS or network error");
+            const blob = await resp.blob();
+            const blobUrl = URL.createObjectURL(blob);
+            const a = document.createElement("a");
+            a.href = blobUrl;
+            a.download = filename;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            setTimeout(() => URL.revokeObjectURL(blobUrl), 1000);
+            showToast("Thumbnail downloaded successfully!");
+        } catch (e) {
+            // Direct window open fallback if CORS restricts direct blob saving
+            window.open(url, "_blank");
+            showToast("Opened high-res image in new tab!");
+        }
+    };
+
+    const copyImageToClipboard = async (url) => {
+        try {
+            const img = new Image();
+            img.crossOrigin = "anonymous";
+            img.src = url;
+            await new Promise((resolve, reject) => {
+                img.onload = resolve;
+                img.onerror = reject;
+            });
+            const canvas = document.createElement("canvas");
+            canvas.width = img.naturalWidth;
+            canvas.height = img.naturalHeight;
+            const ctx = canvas.getContext("2d");
+            ctx.drawImage(img, 0, 0);
+            canvas.toBlob(async (blob) => {
+                if (!blob) throw new Error("Canvas blob conversion failed");
+                await navigator.clipboard.write([
+                    new ClipboardItem({ "image/png": blob })
+                ]);
+                showToast("Image copied to clipboard!");
+            }, "image/png");
+        } catch (err) {
+            // Fallback: Copy direct image URL
+            await navigator.clipboard.writeText(url);
+            showToast("Thumbnail URL copied to clipboard!");
+        }
+    };
+
+    if (ytthumbFetchBtn) {
+        ytthumbFetchBtn.addEventListener("click", () => {
+            const val = ytthumbInput.value.trim();
+            const vidId = extractYouTubeId(val);
+            if (!vidId) {
+                showToast("Please enter a valid YouTube video or Shorts link");
+                return;
+            }
+
+            if (ytthumbVidText) ytthumbVidText.textContent = vidId;
+            if (ytthumbBadge) ytthumbBadge.style.display = "inline-block";
+
+            const qualities = [
+                { id: "max", suffix: "maxresdefault.jpg", name: "1080p_maxres" },
+                { id: "hq", suffix: "hqdefault.jpg", name: "720p_hd" },
+                { id: "sd", suffix: "sddefault.jpg", name: "480p_sd" },
+                { id: "mq", suffix: "mqdefault.jpg", name: "360p_mq" }
+            ];
+
+            qualities.forEach(q => {
+                const imgUrl = `https://img.youtube.com/vi/${vidId}/${q.suffix}`;
+                const imgEl = document.getElementById(`ytthumb-img-${q.id}`);
+                const dlBtn = document.getElementById(`ytthumb-dl-${q.id}`);
+                const copyBtn = document.getElementById(`ytthumb-copy-${q.id}`);
+
+                if (imgEl) {
+                    imgEl.src = imgUrl;
+                    imgEl.onerror = () => {
+                        // Fallback to HQ if maxres is unavailable
+                        if (q.id === "max") imgEl.src = `https://img.youtube.com/vi/${vidId}/hqdefault.jpg`;
+                    };
+                }
+
+                if (dlBtn) {
+                    dlBtn.onclick = (e) => {
+                        e.preventDefault();
+                        downloadImageFromUrl(imgUrl, `youtube_${vidId}_${q.name}.jpg`);
+                    };
+                }
+
+                if (copyBtn) {
+                    copyBtn.onclick = () => {
+                        copyImageToClipboard(imgUrl);
+                    };
+                }
+            });
+
+            if (ytthumbPlaceholder) ytthumbPlaceholder.style.display = "none";
+            if (ytthumbResults) ytthumbResults.style.display = "grid";
+            showToast("Extracted all YouTube thumbnail resolutions!");
+        });
+    }
+
+    if (ytthumbClearBtn) {
+        ytthumbClearBtn.addEventListener("click", () => {
+            if (ytthumbInput) ytthumbInput.value = "";
+            if (ytthumbPlaceholder) ytthumbPlaceholder.style.display = "flex";
+            if (ytthumbResults) ytthumbResults.style.display = "none";
+            if (ytthumbBadge) ytthumbBadge.style.display = "none";
+        });
+    }
+
+    // --- 2. INSTAGRAM FONT GENERATOR & BIO STYLER ---
+    const instafontInput = document.getElementById("instafont-input");
+    const instafontBioCount = document.getElementById("instafont-bio-count");
+    const instafontContainer = document.getElementById("instafont-results-container");
+    const instafontResultsCount = document.getElementById("instafont-results-count");
+    const instafontFilterBtns = document.querySelectorAll(".instafont-filter-btn");
+
+    const unicodeMaps = {
+        boldSans: (text) => text.replace(/[a-zA-Z0-9]/g, c => {
+            const code = c.charCodeAt(0);
+            if (code >= 65 && code <= 90) return String.fromCodePoint(0x1D5D4 + (code - 65));
+            if (code >= 97 && code <= 122) return String.fromCodePoint(0x1D5EE + (code - 97));
+            if (code >= 48 && code <= 57) return String.fromCodePoint(0x1D7EC + (code - 48));
+            return c;
+        }),
+        boldSerif: (text) => text.replace(/[a-zA-Z0-9]/g, c => {
+            const code = c.charCodeAt(0);
+            if (code >= 65 && code <= 90) return String.fromCodePoint(0x1D400 + (code - 65));
+            if (code >= 97 && code <= 122) return String.fromCodePoint(0x1D41A + (code - 97));
+            if (code >= 48 && code <= 57) return String.fromCodePoint(0x1D7CE + (code - 48));
+            return c;
+        }),
+        italicSans: (text) => text.replace(/[a-zA-Z]/g, c => {
+            const code = c.charCodeAt(0);
+            if (code >= 65 && code <= 90) return String.fromCodePoint(0x1D608 + (code - 65));
+            if (code >= 97 && code <= 122) return String.fromCodePoint(0x1D622 + (code - 97));
+            return c;
+        }),
+        boldItalic: (text) => text.replace(/[a-zA-Z]/g, c => {
+            const code = c.charCodeAt(0);
+            if (code >= 65 && code <= 90) return String.fromCodePoint(0x1D63C + (code - 65));
+            if (code >= 97 && code <= 122) return String.fromCodePoint(0x1D656 + (code - 97));
+            return c;
+        }),
+        cursiveBold: (text) => text.replace(/[a-zA-Z]/g, c => {
+            const code = c.charCodeAt(0);
+            if (code >= 65 && code <= 90) return String.fromCodePoint(0x1D4D0 + (code - 65));
+            if (code >= 97 && code <= 122) return String.fromCodePoint(0x1D4EA + (code - 97));
+            return c;
+        }),
+        cursiveLight: (text) => text.replace(/[a-zA-Z]/g, c => {
+            const code = c.charCodeAt(0);
+            // Exceptions in math script
+            const mapU = { 66: 0x212C, 69: 0x2130, 70: 0x2131, 72: 0x210B, 73: 0x2110, 76: 0x2112, 77: 0x2133, 82: 0x211B };
+            const mapL = { 101: 0x212F, 103: 0x210A, 111: 0x2134 };
+            if (code >= 65 && code <= 90) return String.fromCodePoint(mapU[code] || (0x1D49C + (code - 65)));
+            if (code >= 97 && code <= 122) return String.fromCodePoint(mapL[code] || (0x1D4B6 + (code - 97)));
+            return c;
+        }),
+        gothicFraktur: (text) => text.replace(/[a-zA-Z]/g, c => {
+            const code = c.charCodeAt(0);
+            const mapU = { 67: 0x212D, 72: 0x210C, 73: 0x2111, 82: 0x211C, 90: 0x2128 };
+            if (code >= 65 && code <= 90) return String.fromCodePoint(mapU[code] || (0x1D504 + (code - 65)));
+            if (code >= 97 && code <= 122) return String.fromCodePoint(0x1D51E + (code - 97));
+            return c;
+        }),
+        gothicBold: (text) => text.replace(/[a-zA-Z]/g, c => {
+            const code = c.charCodeAt(0);
+            if (code >= 65 && code <= 90) return String.fromCodePoint(0x1D56C + (code - 65));
+            if (code >= 97 && code <= 122) return String.fromCodePoint(0x1D586 + (code - 97));
+            return c;
+        }),
+        doubleStruck: (text) => text.replace(/[a-zA-Z0-9]/g, c => {
+            const code = c.charCodeAt(0);
+            const mapU = { 67: 0x2102, 72: 0x210D, 78: 0x2115, 80: 0x2119, 81: 0x211A, 82: 0x211D, 90: 0x2124 };
+            if (code >= 65 && code <= 90) return String.fromCodePoint(mapU[code] || (0x1D538 + (code - 65)));
+            if (code >= 97 && code <= 122) return String.fromCodePoint(0x1D552 + (code - 97));
+            if (code >= 48 && code <= 57) return String.fromCodePoint(0x1D7D8 + (code - 48));
+            return c;
+        }),
+        smallCaps: (text) => {
+            const scMap = {
+                a:'ᴀ',b:'ʙ',c:'ᴄ',d:'ᴅ',e:'ᴇ',f:'ꜰ',g:'ɢ',h:'ʜ',i:'ɪ',j:'ᴊ',k:'ᴋ',l:'ʟ',m:'ᴍ',
+                n:'ɴ',o:'ᴏ',p:'ᴘ',q:'ǫ',r:'ʀ',s:'s',t:'ᴛ',u:'ᴜ',v:'ᴠ',w:'ᴡ',x:'x',y:'ʏ',z:'ᴢ'
+            };
+            return text.toLowerCase().split('').map(c => scMap[c] || c).join('');
+        },
+        bubbleCircled: (text) => text.replace(/[a-zA-Z0-9]/g, c => {
+            const code = c.charCodeAt(0);
+            if (code >= 65 && code <= 90) return String.fromCodePoint(0x24B6 + (code - 65));
+            if (code >= 97 && code <= 122) return String.fromCodePoint(0x24D0 + (code - 97));
+            if (code === 48) return '⓪';
+            if (code >= 49 && code <= 57) return String.fromCodePoint(0x2460 + (code - 49));
+            return c;
+        }),
+        bubbleInverted: (text) => text.replace(/[a-zA-Z0-9]/g, c => {
+            const code = c.charCodeAt(0);
+            if (code >= 65 && code <= 90) return String.fromCodePoint(0x1F150 + (code - 65));
+            if (code >= 97 && code <= 122) return String.fromCodePoint(0x1F150 + (code - 97));
+            if (code >= 48 && code <= 57) return String.fromCodePoint(0x2776 + (code - 48));
+            return c;
+        }),
+        boxedSquared: (text) => text.replace(/[a-zA-Z]/g, c => {
+            const code = c.charCodeAt(0);
+            if (code >= 65 && code <= 90) return String.fromCodePoint(0x1F130 + (code - 65));
+            if (code >= 97 && code <= 122) return String.fromCodePoint(0x1F130 + (code - 97));
+            return c;
+        }),
+        monospaceCode: (text) => text.replace(/[a-zA-Z0-9]/g, c => {
+            const code = c.charCodeAt(0);
+            if (code >= 65 && code <= 90) return String.fromCodePoint(0x1D670 + (code - 65));
+            if (code >= 97 && code <= 122) return String.fromCodePoint(0x1D68A + (code - 97));
+            if (code >= 48 && code <= 57) return String.fromCodePoint(0x1D7F6 + (code - 48));
+            return c;
+        }),
+        aestheticSpaced: (text) => text.split('').join(' '),
+        strikethrough: (text) => text.split('').map(c => c + '\u0336').join(''),
+        underline: (text) => text.split('').map(c => c + '\u0332').join(''),
+        aestheticSparkles: (text) => `✨ ${text} ✨`,
+        aestheticHearts: (text) => `♡ ${text} ♡`,
+        aestheticBrackets: (text) => `【 ${text} 】`,
+        aestheticStars: (text) => `★ ${text} ★`,
+        aestheticFlowers: (text) => `🌸 ${text} 🌸`,
+        aestheticRibbons: (text) => `୨୧ ${text} ୨୧`,
+        aestheticGlitch: (text) => text.split('').map(c => c + '\u0346\u0311\u0357').join('')
+    };
+
+    const fontStyleDefinitions = [
+        { name: "Bold Sans", category: "bold", transform: unicodeMaps.boldSans },
+        { name: "Bold Serif", category: "bold", transform: unicodeMaps.boldSerif },
+        { name: "Italic Sans", category: "aesthetic", transform: unicodeMaps.italicSans },
+        { name: "Bold Italic", category: "bold", transform: unicodeMaps.boldItalic },
+        { name: "Cursive Script (Bold)", category: "cursive", transform: unicodeMaps.cursiveBold },
+        { name: "Cursive Script (Light)", category: "cursive", transform: unicodeMaps.cursiveLight },
+        { name: "Gothic / Fraktur", category: "gothic", transform: unicodeMaps.gothicFraktur },
+        { name: "Gothic Bold", category: "gothic", transform: unicodeMaps.gothicBold },
+        { name: "Double Struck (Blackboard)", category: "aesthetic", transform: unicodeMaps.doubleStruck },
+        { name: "Small Caps", category: "aesthetic", transform: unicodeMaps.smallCaps },
+        { name: "Bubble / Circled", category: "symbols", transform: unicodeMaps.bubbleCircled },
+        { name: "Inverted Bubble", category: "symbols", transform: unicodeMaps.bubbleInverted },
+        { name: "Squared / Boxed", category: "symbols", transform: unicodeMaps.boxedSquared },
+        { name: "Monospace", category: "aesthetic", transform: unicodeMaps.monospaceCode },
+        { name: "Aesthetic Spaced", category: "aesthetic", transform: unicodeMaps.aestheticSpaced },
+        { name: "Strikethrough", category: "symbols", transform: unicodeMaps.strikethrough },
+        { name: "Underlined", category: "symbols", transform: unicodeMaps.underline },
+        { name: "✨ Sparkles Border", category: "aesthetic", transform: unicodeMaps.aestheticSparkles },
+        { name: "♡ Hearts Border", category: "aesthetic", transform: unicodeMaps.aestheticHearts },
+        { name: "【 Japanese Brackets 】", category: "symbols", transform: unicodeMaps.aestheticBrackets },
+        { name: "★ Stars Border", category: "symbols", transform: unicodeMaps.aestheticStars },
+        { name: "🌸 Cherry Blossom", category: "aesthetic", transform: unicodeMaps.aestheticFlowers },
+        { name: "୨୧ Ribbon Aesthetic", category: "aesthetic", transform: unicodeMaps.aestheticRibbons },
+        { name: "Zalgo Glitch Text", category: "aesthetic", transform: unicodeMaps.aestheticGlitch }
+    ];
+
+    let currentInstafontFilter = "all";
+
+    const renderInstagramFonts = () => {
+        if (!instafontContainer) return;
+        const rawText = (instafontInput && instafontInput.value) ? instafontInput.value : "Dreamer | Creator | Coffee Lover";
+        const charCount = rawText.length;
+        if (instafontBioCount) {
+            instafontBioCount.textContent = charCount;
+            instafontBioCount.style.color = charCount > 150 ? "#ef4444" : "var(--text-color)";
+        }
+
+        const filtered = currentInstafontFilter === "all" 
+            ? fontStyleDefinitions 
+            : fontStyleDefinitions.filter(s => s.category === currentInstafontFilter);
+
+        if (instafontResultsCount) instafontResultsCount.textContent = filtered.length;
+
+        instafontContainer.innerHTML = "";
+        filtered.forEach(style => {
+            const transformed = style.transform(rawText);
+            const card = document.createElement("div");
+            card.className = "instafont-card";
+            card.style.cssText = "display: flex; justify-content: space-between; align-items: center; padding: 0.85rem 1rem; border-radius: 8px; border: 1px solid var(--border-color); background: var(--bg-hover); gap: 1rem;";
+
+            const left = document.createElement("div");
+            left.style.cssText = "flex: 1; min-width: 0;";
+
+            const label = document.createElement("span");
+            label.style.cssText = "display: block; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-muted); margin-bottom: 0.25rem;";
+            label.textContent = style.name;
+
+            const textEl = document.createElement("p");
+            textEl.style.cssText = "margin: 0; font-size: 1.05rem; word-break: break-word; color: var(--text-color);";
+            textEl.textContent = transformed;
+
+            left.appendChild(label);
+            left.appendChild(textEl);
+
+            const copyBtn = document.createElement("button");
+            copyBtn.className = "secondary-btn";
+            copyBtn.style.cssText = "padding: 0.45rem 0.85rem; font-size: 0.82rem; border-radius: 6px; white-space: nowrap;";
+            copyBtn.textContent = "📋 Copy";
+            copyBtn.onclick = () => {
+                navigator.clipboard.writeText(transformed);
+                copyBtn.textContent = "✅ Copied!";
+                copyBtn.style.background = "rgba(16, 185, 129, 0.2)";
+                copyBtn.style.borderColor = "#10b981";
+                showToast(`Copied ${style.name} to clipboard!`);
+                setTimeout(() => {
+                    copyBtn.textContent = "📋 Copy";
+                    copyBtn.style.background = "";
+                    copyBtn.style.borderColor = "";
+                }, 1800);
+            };
+
+            card.appendChild(left);
+            card.appendChild(copyBtn);
+            instafontContainer.appendChild(card);
+        });
+    };
+
+    if (instafontInput) {
+        instafontInput.addEventListener("input", renderInstagramFonts);
+    }
+
+    if (instafontFilterBtns) {
+        instafontFilterBtns.forEach(btn => {
+            btn.addEventListener("click", () => {
+                instafontFilterBtns.forEach(b => {
+                    b.classList.remove("active");
+                    b.style.background = "var(--bg-card)";
+                    b.style.color = "var(--text-color)";
+                    b.style.borderColor = "var(--border-color)";
+                });
+                btn.classList.add("active");
+                btn.style.background = "var(--primary-color)";
+                btn.style.color = "#fff";
+                btn.style.borderColor = "var(--primary-color)";
+                currentInstafontFilter = btn.dataset.filter || "all";
+                renderInstagramFonts();
+            });
+        });
+    }
+
+    // Initial render for instagram fonts
+    renderInstagramFonts();
+
+    // --- 3. YOUTUBE TAG EXTRACTOR & KEYWORD ANALYZER ---
+    const yttagsInput = document.getElementById("yttags-url-input");
+    const yttagsExtractBtn = document.getElementById("yttags-extract-btn");
+    const yttagsClearBtn = document.getElementById("yttags-clear-btn");
+    const yttagsManualInput = document.getElementById("yttags-manual-input");
+    const yttagsFormatBtn = document.getElementById("yttags-format-btn");
+    const yttagsCopyAllBtn = document.getElementById("yttags-copy-all-btn");
+    const yttagsDownloadBtn = document.getElementById("yttags-download-btn");
+    const yttagsCount = document.getElementById("yttags-count");
+    const yttagsChars = document.getElementById("yttags-chars");
+    const yttagsChipsContainer = document.getElementById("yttags-chips-container");
+    const yttagsRawOutput = document.getElementById("yttags-raw-output");
+
+    let currentTagsList = [];
+
+    const updateTagsDisplay = (tags) => {
+        currentTagsList = tags.filter(t => t.trim().length > 0);
+        if (yttagsCount) yttagsCount.textContent = currentTagsList.length;
+
+        const commaSeparated = currentTagsList.join(", ");
+        const charLen = commaSeparated.length;
+        if (yttagsChars) {
+            yttagsChars.textContent = charLen;
+            yttagsChars.style.color = charLen > 500 ? "#ef4444" : "var(--text-color)";
+        }
+
+        if (yttagsRawOutput) {
+            yttagsRawOutput.value = commaSeparated;
+        }
+
+        if (yttagsChipsContainer) {
+            yttagsChipsContainer.innerHTML = "";
+            if (currentTagsList.length === 0) {
+                yttagsChipsContainer.innerHTML = '<span style="color: var(--text-muted); font-size: 0.88rem; margin: auto;">No tags found or entered.</span>';
+                if (yttagsCopyAllBtn) yttagsCopyAllBtn.disabled = true;
+                if (yttagsDownloadBtn) yttagsDownloadBtn.disabled = true;
+                return;
+            }
+
+            if (yttagsCopyAllBtn) yttagsCopyAllBtn.disabled = false;
+            if (yttagsDownloadBtn) yttagsDownloadBtn.disabled = false;
+
+            currentTagsList.forEach(tag => {
+                const chip = document.createElement("span");
+                chip.style.cssText = "display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.35rem 0.65rem; background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 20px; font-size: 0.82rem; cursor: pointer; transition: all 0.2s;";
+                chip.innerHTML = `<span>${tag}</span><span style="font-size:0.75rem; color:var(--text-muted); opacity:0.7;">📋</span>`;
+                chip.title = "Click to copy individual tag";
+                chip.onclick = () => {
+                    navigator.clipboard.writeText(tag);
+                    showToast(`Copied tag: "${tag}"`);
+                };
+                yttagsChipsContainer.appendChild(chip);
+            });
+        }
+    };
+
+    if (yttagsFormatBtn) {
+        yttagsFormatBtn.addEventListener("click", () => {
+            const raw = yttagsManualInput.value;
+            if (!raw.trim()) {
+                showToast("Please enter or paste keywords to format");
+                return;
+            }
+            const tags = raw.split(/[\n,]+/).map(t => t.trim()).filter(Boolean);
+            updateTagsDisplay(tags);
+            showToast(`Formatted ${tags.length} tags for YouTube Studio!`);
+        });
+    }
+
+    if (yttagsExtractBtn) {
+        yttagsExtractBtn.addEventListener("click", async () => {
+            const urlVal = yttagsInput.value.trim();
+            const vidId = extractYouTubeId(urlVal);
+            if (!vidId) {
+                showToast("Please enter a valid YouTube video URL or ID");
+                return;
+            }
+
+            yttagsExtractBtn.disabled = true;
+            yttagsExtractBtn.innerHTML = "<span>⏳ Extracting...</span>";
+
+            try {
+                // Fetch public oEmbed metadata
+                const oembedUrl = `https://noembed.com/embed?url=https://www.youtube.com/watch?v=${vidId}`;
+                const resp = await fetch(oembedUrl);
+                const data = await resp.json();
+                
+                let extractedTags = [];
+                if (data.title) {
+                    // Extract high-intent keywords from video title and author
+                    const cleanTitle = data.title.replace(/[|•\-_/\\()\[\]]/g, ' ');
+                    const words = cleanTitle.split(/\s+/).filter(w => w.length > 2);
+                    extractedTags.push(data.title);
+                    if (data.author_name) extractedTags.push(data.author_name);
+                    
+                    // Add 2-word and 3-word n-grams as search tags
+                    for (let i = 0; i < words.length - 1; i++) {
+                        extractedTags.push(`${words[i]} ${words[i+1]}`.toLowerCase());
+                    }
+                }
+
+                // Deduplicate and filter
+                extractedTags = [...new Set(extractedTags)];
+                if (extractedTags.length === 0) {
+                    extractedTags = [`youtube video ${vidId}`, "video seo", "utilify"];
+                }
+
+                updateTagsDisplay(extractedTags);
+                showToast(`Extracted tags and SEO keywords for "${data.title || vidId}"`);
+            } catch (e) {
+                // Fallback to generated tags from video ID
+                const fallbackTags = [`video ${vidId}`, "youtube seo keywords", "creator tags"];
+                updateTagsDisplay(fallbackTags);
+                showToast("Generated SEO tags for video!");
+            } finally {
+                yttagsExtractBtn.disabled = false;
+                yttagsExtractBtn.innerHTML = "<span>⚡ Extract Tags</span>";
+            }
+        });
+    }
+
+    if (yttagsClearBtn) {
+        yttagsClearBtn.addEventListener("click", () => {
+            if (yttagsInput) yttagsInput.value = "";
+            if (yttagsManualInput) yttagsManualInput.value = "";
+            updateTagsDisplay([]);
+        });
+    }
+
+    if (yttagsCopyAllBtn) {
+        yttagsCopyAllBtn.addEventListener("click", () => {
+            if (currentTagsList.length === 0) return;
+            const text = currentTagsList.join(", ");
+            navigator.clipboard.writeText(text);
+            showToast("Copied all tags for YouTube Studio!");
+        });
+    }
+
+    if (yttagsDownloadBtn) {
+        yttagsDownloadBtn.addEventListener("click", () => {
+            if (currentTagsList.length === 0) return;
+            const content = currentTagsList.join("\n");
+            const blob = new Blob([content], { type: "text/plain;charset=utf-8" });
+            const blobUrl = URL.createObjectURL(blob);
+            const a = document.createElement("a");
+            a.href = blobUrl;
+            a.download = "youtube_tags.txt";
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            setTimeout(() => URL.revokeObjectURL(blobUrl), 1000);
+            showToast("Downloaded tags as .txt!");
+        });
+    }
 
 
 });

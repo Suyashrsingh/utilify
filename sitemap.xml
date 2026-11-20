@@ -532,6 +532,27 @@
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
+  <!-- Tool: ytthumb -->
+  <url>
+    <loc>https://utilify.co.in/tools/youtube-thumbnail-downloader/</loc>
+    <lastmod>2026-11-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <!-- Tool: instafont -->
+  <url>
+    <loc>https://utilify.co.in/tools/instagram-font-generator/</loc>
+    <lastmod>2026-11-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <!-- Tool: yttags -->
+  <url>
+    <loc>https://utilify.co.in/tools/youtube-tag-extractor/</loc>
+    <lastmod>2026-11-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
   <!-- Alias: JPG to PDF Converter Alias -->
   <url>
     <loc>https://utilify.co.in/tools/jpg-to-pdf/</loc>

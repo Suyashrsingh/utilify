@@ -70,7 +70,10 @@ const seoToolUrls = {
     pdftotext: "pdf-to-text",
     pdfpagenumber: "add-page-numbers-to-pdf",
     pdfwatermark: "watermark-pdf",
-    texttopdf: "text-to-pdf"
+    texttopdf: "text-to-pdf",
+    ytthumb: "youtube-thumbnail-downloader",
+    instafont: "instagram-font-generator",
+    yttags: "youtube-tag-extractor"
 };
 
 // Read tool descriptions from app.js

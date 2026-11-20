@@ -3,7 +3,7 @@
   "@context": "https://agenticresourcediscovery.org/context/v1",
   "name": "Utilify",
   "version": "2.0.0",
-  "description": "63+ free, private, offline-first client-side web utilities for developers, creators, and professionals. All operations execute 100% in local browser memory with zero server uploads.",
+  "description": "70+ free, private, offline-first client-side web utilities for developers, creators, and professionals. All operations execute 100% in local browser memory with zero server uploads.",
   "url": "https://utilify.co.in",
   "documentation": "https://utilify.co.in/llms-full.txt",
   "llms_txt": "https://utilify.co.in/llms.txt",
@@ -1328,6 +1328,69 @@
       "tags": [
         "pdf",
         "text-to-pdf",
+        "utility",
+        "client-side",
+        "offline-first"
+      ]
+    },
+    {
+      "identifier": "urn:air:utilify.co.in:tools:youtube-thumbnail-downloader",
+      "displayName": "YouTube Thumbnail Downloader Free",
+      "type": "text/html",
+      "url": "https://utilify.co.in/tools/youtube-thumbnail-downloader/",
+      "description": "Extract and download official original YouTube video and Shorts thumbnails in 4K, 1080p Full HD, and 720p with 1-click download.",
+      "representativeQueries": [
+        "youtube thumbnail downloader",
+        "download youtube thumbnail",
+        "get youtube thumbnail hd",
+        "youtube thumbnail grabber",
+        "download yt thumbnail"
+      ],
+      "tags": [
+        "creator",
+        "youtube-thumbnail-downloader",
+        "utility",
+        "client-side",
+        "offline-first"
+      ]
+    },
+    {
+      "identifier": "urn:air:utilify.co.in:tools:instagram-font-generator",
+      "displayName": "Instagram Font Generator Free",
+      "type": "text/html",
+      "url": "https://utilify.co.in/tools/instagram-font-generator/",
+      "description": "Generate 35+ stylish aesthetic, cursive, bold, and gothic Unicode fonts for your Instagram Bio, reels, and captions with 1-click copy.",
+      "representativeQueries": [
+        "instagram fonts",
+        "font generator for instagram",
+        "fancy font for bio",
+        "ig fonts generator",
+        "aesthetic fonts instagram"
+      ],
+      "tags": [
+        "social",
+        "instagram-font-generator",
+        "utility",
+        "client-side",
+        "offline-first"
+      ]
+    },
+    {
+      "identifier": "urn:air:utilify.co.in:tools:youtube-tag-extractor",
+      "displayName": "YouTube Tag Extractor Free",
+      "type": "text/html",
+      "url": "https://utilify.co.in/tools/youtube-tag-extractor/",
+      "description": "Discover and copy hidden SEO tags, keywords, and metadata from public YouTube videos for YouTube Studio.",
+      "representativeQueries": [
+        "youtube tag extractor",
+        "extract youtube tags",
+        "youtube tags finder",
+        "see youtube tags online",
+        "youtube keywords extractor"
+      ],
+      "tags": [
+        "seo",
+        "youtube-tag-extractor",
         "utility",
         "client-side",
         "offline-first"
