@@ -336,10 +336,10 @@ document.addEventListener("DOMContentLoaded", () => {
         viewPanels.forEach(panel => {
             if (panel.id === `view-${viewName}`) {
                 panel.classList.add("active-view");
-                panel.style.display = "";
+                panel.style.display = "block";
             } else {
                 panel.classList.remove("active-view");
-                panel.style.display = "";
+                panel.style.display = "none";
             }
         });
 

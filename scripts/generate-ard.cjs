@@ -452,8 +452,21 @@ const ardManifest = {
 
 const jsonStr = JSON.stringify(ardManifest, null, 2);
 
-fs.writeFileSync(path.join(__dirname, '..', 'public', '.well-known', 'ard.json'), jsonStr, 'utf8');
-fs.writeFileSync(path.join(__dirname, '..', '.well-known', 'ard.json'), jsonStr, 'utf8');
-fs.writeFileSync(path.join(__dirname, '..', 'dist', '.well-known', 'ard.json'), jsonStr, 'utf8');
+function safeWrite(filePath, data) {
+    const dir = path.dirname(filePath);
+    if (!fs.existsSync(dir)) {
+        fs.mkdirSync(dir, { recursive: true });
+    }
+    fs.writeFileSync(filePath, data, 'utf8');
+}
+
+safeWrite(path.join(__dirname, '..', 'public', '.well-known', 'ard.json'), jsonStr);
+safeWrite(path.join(__dirname, '..', '.well-known', 'ard.json'), jsonStr);
+
+// If dist exists, write there as well; otherwise minify-html/prerender/vite will handle it
+const distWellKnown = path.join(__dirname, '..', 'dist', '.well-known');
+if (fs.existsSync(path.join(__dirname, '..', 'dist'))) {
+    safeWrite(path.join(distWellKnown, 'ard.json'), jsonStr);
+}
 
 console.log(`[ARD Generator] Successfully generated valid ARD Manifest with ${ardEntries.length} entries!`);
