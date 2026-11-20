@@ -1,30 +1,21 @@
-# Cloudflare Pages 301 Permanent Redirects for Clean Canonical SEO
-# Permanent canonicalization of non-trailing slash paths to trailing slash paths
-/tools/:slug   /tools/:slug/   301!
-/about         /about/         301!
-/privacy       /privacy/       301!
-/terms         /terms/         301!
-/disclaimer    /disclaimer/    301!
-/sitemap       /sitemap/       301!
-/contact       /contact/       301!
-
+# Cloudflare 301 Permanent Redirects for Clean Canonical SEO
 # Legacy Tool URLs to High-Intent Canonical SEO URLs
-/tools/pdf-merger                 /tools/merge-pdf/               301
-/tools/pdf-splitter               /tools/split-pdf/               301
-/tools/pdf-page-rotator           /tools/rotate-pdf/              301
-/tools/image-to-pdf-converter     /tools/image-to-pdf/            301
-/tools/pdf-to-image-converter     /tools/pdf-to-image/            301
-/tools/pdf-compressor             /tools/compress-pdf/            301
-/tools/pdf-password-protector     /tools/protect-pdf/             301
-/tools/pdf-password-remover       /tools/unlock-pdf/              301
-/tools/pdf-page-remover           /tools/remove-pdf-pages/        301
-/tools/digital-signature-creator  /tools/sign-pdf/                301
-/tools/pdf-signature-creator      /tools/sign-pdf/                301
-/tools/online-signature-pdf       /tools/sign-pdf/                301
-/tools/sign-pdf-online-free       /tools/sign-pdf/                301
-/tools/sign-pdf-free              /tools/sign-pdf/                301
-/tools/signed-pdf-edit            /tools/sign-pdf/                301
-/tools/digital-signature-online   /tools/sign-pdf/                301
-/tools/protect-pdf-online         /tools/protect-pdf/             301
-/tools/jpg-to-pdf-converter-online /tools/jpg-to-pdf/             301
-/tools/image-to-pdf-converter-free /tools/image-to-pdf/           301
+/tools/pdf-merger                  /tools/merge-pdf/                301
+/tools/pdf-splitter                /tools/split-pdf/                301
+/tools/pdf-page-rotator            /tools/rotate-pdf/               301
+/tools/image-to-pdf-converter      /tools/image-to-pdf/             301
+/tools/pdf-to-image-converter      /tools/pdf-to-image/             301
+/tools/pdf-compressor              /tools/compress-pdf/             301
+/tools/pdf-password-protector      /tools/protect-pdf/              301
+/tools/pdf-password-remover        /tools/unlock-pdf/               301
+/tools/pdf-page-remover            /tools/remove-pdf-pages/         301
+/tools/digital-signature-creator   /tools/sign-pdf/                 301
+/tools/pdf-signature-creator       /tools/sign-pdf/                 301
+/tools/online-signature-pdf        /tools/sign-pdf/                 301
+/tools/sign-pdf-online-free        /tools/sign-pdf/                 301
+/tools/sign-pdf-free               /tools/sign-pdf/                 301
+/tools/signed-pdf-edit             /tools/sign-pdf/                 301
+/tools/digital-signature-online    /tools/sign-pdf/                 301
+/tools/protect-pdf-online          /tools/protect-pdf/              301
+/tools/jpg-to-pdf-converter-online /tools/jpg-to-pdf/              301
+/tools/image-to-pdf-converter-free /tools/image-to-pdf/            301
